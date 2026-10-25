@@ -14,7 +14,7 @@
 #   参考栅格 /realtime_grid     = realtime_grid.py, 不参与规划
 #
 # 前提: Gazebo 已在跑 (gazebo_sim_launch.py), 或已有点云源。
-
+#demo
 import os
 
 from ament_index_python.packages import get_package_share_directory
