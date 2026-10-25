@@ -1,0 +1,225 @@
+[0.000000] (-) TimerEvent: {}
+[0.000122] (fishbot_description) JobQueued: {'identifier': 'fishbot_description', 'dependencies': OrderedDict()}
+[0.000243] (fishbot_description) JobStarted: {'identifier': 'fishbot_description'}
+[0.004388] (fishbot_description) JobProgress: {'identifier': 'fishbot_description', 'progress': 'cmake'}
+[0.005106] (fishbot_description) JobProgress: {'identifier': 'fishbot_description', 'progress': 'build'}
+[0.005799] (fishbot_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description', '--', '-j16', '-l16'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/lele'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en'), ('CLAUDE_SESSION_ID', '78c13020e0164926a383d2c651a958e0'), ('USER', 'lele'), ('SSH_CLIENT', '172.20.10.6 49234 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/lele/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","messagesFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/e124bce74d37146f7757162cc226bed34e6402da1803398ca89bee5684571df6/nls.messages.json","corruptMarkerFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"75539731208fa508a5b042c8fe051beb.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","_cacheRoot":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn","_resolvedLanguagePackCoreLocation":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/e124bce74d37146f7757162cc226bed34e6402da1803398ca89bee5684571df6","_corruptedFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"}'), ('SYSTEMD_PAGER', ''), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('BROWSER', '/home/lele/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('CODEBUDDY_SAFE_DELETE_SHIM_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim'), ('CODEBUDDY_COPILOT_INTERNET_ENVIRONMENT', 'internal'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-b4e416f8-ca9f-4bb1-9cd5-eaee6cb17c15.sock'), ('PYTHONUNBUFFERED', '1'), ('STDBUF_O', 'L'), ('ROS_PYTHON_VERSION', '3'), ('NODE_OPTIONS', '--require="/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/node-language-shim.cjs"'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('CODEBUDDY_NODE_BIN', '/home/lele/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/node'), ('VSCODE_L10N_BUNDLE_LOCATION', 'vscode-local:/c%3A/Users/kun/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.131.2026090407/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('RUBY_UNBUFFERED', '1'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR', '/tmp/codebuddy-safe-delete-bulk'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'ef3eaeba-fde4-4188-8dbf-52d08a0c3426'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin:/home/lele/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/bin/remote-cli:/home/lele/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('VSCODE_AGENT_FOLDER', '/home/lele/.vscode-server'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_REPORT_PATH', '/tmp/codebuddy-safe-delete/report-5171-1792504073736-xk4oyahzh0q.jsonl'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_HOST_HEARTBEAT', '/tmp/codebuddy-sd-state/host-5171-3cb1240f86b06e95/host-heartbeat.json'), ('XMODIFIERS', '@im=fcitx'), ('LS_COLORS', ''), ('MANPAGER', 'cat'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEBUDDY_TOOL_CALL_ID', 'call_00_ET_9CQNGxqzkjwCdwOI1iG74953'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_ENABLED', '1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('BASH_ENV', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin/safe-delete-bash-env.sh'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description'), ('GENIE_TRASH_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/genie-trash'), ('SSH_CONNECTION', '172.20.10.6 49234 172.20.10.2 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CODEBUDDY_SAFE_DELETE_BULK_GUARD', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-delete-bulk-guard.cjs'), ('PYTHONPATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('CODEBUDDY_SESSION_ID', '78c13020e0164926a383d2c651a958e0'), ('LC_PAPER', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_BIN_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('CODEBUDDY_SAFE_DELETE_BULK_THRESHOLD', '500'), ('EDITOR', 'cat'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.041597] (fishbot_description) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target relocalization_3d\n'}
+[0.054802] (fishbot_description) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/relocalization_3d.dir/src/relocalization_3d_node.cpp.o\n'}
+[0.099897] (-) TimerEvent: {}
+[0.200052] (-) TimerEvent: {}
+[0.300216] (-) TimerEvent: {}
+[0.400399] (-) TimerEvent: {}
+[0.500597] (-) TimerEvent: {}
+[0.600778] (-) TimerEvent: {}
+[0.700953] (-) TimerEvent: {}
+[0.801104] (-) TimerEvent: {}
+[0.901292] (-) TimerEvent: {}
+[1.001469] (-) TimerEvent: {}
+[1.101661] (-) TimerEvent: {}
+[1.201861] (-) TimerEvent: {}
+[1.302059] (-) TimerEvent: {}
+[1.402265] (-) TimerEvent: {}
+[1.502438] (-) TimerEvent: {}
+[1.602606] (-) TimerEvent: {}
+[1.702756] (-) TimerEvent: {}
+[1.802882] (-) TimerEvent: {}
+[1.903024] (-) TimerEvent: {}
+[2.003215] (-) TimerEvent: {}
+[2.103395] (-) TimerEvent: {}
+[2.203561] (-) TimerEvent: {}
+[2.303732] (-) TimerEvent: {}
+[2.403924] (-) TimerEvent: {}
+[2.504103] (-) TimerEvent: {}
+[2.604285] (-) TimerEvent: {}
+[2.704455] (-) TimerEvent: {}
+[2.804640] (-) TimerEvent: {}
+[2.904828] (-) TimerEvent: {}
+[3.004999] (-) TimerEvent: {}
+[3.105180] (-) TimerEvent: {}
+[3.205352] (-) TimerEvent: {}
+[3.305533] (-) TimerEvent: {}
+[3.405718] (-) TimerEvent: {}
+[3.505899] (-) TimerEvent: {}
+[3.606071] (-) TimerEvent: {}
+[3.706248] (-) TimerEvent: {}
+[3.806437] (-) TimerEvent: {}
+[3.906618] (-) TimerEvent: {}
+[4.006792] (-) TimerEvent: {}
+[4.106960] (-) TimerEvent: {}
+[4.207151] (-) TimerEvent: {}
+[4.307342] (-) TimerEvent: {}
+[4.407521] (-) TimerEvent: {}
+[4.507703] (-) TimerEvent: {}
+[4.607868] (-) TimerEvent: {}
+[4.708041] (-) TimerEvent: {}
+[4.808214] (-) TimerEvent: {}
+[4.908382] (-) TimerEvent: {}
+[5.008559] (-) TimerEvent: {}
+[5.108734] (-) TimerEvent: {}
+[5.208906] (-) TimerEvent: {}
+[5.309074] (-) TimerEvent: {}
+[5.409234] (-) TimerEvent: {}
+[5.509390] (-) TimerEvent: {}
+[5.609566] (-) TimerEvent: {}
+[5.709804] (-) TimerEvent: {}
+[5.809979] (-) TimerEvent: {}
+[5.910174] (-) TimerEvent: {}
+[6.010373] (-) TimerEvent: {}
+[6.110543] (-) TimerEvent: {}
+[6.210704] (-) TimerEvent: {}
+[6.310876] (-) TimerEvent: {}
+[6.411065] (-) TimerEvent: {}
+[6.511248] (-) TimerEvent: {}
+[6.611419] (-) TimerEvent: {}
+[6.711579] (-) TimerEvent: {}
+[6.811799] (-) TimerEvent: {}
+[6.912032] (-) TimerEvent: {}
+[7.012287] (-) TimerEvent: {}
+[7.112472] (-) TimerEvent: {}
+[7.212661] (-) TimerEvent: {}
+[7.312831] (-) TimerEvent: {}
+[7.413020] (-) TimerEvent: {}
+[7.513222] (-) TimerEvent: {}
+[7.613402] (-) TimerEvent: {}
+[7.713604] (-) TimerEvent: {}
+[7.813801] (-) TimerEvent: {}
+[7.913964] (-) TimerEvent: {}
+[8.014125] (-) TimerEvent: {}
+[8.114302] (-) TimerEvent: {}
+[8.214502] (-) TimerEvent: {}
+[8.314683] (-) TimerEvent: {}
+[8.414852] (-) TimerEvent: {}
+[8.515016] (-) TimerEvent: {}
+[8.615195] (-) TimerEvent: {}
+[8.715388] (-) TimerEvent: {}
+[8.815582] (-) TimerEvent: {}
+[8.915747] (-) TimerEvent: {}
+[9.015907] (-) TimerEvent: {}
+[9.116076] (-) TimerEvent: {}
+[9.216237] (-) TimerEvent: {}
+[9.316400] (-) TimerEvent: {}
+[9.416564] (-) TimerEvent: {}
+[9.516730] (-) TimerEvent: {}
+[9.616891] (-) TimerEvent: {}
+[9.717053] (-) TimerEvent: {}
+[9.817220] (-) TimerEvent: {}
+[9.917370] (-) TimerEvent: {}
+[10.017525] (-) TimerEvent: {}
+[10.117683] (-) TimerEvent: {}
+[10.217839] (-) TimerEvent: {}
+[10.317996] (-) TimerEvent: {}
+[10.418152] (-) TimerEvent: {}
+[10.518304] (-) TimerEvent: {}
+[10.618449] (-) TimerEvent: {}
+[10.718603] (-) TimerEvent: {}
+[10.818761] (-) TimerEvent: {}
+[10.918911] (-) TimerEvent: {}
+[11.019072] (-) TimerEvent: {}
+[11.119215] (-) TimerEvent: {}
+[11.219369] (-) TimerEvent: {}
+[11.319519] (-) TimerEvent: {}
+[11.419664] (-) TimerEvent: {}
+[11.519813] (-) TimerEvent: {}
+[11.619941] (-) TimerEvent: {}
+[11.720113] (-) TimerEvent: {}
+[11.820287] (-) TimerEvent: {}
+[11.920469] (-) TimerEvent: {}
+[12.020637] (-) TimerEvent: {}
+[12.120838] (-) TimerEvent: {}
+[12.221030] (-) TimerEvent: {}
+[12.321231] (-) TimerEvent: {}
+[12.421476] (-) TimerEvent: {}
+[12.521794] (-) TimerEvent: {}
+[12.622032] (-) TimerEvent: {}
+[12.711535] (fishbot_description) StdoutLine: {'line': b'[100%] Linking CXX executable relocalization_3d\n'}
+[12.722063] (-) TimerEvent: {}
+[12.822212] (-) TimerEvent: {}
+[12.922427] (-) TimerEvent: {}
+[13.022612] (-) TimerEvent: {}
+[13.122818] (-) TimerEvent: {}
+[13.223102] (-) TimerEvent: {}
+[13.323343] (-) TimerEvent: {}
+[13.423515] (-) TimerEvent: {}
+[13.523702] (-) TimerEvent: {}
+[13.562810] (fishbot_description) StdoutLine: {'line': b'[100%] Built target relocalization_3d\n'}
+[13.570516] (fishbot_description) CommandEnded: {'returncode': 0}
+[13.570933] (fishbot_description) JobProgress: {'identifier': 'fishbot_description', 'progress': 'install'}
+[13.577489] (fishbot_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/lele'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en'), ('CLAUDE_SESSION_ID', '78c13020e0164926a383d2c651a958e0'), ('USER', 'lele'), ('SSH_CLIENT', '172.20.10.6 49234 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/lele/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","messagesFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/e124bce74d37146f7757162cc226bed34e6402da1803398ca89bee5684571df6/nls.messages.json","corruptMarkerFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"75539731208fa508a5b042c8fe051beb.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","_cacheRoot":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn","_resolvedLanguagePackCoreLocation":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/e124bce74d37146f7757162cc226bed34e6402da1803398ca89bee5684571df6","_corruptedFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"}'), ('SYSTEMD_PAGER', ''), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('BROWSER', '/home/lele/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('CODEBUDDY_SAFE_DELETE_SHIM_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim'), ('CODEBUDDY_COPILOT_INTERNET_ENVIRONMENT', 'internal'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-b4e416f8-ca9f-4bb1-9cd5-eaee6cb17c15.sock'), ('PYTHONUNBUFFERED', '1'), ('STDBUF_O', 'L'), ('ROS_PYTHON_VERSION', '3'), ('NODE_OPTIONS', '--require="/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/node-language-shim.cjs"'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('CODEBUDDY_NODE_BIN', '/home/lele/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/node'), ('VSCODE_L10N_BUNDLE_LOCATION', 'vscode-local:/c%3A/Users/kun/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.131.2026090407/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('RUBY_UNBUFFERED', '1'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR', '/tmp/codebuddy-safe-delete-bulk'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'ef3eaeba-fde4-4188-8dbf-52d08a0c3426'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin:/home/lele/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/bin/remote-cli:/home/lele/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('VSCODE_AGENT_FOLDER', '/home/lele/.vscode-server'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_REPORT_PATH', '/tmp/codebuddy-safe-delete/report-5171-1792504073736-xk4oyahzh0q.jsonl'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_HOST_HEARTBEAT', '/tmp/codebuddy-sd-state/host-5171-3cb1240f86b06e95/host-heartbeat.json'), ('XMODIFIERS', '@im=fcitx'), ('LS_COLORS', ''), ('MANPAGER', 'cat'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEBUDDY_TOOL_CALL_ID', 'call_00_ET_9CQNGxqzkjwCdwOI1iG74953'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_ENABLED', '1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('BASH_ENV', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin/safe-delete-bash-env.sh'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description'), ('GENIE_TRASH_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/genie-trash'), ('SSH_CONNECTION', '172.20.10.6 49234 172.20.10.2 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CODEBUDDY_SAFE_DELETE_BULK_GUARD', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-delete-bulk-guard.cjs'), ('PYTHONPATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('CODEBUDDY_SESSION_ID', '78c13020e0164926a383d2c651a958e0'), ('LC_PAPER', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_BIN_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('CODEBUDDY_SAFE_DELETE_BULK_THRESHOLD', '500'), ('EDITOR', 'cat'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[13.582894] (fishbot_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[13.583305] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch\n'}
+[13.583336] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/relocalization_3d.launch.py\n'}
+[13.583446] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/display_robot.launch.py\n'}
+[13.583472] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/view_map.launch.py\n'}
+[13.583497] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/map_sim.launch.py\n'}
+[13.583541] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/lidar_2d.launch.py\n'}
+[13.583568] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/gazebo_sim_launch.py\n'}
+[13.583596] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/slam_mapping.launch.py\n'}
+[13.583621] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf\n'}
+[13.583646] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/first_robot.urdf\n'}
+[13.583670] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot\n'}
+[13.583696] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/common_inertia.xacro\n'}
+[13.583720] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/fishbot.ros2_control.xacro\n'}
+[13.583744] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor\n'}
+[13.583769] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor/laser.urdf.xacro\n'}
+[13.583793] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor/imu.urdf.xacro\n'}
+[13.583817] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor/camera.urdf.xacro\n'}
+[13.583844] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/base.urdf.xacro\n'}
+[13.583868] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/actuator\n'}
+[13.583892] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/actuator/caster.urdf.xacro\n'}
+[13.583916] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/actuator/wheel.urdf.xacro\n'}
+[13.583939] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/fishbot.urdf.xacro\n'}
+[13.583963] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/plugins\n'}
+[13.583988] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/plugins/gazebo_control_plugin.xacro\n'}
+[13.584018] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing\n'}
+[13.584047] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/shaobing.urdf.xacro\n'}
+[13.584073] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/common_inertia.xacro\n'}
+[13.584098] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/fishbot.ros2_control.xacro\n'}
+[13.584122] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor\n'}
+[13.584147] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor/laser.urdf.xacro\n'}
+[13.584170] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor/imu.urdf.xacro\n'}
+[13.584195] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor/mid360.xacro\n'}
+[13.584219] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor/camera.urdf.xacro\n'}
+[13.584242] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/base.urdf.xacro\n'}
+[13.584267] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/actuator\n'}
+[13.584291] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/actuator/caster.urdf.xacro\n'}
+[13.584315] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/actuator/wheel.urdf.xacro\n'}
+[13.584340] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/plugins\n'}
+[13.584364] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/plugins/gazebo_control_plugin.xacro\n'}
+[13.584388] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/first_robot.xacro\n'}
+[13.584414] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config\n'}
+[13.584437] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/fishbot_ros2_controller.yaml\n'}
+[13.584460] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/display_robot_model.rviz\n'}
+[13.584485] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/slam_toolbox_params.yaml\n'}
+[13.584508] (fishbot_description) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/relocalization_3d.yaml\n'}
+[13.584533] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/worlds\n'}
+[13.584557] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/worlds/rm_field.world\n'}
+[13.584581] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models\n'}
+[13.584607] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field\n'}
+[13.584630] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field/model.sdf\n'}
+[13.584654] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field/meshes\n'}
+[13.584678] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field/meshes/sk_rmmap.stl\n'}
+[13.584702] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field/model.config\n'}
+[13.584725] (fishbot_description) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/relocalization_3d\n'}
+[13.588436] (fishbot_description) StdoutLine: {'line': b'-- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/relocalization_3d" to ""\n'}
+[13.588604] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/height_hist.py\n'}
+[13.588750] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/pgm2png.py\n'}
+[13.588818] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/stl2pgm.py\n'}
+[13.588880] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/ament_index/resource_index/package_run_dependencies/fishbot_description\n'}
+[13.588941] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/ament_index/resource_index/parent_prefix_path/fishbot_description\n'}
+[13.589002] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/environment/ament_prefix_path.sh\n'}
+[13.589102] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/environment/ament_prefix_path.dsv\n'}
+[13.589148] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/environment/path.sh\n'}
+[13.589183] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/environment/path.dsv\n'}
+[13.589300] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/local_setup.bash\n'}
+[13.589470] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/local_setup.sh\n'}
+[13.589620] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/local_setup.zsh\n'}
+[13.589737] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/local_setup.dsv\n'}
+[13.589775] (fishbot_description) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/package.dsv\n'}
+[13.589848] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/ament_index/resource_index/packages/fishbot_description\n'}
+[13.589916] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/cmake/fishbot_descriptionConfig.cmake\n'}
+[13.589982] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/cmake/fishbot_descriptionConfig-version.cmake\n'}
+[13.590048] (fishbot_description) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/package.xml\n'}
+[13.590204] (fishbot_description) CommandEnded: {'returncode': 0}
+[13.597888] (fishbot_description) JobEnded: {'identifier': 'fishbot_description', 'rc': 0}
+[13.598116] (-) EventReactorShutdown: {}

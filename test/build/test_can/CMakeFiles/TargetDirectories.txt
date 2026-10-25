@@ -1,0 +1,10 @@
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/uninstall.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/test_can_uninstall.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/test_can_node.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/test.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/edit_cache.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/rebuild_cache.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/list_install_components.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/install.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/install/local.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_can/CMakeFiles/install/strip.dir

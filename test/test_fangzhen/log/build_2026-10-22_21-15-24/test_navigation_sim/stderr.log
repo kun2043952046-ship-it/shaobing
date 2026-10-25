@@ -1,0 +1,6 @@
+CMake Error at cmake_install.cmake:73 (file):
+  file INSTALL cannot find
+  "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/src/test_navigation_sim/scripts/odom_to_map.py":
+  No such file or directory.
+
+

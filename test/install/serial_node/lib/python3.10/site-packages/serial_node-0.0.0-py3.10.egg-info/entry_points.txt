@@ -1,0 +1,3 @@
+[console_scripts]
+serial_twist_publisher = serial_node.serial_twist_publisher:main
+

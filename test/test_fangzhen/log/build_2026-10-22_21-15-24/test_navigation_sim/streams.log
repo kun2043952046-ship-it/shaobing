@@ -1,0 +1,72 @@
+[0.006s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/src/test_navigation_sim -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim
+[0.053s] -- The C compiler identification is GNU 11.4.0
+[0.099s] -- The CXX compiler identification is GNU 11.4.0
+[0.103s] -- Detecting C compiler ABI info
+[0.148s] -- Detecting C compiler ABI info - done
+[0.152s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.152s] -- Detecting C compile features
+[0.153s] -- Detecting C compile features - done
+[0.154s] -- Detecting CXX compiler ABI info
+[0.209s] -- Detecting CXX compiler ABI info - done
+[0.216s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.216s] -- Detecting CXX compile features
+[0.216s] -- Detecting CXX compile features - done
+[0.219s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.398s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.457s] -- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+[0.484s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.487s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.492s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.499s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.509s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.537s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.538s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.592s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.610s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.633s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.639s] -- Looking for pthread.h
+[0.683s] -- Looking for pthread.h - found
+[0.683s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.733s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.733s] -- Found Threads: TRUE  
+[0.764s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.783s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.793s] -- Found nav2_msgs: 1.1.20 (/opt/ros/humble/share/nav2_msgs/cmake)
+[0.822s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.877s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.877s] -- Configured cppcheck include dirs: 
+[0.877s] -- Configured cppcheck exclude dirs and/or files: 
+[0.877s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.877s] -- Added test 'lint_cmake' to check CMake code style
+[0.877s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.878s] -- Added test 'uncrustify' to check C / C++ code style
+[0.878s] -- Configured uncrustify additional arguments: 
+[0.878s] -- Added test 'xmllint' to check XML markup files
+[0.879s] -- Configuring done
+[0.884s] -- Generating done
+[0.887s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim
+[0.892s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim' returned '0': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/src/test_navigation_sim -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim
+[0.893s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim -- -j16 -l16
+[0.929s] [ 50%] Building CXX object CMakeFiles/test_navigation_node.dir/src/test_navigation.cpp.o
+[11.939s] [100%] Linking CXX executable test_navigation_node
+[12.550s] [100%] Built target test_navigation_node
+[12.558s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim' returned '0': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim -- -j16 -l16
+[12.564s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim
+[12.570s] -- Install configuration: ""
+[12.570s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/lib/test_navigation_sim/test_navigation_node
+[12.578s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/lib/test_navigation_sim/test_navigation_node" to ""
+[12.578s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/share/test_navigation_sim/launch
+[12.578s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/share/test_navigation_sim/launch/sim_navigation.launch.py
+[12.578s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/share/test_navigation_sim/launch/nav2_sim.launch.py
+[12.578s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/share/test_navigation_sim/config
+[12.578s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/share/test_navigation_sim/config/nav2_params.yaml
+[12.578s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/share/test_navigation_sim/config/navigate_to_pose_w_replanning_5hz.xml
+[12.578s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/lib/test_navigation_sim/pgm_viewer.py
+[12.578s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/test_navigation_sim/lib/test_navigation_sim/diag_logger.py
+[12.578s] CMake Error at cmake_install.cmake:73 (file):
+[12.579s]   file INSTALL cannot find
+[12.579s]   "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/src/test_navigation_sim/scripts/odom_to_map.py":
+[12.579s]   No such file or directory.
+[12.579s] 
+[12.579s] 
+[12.579s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim' returned '1': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/test_navigation_sim

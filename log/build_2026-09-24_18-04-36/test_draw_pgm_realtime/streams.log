@@ -1,0 +1,33 @@
+[0.007s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime': /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16
+[0.044s] [35m[1mConsolidate compiler generated dependencies of target test_draw_pgm_realtime_node[0m
+[0.060s] [ 50%] [32mBuilding CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o[0m
+[12.680s] [100%] [32m[1mLinking CXX executable test_draw_pgm_realtime_node[0m
+[13.445s] [100%] Built target test_draw_pgm_realtime_node
+[13.455s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime' returned '0': /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16
+[13.464s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime': /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime
+[13.470s] -- Install configuration: ""
+[13.470s] -- Execute custom install script
+[13.470s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/test_draw_pgm_realtime_node
+[13.470s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/launch/__pycache__/realtime_pgm.launch.cpython-310.pyc
+[13.475s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/launch/__pycache__/realtime_pgm.launch.cpython-39.pyc
+[13.475s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/launch/realtime_pgm.launch.py
+[13.475s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/pgm_viewer.py
+[13.475s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/nav2_bridge.py
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/config/nav2_params.yaml
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/config/navigate_to_pose_w_replanning_5hz.xml
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/ament_index/resource_index/package_run_dependencies/test_draw_pgm_realtime
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/ament_index/resource_index/parent_prefix_path/test_draw_pgm_realtime
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/ament_prefix_path.sh
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/ament_prefix_path.dsv
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/path.sh
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/path.dsv
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.bash
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.sh
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.zsh
+[13.476s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.dsv
+[13.476s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.dsv
+[13.483s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/ament_index/resource_index/packages/test_draw_pgm_realtime
+[13.483s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/cmake/test_draw_pgm_realtimeConfig.cmake
+[13.483s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/cmake/test_draw_pgm_realtimeConfig-version.cmake
+[13.483s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.xml
+[13.485s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime' returned '0': /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime

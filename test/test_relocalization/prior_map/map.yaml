@@ -1,0 +1,12 @@
+image: map.pgm
+resolution: 0.03
+origin: [-20, -20, 0.0]
+negate: 0
+occupied_thresh: 0.1
+free_thresh: 0.9
+# width: 1334
+# height: 1334
+# xmin: -20
+# ymin: -20
+# xmax: 20
+# ymax: 20

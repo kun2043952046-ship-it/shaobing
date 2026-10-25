@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-ec66574195aec5e7096a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "test_ros_health",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "test_ros_health_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_ros_health_node-6b6b0b60bdf8aba6f7ff.json",
+					"name" : "test_ros_health_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_ros_health_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_ros_health_uninstall-84ec6cf86774a4c79d38.json",
+					"name" : "test_ros_health_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-418c9085868bd57652ee.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health",
+		"source" : "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_ros_health"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

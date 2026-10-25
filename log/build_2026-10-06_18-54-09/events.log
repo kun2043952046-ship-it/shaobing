@@ -1,0 +1,217 @@
+[0.000000] (-) TimerEvent: {}
+[0.000245] (-) JobUnselected: {'identifier': 'test_CAN'}
+[0.000461] (-) JobUnselected: {'identifier': 'test_livox_build_pcd_save'}
+[0.000548] (-) JobUnselected: {'identifier': 'test_pcd_To_pgm'}
+[0.001622] (-) JobUnselected: {'identifier': 'test_ros_health'}
+[0.001666] (test_draw_pgm_realtime) JobQueued: {'identifier': 'test_draw_pgm_realtime', 'dependencies': OrderedDict()}
+[0.001680] (test_draw_pgm_realtime) JobStarted: {'identifier': 'test_draw_pgm_realtime'}
+[0.006519] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'cmake'}
+[0.007070] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'build'}
+[0.007774] (test_draw_pgm_realtime) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', '--', '-j16', '-l16'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:en'), ('USER', 'lele'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio/lib:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '2895'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/lele/source_code_from_git/ws_livox/install:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'lele'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/opt/ros/humble/bin:/home/lele/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('SESSION_MANAGER', 'local/hero:@/tmp/.ICE-unix/2831,unix/hero:/tmp/.ICE-unix/2831'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/584319fd_bd7f_4359_9cb5_a2e1f5f1dba7'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.XORTW3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.86'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_ros_health:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime:/home/lele/source_code_from_git/ws_livox/install/fast_lio:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CLUTTER_IM_MODULE', 'xim'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio/local/lib/python3.10/dist-packages:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_ros_health:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime:/home/lele/source_code_from_git/ws_livox/install/fast_lio:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib')]), 'shell': False}
+[0.028683] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099899] (-) TimerEvent: {}
+[0.110311] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.116938] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.138004] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.139622] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.143808] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.150137] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.157560] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.188746] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.189911] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.199970] (-) TimerEvent: {}
+[0.262084] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.296599] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.300087] (-) TimerEvent: {}
+[0.315479] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.325261] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found nav2_msgs: 1.1.20 (/opt/ros/humble/share/nav2_msgs/cmake)\n'}
+[0.357375] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.400151] (-) TimerEvent: {}
+[0.405668] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.405821] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.405855] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.406101] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[0.406622] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.406971] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[0.407713] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.407758] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.408127] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.409781] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.419406] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Generating done\n'}
+[0.421537] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime\n'}
+[0.441039] (test_draw_pgm_realtime) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target test_draw_pgm_realtime_node\x1b[0m\n'}
+[0.455884] (test_draw_pgm_realtime) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o\x1b[0m\n'}
+[0.500280] (-) TimerEvent: {}
+[0.601009] (-) TimerEvent: {}
+[0.701307] (-) TimerEvent: {}
+[0.801608] (-) TimerEvent: {}
+[0.901873] (-) TimerEvent: {}
+[1.002158] (-) TimerEvent: {}
+[1.102476] (-) TimerEvent: {}
+[1.202781] (-) TimerEvent: {}
+[1.303079] (-) TimerEvent: {}
+[1.403354] (-) TimerEvent: {}
+[1.503679] (-) TimerEvent: {}
+[1.603982] (-) TimerEvent: {}
+[1.704284] (-) TimerEvent: {}
+[1.804606] (-) TimerEvent: {}
+[1.904927] (-) TimerEvent: {}
+[2.005228] (-) TimerEvent: {}
+[2.105525] (-) TimerEvent: {}
+[2.205814] (-) TimerEvent: {}
+[2.306114] (-) TimerEvent: {}
+[2.406467] (-) TimerEvent: {}
+[2.506795] (-) TimerEvent: {}
+[2.607209] (-) TimerEvent: {}
+[2.707764] (-) TimerEvent: {}
+[2.808094] (-) TimerEvent: {}
+[2.908704] (-) TimerEvent: {}
+[3.008987] (-) TimerEvent: {}
+[3.109291] (-) TimerEvent: {}
+[3.209611] (-) TimerEvent: {}
+[3.310051] (-) TimerEvent: {}
+[3.410622] (-) TimerEvent: {}
+[3.510925] (-) TimerEvent: {}
+[3.611254] (-) TimerEvent: {}
+[3.711604] (-) TimerEvent: {}
+[3.811985] (-) TimerEvent: {}
+[3.912478] (-) TimerEvent: {}
+[4.012827] (-) TimerEvent: {}
+[4.113184] (-) TimerEvent: {}
+[4.213593] (-) TimerEvent: {}
+[4.313975] (-) TimerEvent: {}
+[4.414447] (-) TimerEvent: {}
+[4.514986] (-) TimerEvent: {}
+[4.615451] (-) TimerEvent: {}
+[4.715828] (-) TimerEvent: {}
+[4.816411] (-) TimerEvent: {}
+[4.916926] (-) TimerEvent: {}
+[5.017403] (-) TimerEvent: {}
+[5.117778] (-) TimerEvent: {}
+[5.218143] (-) TimerEvent: {}
+[5.318534] (-) TimerEvent: {}
+[5.419055] (-) TimerEvent: {}
+[5.519330] (-) TimerEvent: {}
+[5.619620] (-) TimerEvent: {}
+[5.720220] (-) TimerEvent: {}
+[5.820638] (-) TimerEvent: {}
+[5.920954] (-) TimerEvent: {}
+[6.021248] (-) TimerEvent: {}
+[6.121607] (-) TimerEvent: {}
+[6.221914] (-) TimerEvent: {}
+[6.322478] (-) TimerEvent: {}
+[6.422861] (-) TimerEvent: {}
+[6.523341] (-) TimerEvent: {}
+[6.623710] (-) TimerEvent: {}
+[6.724096] (-) TimerEvent: {}
+[6.824508] (-) TimerEvent: {}
+[6.924900] (-) TimerEvent: {}
+[7.025206] (-) TimerEvent: {}
+[7.125878] (-) TimerEvent: {}
+[7.226515] (-) TimerEvent: {}
+[7.326917] (-) TimerEvent: {}
+[7.427435] (-) TimerEvent: {}
+[7.528620] (-) TimerEvent: {}
+[7.630129] (-) TimerEvent: {}
+[7.730510] (-) TimerEvent: {}
+[7.830792] (-) TimerEvent: {}
+[7.931120] (-) TimerEvent: {}
+[8.031476] (-) TimerEvent: {}
+[8.131923] (-) TimerEvent: {}
+[8.232374] (-) TimerEvent: {}
+[8.332925] (-) TimerEvent: {}
+[8.433354] (-) TimerEvent: {}
+[8.533627] (-) TimerEvent: {}
+[8.633878] (-) TimerEvent: {}
+[8.734149] (-) TimerEvent: {}
+[8.834479] (-) TimerEvent: {}
+[8.934765] (-) TimerEvent: {}
+[9.035040] (-) TimerEvent: {}
+[9.135319] (-) TimerEvent: {}
+[9.235705] (-) TimerEvent: {}
+[9.335986] (-) TimerEvent: {}
+[9.436239] (-) TimerEvent: {}
+[9.536510] (-) TimerEvent: {}
+[9.636811] (-) TimerEvent: {}
+[9.737222] (-) TimerEvent: {}
+[9.837726] (-) TimerEvent: {}
+[9.938025] (-) TimerEvent: {}
+[10.038268] (-) TimerEvent: {}
+[10.138646] (-) TimerEvent: {}
+[10.239039] (-) TimerEvent: {}
+[10.339352] (-) TimerEvent: {}
+[10.439677] (-) TimerEvent: {}
+[10.539957] (-) TimerEvent: {}
+[10.640248] (-) TimerEvent: {}
+[10.740592] (-) TimerEvent: {}
+[10.840898] (-) TimerEvent: {}
+[10.941148] (-) TimerEvent: {}
+[11.041458] (-) TimerEvent: {}
+[11.141766] (-) TimerEvent: {}
+[11.242016] (-) TimerEvent: {}
+[11.342328] (-) TimerEvent: {}
+[11.442759] (-) TimerEvent: {}
+[11.543102] (-) TimerEvent: {}
+[11.643470] (-) TimerEvent: {}
+[11.743880] (-) TimerEvent: {}
+[11.844152] (-) TimerEvent: {}
+[11.944478] (-) TimerEvent: {}
+[12.044730] (-) TimerEvent: {}
+[12.145095] (-) TimerEvent: {}
+[12.245491] (-) TimerEvent: {}
+[12.346122] (-) TimerEvent: {}
+[12.446514] (-) TimerEvent: {}
+[12.546831] (-) TimerEvent: {}
+[12.647216] (-) TimerEvent: {}
+[12.747636] (-) TimerEvent: {}
+[12.848046] (-) TimerEvent: {}
+[12.948426] (-) TimerEvent: {}
+[13.049039] (-) TimerEvent: {}
+[13.149670] (-) TimerEvent: {}
+[13.250127] (-) TimerEvent: {}
+[13.350630] (-) TimerEvent: {}
+[13.451165] (-) TimerEvent: {}
+[13.551611] (-) TimerEvent: {}
+[13.566529] (test_draw_pgm_realtime) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable test_draw_pgm_realtime_node\x1b[0m\n'}
+[13.652026] (-) TimerEvent: {}
+[13.752607] (-) TimerEvent: {}
+[13.852878] (-) TimerEvent: {}
+[13.953152] (-) TimerEvent: {}
+[14.053542] (-) TimerEvent: {}
+[14.153904] (-) TimerEvent: {}
+[14.254225] (-) TimerEvent: {}
+[14.354528] (-) TimerEvent: {}
+[14.361720] (test_draw_pgm_realtime) StdoutLine: {'line': b'[100%] Built target test_draw_pgm_realtime_node\n'}
+[14.370880] (test_draw_pgm_realtime) CommandEnded: {'returncode': 0}
+[14.371823] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'install'}
+[14.380318] (test_draw_pgm_realtime) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:en'), ('USER', 'lele'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio/lib:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '2895'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/lele/source_code_from_git/ws_livox/install:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'lele'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/opt/ros/humble/bin:/home/lele/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('SESSION_MANAGER', 'local/hero:@/tmp/.ICE-unix/2831,unix/hero:/tmp/.ICE-unix/2831'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/584319fd_bd7f_4359_9cb5_a2e1f5f1dba7'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.XORTW3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.86'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_ros_health:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime:/home/lele/source_code_from_git/ws_livox/install/fast_lio:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CLUTTER_IM_MODULE', 'xim'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio/local/lib/python3.10/dist-packages:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_ros_health:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime:/home/lele/source_code_from_git/ws_livox/install/fast_lio:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib')]), 'shell': False}
+[14.386488] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[14.386802] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[14.386964] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/test_draw_pgm_realtime_node\n'}
+[14.387129] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/launch/__pycache__/realtime_pgm.launch.cpython-310.pyc\n'}
+[14.394446] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/launch/__pycache__/realtime_pgm.launch.cpython-39.pyc\n'}
+[14.394684] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/launch/realtime_pgm.launch.py\n'}
+[14.400308] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/pgm_viewer.py\n'}
+[14.405676] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/nav2_bridge.py\n'}
+[14.405878] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/config/nav2_params.yaml\n'}
+[14.405955] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/config/navigate_to_pose_w_replanning_5hz.xml\n'}
+[14.406031] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/log/.gitkeep\n'}
+[14.415350] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/log/README.md\n'}
+[14.421277] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/ament_index/resource_index/package_run_dependencies/test_draw_pgm_realtime\n'}
+[14.421362] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/ament_index/resource_index/parent_prefix_path/test_draw_pgm_realtime\n'}
+[14.421414] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/ament_prefix_path.sh\n'}
+[14.421472] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/ament_prefix_path.dsv\n'}
+[14.421514] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/path.sh\n'}
+[14.421572] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/path.dsv\n'}
+[14.421632] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.bash\n'}
+[14.421694] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.sh\n'}
+[14.421745] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.zsh\n'}
+[14.421800] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.dsv\n'}
+[14.421841] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.dsv\n'}
+[14.427512] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/ament_index/resource_index/packages/test_draw_pgm_realtime\n'}
+[14.427784] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/cmake/test_draw_pgm_realtimeConfig.cmake\n'}
+[14.427822] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/cmake/test_draw_pgm_realtimeConfig-version.cmake\n'}
+[14.427858] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.xml\n'}
+[14.430490] (test_draw_pgm_realtime) CommandEnded: {'returncode': 0}
+[14.440223] (test_draw_pgm_realtime) JobEnded: {'identifier': 'test_draw_pgm_realtime', 'rc': 0}
+[14.440678] (-) EventReactorShutdown: {}

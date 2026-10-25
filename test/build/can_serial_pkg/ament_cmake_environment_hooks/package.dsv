@@ -1,0 +1,4 @@
+source;share/can_serial_pkg/local_setup.bash
+source;share/can_serial_pkg/local_setup.dsv
+source;share/can_serial_pkg/local_setup.sh
+source;share/can_serial_pkg/local_setup.zsh

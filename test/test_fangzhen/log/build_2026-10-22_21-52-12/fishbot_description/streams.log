@@ -1,0 +1,86 @@
+[0.008s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description -- -j16 -l16
+[0.059s] [ 50%] Building CXX object CMakeFiles/relocalization_3d.dir/src/relocalization_3d_node.cpp.o
+[18.041s] [100%] Linking CXX executable relocalization_3d
+[19.441s] [100%] Built target relocalization_3d
+[19.453s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description -- -j16 -l16
+[19.459s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description
+[19.465s] -- Install configuration: ""
+[19.465s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch
+[19.466s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/relocalization_3d.launch.py
+[19.466s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/navigation.launch.py
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/display_robot.launch.py
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/view_map.launch.py
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/map_sim.launch.py
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/lidar_2d.launch.py
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/gazebo_sim_launch.py
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/launch/slam_mapping.launch.py
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/first_robot.urdf
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/common_inertia.xacro
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/fishbot.ros2_control.xacro
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor/laser.urdf.xacro
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor/imu.urdf.xacro
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/sensor/camera.urdf.xacro
+[19.466s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/base.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/actuator
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/actuator/caster.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/actuator/wheel.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/fishbot.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/plugins
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/fishbot/plugins/gazebo_control_plugin.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/shaobing.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/common_inertia.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/fishbot.ros2_control.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor/laser.urdf.xacro
+[19.467s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor/imu.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor/mid360.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/sensor/camera.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/base.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/actuator
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/actuator/caster.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/actuator/wheel.urdf.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/plugins
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/shaobing/plugins/gazebo_control_plugin.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/urdf/first_robot.xacro
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/fishbot_ros2_controller.yaml
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/display_robot_model.rviz
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/slam_toolbox_params.yaml
+[19.467s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/relocalization_3d.yaml
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/nav2_params.yaml
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/config/relocalization.rviz
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/worlds
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/worlds/rm_field.world
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field/model.sdf
+[19.467s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field/meshes
+[19.468s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field/meshes/sk_rmmap.stl
+[19.468s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/models/rm_field/model.config
+[19.468s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/relocalization_3d
+[19.473s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/relocalization_3d" to ""
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/height_hist.py
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/pgm2png.py
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/stl2pgm.py
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/cloud_to_odom.py
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/lib/fishbot_description/realtime_grid.py
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/ament_index/resource_index/package_run_dependencies/fishbot_description
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/ament_index/resource_index/parent_prefix_path/fishbot_description
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/environment/ament_prefix_path.sh
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/environment/ament_prefix_path.dsv
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/environment/path.sh
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/environment/path.dsv
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/local_setup.bash
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/local_setup.sh
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/local_setup.zsh
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/local_setup.dsv
+[19.473s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/package.dsv
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/ament_index/resource_index/packages/fishbot_description
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/cmake/fishbot_descriptionConfig.cmake
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/cmake/fishbot_descriptionConfig-version.cmake
+[19.473s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/install/fishbot_description/share/fishbot_description/package.xml
+[19.474s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/build/fishbot_description

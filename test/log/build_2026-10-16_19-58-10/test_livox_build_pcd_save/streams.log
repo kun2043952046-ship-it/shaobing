@@ -1,0 +1,52 @@
+[0.282s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_livox_build_pcd_save -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save
+[0.312s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.555s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.575s] -- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+[0.623s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.625s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.649s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.682s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.717s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.759s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.762s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.890s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.945s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.980s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.086s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.088s] -- Configured cppcheck include dirs: 
+[1.090s] -- Configured cppcheck exclude dirs and/or files: 
+[1.090s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.093s] -- Added test 'lint_cmake' to check CMake code style
+[1.093s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.093s] -- Added test 'uncrustify' to check C / C++ code style
+[1.093s] -- Configured uncrustify additional arguments: 
+[1.093s] -- Added test 'xmllint' to check XML markup files
+[1.095s] -- Configuring done
+[1.105s] -- Generating done
+[1.108s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save
+[1.134s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_livox_build_pcd_save -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save
+[1.140s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save -- -j16 -l16
+[1.216s] [35m[1mConsolidate compiler generated dependencies of target test_livox_build_pcd_save_node[0m
+[1.216s] [100%] Built target test_livox_build_pcd_save_node
+[1.227s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save -- -j16 -l16
+[1.234s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save
+[1.625s] -- Install configuration: ""
+[1.626s] -- Execute custom install script
+[1.626s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/lib/test_livox_build_pcd_save/test_livox_build_pcd_save_node
+[1.626s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/launch/scan_save.launch.py
+[1.626s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/ament_index/resource_index/package_run_dependencies/test_livox_build_pcd_save
+[1.626s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/ament_index/resource_index/parent_prefix_path/test_livox_build_pcd_save
+[1.626s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/environment/ament_prefix_path.sh
+[1.626s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/environment/ament_prefix_path.dsv
+[1.626s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/environment/path.sh
+[1.626s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/environment/path.dsv
+[1.635s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/local_setup.bash
+[1.635s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/local_setup.sh
+[1.635s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/local_setup.zsh
+[1.636s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/local_setup.dsv
+[1.636s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.dsv
+[1.636s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/ament_index/resource_index/packages/test_livox_build_pcd_save
+[1.636s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/cmake/test_livox_build_pcd_saveConfig.cmake
+[1.636s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/cmake/test_livox_build_pcd_saveConfig-version.cmake
+[1.636s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.xml
+[1.637s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save

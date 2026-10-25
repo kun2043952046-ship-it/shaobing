@@ -1,0 +1,6 @@
+cd Navigation
+or cd Navigation/test
+
+colcon build --packages-select test_ros_health 
+source install/setup.bash
+ros2 run test_ros_health test_ros_health_node

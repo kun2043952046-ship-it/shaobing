@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>test_draw_pgm_realtime</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="17518973987@163.com">lele</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
+  <!-- Nav2 代价地图清空服务 (刷新历史累计图时全清红区) -->
+  <depend>nav2_msgs</depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <!-- Nav2 导航栈 (网页点击 -> NavigateToPose) 与 TF 桥接 -->
+  <!-- 注意: nav2_msgs 已由上面的 <depend> 声明(含 exec_depend),
+       这里不能再写 <exec_depend>nav2_msgs</exec_depend>, 否则
+       package.xml 校验失败, colcon 会把本包降级识别成普通 'cmake' 包,
+       导致 install/<pkg>/share/<pkg>/package.dsv 缺少 local_setup.*,
+       source install/setup.bash 后 AMENT_PREFIX_PATH 里没有本包,
+       ros2 launch 报 "Package 'test_draw_pgm_realtime' not found"。 -->
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+
+
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

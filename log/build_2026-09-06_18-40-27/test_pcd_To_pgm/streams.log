@@ -1,0 +1,247 @@
+[0.008s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm
+[0.070s] -- The C compiler identification is GNU 11.4.0
+[0.124s] -- The CXX compiler identification is GNU 11.4.0
+[0.130s] -- Detecting C compiler ABI info
+[0.182s] -- Detecting C compiler ABI info - done
+[0.189s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.189s] -- Detecting C compile features
+[0.189s] -- Detecting C compile features - done
+[0.192s] -- Detecting CXX compiler ABI info
+[0.250s] -- Detecting CXX compiler ABI info - done
+[0.254s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.254s] -- Detecting CXX compile features
+[0.255s] -- Detecting CXX compile features - done
+[0.258s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.367s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.444s] -- Checking for module 'eigen3'
+[0.453s] --   Found eigen3, version 3.4.0
+[0.477s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[0.477s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.494s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization 
+[0.534s] -- Checking for module 'libusb-1.0'
+[0.545s] --   Found libusb-1.0, version 1.0.25
+[0.569s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[0.570s] -- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") 
+[0.570s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.607s] -- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") 
+[0.607s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.607s] [0m** WARNING ** io features related to pcap will be disabled[0m
+[0.607s] [0m** WARNING ** io features related to png will be disabled[0m
+[0.631s] -- Looking for pthread.h
+[0.690s] -- Looking for pthread.h - found
+[0.690s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.747s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.748s] -- Found Threads: TRUE  
+[0.750s] -- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  
+[0.758s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX 
+[0.858s] -- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") 
+[0.858s] -- Found MPI: TRUE (found version "3.1") found components: C 
+[0.861s] -- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") 
+[0.872s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+[0.882s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
+[0.893s] -- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") 
+[0.954s] -- Found X11: /usr/include   
+[0.955s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[1.006s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[1.006s] -- Looking for gethostbyname
+[1.060s] -- Looking for gethostbyname - found
+[1.060s] -- Looking for connect
+[1.112s] -- Looking for connect - found
+[1.112s] -- Looking for remove
+[1.160s] -- Looking for remove - found
+[1.160s] -- Looking for shmat
+[1.212s] -- Looking for shmat - found
+[1.212s] -- Looking for IceConnectionNumber in ICE
+[1.261s] -- Looking for IceConnectionNumber in ICE - found
+[1.318s] -- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") 
+[1.320s] -- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  
+[1.321s] -- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") 
+[1.322s] -- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") 
+[1.351s] -- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") 
+[1.354s] -- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  
+[1.356s] -- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") 
+[1.360s] -- Found utf8cpp: /usr/include/utf8cpp  
+[1.383s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.383s] -- looking for PCL_COMMON
+[1.385s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[1.386s] -- looking for PCL_OCTREE
+[1.387s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[1.387s] -- looking for PCL_IO
+[1.387s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[1.388s] -- Found PCL: pcl_common;pcl_octree;pcl_io;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt  
+[1.390s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.423s] WARNING: Package name "test_pcd_To_pgm" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[1.442s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.442s] -- Configured cppcheck include dirs: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/include
+[1.442s] -- Configured cppcheck exclude dirs and/or files: 
+[1.442s] -- Added test 'lint_cmake' to check CMake code style
+[1.443s] -- Added test 'uncrustify' to check C / C++ code style
+[1.443s] -- Configured uncrustify additional arguments: 
+[1.443s] -- Added test 'xmllint' to check XML markup files
+[1.444s] -- Configuring done
+[1.450s] -- Generating done
+[1.452s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_pcd_To_pgm
+[1.460s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm
+[1.462s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_pcd_To_pgm -- -j16 -l16
+[1.503s] [ 50%] [32mBuilding CXX object CMakeFiles/pcd_to_pgm.dir/src/test_pcd_To_pgm.cpp.o[0m
+[3.207s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[3.207s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:231:24:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmin(double&, const float&)[m[K’
+[3.207s]   231 |       p.xmin = [01;31m[Kstd::min(p.xmin, pt.x)[m[K;
+[3.207s]       |                [01;31m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.207s] In file included from [01m[K/usr/include/c++/11/algorithm:61[m[K,
+[3.208s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.208s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:230:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> constexpr const _Tp& std::min(const _Tp&, const _Tp&)[m[K’
+[3.208s]   230 |     [01;36m[Kmin[m[K(const _Tp& __a, const _Tp& __b)
+[3.208s]       |     [01;36m[K^~~[m[K
+[3.208s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:230:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.208s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:231:24:[m[K [01;36m[Knote: [m[K  deduced conflicting types for parameter ‘[01m[Kconst _Tp[m[K’ (‘[01m[Kdouble[m[K’ and ‘[01m[Kfloat[m[K’)
+[3.208s]   231 |       p.xmin = [01;36m[Kstd::min(p.xmin, pt.x)[m[K;
+[3.208s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.208s] In file included from [01m[K/usr/include/c++/11/algorithm:61[m[K,
+[3.208s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.208s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:278:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Compare> constexpr const _Tp& std::min(const _Tp&, const _Tp&, _Compare)[m[K’
+[3.208s]   278 |     [01;36m[Kmin[m[K(const _Tp& __a, const _Tp& __b, _Compare __comp)
+[3.208s]       |     [01;36m[K^~~[m[K
+[3.208s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:278:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.208s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:231:24:[m[K [01;36m[Knote: [m[K  deduced conflicting types for parameter ‘[01m[Kconst _Tp[m[K’ (‘[01m[Kdouble[m[K’ and ‘[01m[Kfloat[m[K’)
+[3.209s]   231 |       p.xmin = [01;36m[Kstd::min(p.xmin, pt.x)[m[K;
+[3.209s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.209s] In file included from [01m[K/usr/include/c++/11/algorithm:62[m[K,
+[3.209s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.209s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3449:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> constexpr _Tp std::min(std::initializer_list<_Tp>)[m[K’
+[3.209s]  3449 |     [01;36m[Kmin[m[K(initializer_list<_Tp> __l)
+[3.209s]       |     [01;36m[K^~~[m[K
+[3.209s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3449:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.209s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:231:24:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::initializer_list<_Tp>[m[K’ and ‘[01m[Kdouble[m[K’
+[3.209s]   231 |       p.xmin = [01;36m[Kstd::min(p.xmin, pt.x)[m[K;
+[3.209s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.209s] In file included from [01m[K/usr/include/c++/11/algorithm:62[m[K,
+[3.209s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.209s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3455:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Compare> constexpr _Tp std::min(std::initializer_list<_Tp>, _Compare)[m[K’
+[3.209s]  3455 |     [01;36m[Kmin[m[K(initializer_list<_Tp> __l, _Compare __comp)
+[3.209s]       |     [01;36m[K^~~[m[K
+[3.209s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3455:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.209s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:231:24:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::initializer_list<_Tp>[m[K’ and ‘[01m[Kdouble[m[K’
+[3.209s]   231 |       p.xmin = [01;36m[Kstd::min(p.xmin, pt.x)[m[K;
+[3.209s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.209s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:232:24:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmin(double&, const float&)[m[K’
+[3.209s]   232 |       p.ymin = [01;31m[Kstd::min(p.ymin, pt.y)[m[K;
+[3.209s]       |                [01;31m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.209s] In file included from [01m[K/usr/include/c++/11/algorithm:61[m[K,
+[3.209s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.209s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:230:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> constexpr const _Tp& std::min(const _Tp&, const _Tp&)[m[K’
+[3.209s]   230 |     [01;36m[Kmin[m[K(const _Tp& __a, const _Tp& __b)
+[3.209s]       |     [01;36m[K^~~[m[K
+[3.209s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:230:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.209s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:232:24:[m[K [01;36m[Knote: [m[K  deduced conflicting types for parameter ‘[01m[Kconst _Tp[m[K’ (‘[01m[Kdouble[m[K’ and ‘[01m[Kfloat[m[K’)
+[3.209s]   232 |       p.ymin = [01;36m[Kstd::min(p.ymin, pt.y)[m[K;
+[3.209s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.209s] In file included from [01m[K/usr/include/c++/11/algorithm:61[m[K,
+[3.209s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.209s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:278:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Compare> constexpr const _Tp& std::min(const _Tp&, const _Tp&, _Compare)[m[K’
+[3.209s]   278 |     [01;36m[Kmin[m[K(const _Tp& __a, const _Tp& __b, _Compare __comp)
+[3.209s]       |     [01;36m[K^~~[m[K
+[3.209s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:278:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.209s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:232:24:[m[K [01;36m[Knote: [m[K  deduced conflicting types for parameter ‘[01m[Kconst _Tp[m[K’ (‘[01m[Kdouble[m[K’ and ‘[01m[Kfloat[m[K’)
+[3.210s]   232 |       p.ymin = [01;36m[Kstd::min(p.ymin, pt.y)[m[K;
+[3.210s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.210s] In file included from [01m[K/usr/include/c++/11/algorithm:62[m[K,
+[3.210s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.210s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3449:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> constexpr _Tp std::min(std::initializer_list<_Tp>)[m[K’
+[3.210s]  3449 |     [01;36m[Kmin[m[K(initializer_list<_Tp> __l)
+[3.210s]       |     [01;36m[K^~~[m[K
+[3.210s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3449:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.210s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:232:24:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::initializer_list<_Tp>[m[K’ and ‘[01m[Kdouble[m[K’
+[3.210s]   232 |       p.ymin = [01;36m[Kstd::min(p.ymin, pt.y)[m[K;
+[3.210s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.210s] In file included from [01m[K/usr/include/c++/11/algorithm:62[m[K,
+[3.210s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.210s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3455:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Compare> constexpr _Tp std::min(std::initializer_list<_Tp>, _Compare)[m[K’
+[3.210s]  3455 |     [01;36m[Kmin[m[K(initializer_list<_Tp> __l, _Compare __comp)
+[3.210s]       |     [01;36m[K^~~[m[K
+[3.210s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3455:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.210s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:232:24:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::initializer_list<_Tp>[m[K’ and ‘[01m[Kdouble[m[K’
+[3.210s]   232 |       p.ymin = [01;36m[Kstd::min(p.ymin, pt.y)[m[K;
+[3.210s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.210s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:233:24:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmax(double&, const float&)[m[K’
+[3.210s]   233 |       p.xmax = [01;31m[Kstd::max(p.xmax, pt.x)[m[K;
+[3.210s]       |                [01;31m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.210s] In file included from [01m[K/usr/include/c++/11/algorithm:61[m[K,
+[3.210s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.210s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:254:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> constexpr const _Tp& std::max(const _Tp&, const _Tp&)[m[K’
+[3.210s]   254 |     [01;36m[Kmax[m[K(const _Tp& __a, const _Tp& __b)
+[3.210s]       |     [01;36m[K^~~[m[K
+[3.210s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:254:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.210s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:233:24:[m[K [01;36m[Knote: [m[K  deduced conflicting types for parameter ‘[01m[Kconst _Tp[m[K’ (‘[01m[Kdouble[m[K’ and ‘[01m[Kfloat[m[K’)
+[3.210s]   233 |       p.xmax = [01;36m[Kstd::max(p.xmax, pt.x)[m[K;
+[3.210s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.210s] In file included from [01m[K/usr/include/c++/11/algorithm:61[m[K,
+[3.210s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.210s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:300:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Compare> constexpr const _Tp& std::max(const _Tp&, const _Tp&, _Compare)[m[K’
+[3.210s]   300 |     [01;36m[Kmax[m[K(const _Tp& __a, const _Tp& __b, _Compare __comp)
+[3.210s]       |     [01;36m[K^~~[m[K
+[3.210s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:300:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.210s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:233:24:[m[K [01;36m[Knote: [m[K  deduced conflicting types for parameter ‘[01m[Kconst _Tp[m[K’ (‘[01m[Kdouble[m[K’ and ‘[01m[Kfloat[m[K’)
+[3.210s]   233 |       p.xmax = [01;36m[Kstd::max(p.xmax, pt.x)[m[K;
+[3.211s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.211s] In file included from [01m[K/usr/include/c++/11/algorithm:62[m[K,
+[3.211s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.211s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3461:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> constexpr _Tp std::max(std::initializer_list<_Tp>)[m[K’
+[3.211s]  3461 |     [01;36m[Kmax[m[K(initializer_list<_Tp> __l)
+[3.211s]       |     [01;36m[K^~~[m[K
+[3.211s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3461:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.211s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:233:24:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::initializer_list<_Tp>[m[K’ and ‘[01m[Kdouble[m[K’
+[3.211s]   233 |       p.xmax = [01;36m[Kstd::max(p.xmax, pt.x)[m[K;
+[3.211s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.211s] In file included from [01m[K/usr/include/c++/11/algorithm:62[m[K,
+[3.211s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.211s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3467:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Compare> constexpr _Tp std::max(std::initializer_list<_Tp>, _Compare)[m[K’
+[3.211s]  3467 |     [01;36m[Kmax[m[K(initializer_list<_Tp> __l, _Compare __comp)
+[3.211s]       |     [01;36m[K^~~[m[K
+[3.211s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3467:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.211s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:233:24:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::initializer_list<_Tp>[m[K’ and ‘[01m[Kdouble[m[K’
+[3.211s]   233 |       p.xmax = [01;36m[Kstd::max(p.xmax, pt.x)[m[K;
+[3.211s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.211s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:234:24:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmax(double&, const float&)[m[K’
+[3.211s]   234 |       p.ymax = [01;31m[Kstd::max(p.ymax, pt.y)[m[K;
+[3.211s]       |                [01;31m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.211s] In file included from [01m[K/usr/include/c++/11/algorithm:61[m[K,
+[3.211s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.211s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:254:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> constexpr const _Tp& std::max(const _Tp&, const _Tp&)[m[K’
+[3.211s]   254 |     [01;36m[Kmax[m[K(const _Tp& __a, const _Tp& __b)
+[3.211s]       |     [01;36m[K^~~[m[K
+[3.211s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:254:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.211s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:234:24:[m[K [01;36m[Knote: [m[K  deduced conflicting types for parameter ‘[01m[Kconst _Tp[m[K’ (‘[01m[Kdouble[m[K’ and ‘[01m[Kfloat[m[K’)
+[3.211s]   234 |       p.ymax = [01;36m[Kstd::max(p.ymax, pt.y)[m[K;
+[3.211s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.211s] In file included from [01m[K/usr/include/c++/11/algorithm:61[m[K,
+[3.211s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.211s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:300:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Compare> constexpr const _Tp& std::max(const _Tp&, const _Tp&, _Compare)[m[K’
+[3.211s]   300 |     [01;36m[Kmax[m[K(const _Tp& __a, const _Tp& __b, _Compare __comp)
+[3.211s]       |     [01;36m[K^~~[m[K
+[3.211s] [01m[K/usr/include/c++/11/bits/stl_algobase.h:300:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.211s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:234:24:[m[K [01;36m[Knote: [m[K  deduced conflicting types for parameter ‘[01m[Kconst _Tp[m[K’ (‘[01m[Kdouble[m[K’ and ‘[01m[Kfloat[m[K’)
+[3.211s]   234 |       p.ymax = [01;36m[Kstd::max(p.ymax, pt.y)[m[K;
+[3.211s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.211s] In file included from [01m[K/usr/include/c++/11/algorithm:62[m[K,
+[3.211s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.211s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3461:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> constexpr _Tp std::max(std::initializer_list<_Tp>)[m[K’
+[3.211s]  3461 |     [01;36m[Kmax[m[K(initializer_list<_Tp> __l)
+[3.212s]       |     [01;36m[K^~~[m[K
+[3.212s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3461:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.212s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:234:24:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::initializer_list<_Tp>[m[K’ and ‘[01m[Kdouble[m[K’
+[3.212s]   234 |       p.ymax = [01;36m[Kstd::max(p.ymax, pt.y)[m[K;
+[3.212s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.212s] In file included from [01m[K/usr/include/c++/11/algorithm:62[m[K,
+[3.212s]                  from [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:16[m[K:
+[3.212s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3467:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class _Compare> constexpr _Tp std::max(std::initializer_list<_Tp>, _Compare)[m[K’
+[3.212s]  3467 |     [01;36m[Kmax[m[K(initializer_list<_Tp> __l, _Compare __comp)
+[3.212s]       |     [01;36m[K^~~[m[K
+[3.212s] [01m[K/usr/include/c++/11/bits/stl_algo.h:3467:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.212s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/src/test_pcd_To_pgm.cpp:234:24:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::initializer_list<_Tp>[m[K’ and ‘[01m[Kdouble[m[K’
+[3.212s]   234 |       p.ymax = [01;36m[Kstd::max(p.ymax, pt.y)[m[K;
+[3.212s]       |                [01;36m[K~~~~~~~~^~~~~~~~~~~~~~[m[K
+[3.397s] gmake[2]: *** [CMakeFiles/pcd_to_pgm.dir/build.make:76：CMakeFiles/pcd_to_pgm.dir/src/test_pcd_To_pgm.cpp.o] 错误 1
+[3.397s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/pcd_to_pgm.dir/all] 错误 2
+[3.397s] gmake: *** [Makefile:146：all] 错误 2
+[3.399s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_pcd_To_pgm' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_pcd_To_pgm -- -j16 -l16

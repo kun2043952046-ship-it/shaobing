@@ -1,0 +1,7 @@
+[01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:[m[K In member function ‘[01m[Kvoid RealtimePgmNode::cloudCallback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:711:45:[m[K [01;31m[Kerror: [m[K‘[01m[Ksingle_frame_points[m[K’ was not declared in this scope
+  711 |       latest_dynamic_obstacles_ = std::move([01;31m[Ksingle_frame_points[m[K);
+      |                                             [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/test_draw_pgm_realtime_node.dir/build.make:76：CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/test_draw_pgm_realtime_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

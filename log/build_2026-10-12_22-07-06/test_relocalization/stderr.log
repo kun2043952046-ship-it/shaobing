@@ -1,0 +1,7 @@
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_relocalization/src/test_relocalization_node.cpp:21:10: fatal error: sensor_msgs/msg/point_cloud2.hpp: 没有那个文件或目录
+   21 | #include <sensor_msgs/msg/point_cloud2.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/test_relocalization_node.dir/build.make:76：CMakeFiles/test_relocalization_node.dir/src/test_relocalization_node.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/test_relocalization_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

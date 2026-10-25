@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-2e977a2abf157730e82e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "test_relocalization",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "relocalization_3d::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-relocalization_3d-e518b24621eb31d7e9b2.json",
+					"name" : "relocalization_3d",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_relocalization_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_relocalization_node-50aa5ddbbba3345c279c.json",
+					"name" : "test_relocalization_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_relocalization_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_relocalization_uninstall-24ead5a00ae9d7d8228f.json",
+					"name" : "test_relocalization_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-586f032da67b7325440c.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization",
+		"source" : "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_relocalization"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

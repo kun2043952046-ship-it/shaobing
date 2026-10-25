@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find fishbot_description)/urdf/shaobing/common_inertia.xacro"/>
+
+    <xacro:macro name="caster_xacro" params="caster_name xyz">
+    <!-- 机器人的万向轮子 -->
+     <link name="${caster_name}_link">
+        <!-- 部件外观描述 -->
+        <visual>
+           <!-- 沿着自己中心的偏移和旋转量 -->
+           <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+           <!-- 几何形状 -->
+           <geometry>
+           <!-- 球：半径 0.06，直径恰好等于底盘底面离地高度 0.12，同时接触地面与底盘 -->
+          <sphere radius="0.06"/>
+           </geometry>
+            <!-- 材质颜色 -->
+            <material name="yellow">
+                <color rgba="1.0 1.0 0.0 1.0"/>
+            </material>
+        </visual> 
+        <collision>
+           <!-- 沿着自己中心的偏移和旋转量 -->
+           <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+           <!-- 几何形状 -->
+           <geometry>
+           <!-- 球 -->
+          <sphere radius="0.06"/>
+           </geometry>
+        </collision>
+        <!-- 球半径 0.06 -->
+        <xacro:sphere_inertia m="0.05" r="0.06"/>
+    </link>
+
+    <!-- 机器人的关节，用来组合机器人的部件 -->
+    <joint name="${caster_name}_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="${caster_name}_link"/>
+        <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <gazebo reference="${caster_name}_link">
+        <material>Gazebo/Yellow</material>
+        <!-- 万向球必须无摩擦，否则固定球会卡在障碍边缘 -->
+        <mu1 value="0.0"/>
+        <mu2 value="0.0"/>
+        <kp value="1000000000.0"/>
+        <kd value="1.0"/>
+    </gazebo>
+
+</xacro:macro>
+</robot>

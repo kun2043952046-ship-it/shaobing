@@ -1,0 +1,1152 @@
+Consolidate compiler generated dependencies of target test_draw_pgm_realtime_node
+[ 50%] Building CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:4557:2: error: unterminated argument list invoking macro "RCLCPP_INFO_THROTTLE"
+ 4557 | }
+      |  ^
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2566:25: error: expected ‘}’ at end of input
+ 2566 |     RCLCPP_INFO_THROTTLE(
+      |                         ^
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:39:1: note: to match this ‘{’
+   39 | {
+      | ^
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In constructor ‘RealtimePgmNode::RealtimePgmNode()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:155:40: error: ‘config_mutex_’ was not declared in this scope
+  155 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:156:7: error: ‘config_’ was not declared in this scope; did you mean ‘Config’?
+  156 |       config_ = initial_config;
+      |       ^~~~~~~
+      |       Config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:159:5: error: ‘cloud_topic_’ was not declared in this scope
+  159 |     cloud_topic_ =
+      |     ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:163:5: error: ‘render_period_ms_’ was not declared in this scope
+  163 |     render_period_ms_ =
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:169:5: error: ‘cloud_preview_topic_’ was not declared in this scope
+  169 |     cloud_preview_topic_ =
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:173:5: error: ‘cloud_preview_max_points_’ was not declared in this scope
+  173 |     cloud_preview_max_points_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:176:5: error: ‘history_image_topic_’ was not declared in this scope
+  176 |     history_image_topic_ =
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:187:5: error: ‘dynamic_obstacle_enabled_’ was not declared in this scope
+  187 |     dynamic_obstacle_enabled_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:190:5: error: ‘dynamic_obstacle_topic_’ was not declared in this scope
+  190 |     dynamic_obstacle_topic_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:194:5: error: ‘dynamic_obstacle_image_topic_’ was not declared in this scope
+  194 |     dynamic_obstacle_image_topic_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:209:5: error: ‘self_filtered_topic_’ was not declared in this scope
+  209 |     self_filtered_topic_ =
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:214:5: error: ‘self_filtered_publish_rate_’ was not declared in this scope
+  214 |     self_filtered_publish_rate_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:217:5: error: ‘self_filtered_max_points_’ was not declared in this scope
+  217 |     self_filtered_max_points_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:224:5: error: ‘clear_ring_topic_’ was not declared in this scope
+  224 |     clear_ring_topic_ =
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:228:5: error: ‘clear_ring_points_’ was not declared in this scope
+  228 |     clear_ring_points_ =
+      |     ^~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:231:5: error: ‘clear_ring_radius_’ was not declared in this scope
+  231 |     clear_ring_radius_ =
+      |     ^~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:240:5: error: ‘clear_costmap_on_history_reset_’ was not declared in this scope
+  240 |     clear_costmap_on_history_reset_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:243:5: error: ‘clear_local_costmap_service_’ was not declared in this scope
+  243 |     clear_local_costmap_service_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:247:5: error: ‘clear_global_costmap_service_’ was not declared in this scope
+  247 |     clear_global_costmap_service_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:252:5: error: ‘parameter_callback_handle_’ was not declared in this scope
+  252 |     parameter_callback_handle_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:260:5: error: ‘image_topic_’ was not declared in this scope
+  260 |     image_topic_ =
+      |     ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:263:5: error: ‘image_publisher_’ was not declared in this scope; did you mean ‘create_publisher’?
+  263 |     image_publisher_ =
+      |     ^~~~~~~~~~~~~~~~
+      |     create_publisher
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:282:5: error: ‘motion_topic_’ was not declared in this scope
+  282 |     motion_topic_ =
+      |     ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:287:5: error: ‘odom_topic_’ was not declared in this scope; did you mean ‘node_topics_’?
+  287 |     odom_topic_ =
+      |     ^~~~~~~~~~~
+      |     node_topics_
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:289:5: error: ‘global_plan_topic_’ was not declared in this scope
+  289 |     global_plan_topic_ =
+      |     ^~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:293:5: error: ‘local_plan_topic_’ was not declared in this scope
+  293 |     local_plan_topic_ =
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:295:5: error: ‘local_plan_timeout_’ was not declared in this scope
+  295 |     local_plan_timeout_ =
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:298:5: error: ‘motion_control_’ was not declared in this scope
+  298 |     motion_control_ =
+      |     ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:300:5: error: ‘motion_vx_scale_’ was not declared in this scope
+  300 |     motion_vx_scale_ =
+      |     ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:302:5: error: ‘motion_vy_scale_’ was not declared in this scope
+  302 |     motion_vy_scale_ =
+      |     ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:304:5: error: ‘motion_rate_hz_’ was not declared in this scope
+  304 |     motion_rate_hz_ =
+      |     ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:308:5: error: ‘motion_target_speed_’ was not declared in this scope
+  308 |     motion_target_speed_ =
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:310:5: error: ‘motion_lookahead_’ was not declared in this scope
+  310 |     motion_lookahead_ =
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:315:5: error: ‘motion_lookahead_speed_gain_’ was not declared in this scope
+  315 |     motion_lookahead_speed_gain_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:318:5: error: ‘motion_lookahead_max_’ was not declared in this scope
+  318 |     motion_lookahead_max_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:320:5: error: ‘motion_yaw_kp_’ was not declared in this scope
+  320 |     motion_yaw_kp_ =
+      |     ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:322:5: error: ‘motion_goal_tolerance_’ was not declared in this scope
+  322 |     motion_goal_tolerance_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:329:5: error: ‘motion_goal_check_tolerance_’ was not declared in this scope
+  329 |     motion_goal_check_tolerance_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:332:5: error: ‘motion_goal_check_max_retry_’ was not declared in this scope
+  332 |     motion_goal_check_max_retry_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:334:5: error: ‘motion_max_lateral_’ was not declared in this scope
+  334 |     motion_max_lateral_ =
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:340:5: error: ‘motion_plan_timeout_’ was not declared in this scope
+  340 |     motion_plan_timeout_ =
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:344:5: error: ‘motion_slow_radius_’ was not declared in this scope
+  344 |     motion_slow_radius_ =
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:346:5: error: ‘motion_min_speed_’ was not declared in this scope
+  346 |     motion_min_speed_ =
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:348:5: error: ‘motion_base_to_lidar_x_’ was not declared in this scope
+  348 |     motion_base_to_lidar_x_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:350:5: error: ‘motion_base_to_lidar_y_’ was not declared in this scope
+  350 |     motion_base_to_lidar_y_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:360:5: error: ‘astar_enabled_’ was not declared in this scope
+  360 |     astar_enabled_ =
+      |     ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:363:5: error: ‘astar_speed_’ was not declared in this scope
+  363 |     astar_speed_ =
+      |     ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:368:5: error: ‘astar_inflate_radius_’ was not declared in this scope
+  368 |     astar_inflate_radius_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:372:5: error: ‘astar_obstacle_penalty_’ was not declared in this scope
+  372 |     astar_obstacle_penalty_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:377:5: error: ‘astar_cost_reach_’ was not declared in this scope
+  377 |     astar_cost_reach_ =
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:381:5: error: ‘astar_path_spacing_’ was not declared in this scope
+  381 |     astar_path_spacing_ =
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:391:5: error: ‘astar_replan_interval_’ was not declared in this scope
+  391 |     astar_replan_interval_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:394:5: error: ‘astar_replan_move_dist_’ was not declared in this scope
+  394 |     astar_replan_move_dist_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:398:5: error: ‘goal_pose_topic_’ was not declared in this scope
+  398 |     goal_pose_topic_ =
+      |     ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:402:5: error: ‘astar_plan_topic_’ was not declared in this scope
+  402 |     astar_plan_topic_ =
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:409:5: error: ‘motion_publisher_’ was not declared in this scope
+  409 |     motion_publisher_ =
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:421:5: error: ‘can_enabled_’ was not declared in this scope
+  421 |     can_enabled_ =
+      |     ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:423:5: error: ‘can_interface_’ was not declared in this scope; did you mean ‘rcl_interfaces’?
+  423 |     can_interface_ =
+      |     ^~~~~~~~~~~~~~
+      |     rcl_interfaces
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:425:5: error: ‘can_id_’ was not declared in this scope; did you mean ‘canid_t’?
+  425 |     can_id_ = static_cast<canid_t>(
+      |     ^~~~~~~
+      |     canid_t
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:427:5: error: ‘can_send_period_ms_’ was not declared in this scope
+  427 |     can_send_period_ms_ =
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:430:5: error: ‘odom_subscription_’ was not declared in this scope; did you mean ‘rmw_subscription_t’?
+  430 |     odom_subscription_ =
+      |     ^~~~~~~~~~~~~~~~~~
+      |     rmw_subscription_t
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:439:5: error: ‘plan_subscription_’ was not declared in this scope; did you mean ‘rmw_subscription_t’?
+  439 |     plan_subscription_ =
+      |     ^~~~~~~~~~~~~~~~~~
+      |     rmw_subscription_t
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:448:5: error: ‘local_plan_subscription_’ was not declared in this scope
+  448 |     local_plan_subscription_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:461:7: error: ‘goal_pose_subscription_’ was not declared in this scope
+  461 |       goal_pose_subscription_ =
+      |       ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:473:7: error: ‘astar_plan_publisher_’ was not declared in this scope
+  473 |       astar_plan_publisher_ =
+      |       ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:480:5: error: ‘cloud_preview_publisher_’ was not declared in this scope
+  480 |     cloud_preview_publisher_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:485:5: error: ‘history_image_publisher_’ was not declared in this scope
+  485 |     history_image_publisher_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:489:5: error: ‘dynamic_obstacle_publisher_’ was not declared in this scope
+  489 |     dynamic_obstacle_publisher_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:492:5: error: ‘dynamic_obstacle_image_publisher_’ was not declared in this scope
+  492 |     dynamic_obstacle_image_publisher_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:499:5: error: ‘self_filtered_publisher_’ was not declared in this scope
+  499 |     self_filtered_publisher_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:502:5: error: ‘self_filtered_last_publish_’ was not declared in this scope
+  502 |     self_filtered_last_publish_ = rclcpp::Time(0, 0, RCL_ROS_TIME);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:506:5: error: ‘clear_ring_publisher_’ was not declared in this scope
+  506 |     clear_ring_publisher_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:512:5: error: ‘clear_local_costmap_client_’ was not declared in this scope
+  512 |     clear_local_costmap_client_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:515:5: error: ‘clear_global_costmap_client_’ was not declared in this scope
+  515 |     clear_global_costmap_client_ =
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:519:5: error: ‘cloud_subscription_’ was not declared in this scope; did you mean ‘rcl_subscription_t’?
+  519 |     cloud_subscription_ =
+      |     ^~~~~~~~~~~~~~~~~~~
+      |     rcl_subscription_t
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:528:5: error: ‘render_timer_’ was not declared in this scope
+  528 |     render_timer_ =
+      |     ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:535:5: error: ‘warn_timer_’ was not declared in this scope
+  535 |     warn_timer_ =
+      |     ^~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In lambda function:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:539:42: error: ‘cloud_mutex_’ was not declared in this scope
+  539 |         std::lock_guard<std::mutex> lock(cloud_mutex_);
+      |                                          ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:540:14: error: ‘received_cloud_’ was not declared in this scope
+  540 |         if (!received_cloud_) {
+      |              ^~~~~~~~~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:26:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:544:13: error: ‘cloud_topic_’ is not captured
+  544 |             cloud_topic_.c_str());
+      |             ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:538:12: note: the lambda has no capture-default
+  538 |       [this]() {
+      |            ^
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:159:5: note: ‘<typeprefixerror>cloud_topic_’ declared here
+  159 |     cloud_topic_ =
+      |     ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In constructor ‘RealtimePgmNode::RealtimePgmNode()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:582:5: error: ‘printConfig’ was not declared in this scope
+  582 |     printConfig(initial_config);
+      |     ^~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::odomCallback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:594:38: error: ‘motion_mutex_’ was not declared in this scope
+  594 |     std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                      ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:595:5: error: ‘odom_x_’ was not declared in this scope
+  595 |     odom_x_ = msg->pose.pose.position.x;
+      |     ^~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:596:5: error: ‘odom_y_’ was not declared in this scope
+  596 |     odom_y_ = msg->pose.pose.position.y;
+      |     ^~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:597:5: error: ‘odom_yaw_’ was not declared in this scope
+  597 |     odom_yaw_ = yaw;
+      |     ^~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:598:5: error: ‘odom_received_’ was not declared in this scope
+  598 |     odom_received_ = true;
+      |     ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:599:5: error: ‘odom_stamp_’ was not declared in this scope
+  599 |     odom_stamp_ = msg->header.stamp;
+      |     ^~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::planCallback(nav_msgs::msg::Path_<std::allocator<void> >::SharedPtr)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:620:38: error: ‘motion_mutex_’ was not declared in this scope
+  620 |     std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                      ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:621:5: error: ‘motion_plan_’ was not declared in this scope
+  621 |     motion_plan_ = std::move(plan);
+      |     ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:622:5: error: ‘motion_plan_received_’ was not declared in this scope
+  622 |     motion_plan_received_ = true;
+      |     ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:623:5: error: ‘motion_plan_stamp_’ was not declared in this scope
+  623 |     motion_plan_stamp_ = msg->header.stamp;
+      |     ^~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:626:5: error: ‘motion_plan_recv_time_’ was not declared in this scope
+  626 |     motion_plan_recv_time_ = now();
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::localPlanCallback(nav_msgs::msg::Path_<std::allocator<void> >::SharedPtr)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:649:38: error: ‘motion_mutex_’ was not declared in this scope
+  649 |     std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                      ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:650:5: error: ‘local_plan_’ was not declared in this scope
+  650 |     local_plan_ = std::move(plan);
+      |     ^~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:651:5: error: ‘local_plan_received_’ was not declared in this scope
+  651 |     local_plan_received_ = true;
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:653:5: error: ‘local_plan_stamp_’ was not declared in this scope
+  653 |     local_plan_stamp_ = now();
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::goalPoseCallback(geometry_msgs::msg::PoseStamped_<std::allocator<void> >::SharedPtr)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:660:38: error: ‘motion_mutex_’ was not declared in this scope
+  660 |     std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                      ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:661:5: error: ‘goal_x_’ was not declared in this scope
+  661 |     goal_x_ = static_cast<float>(msg->pose.position.x);
+      |     ^~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:662:5: error: ‘goal_y_’ was not declared in this scope
+  662 |     goal_y_ = static_cast<float>(msg->pose.position.y);
+      |     ^~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:663:5: error: ‘goal_received_’ was not declared in this scope
+  663 |     goal_received_ = true;
+      |     ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:664:5: error: ‘goal_recv_time_’ was not declared in this scope
+  664 |     goal_recv_time_ = now();
+      |     ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:666:5: error: ‘motion_goal_check_retry_’ was not declared in this scope
+  666 |     motion_goal_check_retry_ = 0;
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:667:5: error: ‘motion_goal_check_replan_’ was not declared in this scope
+  667 |     motion_goal_check_replan_ = false;
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::cloudCallback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:741:7: error: ‘filterVehicleFootprintPoints’ was not declared in this scope
+  741 |       filterVehicleFootprintPoints(new_cloud);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:774:9: error: ‘dynamic_obstacle_enabled_’ was not declared in this scope; did you mean ‘dynamic_obstacles’?
+  774 |     if (dynamic_obstacle_enabled_.load()) {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |         dynamic_obstacles
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:786:7: error: ‘publishDynamicObstacleCloud’ was not declared in this scope
+  786 |       publishDynamicObstacleCloud(green_layer_points);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:797:7: error: ‘publishClearRingCloud’ was not declared in this scope; did you mean ‘publishPointCloud’?
+  797 |       publishClearRingCloud();
+      |       ^~~~~~~~~~~~~~~~~~~~~
+      |       publishPointCloud
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:805:10: error: ‘dynamic_obstacle_enabled_’ was not declared in this scope; did you mean ‘dynamic_obstacles’?
+  805 |     if (!dynamic_obstacle_enabled_.load()) {
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |          dynamic_obstacles
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:808:42: error: ‘config_mutex_’ was not declared in this scope
+  808 |         std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                          ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:809:40: error: ‘config_’ was not declared in this scope; did you mean ‘Config’?
+  809 |         history_max_points_per_frame = config_.history_max_points_per_frame;
+      |                                        ^~~~~~~
+      |                                        Config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:831:40: error: ‘cloud_mutex_’ was not declared in this scope
+  831 |       std::lock_guard<std::mutex> lock(cloud_mutex_);
+      |                                        ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:832:7: error: ‘latest_cloud_’ was not declared in this scope
+  832 |       latest_cloud_.swap(new_cloud);
+      |       ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:835:12: error: ‘dynamic_obstacle_enabled_’ was not declared in this scope; did you mean ‘dynamic_obstacles’?
+  835 |       if (!dynamic_obstacle_enabled_.load()) {
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |            dynamic_obstacles
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:836:9: error: ‘history_’ was not declared in this scope
+  836 |         history_.push_back(
+      |         ^~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:843:7: error: ‘latest_dynamic_obstacles_’ was not declared in this scope; did you mean ‘dynamic_obstacles’?
+  843 |       latest_dynamic_obstacles_ = std::move(green_layer_points);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |       dynamic_obstacles
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:844:7: error: ‘received_cloud_’ was not declared in this scope
+  844 |       received_cloud_ = true;
+      |       ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:845:9: error: ‘cloud_frames_’ was not declared in this scope; did you mean ‘canfd_frame’?
+  845 |       ++cloud_frames_;
+      |         ^~~~~~~~~~~~~
+      |         canfd_frame
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::pruneHistory(const rclcpp::Time&)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:854:40: error: ‘config_mutex_’ was not declared in this scope
+  854 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:855:26: error: ‘config_’ was not declared in this scope; did you mean ‘Config’?
+  855 |       history_duration = config_.history_duration;
+      |                          ^~~~~~~
+      |                          Config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:858:13: error: ‘history_’ was not declared in this scope
+  858 |     while (!history_.empty() &&
+      |             ^~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::splitDynamicObstacles(std::vector<RealtimePgmNode::Point>&, std::vector<RealtimePgmNode::Point>&)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:884:40: error: ‘config_mutex_’ was not declared in this scope
+  884 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:885:16: error: ‘config_’ was not declared in this scope; did you mean ‘config’?
+  885 |       config = config_;
+      |                ^~~~~~~
+      |                config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:888:10: error: ‘computeMapSize’ was not declared in this scope
+  888 |     if (!computeMapSize(config, width, height)) {
+      |          ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:894:40: error: ‘dynamic_mutex_’ was not declared in this scope
+  894 |       std::lock_guard<std::mutex> lock(dynamic_mutex_);
+      |                                        ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:895:11: error: ‘static_obstacle_mask_’ was not declared in this scope
+  895 |       if (static_obstacle_mask_.empty()) {
+      |           ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:898:18: error: ‘static_obstacle_mask_’ was not declared in this scope
+  898 |       baseline = static_obstacle_mask_;
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::subtractBaseline(const std::vector<RealtimePgmNode::Point>&, std::vector<RealtimePgmNode::Point>&)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:986:40: error: ‘config_mutex_’ was not declared in this scope
+  986 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:987:16: error: ‘config_’ was not declared in this scope; did you mean ‘config’?
+  987 |       config = config_;
+      |                ^~~~~~~
+      |                config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:990:10: error: ‘computeMapSize’ was not declared in this scope
+  990 |     if (!computeMapSize(config, width, height)) {
+      |          ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:996:40: error: ‘dynamic_mutex_’ was not declared in this scope
+  996 |       std::lock_guard<std::mutex> lock(dynamic_mutex_);
+      |                                        ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:997:18: error: ‘static_obstacle_mask_’ was not declared in this scope
+  997 |       baseline = static_obstacle_mask_;
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::buildStaticBaseline()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1057:40: error: ‘config_mutex_’ was not declared in this scope
+ 1057 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1058:16: error: ‘config_’ was not declared in this scope; did you mean ‘config’?
+ 1058 |       config = config_;
+      |                ^~~~~~~
+      |                config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1062:40: error: ‘cloud_mutex_’ was not declared in this scope
+ 1062 |       std::lock_guard<std::mutex> lock(cloud_mutex_);
+      |                                        ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1063:22: error: ‘history_’ was not declared in this scope; did you mean ‘history_copy’?
+ 1063 |       history_copy = history_;
+      |                      ^~~~~~~~
+      |                      history_copy
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1069:10: error: ‘computeMapSize’ was not declared in this scope
+ 1069 |     if (!computeMapSize(config, width, height)) {
+      |          ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1081:7: error: ‘accumulateCloud’ was not declared in this scope
+ 1081 |       accumulateCloud(
+      |       ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1095:5: error: ‘clearVehicleFootprint’ was not declared in this scope
+ 1095 |     clearVehicleFootprint(occupancy, config, width, height);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1109:7: error: ‘applyDilate’ was not declared in this scope
+ 1109 |       applyDilate(
+      |       ^~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1124:40: error: ‘dynamic_mutex_’ was not declared in this scope
+ 1124 |       std::lock_guard<std::mutex> lock(dynamic_mutex_);
+      |                                        ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1125:7: error: ‘static_obstacle_mask_’ was not declared in this scope
+ 1125 |       static_obstacle_mask_ = std::move(occupancy);
+      |       ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::publishCloudPreview(const std::vector<RealtimePgmNode::Point>&)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1142:10: error: ‘cloud_preview_publisher_’ was not declared in this scope
+ 1142 |     if (!cloud_preview_publisher_ ||
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1155:32: error: ‘cloud_preview_max_points_’ was not declared in this scope
+ 1155 |       static_cast<std::size_t>(cloud_preview_max_points_);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1185:5: error: ‘cloud_preview_publisher_’ was not declared in this scope
+ 1185 |     cloud_preview_publisher_->publish(preview_msg);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘rclcpp::Time RealtimePgmNode::pointCloudStamp()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1209:40: error: ‘motion_mutex_’ was not declared in this scope
+ 1209 |       std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1210:17: error: ‘odom_received_’ was not declared in this scope
+ 1210 |       odom_ok = odom_received_;
+      |                 ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1211:20: error: ‘odom_stamp_’ was not declared in this scope; did you mean ‘odom_stamp’?
+ 1211 |       odom_stamp = odom_stamp_;
+      |                    ^~~~~~~~~~~
+      |                    odom_stamp
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘bool RealtimePgmNode::transformToBaseLink(const std::vector<RealtimePgmNode::Point>&, std::vector<RealtimePgmNode::Point>&)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1282:40: error: ‘motion_mutex_’ was not declared in this scope
+ 1282 |       std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1283:17: error: ‘odom_received_’ was not declared in this scope
+ 1283 |       odom_ok = odom_received_;
+      |                 ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1284:16: error: ‘odom_x_’ was not declared in this scope; did you mean ‘odom_x’?
+ 1284 |       odom_x = odom_x_;
+      |                ^~~~~~~
+      |                odom_x
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1285:16: error: ‘odom_y_’ was not declared in this scope; did you mean ‘odom_y’?
+ 1285 |       odom_y = odom_y_;
+      |                ^~~~~~~
+      |                odom_y
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1286:18: error: ‘odom_yaw_’ was not declared in this scope; did you mean ‘odom_yaw’?
+ 1286 |       odom_yaw = odom_yaw_;
+      |                  ^~~~~~~~~
+      |                  odom_yaw
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1287:25: error: ‘motion_base_to_lidar_x_’ was not declared in this scope; did you mean ‘base_to_lidar_x’?
+ 1287 |       base_to_lidar_x = motion_base_to_lidar_x_;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+      |                         base_to_lidar_x
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1288:25: error: ‘motion_base_to_lidar_y_’ was not declared in this scope; did you mean ‘base_to_lidar_y’?
+ 1288 |       base_to_lidar_y = motion_base_to_lidar_y_;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~
+      |                         base_to_lidar_y
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::publishSelfFilteredCloud(const std::vector<RealtimePgmNode::Point>&)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1329:10: error: ‘self_filtered_publisher_’ was not declared in this scope
+ 1329 |     if (!self_filtered_publisher_ ||
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1336:9: error: ‘self_filtered_publish_rate_’ was not declared in this scope
+ 1336 |     if (self_filtered_publish_rate_ > 0.0) {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1340:11: error: ‘self_filtered_last_publish_’ was not declared in this scope
+ 1340 |       if (self_filtered_last_publish_.nanoseconds() != 0 &&
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1345:7: error: ‘self_filtered_last_publish_’ was not declared in this scope
+ 1345 |       self_filtered_last_publish_ = now;
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1351:40: error: ‘config_mutex_’ was not declared in this scope
+ 1351 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1352:20: error: ‘self_filtered_max_points_’ was not declared in this scope
+ 1352 |       max_points = self_filtered_max_points_;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1375:25: error: ‘self_filtered_publisher_’ was not declared in this scope
+ 1375 |       publishPointCloud(self_filtered_publisher_, base_points, "base_link");
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1394:23: error: ‘self_filtered_publisher_’ was not declared in this scope
+ 1394 |     publishPointCloud(self_filtered_publisher_, base_points, "map");
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘rcl_interfaces::msg::SetParametersResult RealtimePgmNode::parameterCallback(const std::vector<rclcpp::Parameter>&)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1401:30: error: ‘cloud_preview_max_points_’ was not declared in this scope; did you mean ‘preview_max_points’?
+ 1401 |     int preview_max_points = cloud_preview_max_points_;
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                              preview_max_points
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1402:30: error: ‘motion_control_’ was not declared in this scope; did you mean ‘new_motion_control’?
+ 1402 |     int new_motion_control = motion_control_;
+      |                              ^~~~~~~~~~~~~~~
+      |                              new_motion_control
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1403:34: error: ‘motion_vx_scale_’ was not declared in this scope; did you mean ‘new_motion_vx_scale’?
+ 1403 |     double new_motion_vx_scale = motion_vx_scale_;
+      |                                  ^~~~~~~~~~~~~~~~
+      |                                  new_motion_vx_scale
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1404:34: error: ‘motion_vy_scale_’ was not declared in this scope; did you mean ‘new_motion_vy_scale’?
+ 1404 |     double new_motion_vy_scale = motion_vy_scale_;
+      |                                  ^~~~~~~~~~~~~~~~
+      |                                  new_motion_vy_scale
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1405:33: error: ‘motion_rate_hz_’ was not declared in this scope; did you mean ‘new_motion_rate_hz’?
+ 1405 |     double new_motion_rate_hz = motion_rate_hz_;
+      |                                 ^~~~~~~~~~~~~~~
+      |                                 new_motion_rate_hz
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1406:38: error: ‘motion_target_speed_’ was not declared in this scope; did you mean ‘new_motion_target_speed’?
+ 1406 |     double new_motion_target_speed = motion_target_speed_;
+      |                                      ^~~~~~~~~~~~~~~~~~~~
+      |                                      new_motion_target_speed
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1407:35: error: ‘motion_lookahead_’ was not declared in this scope; did you mean ‘new_motion_lookahead’?
+ 1407 |     double new_motion_lookahead = motion_lookahead_;
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   new_motion_lookahead
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1408:46: error: ‘motion_lookahead_speed_gain_’ was not declared in this scope; did you mean ‘new_motion_lookahead_speed_gain’?
+ 1408 |     double new_motion_lookahead_speed_gain = motion_lookahead_speed_gain_;
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                              new_motion_lookahead_speed_gain
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1409:39: error: ‘motion_lookahead_max_’ was not declared in this scope; did you mean ‘new_motion_lookahead_max’?
+ 1409 |     double new_motion_lookahead_max = motion_lookahead_max_;
+      |                                       ^~~~~~~~~~~~~~~~~~~~~
+      |                                       new_motion_lookahead_max
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1410:32: error: ‘motion_yaw_kp_’ was not declared in this scope; did you mean ‘new_motion_yaw_kp’?
+ 1410 |     double new_motion_yaw_kp = motion_yaw_kp_;
+      |                                ^~~~~~~~~~~~~~
+      |                                new_motion_yaw_kp
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1411:40: error: ‘motion_goal_tolerance_’ was not declared in this scope; did you mean ‘new_motion_goal_tolerance’?
+ 1411 |     double new_motion_goal_tolerance = motion_goal_tolerance_;
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~
+      |                                        new_motion_goal_tolerance
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1412:46: error: ‘motion_goal_check_tolerance_’ was not declared in this scope; did you mean ‘new_motion_goal_check_tolerance’?
+ 1412 |     double new_motion_goal_check_tolerance = motion_goal_check_tolerance_;
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                              new_motion_goal_check_tolerance
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1413:43: error: ‘motion_goal_check_max_retry_’ was not declared in this scope; did you mean ‘new_motion_goal_check_max_retry’?
+ 1413 |     int new_motion_goal_check_max_retry = motion_goal_check_max_retry_;
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                           new_motion_goal_check_max_retry
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1414:37: error: ‘motion_max_lateral_’ was not declared in this scope; did you mean ‘new_motion_max_lateral’?
+ 1414 |     double new_motion_max_lateral = motion_max_lateral_;
+      |                                     ^~~~~~~~~~~~~~~~~~~
+      |                                     new_motion_max_lateral
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1415:38: error: ‘motion_plan_timeout_’ was not declared in this scope; did you mean ‘new_motion_plan_timeout’?
+ 1415 |     double new_motion_plan_timeout = motion_plan_timeout_;
+      |                                      ^~~~~~~~~~~~~~~~~~~~
+      |                                      new_motion_plan_timeout
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1416:37: error: ‘motion_slow_radius_’ was not declared in this scope; did you mean ‘new_motion_slow_radius’?
+ 1416 |     double new_motion_slow_radius = motion_slow_radius_;
+      |                                     ^~~~~~~~~~~~~~~~~~~
+      |                                     new_motion_slow_radius
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1417:35: error: ‘motion_min_speed_’ was not declared in this scope; did you mean ‘new_motion_min_speed’?
+ 1417 |     double new_motion_min_speed = motion_min_speed_;
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   new_motion_min_speed
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1418:41: error: ‘motion_base_to_lidar_x_’ was not declared in this scope; did you mean ‘new_motion_base_to_lidar_x’?
+ 1418 |     double new_motion_base_to_lidar_x = motion_base_to_lidar_x_;
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                         new_motion_base_to_lidar_x
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1419:41: error: ‘motion_base_to_lidar_y_’ was not declared in this scope; did you mean ‘new_motion_base_to_lidar_y’?
+ 1419 |     double new_motion_base_to_lidar_y = motion_base_to_lidar_y_;
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                         new_motion_base_to_lidar_y
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1420:30: error: ‘astar_enabled_’ was not declared in this scope; did you mean ‘new_astar_enabled’?
+ 1420 |     bool new_astar_enabled = astar_enabled_;
+      |                              ^~~~~~~~~~~~~~
+      |                              new_astar_enabled
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1421:30: error: ‘astar_speed_’ was not declared in this scope; did you mean ‘new_astar_speed’?
+ 1421 |     double new_astar_speed = astar_speed_;
+      |                              ^~~~~~~~~~~~
+      |                              new_astar_speed
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1422:39: error: ‘astar_inflate_radius_’ was not declared in this scope; did you mean ‘new_astar_inflate_radius’?
+ 1422 |     double new_astar_inflate_radius = astar_inflate_radius_;
+      |                                       ^~~~~~~~~~~~~~~~~~~~~
+      |                                       new_astar_inflate_radius
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1423:41: error: ‘astar_obstacle_penalty_’ was not declared in this scope; did you mean ‘new_astar_obstacle_penalty’?
+ 1423 |     double new_astar_obstacle_penalty = astar_obstacle_penalty_;
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                         new_astar_obstacle_penalty
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1424:35: error: ‘astar_cost_reach_’ was not declared in this scope; did you mean ‘new_astar_cost_reach’?
+ 1424 |     double new_astar_cost_reach = astar_cost_reach_;
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   new_astar_cost_reach
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1425:37: error: ‘astar_path_spacing_’ was not declared in this scope; did you mean ‘new_astar_path_spacing’?
+ 1425 |     double new_astar_path_spacing = astar_path_spacing_;
+      |                                     ^~~~~~~~~~~~~~~~~~~
+      |                                     new_astar_path_spacing
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1426:40: error: ‘astar_replan_interval_’ was not declared in this scope; did you mean ‘new_astar_replan_interval’?
+ 1426 |     double new_astar_replan_interval = astar_replan_interval_;
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~
+      |                                        new_astar_replan_interval
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1427:41: error: ‘astar_replan_move_dist_’ was not declared in this scope; did you mean ‘new_astar_replan_move_dist’?
+ 1427 |     double new_astar_replan_move_dist = astar_replan_move_dist_;
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                         new_astar_replan_move_dist
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1428:28: error: ‘can_enabled_’ was not declared in this scope; did you mean ‘new_can_enabled’?
+ 1428 |     bool new_can_enabled = can_enabled_;
+      |                            ^~~~~~~~~~~~
+      |                            new_can_enabled
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1429:45: error: ‘self_filtered_publish_rate_’ was not declared in this scope; did you mean ‘new_self_filtered_publish_rate’?
+ 1429 |     double new_self_filtered_publish_rate = self_filtered_publish_rate_;
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                             new_self_filtered_publish_rate
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1430:40: error: ‘self_filtered_max_points_’ was not declared in this scope; did you mean ‘new_self_filtered_max_points’?
+ 1430 |     int new_self_filtered_max_points = self_filtered_max_points_;
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                        new_self_filtered_max_points
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1431:33: error: ‘clear_ring_points_’ was not declared in this scope; did you mean ‘new_clear_ring_points’?
+ 1431 |     int new_clear_ring_points = clear_ring_points_;
+      |                                 ^~~~~~~~~~~~~~~~~~
+      |                                 new_clear_ring_points
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1432:36: error: ‘clear_ring_radius_’ was not declared in this scope; did you mean ‘new_clear_ring_radius’?
+ 1432 |     double new_clear_ring_radius = clear_ring_radius_;
+      |                                    ^~~~~~~~~~~~~~~~~~
+      |                                    new_clear_ring_radius
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1435:40: error: ‘config_mutex_’ was not declared in this scope
+ 1435 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1436:20: error: ‘config_’ was not declared in this scope; did you mean ‘Config’?
+ 1436 |       new_config = config_;
+      |                    ^~~~~~~
+      |                    Config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1479:13: error: ‘history_reset_requested_’ was not declared in this scope
+ 1479 |             history_reset_requested_.store(true);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1544:13: error: ‘motion_start_requested_’ was not declared in this scope
+ 1544 |             motion_start_requested_.store(true);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1549:13: error: ‘motion_stop_requested_’ was not declared in this scope
+ 1549 |             motion_stop_requested_.store(true);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1555:26: error: ‘dynamic_obstacle_enabled_’ was not declared in this scope
+ 1555 |           if (enabled != dynamic_obstacle_enabled_.load()) {
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1560:48: error: ‘dynamic_mutex_’ was not declared in this scope
+ 1560 |               std::lock_guard<std::mutex> lock(dynamic_mutex_);
+      |                                                ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1561:15: error: ‘static_obstacle_mask_’ was not declared in this scope
+ 1561 |               static_obstacle_mask_.clear();
+      |               ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1572:32: error: ‘can_interface_’ was not declared in this scope; did you mean ‘rcl_interfaces’?
+ 1572 |           if (new_interface != can_interface_) {
+      |                                ^~~~~~~~~~~~~~
+      |                                rcl_interfaces
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1582:11: error: ‘can_id_’ was not declared in this scope; did you mean ‘canid_t’?
+ 1582 |           can_id_ = static_cast<canid_t>(parameter.as_int() & 0x7FF);
+      |           ^~~~~~~
+      |           canid_t
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1584:11: error: ‘can_send_period_ms_’ was not declared in this scope
+ 1584 |           can_send_period_ms_ = static_cast<int>(std::clamp(parameter.as_int(), static_cast<int64_t>(1), static_cast<int64_t>(1000)));
+      |           ^~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1803:40: error: ‘config_mutex_’ was not declared in this scope
+ 1803 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1804:30: error: ‘config_’ was not declared in this scope; did you mean ‘Config’?
+ 1804 |       prev_baseline_dilate = config_.baseline_dilate;
+      |                              ^~~~~~~
+      |                              Config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1814:40: error: ‘config_mutex_’ was not declared in this scope
+ 1814 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1815:7: error: ‘config_’ was not declared in this scope; did you mean ‘Config’?
+ 1815 |       config_ = new_config;
+      |       ^~~~~~~
+      |       Config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1816:7: error: ‘config_changed_’ was not declared in this scope
+ 1816 |       config_changed_ = true;
+      |       ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1827:40: error: ‘motion_mutex_’ was not declared in this scope
+ 1827 |       std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1855:7: error: ‘astar_cache_valid_’ was not declared in this scope
+ 1855 |       astar_cache_valid_ = false;
+      |       ^~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1864:9: error: ‘dynamic_obstacle_enabled_’ was not declared in this scope
+ 1864 |     if (dynamic_obstacle_enabled_.load() &&
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::clearCostmaps()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1901:10: error: ‘clear_costmap_on_history_reset_’ was not declared in this scope
+ 1901 |     if (!clear_costmap_on_history_reset_) {
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1941:15: error: ‘clear_local_costmap_client_’ was not declared in this scope
+ 1941 |     try_clear(clear_local_costmap_client_, clear_local_costmap_service_);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1941:44: error: ‘clear_local_costmap_service_’ was not declared in this scope
+ 1941 |     try_clear(clear_local_costmap_client_, clear_local_costmap_service_);
+      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1942:15: error: ‘clear_global_costmap_client_’ was not declared in this scope
+ 1942 |     try_clear(clear_global_costmap_client_, clear_global_costmap_service_);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1942:45: error: ‘clear_global_costmap_service_’ was not declared in this scope
+ 1942 |     try_clear(clear_global_costmap_client_, clear_global_costmap_service_);
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::renderTimerCallback()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1947:32: error: ‘history_reset_requested_’ was not declared in this scope
+ 1947 |     const bool reset_history = history_reset_requested_.exchange(false);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1948:34: error: ‘dynamic_obstacle_enabled_’ was not declared in this scope
+ 1948 |     const bool dynamic_enabled = dynamic_obstacle_enabled_.load();
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1960:42: error: ‘cloud_mutex_’ was not declared in this scope
+ 1960 |         std::lock_guard<std::mutex> lock(cloud_mutex_);
+      |                                          ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1961:9: error: ‘history_’ was not declared in this scope; did you mean ‘history_copy’?
+ 1961 |         history_.clear();
+      |         ^~~~~~~~
+      |         history_copy
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1968:40: error: ‘cloud_mutex_’ was not declared in this scope
+ 1968 |       std::lock_guard<std::mutex> lock(cloud_mutex_);
+      |                                        ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1969:12: error: ‘received_cloud_’ was not declared in this scope
+ 1969 |       if (!received_cloud_) {
+      |            ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1972:20: error: ‘latest_cloud_’ was not declared in this scope
+ 1972 |       cloud_copy = latest_cloud_;
+      |                    ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1974:22: error: ‘history_’ was not declared in this scope; did you mean ‘history_copy’?
+ 1974 |       history_copy = history_;
+      |                      ^~~~~~~~
+      |                      history_copy
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1975:22: error: ‘latest_dynamic_obstacles_’ was not declared in this scope; did you mean ‘splitDynamicObstacles’?
+ 1975 |       dynamic_copy = latest_dynamic_obstacles_;
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      splitDynamicObstacles
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1979:40: error: ‘config_mutex_’ was not declared in this scope
+ 1979 |       std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1980:21: error: ‘config_’ was not declared in this scope; did you mean ‘Config’?
+ 1980 |       config_copy = config_;
+      |                     ^~~~~~~
+      |                     Config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1981:7: error: ‘config_changed_’ was not declared in this scope
+ 1981 |       config_changed_ = false;
+      |       ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1984:5: error: ‘renderPgm’ was not declared in this scope
+ 1984 |     renderPgm(cloud_copy, config_copy);
+      |     ^~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1985:5: error: ‘renderHistoryPgm’ was not declared in this scope
+ 1985 |     renderHistoryPgm(history_copy, config_copy);
+      |     ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1991:28: error: ‘dynamic_image_published_’ was not declared in this scope
+ 1991 |     if (dynamic_enabled || dynamic_image_published_) {
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1992:7: error: ‘renderDynamicObstaclePgm’ was not declared in this scope
+ 1992 |       renderDynamicObstaclePgm(dynamic_copy, config_copy);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::publishMotionFrame(bool, double, double)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2008:40: error: ‘motion_mutex_’ was not declared in this scope
+ 2008 |       std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2009:18: error: ‘motion_vx_scale_’ was not declared in this scope
+ 2009 |       vx_scale = motion_vx_scale_;
+      |                  ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2010:18: error: ‘motion_vy_scale_’ was not declared in this scope
+ 2010 |       vy_scale = motion_vy_scale_;
+      |                  ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2011:23: error: ‘motion_control_’ was not declared in this scope
+ 2011 |       control_value = motion_control_;
+      |                       ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2037:5: error: ‘motion_publisher_’ was not declared in this scope
+ 2037 |     motion_publisher_->publish(msg);
+      |     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2041:9: error: ‘can_enabled_’ was not declared in this scope
+ 2041 |     if (can_enabled_) {
+      |         ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::closeCanSocket()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2050:9: error: ‘can_socket_fd_’ was not declared in this scope
+ 2050 |     if (can_socket_fd_ >= 0) {
+      |         ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘bool RealtimePgmNode::openCanSocket()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2061:5: error: ‘can_socket_fd_’ was not declared in this scope
+ 2061 |     can_socket_fd_ = ::socket(PF_CAN, SOCK_RAW | SOCK_CLOEXEC, CAN_RAW);
+      |     ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2071:32: error: ‘can_interface_’ was not declared in this scope; did you mean ‘rcl_interfaces’?
+ 2071 |     std::strncpy(ifr.ifr_name, can_interface_.c_str(), IFNAMSIZ - 1);
+      |                                ^~~~~~~~~~~~~~
+      |                                rcl_interfaces
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:26:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2104:31: error: ‘can_id_’ was not declared in this scope; did you mean ‘canid_t’?
+ 2104 |       can_interface_.c_str(), can_id_, can_send_period_ms_);
+      |                               ^~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2104:40: error: ‘can_send_period_ms_’ was not declared in this scope
+ 2104 |       can_interface_.c_str(), can_id_, can_send_period_ms_);
+      |                                        ^~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::canFrameFromMotion(const uint8_t*)’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2114:19: error: ‘can_send_period_ms_’ was not declared in this scope
+ 2114 |       std::max(1, can_send_period_ms_));
+      |                   ^~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2116:9: error: ‘can_last_send_’ was not declared in this scope
+ 2116 |     if (can_last_send_.time_since_epoch().count() != 0 &&
+      |         ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2121:5: error: ‘can_last_send_’ was not declared in this scope
+ 2121 |     can_last_send_ = now;
+      |     ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2123:9: error: ‘can_socket_fd_’ was not declared in this scope
+ 2123 |     if (can_socket_fd_ < 0) {
+      |         ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2131:20: error: ‘can_id_’ was not declared in this scope; did you mean ‘canid_t’?
+ 2131 |     frame.can_id = can_id_;
+      |                    ^~~~~~~
+      |                    canid_t
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2137:36: error: ‘can_socket_fd_’ was not declared in this scope
+ 2137 |     const ssize_t nbytes = ::write(can_socket_fd_, &frame, sizeof(frame));
+      |                                    ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2147:7: error: ‘can_sent_frames_’ was not declared in this scope
+ 2147 |     ++can_sent_frames_;
+      |       ^~~~~~~~~~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:26:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2152:7: error: ‘can_interface_’ was not declared in this scope; did you mean ‘rcl_interfaces’?
+ 2152 |       can_interface_.c_str(), can_id_,
+      |       ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::createMotionTimer()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2203:9: error: ‘motion_timer_’ was not declared in this scope
+ 2203 |     if (motion_timer_) {
+      |         ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2209:40: error: ‘motion_mutex_’ was not declared in this scope
+ 2209 |       std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2210:14: error: ‘motion_rate_hz_’ was not declared in this scope
+ 2210 |       rate = motion_rate_hz_;
+      |              ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2215:5: error: ‘motion_timer_’ was not declared in this scope
+ 2215 |     motion_timer_ = create_wall_timer(
+      |     ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: In member function ‘void RealtimePgmNode::motionTimerCallback()’:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2224:34: error: ‘motion_start_requested_’ was not declared in this scope; did you mean ‘start_requested’?
+ 2224 |     const bool start_requested = motion_start_requested_.exchange(false);
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                  start_requested
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2225:33: error: ‘motion_stop_requested_’ was not declared in this scope; did you mean ‘stop_requested’?
+ 2225 |     const bool stop_requested = motion_stop_requested_.exchange(false);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~
+      |                                 stop_requested
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2228:7: error: ‘startMotion’ was not declared in this scope
+ 2228 |       startMotion();
+      |       ^~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2230:7: error: ‘stopMotion’ was not declared in this scope
+ 2230 |       stopMotion("");
+      |       ^~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2247:40: error: ‘motion_mutex_’ was not declared in this scope
+ 2247 |       std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2248:16: error: ‘motion_active_’ was not declared in this scope
+ 2248 |       active = motion_active_;
+      |                ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2249:17: error: ‘odom_received_’ was not declared in this scope
+ 2249 |       odom_ok = odom_received_;
+      |                 ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2250:17: error: ‘motion_plan_received_’ was not declared in this scope
+ 2250 |       plan_ok = motion_plan_received_;
+      |                 ^~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2251:16: error: ‘odom_x_’ was not declared in this scope; did you mean ‘odom_x’?
+ 2251 |       odom_x = odom_x_;
+      |                ^~~~~~~
+      |                odom_x
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2252:16: error: ‘odom_y_’ was not declared in this scope; did you mean ‘odom_y’?
+ 2252 |       odom_y = odom_y_;
+      |                ^~~~~~~
+      |                odom_y
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2253:18: error: ‘odom_yaw_’ was not declared in this scope; did you mean ‘odom_yaw’?
+ 2253 |       odom_yaw = odom_yaw_;
+      |                  ^~~~~~~~~
+      |                  odom_yaw
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2256:22: error: ‘motion_plan_timeout_’ was not declared in this scope
+ 2256 |       plan_timeout = motion_plan_timeout_;
+      |                      ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2258:29: error: ‘motion_plan_recv_time_’ was not declared in this scope
+ 2258 |         plan_age = (now() - motion_plan_recv_time_).seconds();
+      |                             ^~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2261:23: error: ‘local_plan_received_’ was not declared in this scope
+ 2261 |       local_plan_ok = local_plan_received_ && local_plan_.size() >= 2;
+      |                       ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2261:47: error: ‘local_plan_’ was not declared in this scope; did you mean ‘local_plan_ok’?
+ 2261 |       local_plan_ok = local_plan_received_ && local_plan_.size() >= 2;
+      |                                               ^~~~~~~~~~~
+      |                                               local_plan_ok
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2262:28: error: ‘local_plan_timeout_’ was not declared in this scope; did you mean ‘plan_timeout’?
+ 2262 |       if (local_plan_ok && local_plan_timeout_ > 0.0) {
+      |                            ^~~~~~~~~~~~~~~~~~~
+      |                            plan_timeout
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2263:37: error: ‘local_plan_stamp_’ was not declared in this scope
+ 2263 |         local_plan_fresh = (now() - local_plan_stamp_).seconds() < local_plan_timeout_;
+      |                                     ^~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2269:49: error: ‘motion_plan_’ was not declared in this scope
+ 2269 |       plan = (local_plan_fresh) ? local_plan_ : motion_plan_;
+      |                                                 ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2273:11: error: ‘motion_goal_check_replan_’ was not declared in this scope
+ 2273 |       if (motion_goal_check_replan_ && plan.size() >= 2) {
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2277:16: error: ‘motion_base_to_lidar_x_’ was not declared in this scope
+ 2277 |           (c * motion_base_to_lidar_x_ - s * motion_base_to_lidar_y_);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2277:46: error: ‘motion_base_to_lidar_y_’ was not declared in this scope
+ 2277 |           (c * motion_base_to_lidar_x_ - s * motion_base_to_lidar_y_);
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2283:21: error: ‘motion_goal_tolerance_’ was not declared in this scope
+ 2283 |         if (d_end > motion_goal_tolerance_ * 1.5) {
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2296:7: error: ‘stopMotion’ was not declared in this scope
+ 2296 |       stopMotion("未收到里程计 (/Odometry), 无法跟随路径");
+      |       ^~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2314:53: error: ‘motion_goal_check_replan_’ was not declared in this scope
+ 2314 |       plan_ok && plan_fresh && plan.size() >= 2 && !motion_goal_check_replan_;
+      |                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2319:42: error: ‘motion_mutex_’ was not declared in this scope
+ 2319 |         std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                          ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2320:23: error: ‘motion_waiting_’ was not declared in this scope
+ 2320 |         was_waiting = motion_waiting_;
+      |                       ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2349:42: error: ‘config_mutex_’ was not declared in this scope
+ 2349 |         std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                          ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2350:24: error: ‘config_’ was not declared in this scope; did you mean ‘Config’?
+ 2350 |         astar_config = config_;
+      |                        ^~~~~~~
+      |                        Config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2357:11: error: ‘computeMapSize’ was not declared in this scope
+ 2357 |       if (computeMapSize(astar_config, awidth, aheight) &&
+      |           ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2358:9: error: ‘getAstarPath’ was not declared in this scope
+ 2358 |         getAstarPath(
+      |         ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2362:9: error: ‘publishAstarPlan’ was not declared in this scope
+ 2362 |         publishAstarPlan(astar_path);
+      |         ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2366:13: error: ‘computeAstarFollowCommand’ was not declared in this scope
+ 2366 |         if (computeAstarFollowCommand(
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155,
+                 from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:26:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2380:42: error: ‘astar_speed_’ was not declared in this scope
+ 2380 |             astar_path.size(), avx, avy, astar_speed_);
+      |                                          ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2389:7: error: ‘publishAstarPlan’ was not declared in this scope
+ 2389 |       publishAstarPlan(std::vector<Point>{});
+      |       ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2401:40: error: ‘motion_mutex_’ was not declared in this scope
+ 2401 |       std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                        ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2402:7: error: ‘motion_waiting_’ was not declared in this scope
+ 2402 |       motion_waiting_ = false;
+      |       ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2404:7: error: ‘astar_cache_valid_’ was not declared in this scope
+ 2404 |       astar_cache_valid_ = false;
+      |       ^~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2409:26: error: ‘computeFollowCommand’ was not declared in this scope
+ 2409 |     const bool arrived = computeFollowCommand(
+      |                          ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2426:42: error: ‘motion_mutex_’ was not declared in this scope
+ 2426 |         std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                          ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2427:22: error: ‘goal_received_’ was not declared in this scope
+ 2427 |         goal_known = goal_received_;
+      |                      ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2428:18: error: ‘goal_x_’ was not declared in this scope; did you mean ‘goal_x’?
+ 2428 |         goal_x = goal_x_;
+      |                  ^~~~~~~
+      |                  goal_x
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2429:18: error: ‘goal_y_’ was not declared in this scope; did you mean ‘goal_y’?
+ 2429 |         goal_y = goal_y_;
+      |                  ^~~~~~~
+      |                  goal_y
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2436:20: error: ‘motion_base_to_lidar_x_’ was not declared in this scope
+ 2436 |         (cos_yaw * motion_base_to_lidar_x_ - sin_yaw * motion_base_to_lidar_y_);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2436:56: error: ‘motion_base_to_lidar_y_’ was not declared in this scope
+ 2436 |         (cos_yaw * motion_base_to_lidar_x_ - sin_yaw * motion_base_to_lidar_y_);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2449:24: error: ‘motion_goal_check_tolerance_’ was not declared in this scope
+ 2449 |         (goal_known && motion_goal_check_tolerance_ > 0.0);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2462:44: error: ‘motion_mutex_’ was not declared in this scope
+ 2462 |           std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                            ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2463:11: error: ‘motion_goal_check_retry_’ was not declared in this scope
+ 2463 |           motion_goal_check_retry_ = 0;
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2466:9: error: ‘stopMotion’ was not declared in this scope
+ 2466 |         stopMotion("");
+      |         ^~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2473:42: error: ‘motion_mutex_’ was not declared in this scope
+ 2473 |         std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                          ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2474:22: error: ‘motion_goal_check_retry_’ was not declared in this scope
+ 2474 |         retry_used = motion_goal_check_retry_;
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2477:24: error: ‘motion_goal_check_max_retry_’ was not declared in this scope
+ 2477 |       if (retry_used < motion_goal_check_max_retry_) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2483:44: error: ‘motion_mutex_’ was not declared in this scope
+ 2483 |           std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                            ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2484:11: error: ‘motion_goal_check_retry_’ was not declared in this scope
+ 2484 |           motion_goal_check_retry_ = retry_used + 1;
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2485:11: error: ‘astar_cache_valid_’ was not declared in this scope
+ 2485 |           astar_cache_valid_ = false;
+      |           ^~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2486:11: error: ‘motion_waiting_’ was not declared in this scope
+ 2486 |           motion_waiting_ = true;
+      |           ^~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2493:44: error: ‘config_mutex_’ was not declared in this scope
+ 2493 |           std::lock_guard<std::mutex> lock(config_mutex_);
+      |                                            ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2494:26: error: ‘config_’ was not declared in this scope; did you mean ‘Config’?
+ 2494 |           astar_config = config_;
+      |                          ^~~~~~~
+      |                          Config
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2501:13: error: ‘computeMapSize’ was not declared in this scope
+ 2501 |         if (computeMapSize(astar_config, awidth, aheight) &&
+      |             ^~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2502:11: error: ‘getAstarPath’ was not declared in this scope
+ 2502 |           getAstarPath(
+      |           ^~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2505:11: error: ‘publishAstarPlan’ was not declared in this scope
+ 2505 |           publishAstarPlan(astar_path);
+      |           ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2510:15: error: ‘computeAstarFollowCommand’ was not declared in this scope
+ 2510 |           if (computeAstarFollowCommand(
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2531:9: error: ‘publishAstarPlan’ was not declared in this scope
+ 2531 |         publishAstarPlan(std::vector<Point>{});
+      |         ^~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2556:42: error: ‘motion_mutex_’ was not declared in this scope
+ 2556 |         std::lock_guard<std::mutex> lock(motion_mutex_);
+      |                                          ^~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2557:9: error: ‘motion_goal_check_retry_’ was not declared in this scope
+ 2557 |         motion_goal_check_retry_ = 0;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2560:7: error: ‘stopMotion’ was not declared in this scope
+ 2560 |       stopMotion("");
+      |       ^~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2566:5: error: ‘RCLCPP_INFO_THROTTLE’ was not declared in this scope
+ 2566 |     RCLCPP_INFO_THROTTLE(
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2566:25: error: expected ‘}’ at end of input
+ 2566 |     RCLCPP_INFO_THROTTLE(
+      |                         ^
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2222:3: note: to match this ‘{’
+ 2222 |   {
+      |   ^
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp: At global scope:
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2566:25: error: expected unqualified-id at end of input
+ 2566 |     RCLCPP_INFO_THROTTLE(
+      |                         ^
+gmake[2]: *** [CMakeFiles/test_draw_pgm_realtime_node.dir/build.make:76：CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/test_draw_pgm_realtime_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

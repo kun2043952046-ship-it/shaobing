@@ -1,0 +1,23 @@
+[0.006s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_CAN': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_CAN -- -j16 -l16
+[0.036s] [35m[1mConsolidate compiler generated dependencies of target test_CAN_node[0m
+[0.046s] [100%] Built target test_CAN_node
+[0.052s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_CAN' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_CAN -- -j16 -l16
+[0.058s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_CAN': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_CAN
+[0.063s] -- Install configuration: ""
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/lib/test_CAN/test_CAN_node
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/ament_index/resource_index/package_run_dependencies/test_CAN
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/ament_index/resource_index/parent_prefix_path/test_CAN
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/environment/ament_prefix_path.sh
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/environment/ament_prefix_path.dsv
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/environment/path.sh
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/environment/path.dsv
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/local_setup.bash
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/local_setup.sh
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/local_setup.zsh
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/local_setup.dsv
+[0.064s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/package.dsv
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/ament_index/resource_index/packages/test_CAN
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/cmake/test_CANConfig.cmake
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/cmake/test_CANConfig-version.cmake
+[0.064s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_CAN/share/test_CAN/package.xml
+[0.065s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_CAN' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_CAN

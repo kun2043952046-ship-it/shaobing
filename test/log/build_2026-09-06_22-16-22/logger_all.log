@@ -1,0 +1,328 @@
+[0.060s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.060s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x77d317445750>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x77d317556bf0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x77d317556bf0>>)
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.153s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.160s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(test_draw_pgm_realtime) by extensions ['ignore', 'ignore_ament_install']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(test_draw_pgm_realtime) by extension 'ignore'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(test_draw_pgm_realtime) by extension 'ignore_ament_install'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(test_draw_pgm_realtime) by extensions ['colcon_pkg']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(test_draw_pgm_realtime) by extension 'colcon_pkg'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(test_draw_pgm_realtime) by extensions ['colcon_meta']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(test_draw_pgm_realtime) by extension 'colcon_meta'
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(test_draw_pgm_realtime) by extensions ['ros']
+[0.161s] Level 1:colcon.colcon_core.package_identification:_identify(test_draw_pgm_realtime) by extension 'ros'
+[0.162s] DEBUG:colcon.colcon_core.package_identification:Package 'test_draw_pgm_realtime' with type 'ros.ament_cmake' and name 'test_draw_pgm_realtime'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(test_livox_build_pcd_save) by extensions ['ignore', 'ignore_ament_install']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(test_livox_build_pcd_save) by extension 'ignore'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(test_livox_build_pcd_save) by extension 'ignore_ament_install'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(test_livox_build_pcd_save) by extensions ['colcon_pkg']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(test_livox_build_pcd_save) by extension 'colcon_pkg'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(test_livox_build_pcd_save) by extensions ['colcon_meta']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(test_livox_build_pcd_save) by extension 'colcon_meta'
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(test_livox_build_pcd_save) by extensions ['ros']
+[0.162s] Level 1:colcon.colcon_core.package_identification:_identify(test_livox_build_pcd_save) by extension 'ros'
+[0.163s] DEBUG:colcon.colcon_core.package_identification:Package 'test_livox_build_pcd_save' with type 'ros.ament_cmake' and name 'test_livox_build_pcd_save'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_pcd_To_pgm) by extensions ['ignore', 'ignore_ament_install']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_pcd_To_pgm) by extension 'ignore'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_pcd_To_pgm) by extension 'ignore_ament_install'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_pcd_To_pgm) by extensions ['colcon_pkg']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_pcd_To_pgm) by extension 'colcon_pkg'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_pcd_To_pgm) by extensions ['colcon_meta']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_pcd_To_pgm) by extension 'colcon_meta'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_pcd_To_pgm) by extensions ['ros']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_pcd_To_pgm) by extension 'ros'
+[0.163s] DEBUG:colcon.colcon_core.package_identification:Package 'test_pcd_To_pgm' with type 'ros.ament_cmake' and name 'test_pcd_To_pgm'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_ros_health) by extensions ['ignore', 'ignore_ament_install']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_ros_health) by extension 'ignore'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_ros_health) by extension 'ignore_ament_install'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_ros_health) by extensions ['colcon_pkg']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_ros_health) by extension 'colcon_pkg'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_ros_health) by extensions ['colcon_meta']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_ros_health) by extension 'colcon_meta'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_ros_health) by extensions ['ros']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(test_ros_health) by extension 'ros'
+[0.164s] DEBUG:colcon.colcon_core.package_identification:Package 'test_ros_health' with type 'ros.ament_cmake' and name 'test_ros_health'
+[0.164s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.164s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.164s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.164s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.164s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.184s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.184s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.185s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install
+[0.185s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/lele/source_code_from_git/ws_livox/install
+[0.186s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 403 installed packages in /opt/ros/humble
+[0.187s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_draw_pgm_realtime' build argument 'cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_draw_pgm_realtime' build argument 'cmake_target' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_draw_pgm_realtime' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_draw_pgm_realtime' build argument 'cmake_clean_cache' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_draw_pgm_realtime' build argument 'cmake_clean_first' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_draw_pgm_realtime' build argument 'cmake_force_configure' from command line to 'False'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_draw_pgm_realtime' build argument 'ament_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_draw_pgm_realtime' build argument 'catkin_cmake_args' from command line to 'None'
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_draw_pgm_realtime' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.212s] DEBUG:colcon.colcon_core.verb:Building package 'test_draw_pgm_realtime' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime', 'merge_install': False, 'path': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime', 'symlink_install': True, 'test_result_base': None}
+[0.212s] Level 5:colcon.colcon_core.verb:set package 'test_livox_build_pcd_save' build argument 'cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_livox_build_pcd_save' build argument 'cmake_target' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_livox_build_pcd_save' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_livox_build_pcd_save' build argument 'cmake_clean_cache' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_livox_build_pcd_save' build argument 'cmake_clean_first' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_livox_build_pcd_save' build argument 'cmake_force_configure' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_livox_build_pcd_save' build argument 'ament_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_livox_build_pcd_save' build argument 'catkin_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_livox_build_pcd_save' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.213s] DEBUG:colcon.colcon_core.verb:Building package 'test_livox_build_pcd_save' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save', 'merge_install': False, 'path': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_livox_build_pcd_save', 'symlink_install': True, 'test_result_base': None}
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_pcd_To_pgm' build argument 'cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_pcd_To_pgm' build argument 'cmake_target' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_pcd_To_pgm' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_pcd_To_pgm' build argument 'cmake_clean_cache' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_pcd_To_pgm' build argument 'cmake_clean_first' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_pcd_To_pgm' build argument 'cmake_force_configure' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_pcd_To_pgm' build argument 'ament_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_pcd_To_pgm' build argument 'catkin_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_pcd_To_pgm' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.213s] DEBUG:colcon.colcon_core.verb:Building package 'test_pcd_To_pgm' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm', 'merge_install': False, 'path': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm', 'symlink_install': True, 'test_result_base': None}
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_ros_health' build argument 'cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_ros_health' build argument 'cmake_target' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_ros_health' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_ros_health' build argument 'cmake_clean_cache' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_ros_health' build argument 'cmake_clean_first' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_ros_health' build argument 'cmake_force_configure' from command line to 'False'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_ros_health' build argument 'ament_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_ros_health' build argument 'catkin_cmake_args' from command line to 'None'
+[0.213s] Level 5:colcon.colcon_core.verb:set package 'test_ros_health' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.213s] DEBUG:colcon.colcon_core.verb:Building package 'test_ros_health' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health', 'merge_install': False, 'path': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_ros_health', 'symlink_install': True, 'test_result_base': None}
+[0.213s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.214s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.214s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime' with build type 'ament_cmake'
+[0.214s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime'
+[0.215s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.215s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.215s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.218s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_livox_build_pcd_save' with build type 'ament_cmake'
+[0.218s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_livox_build_pcd_save'
+[0.218s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.218s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.220s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm' with build type 'ament_cmake'
+[0.220s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm'
+[0.221s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.221s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.223s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_ros_health' with build type 'ament_cmake'
+[0.223s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_ros_health'
+[0.223s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.223s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.230s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime
+[0.232s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_livox_build_pcd_save -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save
+[0.233s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm
+[0.236s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_ros_health -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health
+[1.088s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_livox_build_pcd_save -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save
+[1.089s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save -- -j16 -l16
+[1.090s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime
+[1.091s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime -- -j16 -l16
+[1.093s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_ros_health -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health
+[1.094s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health -- -j16 -l16
+[1.737s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm
+[1.739s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm -- -j16 -l16
+[4.465s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm -- -j16 -l16
+[4.481s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm
+[4.662s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health -- -j16 -l16
+[4.663s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health
+[4.668s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(test_pcd_To_pgm)
+[4.668s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm
+[4.670s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm' for CMake module files
+[4.671s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm' for CMake config files
+[4.671s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_pcd_To_pgm', 'cmake_prefix_path')
+[4.671s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/hook/cmake_prefix_path.ps1'
+[4.672s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/hook/cmake_prefix_path.dsv'
+[4.672s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/hook/cmake_prefix_path.sh'
+[4.672s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/lib'
+[4.673s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/bin'
+[4.673s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/lib/pkgconfig/test_pcd_To_pgm.pc'
+[4.673s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/lib/python3.10/site-packages'
+[4.673s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/bin'
+[4.673s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.ps1'
+[4.673s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.dsv'
+[4.674s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.sh'
+[4.674s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.bash'
+[4.675s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.zsh'
+[4.675s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/colcon-core/packages/test_pcd_To_pgm)
+[4.675s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(test_pcd_To_pgm)
+[4.676s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm' for CMake module files
+[4.676s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm' for CMake config files
+[4.676s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_pcd_To_pgm', 'cmake_prefix_path')
+[4.676s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/hook/cmake_prefix_path.ps1'
+[4.676s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/hook/cmake_prefix_path.dsv'
+[4.677s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/hook/cmake_prefix_path.sh'
+[4.677s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/lib'
+[4.677s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/bin'
+[4.677s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/lib/pkgconfig/test_pcd_To_pgm.pc'
+[4.677s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/lib/python3.10/site-packages'
+[4.677s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/bin'
+[4.677s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.ps1'
+[4.678s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.dsv'
+[4.678s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.sh'
+[4.678s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.bash'
+[4.679s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.zsh'
+[4.679s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/colcon-core/packages/test_pcd_To_pgm)
+[4.825s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(test_ros_health)
+[4.826s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health' for CMake module files
+[4.826s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health
+[4.827s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health' for CMake config files
+[4.827s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_ros_health', 'cmake_prefix_path')
+[4.827s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/hook/cmake_prefix_path.ps1'
+[4.828s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/hook/cmake_prefix_path.dsv'
+[4.828s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/hook/cmake_prefix_path.sh'
+[4.829s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/lib'
+[4.829s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/bin'
+[4.829s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/lib/pkgconfig/test_ros_health.pc'
+[4.829s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/lib/python3.10/site-packages'
+[4.830s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/bin'
+[4.830s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.ps1'
+[4.830s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.dsv'
+[4.831s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.sh'
+[4.831s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.bash'
+[4.831s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.zsh'
+[4.831s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/colcon-core/packages/test_ros_health)
+[4.832s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(test_ros_health)
+[4.832s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health' for CMake module files
+[4.832s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health' for CMake config files
+[4.832s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_ros_health', 'cmake_prefix_path')
+[4.833s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/hook/cmake_prefix_path.ps1'
+[4.834s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/hook/cmake_prefix_path.dsv'
+[4.834s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/hook/cmake_prefix_path.sh'
+[4.835s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/lib'
+[4.835s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/bin'
+[4.835s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/lib/pkgconfig/test_ros_health.pc'
+[4.836s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/lib/python3.10/site-packages'
+[4.836s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/bin'
+[4.837s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.ps1'
+[4.837s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.dsv'
+[4.838s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.sh'
+[4.838s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.bash'
+[4.838s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.zsh'
+[4.839s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/colcon-core/packages/test_ros_health)
+[7.794s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save -- -j16 -l16
+[7.795s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save
+[7.875s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime -- -j16 -l16
+[7.876s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime
+[7.923s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(test_livox_build_pcd_save)
+[7.924s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save' for CMake module files
+[7.924s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save
+[7.924s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save' for CMake config files
+[7.924s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_livox_build_pcd_save', 'cmake_prefix_path')
+[7.924s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/hook/cmake_prefix_path.ps1'
+[7.925s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/hook/cmake_prefix_path.dsv'
+[7.925s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/hook/cmake_prefix_path.sh'
+[7.925s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/lib'
+[7.925s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/bin'
+[7.925s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/lib/pkgconfig/test_livox_build_pcd_save.pc'
+[7.925s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/lib/python3.10/site-packages'
+[7.925s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/bin'
+[7.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.ps1'
+[7.926s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.dsv'
+[7.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.sh'
+[7.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.bash'
+[7.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.zsh'
+[7.926s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/colcon-core/packages/test_livox_build_pcd_save)
+[7.927s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(test_livox_build_pcd_save)
+[7.927s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save' for CMake module files
+[7.927s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save' for CMake config files
+[7.927s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_livox_build_pcd_save', 'cmake_prefix_path')
+[7.927s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/hook/cmake_prefix_path.ps1'
+[7.928s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/hook/cmake_prefix_path.dsv'
+[7.928s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/hook/cmake_prefix_path.sh'
+[7.928s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/lib'
+[7.928s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/bin'
+[7.928s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/lib/pkgconfig/test_livox_build_pcd_save.pc'
+[7.928s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/lib/python3.10/site-packages'
+[7.928s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/bin'
+[7.929s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.ps1'
+[7.929s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.dsv'
+[7.929s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.sh'
+[7.929s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.bash'
+[7.929s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.zsh'
+[7.930s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_livox_build_pcd_save/share/colcon-core/packages/test_livox_build_pcd_save)
+[7.984s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(test_draw_pgm_realtime)
+[7.984s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime' for CMake module files
+[7.984s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_draw_pgm_realtime
+[7.985s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime' for CMake config files
+[7.985s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_draw_pgm_realtime', 'cmake_prefix_path')
+[7.985s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/hook/cmake_prefix_path.ps1'
+[7.986s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/hook/cmake_prefix_path.dsv'
+[7.986s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/hook/cmake_prefix_path.sh'
+[7.986s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/lib'
+[7.986s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/bin'
+[7.987s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/lib/pkgconfig/test_draw_pgm_realtime.pc'
+[7.987s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/lib/python3.10/site-packages'
+[7.987s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/bin'
+[7.987s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.ps1'
+[7.988s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.dsv'
+[7.988s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.sh'
+[7.988s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.bash'
+[7.989s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.zsh'
+[7.989s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/colcon-core/packages/test_draw_pgm_realtime)
+[7.989s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(test_draw_pgm_realtime)
+[7.989s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime' for CMake module files
+[7.989s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime' for CMake config files
+[7.989s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_draw_pgm_realtime', 'cmake_prefix_path')
+[7.990s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/hook/cmake_prefix_path.ps1'
+[7.990s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/hook/cmake_prefix_path.dsv'
+[7.990s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/hook/cmake_prefix_path.sh'
+[7.990s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/lib'
+[7.990s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/bin'
+[7.990s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/lib/pkgconfig/test_draw_pgm_realtime.pc'
+[7.990s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/lib/python3.10/site-packages'
+[7.991s] Level 1:colcon.colcon_core.environment:checking '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/bin'
+[7.991s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.ps1'
+[7.991s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.dsv'
+[7.991s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.sh'
+[7.991s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.bash'
+[7.992s] INFO:colcon.colcon_core.shell:Creating package script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.zsh'
+[7.992s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_draw_pgm_realtime/share/colcon-core/packages/test_draw_pgm_realtime)
+[7.992s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[7.992s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[7.992s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[7.992s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[7.997s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.998s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.998s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[8.005s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[8.005s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/local_setup.ps1'
+[8.006s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/_local_setup_util_ps1.py'
+[8.006s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/setup.ps1'
+[8.007s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/local_setup.sh'
+[8.007s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/_local_setup_util_sh.py'
+[8.007s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/setup.sh'
+[8.008s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/local_setup.bash'
+[8.008s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/setup.bash'
+[8.009s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/local_setup.zsh'
+[8.009s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/setup.zsh'

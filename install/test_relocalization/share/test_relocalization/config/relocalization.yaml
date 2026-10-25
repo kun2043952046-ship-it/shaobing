@@ -1,0 +1,108 @@
+/**:
+    ros__parameters:
+        # ---- 点云输入 / 里程计 (FAST-LIO) ----
+        cloud_topic: /cloud_registered
+        odom_topic: /Odometry
+
+        # ---- 栅格几何 ----
+        resolution: 0.03
+        xmin: -20.0
+        ymin: -20.0
+        xmax: 20.0
+        ymax: 20.0
+        zmin: -2.25
+        zmax: 0.22
+        dilate: 1
+        # 静态基准图膨胀量 (-1 = 沿用 dilate)
+        baseline_dilate: -1
+        # 车体自过滤正方形边长 (m)
+        self_filter_size: 1.0
+        # "车体中心 -> 雷达原点"平移 (车体系), 自过滤方框用
+        base_to_lidar_x: -0.239
+        base_to_lidar_y: 0.158
+
+        # ---- 渲染 ----
+        render_period_ms: 150
+        image_topic: /realtime_pgm/image
+        history_image_topic: /realtime_pgm/image_history
+        output: /tmp/realtime_map.pgm
+        history_output: /tmp/realtime_map_history.pgm
+        history_duration: 300.0
+        history_max_points_per_frame: 5000
+        history_min_hits: 2
+        cloud_preview_topic: /realtime_pgm/cloud
+        cloud_preview_max_points: 15000
+
+        # ---- 锁定历史累计图 (冻结静态基准, 重定位配准的参照) ----
+        # true 后: 历史图冻结 + estimatePoseCorrection 以其为基准输出
+        #   /pose_correction (map->odom) —— 后续重定位开发的基线行为。
+        dynamic_obstacle_enabled: false
+
+        # ---- 位姿修正 (锁定后生效) ----
+        # 评分容差固定为"基准膨胀 + 1 格"(无需配置), 搜索步长 0.2 m + 格级细化
+        # 本节点自带的 2D 栅格配准修正开关: launch 中设为 false, 修正交由
+        #   3D 重定位节点 (relocalization_3d) 承担; 独立运行本节点时保持 true。
+        apply_pose_correction: true
+        pose_correction_topic: /pose_correction
+        pose_correction_global_period_sec: 1.0
+        pose_correction_global_range_m: 15.0
+        pose_correction_local_range_m: 1.0
+        pose_correction_score_min: 0.12
+        # 单帧校正变化上限 (m): 由 1.5 收紧到 0.3, 防止一次误估把点云搬走 1.5 m
+        pose_correction_max_delta_m: 0.3
+        # 时序滤波: EMA 平滑系数 (1=不平滑) / 滞回增益阈值 (新解须超过当前解多少分)
+        pose_correction_ema_alpha: 0.5
+        pose_correction_score_gain: 0.05
+        # 全局兜底搜索: 局部连续失败达该帧数才触发 (抑制错误锁死)
+        pose_correction_global_trigger_fails: 5
+
+        # ---- 历史图导出 / 导入 (先验地图接口) ----
+        # 默认落在包内 prior_map/ (随工程保存, 重启不丢); launch 可用
+        #   prior_map_dir:=<路径> 覆盖, 且会自动同步给 3D 节点的 prior_map_path。
+        export_map_dir: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_relocalization/prior_map
+        export_map_name: map_export.zip
+        # 导出 map.pcd 时的体素降采样边长 (m): 0.05 兼顾体积与精度,
+        #   <=0 表示原样导出 (300 s 历史最多可达 1500 万点, 文件极大)
+        export_pcd_voxel: 0.05
+        import_map_dir: /tmp/pgm_import
+
+        # ---- 3D 重定位 (relocalization_3d 节点) ----
+        # 先验地图 = 网页"锁定基准"导出的 map_clouds.bin (mtime 轮询自动重载,
+        #   重新锁定覆盖导出即自动重定位)。enabled 由网页锁定/解锁同步设置,
+        #   rate_hz 可网页热调 (默认 2 Hz: 单次 GICP 需 < 周期 50% 才不堆积)。
+        relocalization_3d:
+          ros__parameters:
+            cloud_topic: /cloud_registered
+            prior_map_path: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_relocalization/prior_map/map_clouds.bin
+            map_poll_period_sec: 1.0
+            enabled: false
+            rate_hz: 2.0
+            source_voxel: 0.2
+            target_voxel: 0.2
+            source_max_points: 8000
+            gicp_max_corr_dist: 2.0
+            gicp_max_iter: 50
+            # 接受门限: fitness (均方对应距离, m) 超此值即拒绝本次结果
+            gicp_fitness_max: 1.0
+            # 单次修正跳变上限 (m), 防误匹配搬飞; EMA 平滑 (1=不平滑)
+            correction_max_delta_m: 1.0
+            ema_alpha: 0.5
+            pose_correction_topic: /pose_correction
+            fitness_topic: /relocalization_3d/fitness
+            map_frame: map
+            odom_frame: camera_init
+            broadcast_tf: true
+
+        # ---- 调试日志 / 异常快照 ----
+        debug_log_enabled: true
+        debug_log_dir: log
+        debug_pcd_enabled: true
+        debug_pcd_max_files: 200
+        debug_cloud_count_jump_ratio: 3.0
+        debug_cloud_count_jump_delta: 20000
+        debug_centroid_jump_m: 1.5
+        debug_odom_jump_m: 0.5
+        debug_odom_jump_yaw_deg: 30.0
+        # 位姿跳变"拒绝窗口" (s): 检出跳变后该时长内的点云帧一律丢弃
+        pose_jump_reject_sec: 0.8
+        debug_occ_ratio_jump: 0.15

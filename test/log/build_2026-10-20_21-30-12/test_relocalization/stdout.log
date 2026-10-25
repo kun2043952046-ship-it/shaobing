@@ -1,0 +1,56 @@
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Found tf2_ros: 0.25.17 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_relocalization
+Consolidate compiler generated dependencies of target test_relocalization_node
+Consolidate compiler generated dependencies of target relocalization_3d
+[ 50%] Built target test_relocalization_node
+[ 75%] Building CXX object CMakeFiles/relocalization_3d.dir/src/relocalization_3d_node.cpp.o
+[100%] Linking CXX executable relocalization_3d
+[100%] Built target relocalization_3d
+-- Install configuration: "Release"
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/lib/test_relocalization/test_relocalization_node
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/lib/test_relocalization/relocalization_3d
+-- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/lib/test_relocalization/relocalization_3d" to ""
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/launch
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/launch/relocalization.launch.py
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/config
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/config/relocalization.yaml
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/lib/test_relocalization/relocalization_viewer.py
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/ament_index/resource_index/package_run_dependencies/test_relocalization
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/ament_index/resource_index/parent_prefix_path/test_relocalization
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/environment/ament_prefix_path.sh
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/environment/path.sh
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/environment/path.dsv
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/local_setup.bash
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/local_setup.sh
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/local_setup.zsh
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/local_setup.dsv
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/package.dsv
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/ament_index/resource_index/packages/test_relocalization
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/cmake/test_relocalizationConfig.cmake
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/cmake/test_relocalizationConfig-version.cmake
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_relocalization/share/test_relocalization/package.xml

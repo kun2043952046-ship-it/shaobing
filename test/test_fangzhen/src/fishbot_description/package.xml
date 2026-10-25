@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>fishbot_description</name>
+  <version>0.0.0</version>
+  <description>shaobing 机器人 URDF 模型 + Gazebo 仿真 + RViz 查看 + SLAM 建图（不含导航）</description>
+  <maintainer email="sk@todo.todo">sk</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- 模型加载 / RViz 查看 -->
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <depend>tf2_ros</depend>
+
+  <!-- 3D 重定位节点 (仿真侧副本, 迁自 test_relocalization) -->
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>pcl_conversions</depend>
+  <depend>libpcl-all-dev</depend>
+
+  <!-- Gazebo 仿真 + ros2_control -->
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>diff_drive_controller</exec_depend>
+  <exec_depend>joint_state_broadcaster</exec_depend>
+  <exec_depend>teleop_twist_keyboard</exec_depend>
+
+  <!-- 建图：点云转 2D 扫描 + slam_toolbox -->
+  <exec_depend>pointcloud_to_laserscan</exec_depend>
+  <exec_depend>slam_toolbox</exec_depend>
+  <!-- 仅用 map_saver_cli 把建好的地图存成 pgm/yaml，不启动任何导航节点 -->
+  <exec_depend>nav2_map_server</exec_depend>
+
+  <!-- 导航 (navigation.launch.py): Nav2 栈, map->odom 由 relocalization_3d 提供 -->
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>nav2_controller</exec_depend>
+  <exec_depend>nav2_planner</exec_depend>
+  <exec_depend>nav2_bt_navigator</exec_depend>
+  <exec_depend>nav2_behaviors</exec_depend>
+  <exec_depend>nav2_smoother</exec_depend>
+  <exec_depend>nav2_waypoint_follower</exec_depend>
+  <exec_depend>nav2_velocity_smoother</exec_depend>
+  <exec_depend>nav2_costmap_2d</exec_depend>
+  <exec_depend>dwb_core</exec_depend>
+
+  <!-- 工具脚本 -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs_py</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

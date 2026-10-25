@@ -1,0 +1,94 @@
+[0.000000] (-) TimerEvent: {}
+[0.000242] (-) JobUnselected: {'identifier': 'test_CAN'}
+[0.000504] (-) JobUnselected: {'identifier': 'test_livox_build_pcd_save'}
+[0.000516] (-) JobUnselected: {'identifier': 'test_pcd_To_pgm'}
+[0.000605] (-) JobUnselected: {'identifier': 'test_ros_health'}
+[0.000697] (test_draw_pgm_realtime) JobQueued: {'identifier': 'test_draw_pgm_realtime', 'dependencies': OrderedDict()}
+[0.000710] (test_draw_pgm_realtime) JobStarted: {'identifier': 'test_draw_pgm_realtime'}
+[0.005841] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'cmake'}
+[0.006179] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'build'}
+[0.006555] (test_draw_pgm_realtime) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', '--', '-j16', '-l16'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:en'), ('USER', 'lele'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio/lib:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '2806'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=aa332d2ed1506c5845f362c96ab4cc35'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/lele/source_code_from_git/ws_livox/install:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'lele'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/opt/ros/humble/bin:/home/lele/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('SESSION_MANAGER', 'local/hero:@/tmp/.ICE-unix/2806,unix/hero:/tmp/.ICE-unix/2806'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/4809cde3_9606_40b0_8d1e_eb8a6b51a08f'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.Y6V0V3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.81'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_ros_health:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime:/home/lele/source_code_from_git/ws_livox/install/fast_lio:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CLUTTER_IM_MODULE', 'xim'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=aa332d2ed1506c5845f362c96ab4cc35'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio/local/lib/python3.10/dist-packages:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_ros_health:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save:/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime:/home/lele/source_code_from_git/ws_livox/install/fast_lio:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib')]), 'shell': False}
+[0.054975] (test_draw_pgm_realtime) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o\x1b[0m\n'}
+[0.099867] (-) TimerEvent: {}
+[0.200354] (-) TimerEvent: {}
+[0.300619] (-) TimerEvent: {}
+[0.400947] (-) TimerEvent: {}
+[0.501291] (-) TimerEvent: {}
+[0.601827] (-) TimerEvent: {}
+[0.702170] (-) TimerEvent: {}
+[0.802513] (-) TimerEvent: {}
+[0.902839] (-) TimerEvent: {}
+[1.003221] (-) TimerEvent: {}
+[1.103611] (-) TimerEvent: {}
+[1.203954] (-) TimerEvent: {}
+[1.304412] (-) TimerEvent: {}
+[1.404735] (-) TimerEvent: {}
+[1.505046] (-) TimerEvent: {}
+[1.605387] (-) TimerEvent: {}
+[1.705719] (-) TimerEvent: {}
+[1.715435] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid RealtimePgmNode::subtractBaseline(const std::vector<RealtimePgmNode::Point>&, std::vector<RealtimePgmNode::Point>&) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.715817] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:852:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbinding reference of type \xe2\x80\x98\x1b[01m\x1b[Kstd::lock_guard<std::mutex>::mutex_type&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstd::mutex&\x1b[m\x1b[K\xe2\x80\x99} to \xe2\x80\x98\x1b[01m\x1b[Kconst std::mutex\x1b[m\x1b[K\xe2\x80\x99 discards qualifiers\n'}
+[1.715909] (test_draw_pgm_realtime) StderrLine: {'line': b'  852 |       std::lock_guard<std::mutex> lock(\x1b[01;31m\x1b[Kconfig_mutex_\x1b[m\x1b[K);\n'}
+[1.715944] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.715975] (test_draw_pgm_realtime) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/mutex:43\x1b[m\x1b[K,\n'}
+[1.716005] (test_draw_pgm_realtime) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:13\x1b[m\x1b[K:\n'}
+[1.716047] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/std_mutex.h:228:39:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  initializing argument 1 of \xe2\x80\x98\x1b[01m\x1b[Kstd::lock_guard<_Mutex>::lock_guard(std::lock_guard<_Mutex>::mutex_type&) [with _Mutex = std::mutex; std::lock_guard<_Mutex>::mutex_type = std::mutex]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.716096] (test_draw_pgm_realtime) StderrLine: {'line': b'  228 |       explicit lock_guard(\x1b[01;36m\x1b[Kmutex_type& __m\x1b[m\x1b[K) : _M_device(__m)\n'}
+[1.716125] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[1.716170] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:856:24:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kpassing \xe2\x80\x98\x1b[01m\x1b[Kconst RealtimePgmNode\x1b[m\x1b[K\xe2\x80\x99 as \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 argument discards qualifiers [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.716203] (test_draw_pgm_realtime) StderrLine: {'line': b'  856 |     if (!\x1b[01;31m\x1b[KcomputeMapSize(config, width, height)\x1b[m\x1b[K) {\n'}
+[1.716231] (test_draw_pgm_realtime) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.716259] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2332:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  in call to \xe2\x80\x98\x1b[01m\x1b[Kbool RealtimePgmNode::computeMapSize(const RealtimePgmNode::Config&, int&, int&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.716289] (test_draw_pgm_realtime) StderrLine: {'line': b' 2332 |   bool \x1b[01;36m\x1b[KcomputeMapSize\x1b[m\x1b[K(const Config & config, int & width, int & height)\n'}
+[1.716316] (test_draw_pgm_realtime) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.716343] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:862:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kbinding reference of type \xe2\x80\x98\x1b[01m\x1b[Kstd::lock_guard<std::mutex>::mutex_type&\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kstd::mutex&\x1b[m\x1b[K\xe2\x80\x99} to \xe2\x80\x98\x1b[01m\x1b[Kconst std::mutex\x1b[m\x1b[K\xe2\x80\x99 discards qualifiers\n'}
+[1.716372] (test_draw_pgm_realtime) StderrLine: {'line': b'  862 |       std::lock_guard<std::mutex> lock(\x1b[01;31m\x1b[Kdynamic_mutex_\x1b[m\x1b[K);\n'}
+[1.716399] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.716429] (test_draw_pgm_realtime) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/mutex:43\x1b[m\x1b[K,\n'}
+[1.716456] (test_draw_pgm_realtime) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:13\x1b[m\x1b[K:\n'}
+[1.716485] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/std_mutex.h:228:39:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  initializing argument 1 of \xe2\x80\x98\x1b[01m\x1b[Kstd::lock_guard<_Mutex>::lock_guard(std::lock_guard<_Mutex>::mutex_type&) [with _Mutex = std::mutex; std::lock_guard<_Mutex>::mutex_type = std::mutex]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.716514] (test_draw_pgm_realtime) StderrLine: {'line': b'  228 |       explicit lock_guard(\x1b[01;36m\x1b[Kmutex_type& __m\x1b[m\x1b[K) : _M_device(__m)\n'}
+[1.716542] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[1.805793] (-) TimerEvent: {}
+[1.906122] (-) TimerEvent: {}
+[2.006472] (-) TimerEvent: {}
+[2.106845] (-) TimerEvent: {}
+[2.207229] (-) TimerEvent: {}
+[2.307836] (-) TimerEvent: {}
+[2.408434] (-) TimerEvent: {}
+[2.508910] (-) TimerEvent: {}
+[2.609468] (-) TimerEvent: {}
+[2.709822] (-) TimerEvent: {}
+[2.810231] (-) TimerEvent: {}
+[2.910703] (-) TimerEvent: {}
+[3.011088] (-) TimerEvent: {}
+[3.111678] (-) TimerEvent: {}
+[3.212354] (-) TimerEvent: {}
+[3.312745] (-) TimerEvent: {}
+[3.413422] (-) TimerEvent: {}
+[3.514802] (-) TimerEvent: {}
+[3.615203] (-) TimerEvent: {}
+[3.715574] (-) TimerEvent: {}
+[3.816013] (-) TimerEvent: {}
+[3.916580] (-) TimerEvent: {}
+[4.017139] (-) TimerEvent: {}
+[4.117866] (-) TimerEvent: {}
+[4.218444] (-) TimerEvent: {}
+[4.318993] (-) TimerEvent: {}
+[4.419356] (-) TimerEvent: {}
+[4.519816] (-) TimerEvent: {}
+[4.620121] (-) TimerEvent: {}
+[4.720537] (-) TimerEvent: {}
+[4.820922] (-) TimerEvent: {}
+[4.921257] (-) TimerEvent: {}
+[5.021634] (-) TimerEvent: {}
+[5.122018] (-) TimerEvent: {}
+[5.222393] (-) TimerEvent: {}
+[5.322725] (-) TimerEvent: {}
+[5.423155] (-) TimerEvent: {}
+[5.458156] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_draw_pgm_realtime_node.dir/build.make:76\xef\xbc\x9aCMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[5.458363] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137\xef\xbc\x9aCMakeFiles/test_draw_pgm_realtime_node.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[5.458457] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[5.459967] (test_draw_pgm_realtime) CommandEnded: {'returncode': 2}
+[5.466846] (test_draw_pgm_realtime) JobEnded: {'identifier': 'test_draw_pgm_realtime', 'rc': 2}
+[5.477657] (-) EventReactorShutdown: {}

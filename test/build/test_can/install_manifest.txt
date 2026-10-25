@@ -1,0 +1,16 @@
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/lib/test_can/test_can_node
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/ament_index/resource_index/package_run_dependencies/test_can
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/ament_index/resource_index/parent_prefix_path/test_can
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/environment/ament_prefix_path.sh
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/environment/ament_prefix_path.dsv
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/environment/path.sh
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/environment/path.dsv
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/local_setup.bash
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/local_setup.sh
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/local_setup.zsh
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/local_setup.dsv
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/package.dsv
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/ament_index/resource_index/packages/test_can
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/cmake/test_canConfig.cmake
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/cmake/test_canConfig-version.cmake
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_can/share/test_can/package.xml

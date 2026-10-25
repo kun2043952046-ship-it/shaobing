@@ -1,0 +1,138 @@
+[0.005s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16
+[0.025s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.129s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.135s] -- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+[0.154s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.155s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.159s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.164s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.172s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.192s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.193s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.258s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.287s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.303s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.313s] -- Found nav2_msgs: 1.1.20 (/opt/ros/humble/share/nav2_msgs/cmake)
+[0.349s] -- Checking for module 'eigen3'
+[0.357s] --   Found eigen3, version 3.4.0
+[0.378s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[0.378s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.391s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization 
+[0.427s] -- Checking for module 'libusb-1.0'
+[0.434s] --   Found libusb-1.0, version 1.0.25
+[0.454s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[0.455s] -- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") 
+[0.455s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.487s] -- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") 
+[0.487s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.487s] ** WARNING ** io features related to pcap will be disabled
+[0.487s] ** WARNING ** io features related to png will be disabled
+[0.509s] -- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  
+[0.512s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX 
+[0.614s] -- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") 
+[0.615s] -- Found MPI: TRUE (found version "3.1") found components: C 
+[0.616s] -- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") 
+[0.623s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+[0.636s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
+[0.646s] -- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") 
+[0.697s] -- Found X11: /usr/include   
+[0.697s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[0.742s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[0.742s] -- Looking for gethostbyname
+[0.789s] -- Looking for gethostbyname - found
+[0.789s] -- Looking for connect
+[0.837s] -- Looking for connect - found
+[0.837s] -- Looking for remove
+[0.879s] -- Looking for remove - found
+[0.879s] -- Looking for shmat
+[0.921s] -- Looking for shmat - found
+[0.921s] -- Looking for IceConnectionNumber in ICE
+[0.965s] -- Looking for IceConnectionNumber in ICE - found
+[1.015s] -- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") 
+[1.016s] -- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  
+[1.017s] -- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") 
+[1.018s] -- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") 
+[1.029s] -- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") 
+[1.032s] -- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  
+[1.034s] -- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") 
+[1.037s] -- Found utf8cpp: /usr/include/utf8cpp  
+[1.058s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.067s] -- Checking for module 'flann'
+[1.076s] --   Found flann, version 1.9.1
+[1.101s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[1.101s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[1.262s] -- looking for PCL_COMMON
+[1.263s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[1.263s] -- looking for PCL_OCTREE
+[1.264s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[1.264s] -- looking for PCL_IO
+[1.264s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[1.264s] -- looking for PCL_SEARCH
+[1.265s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[1.265s] -- looking for PCL_SAMPLE_CONSENSUS
+[1.265s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[1.265s] -- looking for PCL_FILTERS
+[1.266s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[1.266s] -- looking for PCL_KDTREE
+[1.266s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[1.266s] -- looking for PCL_2D
+[1.266s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[1.267s] -- looking for PCL_FEATURES
+[1.267s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+[1.267s] -- looking for PCL_REGISTRATION
+[1.268s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+[1.268s] -- Found PCL: pcl_common;pcl_octree;pcl_io;pcl_search;pcl_sample_consensus;pcl_filters;pcl_kdtree;pcl_features;pcl_registration;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN  
+[1.269s] -- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+[1.290s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.347s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.347s] -- Configured cppcheck include dirs: 
+[1.347s] -- Configured cppcheck exclude dirs and/or files: 
+[1.347s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.347s] -- Added test 'lint_cmake' to check CMake code style
+[1.348s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.348s] -- Added test 'uncrustify' to check C / C++ code style
+[1.348s] -- Configured uncrustify additional arguments: 
+[1.348s] -- Added test 'xmllint' to check XML markup files
+[1.349s] -- Configuring done
+[1.368s] -- Generating done
+[1.372s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime
+[1.396s] Consolidate compiler generated dependencies of target test_draw_pgm_realtime_node
+[1.401s] [ 25%] Building CXX object CMakeFiles/pose_localization_node.dir/src/pose_localization_node.cpp.o
+[1.404s] [ 50%] Building CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o
+[5.168s] /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp: In member function ‘double PoseLocalizationNode::computeInlierRatio(const CloudT&, const Matrix4f&) const’:
+[5.168s] /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:412:26: error: no matching function for call to ‘transformPoint(const pcl::PointXYZ&, {anonymous}::PointT&, const Matrix4f&)’
+[5.168s]   412 |       pcl::transformPoint(point, transformed, transform);
+[5.168s]       |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[5.168s] In file included from /usr/include/pcl-1.12/pcl/common/transforms.h:45,
+[5.168s]                  from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:60:
+[5.168s] /usr/include/pcl-1.12/pcl/common/eigen.h:389:3: note: candidate: ‘template<class Scalar> void pcl::transformPoint(const Eigen::Matrix<Type, 3, 1>&, Eigen::Matrix<Type, 3, 1>&, const Eigen::Transform<NewScalarType, 3, 2, 0>&)’
+[5.168s]   389 |   transformPoint (const Eigen::Matrix<Scalar, 3, 1> &point_in,
+[5.168s]       |   ^~~~~~~~~~~~~~
+[5.169s] /usr/include/pcl-1.12/pcl/common/eigen.h:389:3: note:   template argument deduction/substitution failed:
+[5.169s] /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:412:26: note:   ‘const pcl::PointXYZ’ is not derived from ‘const Eigen::Matrix<Type, 3, 1>’
+[5.169s]   412 |       pcl::transformPoint(point, transformed, transform);
+[5.169s]       |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[5.169s] In file included from /usr/include/pcl-1.12/pcl/common/transforms.h:493,
+[5.169s]                  from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:60:
+[5.169s] /usr/include/pcl-1.12/pcl/common/impl/transforms.hpp:435:1: note: candidate: ‘template<class PointT, class Scalar> PointT pcl::transformPoint(const PointT&, const Eigen::Transform<Scalar, 3, 2>&)’
+[5.169s]   435 | transformPoint (const PointT &point, const Eigen::Transform<Scalar, 3, Eigen::Affine> &transform)
+[5.169s]       | ^~~~~~~~~~~~~~
+[5.169s] /usr/include/pcl-1.12/pcl/common/impl/transforms.hpp:435:1: note:   template argument deduction/substitution failed:
+[5.169s] /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:412:26: note:   ‘{anonymous}::PointT’ {aka ‘pcl::PointXYZ’} is not derived from ‘const Eigen::Transform<Scalar, 3, 2>’
+[5.169s]   412 |       pcl::transformPoint(point, transformed, transform);
+[5.169s]       |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[5.169s] In file included from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:60:
+[5.169s] /usr/include/pcl-1.12/pcl/common/transforms.h:451:3: note: candidate: ‘template<class PointT> PointT pcl::transformPoint(const PointT&, const Affine3f&)’
+[5.169s]   451 |   transformPoint (const PointT &point,
+[5.169s]       |   ^~~~~~~~~~~~~~
+[5.169s] /usr/include/pcl-1.12/pcl/common/transforms.h:451:3: note:   template argument deduction/substitution failed:
+[5.169s] /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:412:26: note:   candidate expects 2 arguments, 3 provided
+[5.169s]   412 |       pcl::transformPoint(point, transformed, transform);
+[5.169s]       |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[13.900s] [ 75%] Linking CXX executable test_draw_pgm_realtime_node
+[14.009s] gmake[2]: *** [CMakeFiles/pose_localization_node.dir/build.make:76：CMakeFiles/pose_localization_node.dir/src/pose_localization_node.cpp.o] 错误 1
+[14.009s] gmake[1]: *** [CMakeFiles/Makefile2:165：CMakeFiles/pose_localization_node.dir/all] 错误 2
+[14.009s] gmake[1]: *** 正在等待未完成的任务....
+[14.537s] [ 75%] Built target test_draw_pgm_realtime_node
+[14.537s] gmake: *** [Makefile:146：all] 错误 2
+[14.538s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16

@@ -1,0 +1,23 @@
+# 1. 进入工作空间根目录（即包含 test/ 的 Navigation 目录，
+#    你现有的 Navigation/build 目录说明之前就是在这里编译的）
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation
+
+# 2. 只编译这一个包
+colcon build --packages-select test_pcd_To_pgm
+
+# 3. 加载环境
+source install/setup.bash
+
+# 4. 运行转换（示例：0.05m 分辨率，保留 0.1~2m 高度的点，障碍膨胀 2 像素）
+ros2 run test_pcd_To_pgm pcd_to_pgm \
+  -i /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/map_20260906_183536.pcd \
+  -o /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/map.pgm \
+  -r 0.05 --zmin -0.5 --zmax 1 --dilate 2
+
+ros2 run test_pcd_To_pgm pcd_to_pgm \
+  -i /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/map_20260906_183536.pcd \
+  -o /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test.pgm \
+  -r 0.05 \
+  --zmin -100.0 \
+  --zmax 100.0
+

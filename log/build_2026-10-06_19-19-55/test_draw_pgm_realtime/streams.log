@@ -1,0 +1,15 @@
+[0.007s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16
+[0.066s] [35m[1mConsolidate compiler generated dependencies of target test_draw_pgm_realtime_node[0m
+[0.089s] [ 50%] [32mBuilding CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o[0m
+[1.951s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:[m[K In member function ‘[01m[Kvoid RealtimePgmNode::cloudCallback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.951s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1209:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst class rclcpp::Time[m[K’ has no member named ‘[01m[Ksec[m[K’
+[1.951s]  1209 |         static_cast<double>(cloud_stamp.[01;31m[Ksec[m[K) +
+[1.951s]       |                                         [01;31m[K^~~[m[K
+[1.952s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1210:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst class rclcpp::Time[m[K’ has no member named ‘[01m[Knanosec[m[K’; did you mean ‘[01m[Knanoseconds[m[K’?
+[1.952s]  1210 |         static_cast<double>(cloud_stamp.[01;31m[Knanosec[m[K) * 1e-9;
+[1.952s]       |                                         [01;31m[K^~~~~~~[m[K
+[1.952s]       |                                         [32m[Knanoseconds[m[K
+[6.683s] gmake[2]: *** [CMakeFiles/test_draw_pgm_realtime_node.dir/build.make:76：CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o] 错误 1
+[6.683s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/test_draw_pgm_realtime_node.dir/all] 错误 2
+[6.683s] gmake: *** [Makefile:146：all] 错误 2
+[6.684s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16

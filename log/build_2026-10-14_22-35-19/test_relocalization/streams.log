@@ -1,0 +1,33 @@
+[0.006s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization -- -j16 -l16
+[0.046s] [ 25%] Building CXX object CMakeFiles/test_relocalization_node.dir/src/test_relocalization_node.cpp.o
+[0.046s] Consolidate compiler generated dependencies of target relocalization_3d
+[0.061s] [ 75%] Built target relocalization_3d
+[7.016s] [100%] Linking CXX executable test_relocalization_node
+[7.352s] [100%] Built target test_relocalization_node
+[7.359s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization -- -j16 -l16
+[7.365s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization
+[7.369s] -- Install configuration: ""
+[7.369s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/lib/test_relocalization/test_relocalization_node
+[7.374s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/lib/test_relocalization/test_relocalization_node" to ""
+[7.374s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/lib/test_relocalization/relocalization_3d
+[7.374s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/launch
+[7.374s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/launch/relocalization.launch.py
+[7.374s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/config
+[7.374s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/config/relocalization.yaml
+[7.374s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/lib/test_relocalization/relocalization_viewer.py
+[7.374s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/ament_index/resource_index/package_run_dependencies/test_relocalization
+[7.374s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/ament_index/resource_index/parent_prefix_path/test_relocalization
+[7.374s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/environment/ament_prefix_path.sh
+[7.374s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/environment/ament_prefix_path.dsv
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/environment/path.sh
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/environment/path.dsv
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/local_setup.bash
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/local_setup.sh
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/local_setup.zsh
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/local_setup.dsv
+[7.375s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/package.dsv
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/ament_index/resource_index/packages/test_relocalization
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/cmake/test_relocalizationConfig.cmake
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/cmake/test_relocalizationConfig-version.cmake
+[7.375s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/package.xml
+[7.376s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization

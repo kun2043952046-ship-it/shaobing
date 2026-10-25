@@ -1,0 +1,9 @@
+[100%] Built target test_relocalization_node
+-- Install configuration: ""
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/lib/test_relocalization/test_relocalization_node
+CMake Error at cmake_install.cmake:66 (file):
+  file INSTALL cannot find
+  "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_relocalization/launch":
+  No such file or directory.
+
+

@@ -1,0 +1,74 @@
+/**:
+    ros__parameters:
+        # ---- 3D 重定位 (仿真侧副本, 迁自 test_relocalization) ----
+        # 输入: odom 系点云 (/cloud_registered, 与 FAST-LIO 输出同名同语义)。
+        #   传感器系的 /livox/lidar 先经 cloud_to_odom.py 变换过来, launch 里默认拉起
+        cloud_topic: /cloud_registered
+        # 先验地图: 仿真场地 PCD (工作空间根目录 map.pcd, mtime 轮询自动重载)
+        prior_map_path: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/map.pcd
+        map_poll_period_sec: 1.0
+        # 门控 / 频率: 仿真里没有网页"锁定基准"流程, 默认直接开启
+        enabled: true
+        rate_hz: 1.0
+        # ---- 点云预处理 ----
+        source_voxel: 0.2
+        target_voxel: 0.2
+        source_max_points: 8000
+        # 范围过滤 (m): 丢弃超此距离的点。Gazebo gpu_ray 对"没打到东西"的射线
+        #   补 40 m 假点, 不过滤会把 fitness 拉到 180+, 正确位姿被门限误杀
+        source_range_max: 20.0
+        # ---- GICP ----
+        gicp_max_corr_dist: 2.0
+        gicp_max_iter: 50
+        # 接受门限 (口径: 只统计 max_corr_dist 内的对应点)
+        #   gicp_fitness_max  = 截断均方对应距离 (m^2)
+        #   fitness_inlier_min = 内点比例下限
+        gicp_fitness_max: 2.0
+        fitness_inlier_min: 0.3
+        # 单次修正跳变上限 (m), 防误匹配搬飞; EMA 平滑 (1=不平滑)
+        # 实际门限 = max(correction_max_delta_m, correction_max_speed_mps * 帧间隔)
+        correction_max_delta_m: 1.0
+        correction_max_speed_mps: 2.0
+        # 里程计补偿: 仅在"点云在传感器系、输出是绝对位姿"时打开;
+        #   本配置点云已在 odom 系 (输出即 map->odom 修正量), 保持 false
+        compensate_odom: false
+        odom_topic: /odom
+        ema_alpha: 0.5
+        # ---- 初始位姿猜测 (上电 / 全局定位交接时注入) ----
+        # 语义: odom 系原点在 map 系下的位姿, 也就是 map->odom 的初值。
+        #   仿真出生点就是 gazebo_sim_launch.py 的 -x -5.0 -y 3.0 -Y -1.5708,
+        #   差速底盘 odom 从 (0,0,0) 起步, 因此这里必须是 (-5.0, 3.0, -90°)。
+        #   若保持 0/0/0, GICP 会假设"机器人在 map 原点", 与真实出生点相差
+        #   5.8 m (超出收敛域) -> 配准失败 -> map->odom 恒等 -> 在 RViz 里
+        #   表现为"机器人站在先验点云正中心 (map 原点)"。
+        # 换出生点或换场地时, 这三项与两个 launch 的默认值必须同步改。
+        # 只在首次配准生效: 以 (init_x, init_y, init_yaw) 为基座叠加
+        #   init_yaw_hypotheses 个 yaw 假设; 已有可信 yaw 时设 1
+        #
+        # 已知现象 (暂不修, 仅记录): 节点内部 corr_x_/corr_y_/corr_yaw_ 的
+        #   初值是 0.0 (relocalization_3d_node.cpp 的成员初始化), 而 publishTf()
+        #   无条件用它们发 map->odom。所以在首帧配准成功之前, map->odom 是恒等,
+        #   表现为 RViz 里机器人先站在 map 原点 (先验点云中心), 约 1~2 s 后
+        #   首帧配准成功才跳到真实出生点 (-5, 3, -90°)。
+        #   这只影响启动瞬间的显示, 不影响定位与导航。
+        #   若将来要修: 构造时把 corr_* 初始化为 init_x_/init_y_/init_yaw_,
+        #   或让 publishTf() 在 !has_correction_ 时使用 init_* 而非 0。
+        init_x: -5.0
+        init_y: 3.0
+        init_yaw: -1.5708
+        init_yaw_hypotheses: 8
+        # ---- 输出 ----
+        pose_correction_topic: /pose_correction
+        fitness_topic: /relocalization_3d/fitness
+        map_frame: map
+        # 点云已在 odom 系, 解出的就是 map->odom, 直接发 TF 补全地图定位链
+        #   (map->odom 由本节点出; odom->base_footprint 由 gazebo diff_drive 出)
+        odom_frame: odom
+        broadcast_tf: true
+        # TF 独立广播频率: 配准只有 1 Hz, 而点云 10 Hz; 只在配准时发 TF 会让
+        #   RViz 报 "Lookup would require extrapolation into the future" 并闪断
+        tf_publish_rate: 10.0
+        # 2D 定位: map->odom 的 z 锁 0 (先验图 z 原点与地面差约 0.15 m)
+        correction_z_locked: true
+        # 先验地图可视化 (latched), RViz 里加 PointCloud2 即可叠加对照
+        prior_map_topic: /relocalization_3d/prior_map

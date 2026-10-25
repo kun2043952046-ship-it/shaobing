@@ -1,0 +1,155 @@
+[0.000000] (-) TimerEvent: {}
+[0.000690] (-) JobUnselected: {'identifier': 'test_CAN'}
+[0.000967] (-) JobUnselected: {'identifier': 'test_livox_build_pcd_save'}
+[0.001196] (-) JobUnselected: {'identifier': 'test_pcd_To_pgm'}
+[0.001227] (-) JobUnselected: {'identifier': 'test_ros_health'}
+[0.001257] (test_draw_pgm_realtime) JobQueued: {'identifier': 'test_draw_pgm_realtime', 'dependencies': OrderedDict()}
+[0.001290] (test_draw_pgm_realtime) JobStarted: {'identifier': 'test_draw_pgm_realtime'}
+[0.007715] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'cmake'}
+[0.008644] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'build'}
+[0.009179] (test_draw_pgm_realtime) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', '--', '-j16', '-l16'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:en'), ('USER', 'lele'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio/lib:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('SYSTEMD_EXEC_PID', '2895'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/lele/source_code_from_git/ws_livox/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'lele'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/opt/ros/humble/bin:/home/lele/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('SESSION_MANAGER', 'local/hero:@/tmp/.ICE-unix/2831,unix/hero:/tmp/.ICE-unix/2831'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/584319fd_bd7f_4359_9cb5_a2e1f5f1dba7'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.XORTW3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.86'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CLUTTER_IM_MODULE', 'xim'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio/local/lib/python3.10/dist-packages:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/lele/source_code_from_git/ws_livox/install/fast_lio:/home/lele/source_code_from_git/ws_livox/install/livox_ros_driver2:/opt/ros/humble'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib')]), 'shell': False}
+[0.087597] (test_draw_pgm_realtime) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o\x1b[0m\n'}
+[0.099334] (-) TimerEvent: {}
+[0.199602] (-) TimerEvent: {}
+[0.299887] (-) TimerEvent: {}
+[0.400248] (-) TimerEvent: {}
+[0.500474] (-) TimerEvent: {}
+[0.600773] (-) TimerEvent: {}
+[0.701082] (-) TimerEvent: {}
+[0.801337] (-) TimerEvent: {}
+[0.901567] (-) TimerEvent: {}
+[1.001825] (-) TimerEvent: {}
+[1.102321] (-) TimerEvent: {}
+[1.203202] (-) TimerEvent: {}
+[1.303458] (-) TimerEvent: {}
+[1.403841] (-) TimerEvent: {}
+[1.504364] (-) TimerEvent: {}
+[1.604563] (-) TimerEvent: {}
+[1.704900] (-) TimerEvent: {}
+[1.776384] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6172:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPath\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Knav_msgs\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Knav_msgs::msg::Path\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[1.776642] (test_draw_pgm_realtime) StderrLine: {'line': b' 6172 |   rclcpp::Publisher<nav_msgs::\x1b[01;31m\x1b[KPath\x1b[m\x1b[K>::SharedPtr chase_viz_publisher_;\n'}
+[1.776708] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.776766] (test_draw_pgm_realtime) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/nav_msgs/nav_msgs/msg/path.hpp:7\x1b[m\x1b[K,\n'}
+[1.776800] (test_draw_pgm_realtime) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:32\x1b[m\x1b[K:\n'}
+[1.776864] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__struct.hpp:133:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Knav_msgs::msg::Path\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[1.776935] (test_draw_pgm_realtime) StderrLine: {'line': b'  133 | using \x1b[01;36m\x1b[KPath\x1b[m\x1b[K =\n'}
+[1.776966] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.776993] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6172:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[1.777021] (test_draw_pgm_realtime) StderrLine: {'line': b' 6172 |   rclcpp::Publisher<nav_msgs::Path\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr chase_viz_publisher_;\n'}
+[1.777066] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[1.777101] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6172:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[1.777132] (test_draw_pgm_realtime) StderrLine: {'line': b' 6172 |   rclcpp::Publisher<nav_msgs::Path>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K chase_viz_publisher_;\n'}
+[1.777175] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[1.777223] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                               \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[1.779828] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6172:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kchase_viz_publisher_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[1.779938] (test_draw_pgm_realtime) StderrLine: {'line': b' 6172 |   rclcpp::Publisher<nav_msgs::Path>::SharedPtr \x1b[01;31m\x1b[Kchase_viz_publisher_\x1b[m\x1b[K;\n'}
+[1.779985] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.780551] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6173:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KPath\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Knav_msgs\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Knav_msgs::msg::Path\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[1.780648] (test_draw_pgm_realtime) StderrLine: {'line': b' 6173 |   rclcpp::Publisher<nav_msgs::\x1b[01;31m\x1b[KPath\x1b[m\x1b[K>::SharedPtr chase_track_publisher_;\n'}
+[1.780692] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.780717] (test_draw_pgm_realtime) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/nav_msgs/nav_msgs/msg/path.hpp:7\x1b[m\x1b[K,\n'}
+[1.780750] (test_draw_pgm_realtime) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:32\x1b[m\x1b[K:\n'}
+[1.780792] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__struct.hpp:133:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Knav_msgs::msg::Path\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[1.780824] (test_draw_pgm_realtime) StderrLine: {'line': b'  133 | using \x1b[01;36m\x1b[KPath\x1b[m\x1b[K =\n'}
+[1.780849] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.780873] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6173:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[1.780921] (test_draw_pgm_realtime) StderrLine: {'line': b' 6173 |   rclcpp::Publisher<nav_msgs::Path\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr chase_track_publisher_;\n'}
+[1.780951] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[1.780974] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6173:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[1.781000] (test_draw_pgm_realtime) StderrLine: {'line': b' 6173 |   rclcpp::Publisher<nav_msgs::Path>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K chase_track_publisher_;\n'}
+[1.781022] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[1.781045] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                               \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[1.781067] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6173:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kredeclaration of \xe2\x80\x98\x1b[01m\x1b[Kint RealtimePgmNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.781093] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6172:38:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kprevious declaration \xe2\x80\x98\x1b[01m\x1b[Kint RealtimePgmNode::SharedPtr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[1.781128] (test_draw_pgm_realtime) StderrLine: {'line': b' 6172 |   rclcpp::Publisher<nav_msgs::Path>::\x1b[01;36m\x1b[KSharedPtr\x1b[m\x1b[K chase_viz_publisher_;\n'}
+[1.781169] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                      \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[1.782897] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:6173:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kchase_track_publisher_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[1.782947] (test_draw_pgm_realtime) StderrLine: {'line': b' 6173 |   rclcpp::Publisher<nav_msgs::Path>::SharedPtr \x1b[01;31m\x1b[Kchase_track_publisher_\x1b[m\x1b[K;\n'}
+[1.782984] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.804981] (-) TimerEvent: {}
+[1.895245] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KRealtimePgmNode::RealtimePgmNode()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.895542] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:584:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kchase_viz_publisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[1.895619] (test_draw_pgm_realtime) StderrLine: {'line': b'  584 |       \x1b[01;31m\x1b[Kchase_viz_publisher_\x1b[m\x1b[K =\n'}
+[1.895671] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.895715] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       \x1b[32m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\n'}
+[1.900742] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:596:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kchase_track_publisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[1.900857] (test_draw_pgm_realtime) StderrLine: {'line': b'  596 |       \x1b[01;31m\x1b[Kchase_track_publisher_\x1b[m\x1b[K =\n'}
+[1.900889] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.900915] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       \x1b[32m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\n'}
+[1.905243] (-) TimerEvent: {}
+[1.984165] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool RealtimePgmNode::computeChaseCommand(const RealtimePgmNode::Config&, int, int, double, double, double, double&, double&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.984571] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:4293:18:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kchase_slow_radius\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.984613] (test_draw_pgm_realtime) StderrLine: {'line': b' 4293 |     const double \x1b[01;35m\x1b[Kchase_slow_radius\x1b[m\x1b[K = std::max(\n'}
+[1.984643] (test_draw_pgm_realtime) StderrLine: {'line': b'      |                  \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.993808] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid RealtimePgmNode::publishChaseViz(bool, double, double, double, double)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.993973] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:4626:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kchase_viz_publisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[1.994016] (test_draw_pgm_realtime) StderrLine: {'line': b' 4626 |     if (!\x1b[01;31m\x1b[Kchase_viz_publisher_\x1b[m\x1b[K ||\n'}
+[1.994059] (test_draw_pgm_realtime) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.994088] (test_draw_pgm_realtime) StderrLine: {'line': b'      |          \x1b[32m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\n'}
+[1.999757] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:4652:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kchase_viz_publisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[1.999806] (test_draw_pgm_realtime) StderrLine: {'line': b' 4652 |     \x1b[01;31m\x1b[Kchase_viz_publisher_\x1b[m\x1b[K->publish(path);\n'}
+[1.999833] (test_draw_pgm_realtime) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.999861] (test_draw_pgm_realtime) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\n'}
+[1.999900] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:4623:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Khas_target\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.999938] (test_draw_pgm_realtime) StderrLine: {'line': b' 4623 |     \x1b[01;35m\x1b[Kbool has_target\x1b[m\x1b[K, double target_x, double target_y,\n'}
+[1.999961] (test_draw_pgm_realtime) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.005249] (-) TimerEvent: {}
+[2.005799] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid RealtimePgmNode::publishChaseTrack()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.005874] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:4712:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kchase_track_publisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.005904] (test_draw_pgm_realtime) StderrLine: {'line': b' 4712 |     if (!\x1b[01;31m\x1b[Kchase_track_publisher_\x1b[m\x1b[K ||\n'}
+[2.005941] (test_draw_pgm_realtime) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.005967] (test_draw_pgm_realtime) StderrLine: {'line': b'      |          \x1b[32m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\n'}
+[2.011922] (test_draw_pgm_realtime) StderrLine: {'line': b'\x1b[01m\x1b[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:4735:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kchase_track_publisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.012168] (test_draw_pgm_realtime) StderrLine: {'line': b' 4735 |     \x1b[01;31m\x1b[Kchase_track_publisher_\x1b[m\x1b[K->publish(path);\n'}
+[2.012245] (test_draw_pgm_realtime) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.012282] (test_draw_pgm_realtime) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kchase_status_publisher_\x1b[m\x1b[K\n'}
+[2.105387] (-) TimerEvent: {}
+[2.205735] (-) TimerEvent: {}
+[2.306036] (-) TimerEvent: {}
+[2.406411] (-) TimerEvent: {}
+[2.506885] (-) TimerEvent: {}
+[2.607139] (-) TimerEvent: {}
+[2.707459] (-) TimerEvent: {}
+[2.807778] (-) TimerEvent: {}
+[2.908097] (-) TimerEvent: {}
+[3.008484] (-) TimerEvent: {}
+[3.108830] (-) TimerEvent: {}
+[3.209283] (-) TimerEvent: {}
+[3.309757] (-) TimerEvent: {}
+[3.410048] (-) TimerEvent: {}
+[3.510349] (-) TimerEvent: {}
+[3.610635] (-) TimerEvent: {}
+[3.710984] (-) TimerEvent: {}
+[3.811321] (-) TimerEvent: {}
+[3.911849] (-) TimerEvent: {}
+[4.012257] (-) TimerEvent: {}
+[4.112660] (-) TimerEvent: {}
+[4.213177] (-) TimerEvent: {}
+[4.313636] (-) TimerEvent: {}
+[4.414053] (-) TimerEvent: {}
+[4.514434] (-) TimerEvent: {}
+[4.614904] (-) TimerEvent: {}
+[4.715329] (-) TimerEvent: {}
+[4.815624] (-) TimerEvent: {}
+[4.916064] (-) TimerEvent: {}
+[5.016528] (-) TimerEvent: {}
+[5.117443] (-) TimerEvent: {}
+[5.218310] (-) TimerEvent: {}
+[5.318683] (-) TimerEvent: {}
+[5.418949] (-) TimerEvent: {}
+[5.519253] (-) TimerEvent: {}
+[5.619538] (-) TimerEvent: {}
+[5.719783] (-) TimerEvent: {}
+[5.820139] (-) TimerEvent: {}
+[5.920478] (-) TimerEvent: {}
+[6.020705] (-) TimerEvent: {}
+[6.120920] (-) TimerEvent: {}
+[6.221210] (-) TimerEvent: {}
+[6.321476] (-) TimerEvent: {}
+[6.421765] (-) TimerEvent: {}
+[6.446585] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/test_draw_pgm_realtime_node.dir/build.make:76\xef\xbc\x9aCMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[6.446976] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137\xef\xbc\x9aCMakeFiles/test_draw_pgm_realtime_node.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[6.447126] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[6.449153] (test_draw_pgm_realtime) CommandEnded: {'returncode': 2}
+[6.461905] (test_draw_pgm_realtime) JobEnded: {'identifier': 'test_draw_pgm_realtime', 'rc': 2}
+[6.472318] (-) EventReactorShutdown: {}

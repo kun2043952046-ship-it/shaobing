@@ -1,0 +1,7 @@
+{
+  "package_name": "livox_ros_driver2",
+  "non_idl_tuples": [
+    "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/slam_pkgs/livox_ros_driver2:msg/CustomPoint.msg",
+    "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/slam_pkgs/livox_ros_driver2:msg/CustomMsg.msg"
+  ]
+}

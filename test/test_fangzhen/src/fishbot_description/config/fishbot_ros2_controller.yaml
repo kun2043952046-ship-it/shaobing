@@ -1,0 +1,47 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100          # Hz
+    use_sim_time: true
+    # 声明要使用的控制器
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    fishbot_diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+    fishbot_effort_controller:
+      type: effort_controllers/JointGroupEffortController
+
+fishbot_diff_drive_controller:
+  ros__parameters:
+    left_wheel_names: ["left_wheel_joint"]
+    right_wheel_names: ["right_wheel_joint"]
+    # 必须与 shaobing 当前模型尺寸一致，否则里程计会算错
+    wheel_separation: 0.62    # 轮距（轮心 ±0.31）
+    wheel_radius: 0.064       # 轮半径
+    publish_rate: 50.0
+    use_stamped_vel: false    # false → 订阅 cmd_vel_unstamped（Twist），teleop_twist_keyboard 可直接控制
+    base_frame_id: base_footprint
+    odom_frame_id: odom
+    enable_odom_tf: true
+    open_loop: false
+    position_feedback: true
+    linear.x.has_velocity_limits: true
+    linear.x.max_velocity: 1.0
+    linear.x.min_velocity: -1.0
+    angular.z.has_velocity_limits: true
+    angular.z.max_velocity: 2.0
+    angular.z.min_velocity: -2.0
+
+# 力矩控制器：直接给左右轮下发力矩（N·m），订阅 ~/commands (std_msgs/Float64MultiArray)
+# 注意：它与 fishbot_diff_drive_controller 会争抢同一条轮子的驱动权，
+#       两者不要同时 active，用 spawner --stopped 只加载、需要时再切换激活
+fishbot_effort_controller:
+  ros__parameters:
+    joints:
+      - left_wheel_joint
+      - right_wheel_joint
+    command_interfaces:
+      - effort
+    state_interfaces:
+      - position
+      - velocity
+      - effort

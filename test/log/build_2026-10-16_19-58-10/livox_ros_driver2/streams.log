@@ -1,0 +1,354 @@
+[0.044s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/slam_pkgs/livox_ros_driver2 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2
+[0.333s] -- The C compiler identification is GNU 11.4.0
+[0.334s] -- The CXX compiler identification is GNU 11.4.0
+[0.334s] -- Detecting C compiler ABI info
+[0.334s] -- Detecting C compiler ABI info - done
+[0.334s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.334s] -- Detecting C compile features
+[0.334s] -- Detecting C compile features - done
+[0.334s] -- Detecting CXX compiler ABI info
+[0.334s] -- Detecting CXX compiler ABI info - done
+[0.334s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.334s] -- Detecting CXX compile features
+[0.334s] -- Detecting CXX compile features - done
+[0.334s] -- livox_ros_driver2 version: 1.2.4
+[0.334s] -- Found ament_cmake_auto: 1.3.12 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.597s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.809s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.821s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.867s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.968s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.972s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.070s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.106s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.157s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.171s] -- Looking for pthread.h
+[1.266s] -- Looking for pthread.h - found
+[1.266s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.347s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.348s] -- Found Threads: TRUE  
+[1.504s] -- Checking for module 'eigen3'
+[1.530s] --   Found eigen3, version 3.4.0
+[1.580s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[1.580s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.634s] -- Checking for module 'flann'
+[1.667s] --   Found flann, version 1.9.1
+[1.715s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[1.716s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[2.812s] -- Checking for module 'libusb-1.0'
+[2.824s] --   Found libusb-1.0, version 1.0.25
+[2.852s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[2.853s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.912s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[3.049s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[3.054s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[3.062s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[3.179s] -- Found Qhull version 8.0.2
+[3.334s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[3.512s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[3.514s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[3.515s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[3.516s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[3.517s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[3.517s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[3.518s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[3.520s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+[3.520s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[3.521s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+[3.522s] -- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+[3.523s] -- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+[3.525s] -- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+[3.526s] -- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+[3.527s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+[3.528s] -- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+[3.530s] -- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+[3.531s] -- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+[3.536s] -- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+[3.536s] -- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+[3.536s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+[3.536s] -- Found PCL_MODELER: /usr/include/pcl-1.12  
+[3.536s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+[3.537s] -- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+[3.538s] -- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+[3.611s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[3.615s] -- Checking for module 'apr-1'
+[3.646s] --   Found apr-1, version 1.7.0
+[3.993s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[4.344s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.759s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.799s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[4.802s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[4.849s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[4.849s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[4.849s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[4.849s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[4.887s] -- Found PythonExtra: .so  
+[4.981s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[5.006s] -- Added test 'copyright' to check source files copyright and LICENSE
+[5.008s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[5.009s] -- Configured cppcheck include dirs: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/slam_pkgs/livox_ros_driver2/3rdparty;/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/slam_pkgs/livox_ros_driver2/src
+[5.009s] -- Configured cppcheck exclude dirs and/or files: 
+[5.011s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[5.011s] -- Configured cpplint exclude dirs and/or files: 
+[5.013s] -- Added test 'flake8' to check Python code syntax and style conventions
+[5.013s] -- Added test 'lint_cmake' to check CMake code style
+[5.014s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[5.016s] -- Added test 'uncrustify' to check C / C++ code style
+[5.016s] -- Configured uncrustify additional arguments: 
+[5.017s] -- Added test 'xmllint' to check XML markup files
+[5.019s] -- Configuring done
+[5.097s] -- Generating done
+[5.125s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2
+[5.217s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/slam_pkgs/livox_ros_driver2 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2
+[5.220s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2 -- -j16 -l16
+[5.282s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[5.305s] [  3%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2_node.dir/rclcpp_components/node_main_livox_ros_driver2_node.cpp.o[0m
+[5.305s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[5.323s] [  5%] Built target ament_cmake_python_copy_livox_ros_driver2
+[5.762s] running egg_info
+[5.764s] creating livox_ros_driver2.egg-info
+[5.766s] writing livox_ros_driver2.egg-info/PKG-INFO
+[5.769s] writing dependency_links to livox_ros_driver2.egg-info/dependency_links.txt
+[5.771s] writing top-level names to livox_ros_driver2.egg-info/top_level.txt
+[5.772s] writing manifest file 'livox_ros_driver2.egg-info/SOURCES.txt'
+[5.775s] reading manifest file 'livox_ros_driver2.egg-info/SOURCES.txt'
+[5.777s] writing manifest file 'livox_ros_driver2.egg-info/SOURCES.txt'
+[5.795s] [  7%] [32mBuilding C object CMakeFiles/livox_interfaces2__rosidl_generator_c.dir/rosidl_generator_c/livox_ros_driver2/msg/detail/custom_msg__functions.c.o[0m
+[5.800s] [  8%] [32mBuilding C object CMakeFiles/livox_interfaces2__rosidl_generator_c.dir/rosidl_generator_c/livox_ros_driver2/msg/detail/custom_point__functions.c.o[0m
+[5.881s] [ 10%] [32m[1mLinking C shared library liblivox_ros_driver2__rosidl_generator_c.so[0m
+[5.889s] [ 10%] Built target ament_cmake_python_build_livox_ros_driver2_egg
+[5.955s] [ 10%] Built target livox_interfaces2__rosidl_generator_c
+[5.970s] [ 12%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[5.981s] [ 14%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[5.982s] [ 15%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[6.031s] [ 15%] Built target livox_interfaces2__cpp
+[6.052s] [ 17%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[6.058s] [ 19%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[6.065s] [ 21%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[6.617s] [ 22%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_c.dir/rosidl_typesupport_c/livox_ros_driver2/msg/custom_point__type_support.cpp.o[0m
+[6.641s] [ 24%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_c.dir/rosidl_typesupport_c/livox_ros_driver2/msg/custom_msg__type_support.cpp.o[0m
+[6.699s] [ 26%] [32m[1mLinking CXX shared library liblivox_ros_driver2__rosidl_typesupport_c.so[0m
+[6.731s] [ 28%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/livox_ros_driver2/msg/detail/custom_msg__type_support_c.cpp.o[0m
+[6.736s] [ 29%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/livox_ros_driver2/msg/detail/custom_point__type_support_c.cpp.o[0m
+[6.756s] [ 31%] [32mBuilding C object CMakeFiles/livox_interfaces2__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/livox_ros_driver2/msg/detail/custom_msg__type_support.c.o[0m
+[6.770s] [ 33%] [32mBuilding C object CMakeFiles/livox_interfaces2__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/livox_ros_driver2/msg/detail/custom_point__type_support.c.o[0m
+[6.810s] [ 33%] Built target livox_interfaces2__rosidl_typesupport_c
+[6.862s] [ 35%] [32m[1mLinking C shared library liblivox_ros_driver2__rosidl_typesupport_introspection_c.so[0m
+[6.864s] [ 36%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/livox_ros_driver2/msg/detail/custom_point__type_support.cpp.o[0m
+[6.866s] [ 38%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/livox_ros_driver2/msg/detail/custom_msg__type_support.cpp.o[0m
+[6.926s] [ 40%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/livox_ros_driver2/msg/detail/dds_fastrtps/custom_msg__type_support.cpp.o[0m
+[6.931s] [ 42%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/livox_ros_driver2/msg/detail/dds_fastrtps/custom_point__type_support.cpp.o[0m
+[6.955s] [ 43%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/livox_ros_driver2/msg/custom_msg__type_support.cpp.o[0m
+[6.956s] [ 45%] [32mBuilding CXX object CMakeFiles/livox_interfaces2__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/livox_ros_driver2/msg/custom_point__type_support.cpp.o[0m
+[6.972s] [ 45%] Built target livox_interfaces2__rosidl_typesupport_introspection_c
+[7.348s] [ 47%] [32m[1mLinking CXX shared library liblivox_ros_driver2__rosidl_typesupport_fastrtps_c.so[0m
+[7.673s] [ 49%] [32m[1mLinking CXX shared library liblivox_ros_driver2__rosidl_typesupport_introspection_cpp.so[0m
+[7.700s] [ 50%] [32m[1mLinking CXX shared library liblivox_ros_driver2__rosidl_typesupport_cpp.so[0m
+[7.714s] [ 50%] Built target livox_interfaces2__rosidl_typesupport_fastrtps_c
+[7.773s] [ 50%] Built target livox_interfaces2__rosidl_typesupport_cpp
+[7.821s] [ 52%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/lddc.cpp.o[0m
+[7.832s] [ 54%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/livox_ros_driver2.cpp.o[0m
+[7.834s] [ 57%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/driver_node.cpp.o[0m
+[7.837s] [ 61%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/lds.cpp.o[0m
+[7.838s] [ 57%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/lds_lidar.cpp.o[0m
+[7.840s] [ 59%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/comm/comm.cpp.o[0m
+[7.850s] [ 64%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/comm/cache_index.cpp.o[0m
+[7.852s] [ 64%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/comm/semaphore.cpp.o[0m
+[7.853s] [ 68%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/comm/lidar_imu_data_queue.cpp.o[0m
+[7.854s] [ 68%] [32m[1mLinking CXX shared library liblivox_ros_driver2__rosidl_typesupport_fastrtps_cpp.so[0m
+[7.855s] [ 70%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/comm/ldq.cpp.o[0m
+[7.857s] [ 73%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/parse_cfg_file/parse_cfg_file.cpp.o[0m
+[7.860s] [ 73%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/comm/pub_handler.cpp.o[0m
+[7.861s] [ 75%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/parse_cfg_file/parse_livox_lidar_cfg.cpp.o[0m
+[7.862s] [ 75%] Built target livox_interfaces2__rosidl_typesupport_introspection_cpp
+[7.879s] [ 77%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/call_back/lidar_common_callback.cpp.o[0m
+[8.510s] [ 78%] [32mBuilding CXX object CMakeFiles/livox_ros_driver2.dir/src/call_back/livox_lidar_callback.cpp.o[0m
+[8.513s] [ 78%] Built target livox_interfaces2__rosidl_typesupport_fastrtps_cpp
+[8.610s] [ 78%] Built target livox_interfaces2
+[8.725s] [ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[10.664s] [ 80%] Built target livox_interfaces2__py
+[10.709s] [ 82%] [32mBuilding C object CMakeFiles/livox_interfaces2__rosidl_generator_py.dir/rosidl_generator_py/livox_ros_driver2/msg/_custom_msg_s.c.o[0m
+[10.713s] [ 84%] [32mBuilding C object CMakeFiles/livox_interfaces2__rosidl_generator_py.dir/rosidl_generator_py/livox_ros_driver2/msg/_custom_point_s.c.o[0m
+[10.883s] [ 85%] [32m[1mLinking C shared library rosidl_generator_py/livox_ros_driver2/liblivox_interfaces2__rosidl_generator_py.so[0m
+[10.960s] [ 85%] Built target livox_interfaces2__rosidl_generator_py
+[10.998s] [ 87%] [32mBuilding C object CMakeFiles/livox_ros_driver2__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/livox_ros_driver2/_livox_ros_driver2_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[11.023s] [ 89%] [32mBuilding C object CMakeFiles/livox_ros_driver2__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/livox_ros_driver2/_livox_ros_driver2_s.ep.rosidl_typesupport_c.c.o[0m
+[11.025s] [ 91%] [32mBuilding C object CMakeFiles/livox_ros_driver2__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/livox_ros_driver2/_livox_ros_driver2_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[11.172s] [ 92%] [32m[1mLinking C shared library rosidl_generator_py/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[11.198s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[11.242s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[11.262s] [ 96%] Built target livox_ros_driver2__rosidl_typesupport_fastrtps_c__pyext
+[11.302s] [ 96%] Built target livox_ros_driver2__rosidl_typesupport_introspection_c__pyext
+[11.322s] [ 96%] Built target livox_ros_driver2__rosidl_typesupport_c__pyext
+[13.751s] [ 98%] [32m[1mLinking CXX executable livox_ros_driver2_node[0m
+[14.037s] [ 98%] Built target livox_ros_driver2_node
+[21.721s] [100%] [32m[1mLinking CXX shared library liblivox_ros_driver2.so[0m
+[22.857s] [100%] Built target livox_ros_driver2
+[22.873s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2 -- -j16 -l16
+[22.877s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2
+[22.888s] -- Install configuration: ""
+[22.888s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/ament_index/resource_index/rosidl_interfaces/livox_ros_driver2
+[22.888s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2
+[22.888s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg
+[22.888s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/rosidl_generator_c__visibility_control.h
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/custom_msg.h
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/custom_point.h
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__struct.h
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__type_support.h
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__functions.c
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__functions.h
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__type_support.h
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__functions.c
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__functions.h
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__struct.h
+[22.889s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/environment/library_path.sh
+[22.890s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/environment/library_path.dsv
+[22.890s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_generator_c.so
+[22.890s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_generator_c.so" to ""
+[22.890s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2
+[22.890s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg
+[22.890s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail
+[22.890s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__rosidl_typesupport_fastrtps_c.h
+[22.890s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__rosidl_typesupport_fastrtps_c.h
+[22.890s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[22.890s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_c.so
+[22.890s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_c.so" to ""
+[22.891s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2
+[22.891s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg
+[22.891s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[22.891s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail
+[22.891s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__type_support.c
+[22.891s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__rosidl_typesupport_introspection_c.h
+[22.891s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__type_support.c
+[22.891s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__rosidl_typesupport_introspection_c.h
+[22.891s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_c.so
+[22.891s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_c.so" to ""
+[22.892s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_c.so
+[22.892s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_c.so" to ""
+[22.892s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2
+[22.892s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg
+[22.892s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/rosidl_generator_cpp__visibility_control.hpp
+[22.892s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/custom_point.hpp
+[22.892s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/custom_msg.hpp
+[22.892s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail
+[22.892s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__traits.hpp
+[22.892s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__type_support.hpp
+[22.893s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__struct.hpp
+[22.893s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__type_support.hpp
+[22.893s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__struct.hpp
+[22.893s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__traits.hpp
+[22.893s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__builder.hpp
+[22.893s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__builder.hpp
+[22.893s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2
+[22.893s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg
+[22.893s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[22.893s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/dds_fastrtps
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__rosidl_typesupport_fastrtps_cpp.hpp
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_cpp.so
+[22.894s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_fastrtps_cpp.so" to ""
+[22.894s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2
+[22.894s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg
+[22.894s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__rosidl_typesupport_introspection_cpp.hpp
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__rosidl_typesupport_introspection_cpp.hpp
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__type_support.cpp
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__type_support.cpp
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_cpp.so
+[22.894s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_introspection_cpp.so" to ""
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_cpp.so
+[22.894s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2__rosidl_typesupport_cpp.so" to ""
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/environment/pythonpath.sh
+[22.894s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/environment/pythonpath.dsv
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2-1.0.0-py3.10.egg-info
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2-1.0.0-py3.10.egg-info/PKG-INFO
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2-1.0.0-py3.10.egg-info/SOURCES.txt
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2-1.0.0-py3.10.egg-info/dependency_links.txt
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2-1.0.0-py3.10.egg-info/top_level.txt
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/_livox_ros_driver2_s.ep.rosidl_typesupport_c.c
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg/_custom_point.py
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg/_custom_msg.py
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg/__init__.py
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg/_custom_point_s.c
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg/_custom_msg_s.c
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/__init__.py
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/_livox_ros_driver2_s.ep.rosidl_typesupport_introspection_c.c
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/liblivox_interfaces2__rosidl_generator_py.so
+[22.895s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/_livox_ros_driver2_s.ep.rosidl_typesupport_fastrtps_c.c
+[22.942s] Listing '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2'...
+[22.942s] Compiling '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/__init__.py'...
+[22.942s] Listing '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg'...
+[22.942s] Compiling '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg/__init__.py'...
+[22.943s] Compiling '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg/_custom_msg.py'...
+[22.943s] Compiling '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/msg/_custom_point.py'...
+[22.948s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[22.948s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[22.948s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[22.948s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[22.948s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[22.949s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/local/lib/python3.10/dist-packages/livox_ros_driver2/livox_ros_driver2_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[22.949s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_interfaces2__rosidl_generator_py.so
+[22.949s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_interfaces2__rosidl_generator_py.so" to ""
+[22.949s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/msg/CustomPoint.idl
+[22.949s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/msg/CustomMsg.idl
+[22.949s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/msg/CustomPoint.msg
+[22.949s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/msg/CustomMsg.msg
+[22.949s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/livox_ros_driver2/livox_ros_driver2_node
+[22.949s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/livox_ros_driver2/livox_ros_driver2_node" to ""
+[22.950s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2.so
+[22.953s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/lib/liblivox_ros_driver2.so" to ""
+[22.953s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/config
+[22.953s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/config/display_point_cloud_ROS2.rviz
+[22.953s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/config/MID360_config.json
+[22.953s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/config/display_point_cloud_ROS1.rviz
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/launch
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/launch/msg_MID360_launch.py
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/launch/rviz_MID360_launch.py
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/ament_index/resource_index/package_run_dependencies/livox_ros_driver2
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/ament_index/resource_index/parent_prefix_path/livox_ros_driver2
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/environment/ament_prefix_path.sh
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/environment/ament_prefix_path.dsv
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/environment/path.sh
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/environment/path.dsv
+[22.954s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/local_setup.bash
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/local_setup.sh
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/local_setup.zsh
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/local_setup.dsv
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/package.dsv
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/ament_index/resource_index/packages/livox_ros_driver2
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/export_livox_interfaces2__rosidl_generator_cExport.cmake
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/export_livox_interfaces2__rosidl_generator_cExport-noconfig.cmake
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/export_livox_interfaces2__rosidl_typesupport_fastrtps_cExport.cmake
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/export_livox_interfaces2__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[22.955s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_interfaces2__rosidl_typesupport_introspection_cExport.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_interfaces2__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_interfaces2__rosidl_typesupport_cExport.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_interfaces2__rosidl_typesupport_cExport-noconfig.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/export_livox_interfaces2__rosidl_generator_cppExport.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/export_livox_interfaces2__rosidl_typesupport_fastrtps_cppExport.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/export_livox_interfaces2__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_interfaces2__rosidl_typesupport_introspection_cppExport.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_interfaces2__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_interfaces2__rosidl_typesupport_cppExport.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_interfaces2__rosidl_typesupport_cppExport-noconfig.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/export_livox_interfaces2__rosidl_generator_pyExport.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/export_livox_interfaces2__rosidl_generator_pyExport-noconfig.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/ament_index/resource_index/rclcpp_components/livox_ros_driver2
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/rosidl_cmake-extras.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/ament_cmake_export_dependencies-extras.cmake
+[22.956s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/ament_cmake_export_include_directories-extras.cmake
+[22.957s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/ament_cmake_export_libraries-extras.cmake
+[22.957s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/ament_cmake_export_targets-extras.cmake
+[22.957s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[22.957s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[22.957s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_ros_driver2Config.cmake
+[22.957s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/cmake/livox_ros_driver2Config-version.cmake
+[22.957s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/livox_ros_driver2/share/livox_ros_driver2/package.xml
+[22.960s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/livox_ros_driver2

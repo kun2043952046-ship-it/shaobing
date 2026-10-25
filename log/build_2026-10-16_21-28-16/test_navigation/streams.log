@@ -1,0 +1,36 @@
+[0.022s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation -- -j16 -l16
+[0.169s] [ 50%] Building CXX object CMakeFiles/test_navigation_node.dir/src/test_navigation.cpp.o
+[113.254s] [100%] Linking CXX executable test_navigation_node
+[114.526s] [100%] Built target test_navigation_node
+[114.579s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation -- -j16 -l16
+[114.614s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation
+[114.650s] -- Install configuration: "Release"
+[114.654s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/lib/test_navigation/test_navigation_node
+[114.655s] -- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/lib/test_navigation/test_navigation_node" to ""
+[114.655s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/launch
+[114.655s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/launch/realtime_pgm.launch.py
+[114.655s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/lib/test_navigation/pgm_viewer.py
+[114.655s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/lib/test_navigation/nav2_bridge.py
+[114.656s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/lib/test_navigation/diag_logger.py
+[114.656s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/config
+[114.656s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/config/nav2_params.yaml
+[114.656s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/config/navigate_to_pose_w_replanning_5hz.xml
+[114.656s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/log
+[114.656s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/log/README.md
+[114.656s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/log/.gitkeep
+[114.664s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/ament_index/resource_index/package_run_dependencies/test_navigation
+[114.665s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/ament_index/resource_index/parent_prefix_path/test_navigation
+[114.665s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/environment/ament_prefix_path.sh
+[114.665s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/environment/ament_prefix_path.dsv
+[114.665s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/environment/path.sh
+[114.665s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/environment/path.dsv
+[114.665s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/local_setup.bash
+[114.665s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/local_setup.sh
+[114.665s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/local_setup.zsh
+[114.665s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/local_setup.dsv
+[114.666s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/package.dsv
+[114.666s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/ament_index/resource_index/packages/test_navigation
+[114.666s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/cmake/test_navigationConfig.cmake
+[114.667s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/cmake/test_navigationConfig-version.cmake
+[114.667s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/package.xml
+[114.674s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation

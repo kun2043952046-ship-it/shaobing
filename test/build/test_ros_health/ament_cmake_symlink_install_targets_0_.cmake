@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health/test_ros_health_node" "TARGETS" "test_ros_health_node" "DESTINATION" "lib/test_ros_health")

@@ -1,0 +1,21 @@
+[35m[1mConsolidate compiler generated dependencies of target test_livox_build_pcd_save_node[0m
+[100%] Built target test_livox_build_pcd_save_node
+-- Install configuration: ""
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/lib/test_livox_build_pcd_save/test_livox_build_pcd_save_node
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/launch
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/launch/scan_save.launch.py
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/ament_index/resource_index/package_run_dependencies/test_livox_build_pcd_save
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/ament_index/resource_index/parent_prefix_path/test_livox_build_pcd_save
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/environment/ament_prefix_path.sh
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/environment/path.sh
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/environment/path.dsv
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/local_setup.bash
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/local_setup.sh
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/local_setup.zsh
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/local_setup.dsv
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.dsv
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/ament_index/resource_index/packages/test_livox_build_pcd_save
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/cmake/test_livox_build_pcd_saveConfig.cmake
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/cmake/test_livox_build_pcd_saveConfig-version.cmake
+-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_livox_build_pcd_save/share/test_livox_build_pcd_save/package.xml

@@ -1,0 +1,50 @@
+[0.290s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm
+[0.828s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.830s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.830s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.830s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.830s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.831s] [0m** WARNING ** io features related to pcap will be disabled[0m
+[0.831s] [0m** WARNING ** io features related to png will be disabled[0m
+[1.053s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.054s] -- looking for PCL_COMMON
+[1.054s] -- looking for PCL_OCTREE
+[1.054s] -- looking for PCL_IO
+[1.055s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.129s] WARNING: Package name "test_pcd_To_pgm" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[1.151s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.151s] -- Configured cppcheck include dirs: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/include
+[1.151s] -- Configured cppcheck exclude dirs and/or files: 
+[1.152s] -- Added test 'lint_cmake' to check CMake code style
+[1.152s] -- Added test 'uncrustify' to check C / C++ code style
+[1.152s] -- Configured uncrustify additional arguments: 
+[1.153s] -- Added test 'xmllint' to check XML markup files
+[1.154s] -- Configuring done
+[1.173s] -- Generating done
+[1.177s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm
+[1.213s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm
+[1.214s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm -- -j16 -l16
+[1.334s] [35m[1mConsolidate compiler generated dependencies of target pcd_to_pgm[0m
+[1.334s] [ 50%] [32m[1mLinking CXX executable pcd_to_pgm[0m
+[1.797s] [100%] Built target pcd_to_pgm
+[1.820s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm -- -j16 -l16
+[1.825s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm
+[1.839s] -- Install configuration: ""
+[1.840s] -- Execute custom install script
+[1.841s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/lib/test_pcd_To_pgm/pcd_to_pgm
+[1.841s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/ament_index/resource_index/package_run_dependencies/test_pcd_To_pgm
+[1.841s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/ament_index/resource_index/parent_prefix_path/test_pcd_To_pgm
+[1.841s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/ament_prefix_path.sh
+[1.841s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/ament_prefix_path.dsv
+[1.841s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/path.sh
+[1.841s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/path.dsv
+[1.841s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.bash
+[1.842s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.sh
+[1.842s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.zsh
+[1.842s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.dsv
+[1.842s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.dsv
+[1.851s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/ament_index/resource_index/packages/test_pcd_To_pgm
+[1.851s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/cmake/test_pcd_To_pgmConfig.cmake
+[1.851s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/cmake/test_pcd_To_pgmConfig-version.cmake
+[1.851s] -- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.xml
+[1.854s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm

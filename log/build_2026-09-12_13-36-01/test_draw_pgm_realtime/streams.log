@@ -1,0 +1,12 @@
+[0.007s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16
+[0.052s] [ 50%] [32mBuilding CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o[0m
+[0.211s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:65:30:[m[K [01;31m[Kerror: [m[Kstray ‘[01m[K@[m[K’ in program
+[0.211s]    65 |     initial_config.xmin =lele[01;31m[K@[m[Khero:~/aaaaa_mine_NJIT_Vision_Gen2/Navigation$ ros2 pkg list | grep nav2
+[0.211s]       |                              [01;31m[K^[m[K
+[0.211s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:98:5:[m[K [01;31m[Kerror: [m[Kstray ‘[01m[K@[m[K’ in program
+[0.211s]    98 | lele[01;31m[K@[m[Khero:~/aaaaa_mine_NJIT_Vision_Gen2/Navigation$
+[0.211s]       |     [01;31m[K^[m[K
+[1.571s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:[m[K In constructor ‘[01m[KRealtimePgmNode::RealtimePgmNode()[m[K’:
+[1.571s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:65:26:[m[K [01;31m[Kerror: [m[K‘[01m[Klele[m[K’ was not declared in this scope
+[1.571s]    65 |     initial_config.xmin =[01;31m[Klele[m[K@hero:~/aaaaa_mine_NJIT_Vision_Gen2/Navigation$ ros2 pkg list | grep nav2
+[1.571s]       |                          [01;31m[K^~~~[m[K

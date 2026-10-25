@@ -1,0 +1,9 @@
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg/CMakeFiles/uninstall.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg/CMakeFiles/robot_description_pkg_uninstall.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg/CMakeFiles/test.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg/CMakeFiles/edit_cache.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg/CMakeFiles/rebuild_cache.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg/CMakeFiles/list_install_components.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg/CMakeFiles/install.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg/CMakeFiles/install/local.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg/CMakeFiles/install/strip.dir

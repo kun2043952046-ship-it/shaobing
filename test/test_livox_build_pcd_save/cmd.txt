@@ -1,0 +1,10 @@
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation
+source /opt/ros/humble/setup.bash
+colcon build --packages-select test_livox_build_pcd_save
+source install/setup.bash
+
+# 重新一键启动（ws_livox 的 source 这个终端之前已经做过，可以不重复；
+# 但如果换了新终端，两个都要重新 source）
+ros2 launch test_livox_build_pcd_save scan_save.launch.py \
+  scan_duration:=10.0 \
+  output_dir:=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation

@@ -1,0 +1,36 @@
+[0.009s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation -- -j16 -l16
+[0.051s] Consolidate compiler generated dependencies of target test_navigation_node
+[0.066s] [100%] Built target test_navigation_node
+[0.079s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation' returned '0': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation -- -j16 -l16
+[0.086s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation
+[0.096s] -- Install configuration: "Release"
+[0.096s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/lib/test_navigation/test_navigation_node
+[0.096s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/launch
+[0.096s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/launch/__pycache__
+[0.096s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/launch/__pycache__/realtime_pgm.launch.cpython-310.pyc
+[0.096s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/launch/realtime_pgm.launch.py
+[0.096s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/lib/test_navigation/pgm_viewer.py
+[0.096s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/lib/test_navigation/nav2_bridge.py
+[0.096s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/lib/test_navigation/diag_logger.py
+[0.096s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/config
+[0.097s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/config/nav2_params.yaml
+[0.097s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/config/navigate_to_pose_w_replanning_5hz.xml
+[0.097s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/log
+[0.097s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/log/README.md
+[0.097s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/log/.gitkeep
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/ament_index/resource_index/package_run_dependencies/test_navigation
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/ament_index/resource_index/parent_prefix_path/test_navigation
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/environment/ament_prefix_path.sh
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/environment/ament_prefix_path.dsv
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/environment/path.sh
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/environment/path.dsv
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/local_setup.bash
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/local_setup.sh
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/local_setup.zsh
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/local_setup.dsv
+[0.098s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/package.dsv
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/ament_index/resource_index/packages/test_navigation
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/cmake/test_navigationConfig.cmake
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/cmake/test_navigationConfig-version.cmake
+[0.098s] -- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_navigation/share/test_navigation/package.xml
+[0.100s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation' returned '0': AMENT_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_navigation

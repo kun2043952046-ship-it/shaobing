@@ -1,0 +1,1 @@
+navigation2;nav2_common;nav2_core;nav2_costmap_2d;nav2_lifecycle_manager;nav2_map_server;nav2_amcl;nav2_planner;nav2_controller;nav2_behavior_tree;nav2_rviz_plugins;robot_state_publisher;rviz2;tf2_ros

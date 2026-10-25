@@ -1,0 +1,1 @@
+rclcpp;sensor_msgs;std_msgs;laser_geometry;pcl_conversions;nav_msgs;tf2_ros;tf2_sensor_msgs;tf2_geometry_msgs;libpcl-all-dev;libopencv-dev;open3d;rclpy;python3-pil;python3-yaml;ros2launch;ament_lint_auto;ament_lint_common

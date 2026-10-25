@@ -1,0 +1,112 @@
+# =====================================================================
+#  fishbot_description 常用命令 (仿真 / 建图 / 3D 重定位 / RViz)
+#
+#  工作空间: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen
+#  前置: ROS 2 Humble 已在 ~/.bashrc 里 source
+#  每条命令都可整行复制; 前缀统一为:
+#      cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash &&
+# =====================================================================
+
+# ---------- 0) 编译 (改过 src/launch/config/urdf 后执行) ----------
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source /opt/ros/humble/setup.bash && colcon build --packages-select fishbot_description && source install/setup.bash
+
+# ---------- 1) 仿真 ----------
+# 一键: Gazebo + slam_toolbox 在线建图 + RViz
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/run_fangzhen.sh
+
+# 一键: Gazebo + 先验 /map (不跑 slam)
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/run_fangzhen_map.sh
+
+# 只起仿真 (车出生在 map 系 -5.0, 3.0, -90°)
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 launch fishbot_description gazebo_sim_launch.py
+
+# 只看模型 (不起 Gazebo)
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 launch fishbot_description display_robot.launch.py
+
+# ---------- 2) 3D 重定位 (relocalization_3d) ----------
+# 一条命令: 点云转换 + 3D 重定位 + RViz
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 launch fishbot_description relocalization_3d.launch.py init_x:=-5.0 init_y:=3.0 init_yaw:=-1.5708 init_yaw_hypotheses:=1
+
+# 无显示 / 不要 RViz
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 launch fishbot_description relocalization_3d.launch.py init_x:=-5.0 init_y:=3.0 init_yaw:=-1.5708 init_yaw_hypotheses:=1 rviz:=false
+
+# 没有可信初始 yaw (冷启动): 8 个 yaw 假设暴力搜索, 耗时约 8 倍
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 launch fishbot_description relocalization_3d.launch.py init_x:=-5.0 init_y:=3.0 init_yaw:=0.0 init_yaw_hypotheses:=8
+
+# 已是 odom 系点云 (真实 FAST-LIO 的 /cloud_registered) 时, 关掉转换节点
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 launch fishbot_description relocalization_3d.launch.py with_cloud_converter:=false cloud_topic:=/cloud_registered
+
+# 只做转换 (单独调试 TF): /livox/lidar(livox_frame) -> /cloud_registered(odom)
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 run fishbot_description cloud_to_odom.py
+
+# 单独起节点 (不带 launch, 用包内 yaml)
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 run fishbot_description relocalization_3d --ros-args --params-file install/fishbot_description/share/fishbot_description/config/relocalization_3d.yaml
+
+# ---------- 3) 3D 重定位: 查看输出 ----------
+ros2 topic echo /pose_correction --once            # map->odom (frame=map, z 锁 0)
+ros2 topic echo /relocalization_3d/fitness --once   # 截断均方 m^2, 失败为 -1
+ros2 topic hz /pose_correction                      # 应 ≈ rate_hz (1 Hz)
+ros2 topic hz /relocalization_3d/prior_map          # latched, 只发一次 (新订阅也能收到)
+ros2 run tf2_ros tf2_echo map odom                  # TF: map->odom 应 ≈ (-4.9, 3.0, -93°)
+ros2 run tf2_ros tf2_echo map livox_frame           # TF: 车在地图中的位姿
+
+# 验收判据 (仿真出生点 -5,3,-90°):
+#   fitness ≈ 0.01 m^2, 内点 ≈ 1.00, map->odom ≈ (-4.9, 3.0, -93°)
+#   车开动后 map->odom 基本不变 (它是 odom 原点=出生点 在地图中的位姿)
+
+# ---------- 4) 3D 重定位: 参数热改 (无需重启) ----------
+ros2 param set /relocalization_3d enabled false               # 停用, 发一次恒等修正
+ros2 param set /relocalization_3d rate_hz 2.0                 # 配准频率
+ros2 param set /relocalization_3d gicp_fitness_max 2.0        # 截断均方门限 (m^2)
+ros2 param set /relocalization_3d fitness_inlier_min 0.3      # 内点比例下限
+ros2 param set /relocalization_3d source_range_max 20.0       # 范围过滤 (丢无回波远点)
+ros2 param set /relocalization_3d correction_max_delta_m 1.0  # 单帧跳变上限 (m)
+ros2 param set /relocalization_3d correction_max_speed_mps 2.0 # 跳变速率门限 (m/s)
+ros2 param set /relocalization_3d compensate_odom false       # 传感器系点云时才设 true
+ros2 param set /relocalization_3d ema_alpha 0.5               # 0.5=平滑, 1=不平滑
+ros2 param set /relocalization_3d tf_publish_rate 20.0        # map->odom TF 广播频率
+ros2 param set /relocalization_3d correction_z_locked true    # z 锁 0 (2D 定位)
+touch /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/map.pcd   # 触发地图重载 -> 回到初始化
+
+# ---------- 5) RViz ----------
+# 已配好: 固定坐标系 map, 先验图 + 实时点云 + 车模 + map->odom 箭头
+# 必须带 use_sim_time:=true: Gazebo 的 TF/点云都是仿真时间戳, 混墙钟会导致
+#   map 坐标系下查不到变换 (车模/点云不显示)
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 run rviz2 rviz2 -d install/fishbot_description/share/fishbot_description/config/relocalization.rviz --ros-args -p use_sim_time:=true
+
+# 显示项: 灰蓝=先验图 /relocalization_3d/prior_map, 绿=实时点云 /cloud_registered,
+#         红箭头=map->odom /pose_correction, 橙=原始点云 /livox/lidar (默认关)
+
+# ---------- 6) 底盘 / 键盘遥控 ----------
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 run teleop_twist_keyboard teleop_twist_keyboard
+ros2 control list_controllers                           # 两个控制器应都是 active
+ros2 topic pub -r 10 /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.3}}"   # 绕过键盘直接测
+ros2 topic echo /odom --once                            # 车是否真的动了
+
+# ---------- 7) 建图 / 存图 ----------
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 launch fishbot_description slam_mapping.launch.py
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 launch fishbot_description lidar_2d.launch.py
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen && source install/setup.bash && ros2 run nav2_map_server map_saver_cli -f /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_fangzhen/my_map
+
+# ---------- 8) 辅助工具 ----------
+ros2 run fishbot_description height_hist.py        # 点云高度直方图 (定 2D 切片带)
+ros2 run fishbot_description pgm2png.py my_map.pgm # PGM -> PNG 预览
+
+# ---------- 9) 接口一览 ----------
+# /livox/lidar              PointCloud2 (livox_frame)  仿真 Mid-360 原始点云
+# /cloud_registered         PointCloud2 (odom)         cloud_to_odom.py 输出 (或 FAST-LIO)
+# /pose_correction          PoseStamped  (map)         map->odom 修正量
+# /relocalization_3d/fitness Float64                   截断均方, 失败 -1
+# /relocalization_3d/prior_map PointCloud2 (map)       先验图 (latched)
+# /cmd_vel                  Twist                      速度指令入口
+# /odom                     Odometry                   diff_drive 里程计
+# /scan                     LaserScan                  lidar_2d 切片
+# TF: map -> odom (本节点) -> base_footprint (diff_drive) -> ... -> livox_frame
+
+# ---------- 10) 注意事项 ----------
+# 1) 同一个仿真不要起两份, 否则 controller_manager 同名串台、/cmd_vel 收不到。
+#    重来前先: pkill -f gzserver; pkill -f gzclient; pkill -f gazebo_sim_launch
+# 2) gpu_ray 雷达需要 GPU/显示; 无显示时 /livox/lidar 不出点云 (日志 GpuRaySensor 报错)。
+# 3) fitness 出现 100+ 说明点云里有大量无回波假点 (40 m), 检查 source_range_max。
+# 4) 本包不含导航 (无 Nav2/AMCL); 地图 = map.pcd (由场地 STL 生成) 或 map.pgm (建图产出)。
+# 5) 3D 重定位已从 test_relocalization 迁到本包, 原包仅作历史对照, 勿再改。

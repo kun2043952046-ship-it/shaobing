@@ -1,0 +1,76 @@
+[0.036s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/r2n_bringup_pkg -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg
+[0.321s] -- The C compiler identification is GNU 11.4.0
+[0.321s] -- The CXX compiler identification is GNU 11.4.0
+[0.322s] -- Detecting C compiler ABI info
+[0.322s] -- Detecting C compiler ABI info - done
+[0.322s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.322s] -- Detecting C compile features
+[0.322s] -- Detecting C compile features - done
+[0.322s] -- Detecting CXX compiler ABI info
+[0.322s] -- Detecting CXX compiler ABI info - done
+[0.322s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.322s] -- Detecting CXX compile features
+[0.322s] -- Detecting CXX compile features - done
+[0.322s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.574s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.728s] -- Found rclpy: 3.3.19 (/opt/ros/humble/share/rclpy/cmake)
+[0.731s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.789s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.798s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.807s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.821s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.849s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.931s] -- Found tf2_ros: 0.25.17 (/opt/ros/humble/share/tf2_ros/cmake)
+[1.006s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.009s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.111s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.153s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.199s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.216s] -- Looking for pthread.h
+[1.304s] -- Looking for pthread.h - found
+[1.304s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.396s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.398s] -- Found Threads: TRUE  
+[1.650s] -- Configuring done
+[1.653s] -- Generating done
+[1.661s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg
+[1.700s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/r2n_bringup_pkg -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg
+[1.703s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg -- -j16 -l16
+[1.777s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg -- -j16 -l16
+[1.780s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg
+[1.788s] -- Install configuration: ""
+[1.788s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//launch
+[1.788s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//launch/__pycache__
+[1.788s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//launch/__pycache__/nav.launch.cpython-310.pyc
+[1.788s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//launch/nav.launch.py
+[1.788s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//maps
+[1.789s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//maps/3v3map.pgm
+[1.789s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//maps/test.yaml
+[1.789s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//maps/.gitignore
+[1.789s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//maps/test.pgm
+[1.792s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//pcds
+[1.794s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//pcds/.keep
+[1.794s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//pcds/test.pcd
+[1.794s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//params
+[1.794s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//params/nav2_params_omni.yaml
+[1.794s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//params/nav2_params copy.yaml
+[1.794s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//params/nav2_params.yaml
+[1.796s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//params/nav2_params_test.yaml
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//rviz
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg//rviz/nav2.rviz
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/ament_index/resource_index/package_run_dependencies/r2n_bringup_pkg
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/ament_index/resource_index/parent_prefix_path/r2n_bringup_pkg
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/environment/ament_prefix_path.sh
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/environment/ament_prefix_path.dsv
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/environment/path.sh
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/environment/path.dsv
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/local_setup.bash
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/local_setup.sh
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/local_setup.zsh
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/local_setup.dsv
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/package.dsv
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/ament_index/resource_index/packages/r2n_bringup_pkg
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/cmake/r2n_bringup_pkgConfig.cmake
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/cmake/r2n_bringup_pkgConfig-version.cmake
+[1.797s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/r2n_bringup_pkg/share/r2n_bringup_pkg/package.xml
+[1.803s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/r2n_bringup_pkg

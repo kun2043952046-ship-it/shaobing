@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- =====================================================================
+         Livox Mid-360 3D 点云仿真（Gazebo classic）
+
+         设置逻辑：
+         1) Gazebo 的 ray 传感器，垂直视场是【以传感器 +X 轴为中心上下对称】的；
+            而 Mid-360 真实垂直视场是 -7° ~ +52°（中心 +22.5°，半张角 29.5°），
+            是非对称的，Gazebo 表达不了。
+         2) 解决办法：加一个中间坐标系 livox_frame，让它相对父 link
+            【上仰 22.5°(0.3927rad)】，再把传感器垂直视场设成 ±29.5°；
+            叠加后实际覆盖 = 22.5° ± 29.5° = -7° ~ +52°
+         3) 因此传感器自身的 <pose> 保持 0 0 0，姿态全部交给 joint 进 TF 树，
+            点云、RViz、下游 SLAM 算法看到的姿态才一致。
+         4) 坐标系命名 livox_frame、话题 /livox/lidar 都对齐真实驱动，
+            以后从仿真切到实车，下游代码不用改。
+
+         用法：<xacro:mid360_xacro/>                        挂在 laser_link 原点
+               <xacro:mid360_xacro parent="laser_connector_link" xyz="0 0 0"/>
+    ===================================================================== -->
+    <xacro:macro name="mid360_xacro"
+                 params="parent:='laser_link' xyz:='0 0 0'
+                         horizontal_samples:=720 vertical_samples:=16
+                         update_rate:=10 range_max:=40.0">
+
+        <!-- 传感器安装坐标系：空 link，仅提供姿态参考（无 visual/collision/inertia） -->
+        <link name="livox_frame"/>
+
+        <!-- 相对父 link 上仰 22.5°：绕 Y 轴转 -0.3927rad 使 +X 轴抬起 -->
+        <joint name="livox_frame_joint" type="fixed">
+            <parent link="${parent}"/>
+            <child link="livox_frame"/>
+            <origin xyz="${xyz}" rpy="0 -0.3927 0"/>
+        </joint>
+
+        <gazebo reference="livox_frame">
+            <sensor name="livox_mid360" type="gpu_ray">
+                <!-- 姿态已在 joint 里，这里保持零，避免点云与 TF 不一致 -->
+                <pose>0 0 0 0 0 0</pose>
+                <!-- 关闭射线可视化：720x16=11520 条射线全画出来会把 gzclient 拖垮（界面里那些蓝线）
+                     仅在需要确认射线方向时临时改 true，并同时把采样数调小 -->
+                <visualize>false</visualize>
+                <!-- 帧率 10Hz，对应 Mid-360 真实帧率 -->
+                <update_rate>${update_rate}</update_rate>
+                <ray>
+                    <scan>
+                        <horizontal>
+                            <!-- 720 点 = 0.5°/点，水平 360° -->
+                            <samples>${horizontal_samples}</samples>
+                            <resolution>1</resolution>
+                            <min_angle>-3.14159265</min_angle>
+                            <max_angle>3.14159265</max_angle>
+                        </horizontal>
+                        <vertical>
+                            <!-- 16 层 = 3.9°/层；±29.5° 经安装上仰后变成 -7°~+52° -->
+                            <samples>${vertical_samples}</samples>
+                            <resolution>1</resolution>
+                            <min_angle>-0.5149</min_angle>
+                            <max_angle>0.5149</max_angle>
+                        </vertical>
+                    </scan>
+                    <range>
+                        <!-- Mid-360：盲区 0.1m，量程 40m @10% 反射率 -->
+                        <min>0.1</min>
+                        <max>${range_max}</max>
+                        <resolution>0.01</resolution>
+                    </range>
+                    <noise>
+                        <!-- 高斯噪声：σ=2mm（原 1cm 会让地面点被噪声"顶"进薄切片带，
+                             在 2D 建图时产生一圈假的近距回波） -->
+                        <type>gaussian</type>
+                        <mean>0.0</mean>
+                        <stddev>0.002</stddev>
+                    </noise>
+                </ray>
+                <!--
+                     点频 = horizontal_samples × vertical_samples × update_rate
+                     默认 720 × 16 × 10 = 115,200 点/秒（约真实 20 万点/秒的 58%）
+                     想贴近真实：horizontal_samples:=1000 vertical_samples:=20
+                     卡顿时反过来降：horizontal_samples:=360 vertical_samples:=8
+                -->
+                <plugin name="livox_mid360_plugin" filename="libgazebo_ros_ray_sensor.so">
+                    <ros>
+                        <namespace>/</namespace>
+                        <!-- 话题名对齐真实驱动 -->
+                        <remapping>~/out:=livox/lidar</remapping>
+                    </ros>
+                    <!-- 多层传感器必须用 PointCloud2，LaserScan 装不下垂直信息 -->
+                    <output_type>sensor_msgs/PointCloud2</output_type>
+                    <frame_name>livox_frame</frame_name>
+                </plugin>
+            </sensor>
+        </gazebo>
+
+    </xacro:macro>
+</robot>

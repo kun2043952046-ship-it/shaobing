@@ -1,0 +1,11 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o[0m
+[01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:65:30:[m[K [01;31m[Kerror: [m[Kstray ‘[01m[K@[m[K’ in program
+   65 |     initial_config.xmin =lele[01;31m[K@[m[Khero:~/aaaaa_mine_NJIT_Vision_Gen2/Navigation$ ros2 pkg list | grep nav2
+      |                              [01;31m[K^[m[K
+[01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:98:5:[m[K [01;31m[Kerror: [m[Kstray ‘[01m[K@[m[K’ in program
+   98 | lele[01;31m[K@[m[Khero:~/aaaaa_mine_NJIT_Vision_Gen2/Navigation$
+      |     [01;31m[K^[m[K
+[01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:[m[K In constructor ‘[01m[KRealtimePgmNode::RealtimePgmNode()[m[K’:
+[01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:65:26:[m[K [01;31m[Kerror: [m[K‘[01m[Klele[m[K’ was not declared in this scope
+   65 |     initial_config.xmin =[01;31m[Klele[m[K@hero:~/aaaaa_mine_NJIT_Vision_Gen2/Navigation$ ros2 pkg list | grep nav2
+      |                          [01;31m[K^~~~[m[K

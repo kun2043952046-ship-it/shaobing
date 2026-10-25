@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="rm_field">
+    <!-- 新场地 STL（RMUL2027_3V3_V1.0.0）为 Z 轴朝上：包围盒
+         x 0.063~12.663 / y 0.043~8.643 / z -0.1~0.42；
+         场地地面在局部 z=0，z=-0.1 是底板下表面，墙体顶面 0.42。
+         故不再需要原来的 roll=-90°，pose 只做平移：
+         地图覆盖 world x -6.30~6.30 / y -4.30~4.30、地面 z=0、墙体高 0.42 -->
+    <pose>-6.363 -4.343 0.0 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://rm_field/meshes/sk_rmmap.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://rm_field/meshes/sk_rmmap.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

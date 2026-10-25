@@ -1,0 +1,4 @@
+WARNING: Package name "test_CAN" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_CAN/src/test_CAN.cpp:154:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kbool {anonymous}::parseByte(const string&, uint8_t&)[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-function-Wunused-function]8;;[m[K]
+  154 | bool [01;35m[KparseByte[m[K(const std::string & text, uint8_t & out)
+      |      [01;35m[K^~~~~~~~~[m[K

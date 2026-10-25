@@ -1,0 +1,50 @@
+<!--
+  navigate_to_pose 行为树, 与 Nav2 自带 navigate_to_pose_w_replanning_and_recovery.xml
+  结构完全一致, 唯一差别: ComputePathToPose 的 RateController 由 1.0 Hz 提到 5.0 Hz
+  (即 200 ms 重规划一次), 用于配合实时代价地图提升动态避障响应速度。
+
+  由 nav2_params.yaml 的 bt_navigator.default_nav_to_pose_bt_xml 指向本文件;
+  Nav2 打开该参数时只认"文件路径"(或退回 nav2_bt_navigator/behavior_trees 下查找),
+  不认 "包名/相对路径", 因此 realtime_pgm.launch.py 用 nav2_common 的 RewrittenYaml
+  把本文件的绝对路径写进参数后再传给 Nav2。
+
+  【Humble 兼容性: 不要给 BT 节点加 error_code_id 端口】
+  error_code_id 是 Nav2 Iron/Jazzy 才引入的端口。在 Humble 下 BT 加载会直接报
+    "Exception when loading BT: Possible typo? In the XML, you tried to remap port
+     \"error_code_id\" in node [ComputePathToPose], but the manifest of this node
+     does not contain a port with this name."
+  -> bt_navigator 激活失败(inactive) -> NavigateToPose 动作服务器不可用 ->
+     planner_server 永不被调用 -> 网页点击目标后一条 /plan 都没有。
+  若以后从 Jazzy 的示例里拷 BT 节点, 记得把 error_code_id="..." 删掉。
+
+  RateController hz 说明: hz=5.0 表示每秒最多触发 5 次重规划, 周期 200 ms。
+  注意 hz 只是"最大速率", 实际重规划还受 planner_server 求解耗时与
+  expected_planner_frequency 影响; 若迷宫类环境求解较慢, 实际周期会大于 200 ms。
+-->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode number_of_retries="6" name="NavigateRecovery">
+      <PipelineSequence name="NavigateWithReplanning">
+        <ControllerSelector selected_controller="{selected_controller}" default_controller="FollowPath" topic_name="controller_selector"/>
+        <PlannerSelector selected_planner="{selected_planner}" default_planner="GridBased" topic_name="planner_selector"/>
+        <RateController hz="5.0">
+          <RecoveryNode number_of_retries="1" name="ComputePathToPose">
+            <ComputePathToPose goal="{goal}" path="{path}" planner_id="{selected_planner}"/>
+            <ClearEntireCostmap name="ClearLocalCostmap-Context" service_name="local_costmap/clear_entirely_local_costmap"/>
+          </RecoveryNode>
+        </RateController>
+        <RecoveryNode number_of_retries="1" name="FollowPath">
+          <FollowPath path="{path}" controller_id="{selected_controller}"/>
+          <ClearEntireCostmap name="ClearLocalCostmap-Context" service_name="local_costmap/clear_entirely_local_costmap"/>
+        </RecoveryNode>
+      </PipelineSequence>
+      <SequenceStar name="RecoveryActions">
+        <ClearEntireCostmap name="ClearLocalCostmap-Subtree" service_name="local_costmap/clear_entirely_local_costmap"/>
+        <ClearEntireCostmap name="ClearGlobalCostmap-Subtree" service_name="global_costmap/clear_entirely_global_costmap"/>
+        <Spin spin_dist="1.57"/>
+        <Wait wait_duration="5"/>
+        <BackUp backup_dist="0.30" backup_speed="0.15"/>
+      </SequenceStar>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

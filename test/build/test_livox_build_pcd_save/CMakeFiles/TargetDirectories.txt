@@ -1,0 +1,10 @@
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/uninstall.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/test_livox_build_pcd_save_uninstall.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/test_livox_build_pcd_save_node.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/test.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/edit_cache.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/rebuild_cache.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/list_install_components.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/install.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/install/local.dir
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/CMakeFiles/install/strip.dir

@@ -1,0 +1,45 @@
+[0.036s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/rm_related_pkgs/robot_description_pkg -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg
+[0.321s] -- The C compiler identification is GNU 11.4.0
+[0.321s] -- The CXX compiler identification is GNU 11.4.0
+[0.321s] -- Detecting C compiler ABI info
+[0.321s] -- Detecting C compiler ABI info - done
+[0.321s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.321s] -- Detecting C compile features
+[0.321s] -- Detecting C compile features - done
+[0.321s] -- Detecting CXX compiler ABI info
+[0.321s] -- Detecting CXX compiler ABI info - done
+[0.321s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.321s] -- Detecting CXX compile features
+[0.321s] -- Detecting CXX compile features - done
+[0.321s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.592s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.829s] -- Configuring done
+[0.831s] -- Generating done
+[0.832s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg
+[0.846s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/rm_related_pkgs/robot_description_pkg -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg
+[0.846s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg -- -j16 -l16
+[1.214s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg -- -j16 -l16
+[1.223s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg
+[1.348s] -- Install configuration: ""
+[1.348s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/launch
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/launch/robot_urdf.launch.py
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/urdf
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/urdf/robot.urdf
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/rviz
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/rviz/display_robot.rviz
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/ament_index/resource_index/package_run_dependencies/robot_description_pkg
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/ament_index/resource_index/parent_prefix_path/robot_description_pkg
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/environment/ament_prefix_path.sh
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/environment/ament_prefix_path.dsv
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/environment/path.sh
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/environment/path.dsv
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/local_setup.bash
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/local_setup.sh
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/local_setup.zsh
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/local_setup.dsv
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/package.dsv
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/ament_index/resource_index/packages/robot_description_pkg
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/cmake/robot_description_pkgConfig.cmake
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/cmake/robot_description_pkgConfig-version.cmake
+[1.349s] -- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/robot_description_pkg/share/robot_description_pkg/package.xml
+[1.371s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/robot_description_pkg

@@ -1,0 +1,110 @@
+[0.012s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm
+[0.056s] -- The C compiler identification is GNU 11.4.0
+[0.094s] -- The CXX compiler identification is GNU 11.4.0
+[0.100s] -- Detecting C compiler ABI info
+[0.156s] -- Detecting C compiler ABI info - done
+[0.160s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.160s] -- Detecting C compile features
+[0.161s] -- Detecting C compile features - done
+[0.164s] -- Detecting CXX compiler ABI info
+[0.220s] -- Detecting CXX compiler ABI info - done
+[0.226s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.226s] -- Detecting CXX compile features
+[0.226s] -- Detecting CXX compile features - done
+[0.228s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.336s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.379s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.411s] -- Checking for module 'eigen3'
+[0.420s] --   Found eigen3, version 3.4.0
+[0.440s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[0.440s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.454s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization 
+[0.493s] -- Checking for module 'libusb-1.0'
+[0.503s] --   Found libusb-1.0, version 1.0.25
+[0.531s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[0.532s] -- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") 
+[0.532s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.565s] -- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") 
+[0.565s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.565s] [0m** WARNING ** io features related to pcap will be disabled[0m
+[0.566s] [0m** WARNING ** io features related to png will be disabled[0m
+[0.586s] -- Looking for pthread.h
+[0.644s] -- Looking for pthread.h - found
+[0.645s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.698s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.699s] -- Found Threads: TRUE  
+[0.701s] -- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  
+[0.707s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX 
+[0.808s] -- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") 
+[0.809s] -- Found MPI: TRUE (found version "3.1") found components: C 
+[0.810s] -- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") 
+[0.816s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+[0.827s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
+[0.835s] -- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") 
+[0.904s] -- Found X11: /usr/include   
+[0.905s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[0.962s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[0.962s] -- Looking for gethostbyname
+[1.020s] -- Looking for gethostbyname - found
+[1.020s] -- Looking for connect
+[1.078s] -- Looking for connect - found
+[1.078s] -- Looking for remove
+[1.150s] -- Looking for remove - found
+[1.150s] -- Looking for shmat
+[1.222s] -- Looking for shmat - found
+[1.222s] -- Looking for IceConnectionNumber in ICE
+[1.292s] -- Looking for IceConnectionNumber in ICE - found
+[1.364s] -- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") 
+[1.369s] -- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  
+[1.372s] -- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") 
+[1.373s] -- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") 
+[1.384s] -- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") 
+[1.389s] -- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  
+[1.392s] -- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") 
+[1.396s] -- Found utf8cpp: /usr/include/utf8cpp  
+[1.421s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.421s] -- looking for PCL_COMMON
+[1.422s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[1.422s] -- looking for PCL_OCTREE
+[1.423s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[1.423s] -- looking for PCL_IO
+[1.424s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[1.424s] -- Found PCL: pcl_common;pcl_octree;pcl_io;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt  
+[1.426s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.468s] WARNING: Package name "test_pcd_To_pgm" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[1.490s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.490s] -- Configured cppcheck include dirs: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm/include
+[1.490s] -- Configured cppcheck exclude dirs and/or files: 
+[1.490s] -- Added test 'lint_cmake' to check CMake code style
+[1.490s] -- Added test 'uncrustify' to check C / C++ code style
+[1.490s] -- Configured uncrustify additional arguments: 
+[1.491s] -- Added test 'xmllint' to check XML markup files
+[1.493s] -- Configuring done
+[1.503s] -- Generating done
+[1.506s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm
+[1.516s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_pcd_To_pgm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm
+[1.518s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm -- -j16 -l16
+[1.574s] [ 50%] [32mBuilding CXX object CMakeFiles/pcd_to_pgm.dir/src/test_pcd_To_pgm.cpp.o[0m
+[3.983s] [100%] [32m[1mLinking CXX executable pcd_to_pgm[0m
+[4.232s] [100%] Built target pcd_to_pgm
+[4.245s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm -- -j16 -l16
+[4.260s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm
+[4.269s] -- Install configuration: ""
+[4.269s] -- Execute custom install script
+[4.270s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/lib/test_pcd_To_pgm/pcd_to_pgm
+[4.280s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/ament_index/resource_index/package_run_dependencies/test_pcd_To_pgm
+[4.293s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/ament_index/resource_index/parent_prefix_path/test_pcd_To_pgm
+[4.303s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/ament_prefix_path.sh
+[4.312s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/ament_prefix_path.dsv
+[4.323s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/path.sh
+[4.341s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/path.dsv
+[4.351s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.bash
+[4.362s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.sh
+[4.376s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.zsh
+[4.389s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.dsv
+[4.400s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.dsv
+[4.413s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/ament_index/resource_index/packages/test_pcd_To_pgm
+[4.424s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/cmake/test_pcd_To_pgmConfig.cmake
+[4.431s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/cmake/test_pcd_To_pgmConfig-version.cmake
+[4.439s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.xml
+[4.448s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_pcd_To_pgm

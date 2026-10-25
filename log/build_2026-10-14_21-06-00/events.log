@@ -1,0 +1,284 @@
+[0.000000] (-) TimerEvent: {}
+[0.000136] (-) JobUnselected: {'identifier': 'can_serial_pkg'}
+[0.000292] (-) JobUnselected: {'identifier': 'decision_pkg'}
+[0.000315] (-) JobUnselected: {'identifier': 'fast_lio'}
+[0.000481] (-) JobUnselected: {'identifier': 'livox_ros_driver2'}
+[0.000538] (-) JobUnselected: {'identifier': 'map_trans_pkg'}
+[0.000593] (-) JobUnselected: {'identifier': 'r2n_bringup_pkg'}
+[0.000677] (-) JobUnselected: {'identifier': 'robot_description_pkg'}
+[0.000701] (-) JobUnselected: {'identifier': 'serial_node'}
+[0.000732] (-) JobUnselected: {'identifier': 'test_CAN'}
+[0.000751] (-) JobUnselected: {'identifier': 'test_draw_pgm_realtime'}
+[0.000769] (-) JobUnselected: {'identifier': 'test_livox_build_pcd_save'}
+[0.000810] (-) JobUnselected: {'identifier': 'test_pcd_To_pgm'}
+[0.000830] (-) JobUnselected: {'identifier': 'test_ros_health'}
+[0.000851] (test_relocalization) JobQueued: {'identifier': 'test_relocalization', 'dependencies': OrderedDict()}
+[0.000890] (test_relocalization) JobStarted: {'identifier': 'test_relocalization'}
+[0.004839] (test_relocalization) JobProgress: {'identifier': 'test_relocalization', 'progress': 'cmake'}
+[0.005294] (test_relocalization) JobProgress: {'identifier': 'test_relocalization', 'progress': 'build'}
+[0.005875] (test_relocalization) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization', '--', '-j16', '-l16'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/lele'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en'), ('CLAUDE_SESSION_ID', '49f2b36c67a24a03a281586e2de17a25'), ('USER', 'lele'), ('SSH_CLIENT', '172.20.10.6 49767 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","messagesFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea/nls.messages.json","corruptMarkerFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"75539731208fa508a5b042c8fe051beb.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","_cacheRoot":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn","_resolvedLanguagePackCoreLocation":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea","_corruptedFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"}'), ('SYSTEMD_PAGER', ''), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('BROWSER', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('CODEBUDDY_SAFE_DELETE_SHIM_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim'), ('CODEBUDDY_COPILOT_INTERNET_ENVIRONMENT', 'internal'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-96823cd8-285e-4609-ad8a-94ccefad86ed.sock'), ('PYTHONUNBUFFERED', '1'), ('STDBUF_O', 'L'), ('ROS_PYTHON_VERSION', '3'), ('NODE_OPTIONS', '--require="/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/node-language-shim.cjs"'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('CODEBUDDY_NODE_BIN', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('RUBY_UNBUFFERED', '1'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR', '/tmp/codebuddy-safe-delete-bulk'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', '80447165-83fd-40e0-8bc9-ece057424869'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin:/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/remote-cli:/home/lele/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('VSCODE_AGENT_FOLDER', '/home/lele/.vscode-server'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_REPORT_PATH', '/tmp/codebuddy-safe-delete/report-7097-1791983160038-l2ni9vgmlem.jsonl'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_HOST_HEARTBEAT', '/tmp/codebuddy-sd-state/host-7097-1b340ee5a3cb9c15/host-heartbeat.json'), ('XMODIFIERS', '@im=fcitx'), ('LS_COLORS', ''), ('MANPAGER', 'cat'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('MXC_BIN_DIR', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node_modules/@microsoft/mxc-sdk/bin'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEBUDDY_TOOL_CALL_ID', 'call_00_ET_0iTPltu6RAhrOSEDg7Qr7133'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_ENABLED', '1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('BASH_ENV', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin/safe-delete-bash-env.sh'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization'), ('GENIE_TRASH_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/genie-trash'), ('SSH_CONNECTION', '172.20.10.6 49767 172.20.10.2 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CODEBUDDY_SAFE_DELETE_BULK_GUARD', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-delete-bulk-guard.cjs'), ('PYTHONPATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('CODEBUDDY_SESSION_ID', '49f2b36c67a24a03a281586e2de17a25'), ('LC_PAPER', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_BIN_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('CODEBUDDY_SAFE_DELETE_BULK_THRESHOLD', '500'), ('EDITOR', 'cat'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.025276] (test_relocalization) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099871] (-) TimerEvent: {}
+[0.144192] (test_relocalization) StdoutLine: {'line': b'-- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.164822] (test_relocalization) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.166256] (test_relocalization) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.170658] (test_relocalization) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.176755] (test_relocalization) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.185104] (test_relocalization) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.199962] (-) TimerEvent: {}
+[0.205844] (test_relocalization) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.206841] (test_relocalization) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.272893] (test_relocalization) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.300066] (-) TimerEvent: {}
+[0.314075] (test_relocalization) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.331957] (test_relocalization) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.343039] (test_relocalization) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[0.367829] (test_relocalization) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[0.376550] (test_relocalization) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[0.397181] (test_relocalization) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[0.397360] (test_relocalization) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[0.400127] (-) TimerEvent: {}
+[0.422156] (test_relocalization) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[0.430649] (test_relocalization) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[0.455932] (test_relocalization) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[0.456112] (test_relocalization) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[0.500243] (-) TimerEvent: {}
+[0.600445] (-) TimerEvent: {}
+[0.700656] (-) TimerEvent: {}
+[0.800864] (-) TimerEvent: {}
+[0.901070] (-) TimerEvent: {}
+[1.001266] (-) TimerEvent: {}
+[1.060762] (test_relocalization) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[1.068974] (test_relocalization) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[1.089864] (test_relocalization) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[1.090552] (test_relocalization) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[1.101367] (-) TimerEvent: {}
+[1.127353] (test_relocalization) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[1.201455] (-) TimerEvent: {}
+[1.217344] (test_relocalization) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[1.222129] (test_relocalization) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[1.226669] (test_relocalization) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[1.301556] (-) TimerEvent: {}
+[1.316757] (test_relocalization) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[1.401649] (-) TimerEvent: {}
+[1.403529] (test_relocalization) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[1.483832] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[1.484237] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[1.484711] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[1.485198] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[1.485695] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[1.486176] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[1.486395] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[1.486588] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[1.487056] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[1.487600] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[1.488156] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  \n'}
+[1.488682] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  \n'}
+[1.489262] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  \n'}
+[1.489826] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  \n'}
+[1.490377] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[1.490929] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  \n'}
+[1.491464] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  \n'}
+[1.492024] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  \n'}
+[1.492589] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  \n'}
+[1.493126] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  \n'}
+[1.493571] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[1.493763] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[1.493984] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[1.494477] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  \n'}
+[1.495024] (test_relocalization) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  \n'}
+[1.497050] (test_relocalization) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.17 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[1.501700] (-) TimerEvent: {}
+[1.554107] (test_relocalization) StderrLine: {'line': b'CMake Warning (dev) at CMakeLists.txt:16 (find_package):\n'}
+[1.554251] (test_relocalization) StderrLine: {'line': b'  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.\n'}
+[1.554315] (test_relocalization) StderrLine: {'line': b'  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy\n'}
+[1.554380] (test_relocalization) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[1.554439] (test_relocalization) StderrLine: {'line': b'\n'}
+[1.554502] (test_relocalization) StderrLine: {'line': b'  CMake variable PCL_ROOT is set to:\n'}
+[1.554562] (test_relocalization) StderrLine: {'line': b'\n'}
+[1.554625] (test_relocalization) StderrLine: {'line': b'    /usr\n'}
+[1.554686] (test_relocalization) StderrLine: {'line': b'\n'}
+[1.554743] (test_relocalization) StderrLine: {'line': b'  For compatibility, CMake is ignoring the variable.\n'}
+[1.554800] (test_relocalization) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[1.554857] (test_relocalization) StderrLine: {'line': b'\n'}
+[1.601779] (-) TimerEvent: {}
+[1.609189] (test_relocalization) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.633635] (test_relocalization) StdoutLine: {'line': b'-- Generating done\n'}
+[1.639460] (test_relocalization) StdoutLine: {'line': b'-- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization\n'}
+[1.660763] (test_relocalization) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target test_relocalization_node\n'}
+[1.667765] (test_relocalization) StdoutLine: {'line': b'[ 75%] Built target test_relocalization_node\n'}
+[1.667879] (test_relocalization) StdoutLine: {'line': b'[ 75%] Building CXX object CMakeFiles/relocalization_3d.dir/src/relocalization_3d_node.cpp.o\n'}
+[1.701864] (-) TimerEvent: {}
+[1.802016] (-) TimerEvent: {}
+[1.902207] (-) TimerEvent: {}
+[2.002402] (-) TimerEvent: {}
+[2.102616] (-) TimerEvent: {}
+[2.202820] (-) TimerEvent: {}
+[2.302993] (-) TimerEvent: {}
+[2.403169] (-) TimerEvent: {}
+[2.503372] (-) TimerEvent: {}
+[2.603573] (-) TimerEvent: {}
+[2.703762] (-) TimerEvent: {}
+[2.803920] (-) TimerEvent: {}
+[2.904100] (-) TimerEvent: {}
+[3.004297] (-) TimerEvent: {}
+[3.104491] (-) TimerEvent: {}
+[3.204683] (-) TimerEvent: {}
+[3.304890] (-) TimerEvent: {}
+[3.405108] (-) TimerEvent: {}
+[3.505312] (-) TimerEvent: {}
+[3.605528] (-) TimerEvent: {}
+[3.705713] (-) TimerEvent: {}
+[3.805910] (-) TimerEvent: {}
+[3.906076] (-) TimerEvent: {}
+[4.006260] (-) TimerEvent: {}
+[4.106397] (-) TimerEvent: {}
+[4.206581] (-) TimerEvent: {}
+[4.306770] (-) TimerEvent: {}
+[4.406960] (-) TimerEvent: {}
+[4.507135] (-) TimerEvent: {}
+[4.607308] (-) TimerEvent: {}
+[4.707451] (-) TimerEvent: {}
+[4.807638] (-) TimerEvent: {}
+[4.907824] (-) TimerEvent: {}
+[5.008023] (-) TimerEvent: {}
+[5.108214] (-) TimerEvent: {}
+[5.208386] (-) TimerEvent: {}
+[5.308555] (-) TimerEvent: {}
+[5.408752] (-) TimerEvent: {}
+[5.508941] (-) TimerEvent: {}
+[5.609140] (-) TimerEvent: {}
+[5.709323] (-) TimerEvent: {}
+[5.809533] (-) TimerEvent: {}
+[5.909740] (-) TimerEvent: {}
+[6.009926] (-) TimerEvent: {}
+[6.110109] (-) TimerEvent: {}
+[6.210304] (-) TimerEvent: {}
+[6.310493] (-) TimerEvent: {}
+[6.410657] (-) TimerEvent: {}
+[6.510842] (-) TimerEvent: {}
+[6.611029] (-) TimerEvent: {}
+[6.711228] (-) TimerEvent: {}
+[6.811473] (-) TimerEvent: {}
+[6.911709] (-) TimerEvent: {}
+[7.011911] (-) TimerEvent: {}
+[7.112098] (-) TimerEvent: {}
+[7.212288] (-) TimerEvent: {}
+[7.312503] (-) TimerEvent: {}
+[7.412711] (-) TimerEvent: {}
+[7.512922] (-) TimerEvent: {}
+[7.613128] (-) TimerEvent: {}
+[7.713326] (-) TimerEvent: {}
+[7.813516] (-) TimerEvent: {}
+[7.913734] (-) TimerEvent: {}
+[8.013946] (-) TimerEvent: {}
+[8.114165] (-) TimerEvent: {}
+[8.214391] (-) TimerEvent: {}
+[8.314589] (-) TimerEvent: {}
+[8.414824] (-) TimerEvent: {}
+[8.515020] (-) TimerEvent: {}
+[8.615240] (-) TimerEvent: {}
+[8.715452] (-) TimerEvent: {}
+[8.815672] (-) TimerEvent: {}
+[8.915890] (-) TimerEvent: {}
+[9.016091] (-) TimerEvent: {}
+[9.116279] (-) TimerEvent: {}
+[9.216480] (-) TimerEvent: {}
+[9.316691] (-) TimerEvent: {}
+[9.416927] (-) TimerEvent: {}
+[9.517173] (-) TimerEvent: {}
+[9.617437] (-) TimerEvent: {}
+[9.717635] (-) TimerEvent: {}
+[9.817873] (-) TimerEvent: {}
+[9.918184] (-) TimerEvent: {}
+[10.018402] (-) TimerEvent: {}
+[10.118579] (-) TimerEvent: {}
+[10.218746] (-) TimerEvent: {}
+[10.318934] (-) TimerEvent: {}
+[10.419131] (-) TimerEvent: {}
+[10.519300] (-) TimerEvent: {}
+[10.619506] (-) TimerEvent: {}
+[10.719719] (-) TimerEvent: {}
+[10.819928] (-) TimerEvent: {}
+[10.920128] (-) TimerEvent: {}
+[11.020318] (-) TimerEvent: {}
+[11.120485] (-) TimerEvent: {}
+[11.220664] (-) TimerEvent: {}
+[11.320853] (-) TimerEvent: {}
+[11.421024] (-) TimerEvent: {}
+[11.521190] (-) TimerEvent: {}
+[11.621353] (-) TimerEvent: {}
+[11.721504] (-) TimerEvent: {}
+[11.821654] (-) TimerEvent: {}
+[11.921831] (-) TimerEvent: {}
+[12.021987] (-) TimerEvent: {}
+[12.122128] (-) TimerEvent: {}
+[12.222287] (-) TimerEvent: {}
+[12.322451] (-) TimerEvent: {}
+[12.422631] (-) TimerEvent: {}
+[12.522797] (-) TimerEvent: {}
+[12.622956] (-) TimerEvent: {}
+[12.723114] (-) TimerEvent: {}
+[12.823297] (-) TimerEvent: {}
+[12.923476] (-) TimerEvent: {}
+[13.023642] (-) TimerEvent: {}
+[13.123810] (-) TimerEvent: {}
+[13.223976] (-) TimerEvent: {}
+[13.324129] (-) TimerEvent: {}
+[13.424285] (-) TimerEvent: {}
+[13.524479] (-) TimerEvent: {}
+[13.624646] (-) TimerEvent: {}
+[13.724806] (-) TimerEvent: {}
+[13.825066] (-) TimerEvent: {}
+[13.925343] (-) TimerEvent: {}
+[14.025524] (-) TimerEvent: {}
+[14.125727] (-) TimerEvent: {}
+[14.225931] (-) TimerEvent: {}
+[14.326152] (-) TimerEvent: {}
+[14.426350] (-) TimerEvent: {}
+[14.526543] (-) TimerEvent: {}
+[14.626750] (-) TimerEvent: {}
+[14.726952] (-) TimerEvent: {}
+[14.827313] (-) TimerEvent: {}
+[14.927702] (-) TimerEvent: {}
+[15.003831] (test_relocalization) StdoutLine: {'line': b'[100%] Linking CXX executable relocalization_3d\n'}
+[15.027823] (-) TimerEvent: {}
+[15.128023] (-) TimerEvent: {}
+[15.228212] (-) TimerEvent: {}
+[15.328410] (-) TimerEvent: {}
+[15.428634] (-) TimerEvent: {}
+[15.528839] (-) TimerEvent: {}
+[15.629067] (-) TimerEvent: {}
+[15.729286] (-) TimerEvent: {}
+[15.829499] (-) TimerEvent: {}
+[15.859212] (test_relocalization) StdoutLine: {'line': b'[100%] Built target relocalization_3d\n'}
+[15.865150] (test_relocalization) CommandEnded: {'returncode': 0}
+[15.865696] (test_relocalization) JobProgress: {'identifier': 'test_relocalization', 'progress': 'install'}
+[15.871218] (test_relocalization) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/lele'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en'), ('CLAUDE_SESSION_ID', '49f2b36c67a24a03a281586e2de17a25'), ('USER', 'lele'), ('SSH_CLIENT', '172.20.10.6 49767 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","messagesFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea/nls.messages.json","corruptMarkerFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"75539731208fa508a5b042c8fe051beb.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","_cacheRoot":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn","_resolvedLanguagePackCoreLocation":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea","_corruptedFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"}'), ('SYSTEMD_PAGER', ''), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('BROWSER', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('CODEBUDDY_SAFE_DELETE_SHIM_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim'), ('CODEBUDDY_COPILOT_INTERNET_ENVIRONMENT', 'internal'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-96823cd8-285e-4609-ad8a-94ccefad86ed.sock'), ('PYTHONUNBUFFERED', '1'), ('STDBUF_O', 'L'), ('ROS_PYTHON_VERSION', '3'), ('NODE_OPTIONS', '--require="/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/node-language-shim.cjs"'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('CODEBUDDY_NODE_BIN', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('RUBY_UNBUFFERED', '1'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR', '/tmp/codebuddy-safe-delete-bulk'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', '80447165-83fd-40e0-8bc9-ece057424869'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin:/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/remote-cli:/home/lele/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('VSCODE_AGENT_FOLDER', '/home/lele/.vscode-server'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_REPORT_PATH', '/tmp/codebuddy-safe-delete/report-7097-1791983160038-l2ni9vgmlem.jsonl'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_HOST_HEARTBEAT', '/tmp/codebuddy-sd-state/host-7097-1b340ee5a3cb9c15/host-heartbeat.json'), ('XMODIFIERS', '@im=fcitx'), ('LS_COLORS', ''), ('MANPAGER', 'cat'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('MXC_BIN_DIR', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node_modules/@microsoft/mxc-sdk/bin'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEBUDDY_TOOL_CALL_ID', 'call_00_ET_0iTPltu6RAhrOSEDg7Qr7133'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_ENABLED', '1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('BASH_ENV', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin/safe-delete-bash-env.sh'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_relocalization'), ('GENIE_TRASH_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/genie-trash'), ('SSH_CONNECTION', '172.20.10.6 49767 172.20.10.2 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CODEBUDDY_SAFE_DELETE_BULK_GUARD', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-delete-bulk-guard.cjs'), ('PYTHONPATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('CODEBUDDY_SESSION_ID', '49f2b36c67a24a03a281586e2de17a25'), ('LC_PAPER', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_BIN_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('CODEBUDDY_SAFE_DELETE_BULK_THRESHOLD', '500'), ('EDITOR', 'cat'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[15.875275] (test_relocalization) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[15.875373] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/lib/test_relocalization/test_relocalization_node\n'}
+[15.875465] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/lib/test_relocalization/relocalization_3d\n'}
+[15.880725] (test_relocalization) StdoutLine: {'line': b'-- Set runtime path of "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/lib/test_relocalization/relocalization_3d" to ""\n'}
+[15.881665] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/launch\n'}
+[15.881697] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/launch/relocalization.launch.py\n'}
+[15.881725] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/config\n'}
+[15.881752] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/config/relocalization.yaml\n'}
+[15.881779] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/lib/test_relocalization/relocalization_viewer.py\n'}
+[15.881806] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/ament_index/resource_index/package_run_dependencies/test_relocalization\n'}
+[15.881833] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/ament_index/resource_index/parent_prefix_path/test_relocalization\n'}
+[15.881860] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/environment/ament_prefix_path.sh\n'}
+[15.881887] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/environment/ament_prefix_path.dsv\n'}
+[15.881925] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/environment/path.sh\n'}
+[15.882131] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/environment/path.dsv\n'}
+[15.882572] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/local_setup.bash\n'}
+[15.882666] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/local_setup.sh\n'}
+[15.882797] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/local_setup.zsh\n'}
+[15.882966] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/local_setup.dsv\n'}
+[15.883066] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/package.dsv\n'}
+[15.883307] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/ament_index/resource_index/packages/test_relocalization\n'}
+[15.883484] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/cmake/test_relocalizationConfig.cmake\n'}
+[15.883730] (test_relocalization) StdoutLine: {'line': b'-- Up-to-date: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/cmake/test_relocalizationConfig-version.cmake\n'}
+[15.883806] (test_relocalization) StdoutLine: {'line': b'-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_relocalization/share/test_relocalization/package.xml\n'}
+[15.883897] (test_relocalization) CommandEnded: {'returncode': 0}
+[15.890946] (test_relocalization) JobEnded: {'identifier': 'test_relocalization', 'rc': 0}
+[15.891183] (-) EventReactorShutdown: {}

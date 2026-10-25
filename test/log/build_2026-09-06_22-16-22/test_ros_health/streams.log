@@ -1,0 +1,69 @@
+[0.013s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_ros_health -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health
+[0.053s] -- The C compiler identification is GNU 11.4.0
+[0.099s] -- The CXX compiler identification is GNU 11.4.0
+[0.104s] -- Detecting C compiler ABI info
+[0.157s] -- Detecting C compiler ABI info - done
+[0.163s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.163s] -- Detecting C compile features
+[0.164s] -- Detecting C compile features - done
+[0.166s] -- Detecting CXX compiler ABI info
+[0.239s] -- Detecting CXX compiler ABI info - done
+[0.244s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.244s] -- Detecting CXX compile features
+[0.245s] -- Detecting CXX compile features - done
+[0.247s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.366s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.414s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.435s] -- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+[0.463s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.466s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.471s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.479s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.489s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.516s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.518s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.582s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.602s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.629s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.636s] -- Looking for pthread.h
+[0.688s] -- Looking for pthread.h - found
+[0.688s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.754s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.755s] -- Found Threads: TRUE  
+[0.789s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.850s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.851s] -- Configured cppcheck include dirs: 
+[0.851s] -- Configured cppcheck exclude dirs and/or files: 
+[0.851s] -- Added test 'lint_cmake' to check CMake code style
+[0.851s] -- Added test 'uncrustify' to check C / C++ code style
+[0.851s] -- Configured uncrustify additional arguments: 
+[0.852s] -- Added test 'xmllint' to check XML markup files
+[0.853s] -- Configuring done
+[0.857s] -- Generating done
+[0.860s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health
+[0.870s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_ros_health -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health
+[0.871s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health -- -j16 -l16
+[0.908s] [ 50%] [32mBuilding CXX object CMakeFiles/test_ros_health_node.dir/src/test_ros_health.cpp.o[0m
+[4.259s] [100%] [32m[1mLinking CXX executable test_ros_health_node[0m
+[4.427s] [100%] Built target test_ros_health_node
+[4.439s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health -- -j16 -l16
+[4.440s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health
+[4.446s] -- Install configuration: ""
+[4.446s] -- Execute custom install script
+[4.447s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/lib/test_ros_health/test_ros_health_node
+[4.455s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/ament_index/resource_index/package_run_dependencies/test_ros_health
+[4.470s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/ament_index/resource_index/parent_prefix_path/test_ros_health
+[4.478s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/environment/ament_prefix_path.sh
+[4.489s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/environment/ament_prefix_path.dsv
+[4.501s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/environment/path.sh
+[4.509s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/environment/path.dsv
+[4.518s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/local_setup.bash
+[4.527s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/local_setup.sh
+[4.538s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/local_setup.zsh
+[4.548s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/local_setup.dsv
+[4.555s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.dsv
+[4.564s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/ament_index/resource_index/packages/test_ros_health
+[4.577s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/cmake/test_ros_healthConfig.cmake
+[4.586s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/cmake/test_ros_healthConfig-version.cmake
+[4.592s] -- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/test_ros_health/share/test_ros_health/package.xml
+[4.603s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_ros_health

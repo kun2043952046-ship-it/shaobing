@@ -1,0 +1,258 @@
+[0.000000] (-) TimerEvent: {}
+[0.000149] (-) JobUnselected: {'identifier': 'can_serial_pkg'}
+[0.000284] (-) JobUnselected: {'identifier': 'decision_pkg'}
+[0.000367] (-) JobUnselected: {'identifier': 'fast_lio'}
+[0.000388] (-) JobUnselected: {'identifier': 'livox_ros_driver2'}
+[0.000437] (-) JobUnselected: {'identifier': 'map_trans_pkg'}
+[0.000458] (-) JobUnselected: {'identifier': 'r2n_bringup_pkg'}
+[0.000516] (-) JobUnselected: {'identifier': 'robot_description_pkg'}
+[0.000534] (-) JobUnselected: {'identifier': 'serial_node'}
+[0.000551] (-) JobUnselected: {'identifier': 'test_CAN'}
+[0.000577] (-) JobUnselected: {'identifier': 'test_livox_build_pcd_save'}
+[0.000595] (-) JobUnselected: {'identifier': 'test_pcd_To_pgm'}
+[0.000632] (-) JobUnselected: {'identifier': 'test_ros_health'}
+[0.000652] (test_draw_pgm_realtime) JobQueued: {'identifier': 'test_draw_pgm_realtime', 'dependencies': OrderedDict()}
+[0.000672] (test_draw_pgm_realtime) JobStarted: {'identifier': 'test_draw_pgm_realtime'}
+[0.004437] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'cmake'}
+[0.004880] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'build'}
+[0.005315] (test_draw_pgm_realtime) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', '--', '-j16', '-l16'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/lele'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en'), ('CLAUDE_SESSION_ID', '18235f62d56c4d45a0c231ed8df3075f'), ('USER', 'lele'), ('SSH_CLIENT', '172.20.10.6 63384 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","messagesFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea/nls.messages.json","corruptMarkerFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"75539731208fa508a5b042c8fe051beb.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","_cacheRoot":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn","_resolvedLanguagePackCoreLocation":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea","_corruptedFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"}'), ('SYSTEMD_PAGER', ''), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('BROWSER', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('CODEBUDDY_SAFE_DELETE_SHIM_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim'), ('CODEBUDDY_COPILOT_INTERNET_ENVIRONMENT', 'internal'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-a5010398-84dc-45fc-8bd3-cd77865cc3bc.sock'), ('PYTHONUNBUFFERED', '1'), ('STDBUF_O', 'L'), ('ROS_PYTHON_VERSION', '3'), ('NODE_OPTIONS', '--require="/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/node-language-shim.cjs"'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('CODEBUDDY_NODE_BIN', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('RUBY_UNBUFFERED', '1'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR', '/tmp/codebuddy-safe-delete-bulk'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'f6439f8c-932f-4c07-b2d1-a32a89ce972a'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin:/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/remote-cli:/home/lele/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('VSCODE_AGENT_FOLDER', '/home/lele/.vscode-server'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_REPORT_PATH', '/tmp/codebuddy-safe-delete/report-8964-1791642028912-kqlb0g4fckp.jsonl'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_HOST_HEARTBEAT', '/tmp/codebuddy-sd-state/host-8964-29b2332e7055b9bc/host-heartbeat.json'), ('XMODIFIERS', '@im=fcitx'), ('LS_COLORS', ''), ('MANPAGER', 'cat'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('MXC_BIN_DIR', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node_modules/@microsoft/mxc-sdk/bin'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEBUDDY_TOOL_CALL_ID', 'call_00_ET_ZzpsYF0EOX1yAR4fVSHH0757'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_ENABLED', '1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('BASH_ENV', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin/safe-delete-bash-env.sh'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime'), ('GENIE_TRASH_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/genie-trash'), ('SSH_CONNECTION', '172.20.10.6 63384 172.20.10.2 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CODEBUDDY_SAFE_DELETE_BULK_GUARD', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-delete-bulk-guard.cjs'), ('PYTHONPATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('CODEBUDDY_SESSION_ID', '18235f62d56c4d45a0c231ed8df3075f'), ('LC_PAPER', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_BIN_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('CODEBUDDY_SAFE_DELETE_BULK_THRESHOLD', '500'), ('EDITOR', 'cat'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.035134] (test_draw_pgm_realtime) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target test_draw_pgm_realtime_node\n'}
+[0.037274] (test_draw_pgm_realtime) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target pose_localization_node\n'}
+[0.045331] (test_draw_pgm_realtime) StdoutLine: {'line': b'[ 50%] Built target test_draw_pgm_realtime_node\n'}
+[0.051055] (test_draw_pgm_realtime) StdoutLine: {'line': b'[ 75%] Building CXX object CMakeFiles/pose_localization_node.dir/src/pose_localization_node.cpp.o\n'}
+[0.099784] (-) TimerEvent: {}
+[0.199982] (-) TimerEvent: {}
+[0.300256] (-) TimerEvent: {}
+[0.400574] (-) TimerEvent: {}
+[0.500770] (-) TimerEvent: {}
+[0.600996] (-) TimerEvent: {}
+[0.701196] (-) TimerEvent: {}
+[0.801400] (-) TimerEvent: {}
+[0.901607] (-) TimerEvent: {}
+[1.001800] (-) TimerEvent: {}
+[1.101989] (-) TimerEvent: {}
+[1.202172] (-) TimerEvent: {}
+[1.302371] (-) TimerEvent: {}
+[1.402583] (-) TimerEvent: {}
+[1.502764] (-) TimerEvent: {}
+[1.602948] (-) TimerEvent: {}
+[1.703144] (-) TimerEvent: {}
+[1.803331] (-) TimerEvent: {}
+[1.903528] (-) TimerEvent: {}
+[2.003727] (-) TimerEvent: {}
+[2.103918] (-) TimerEvent: {}
+[2.204116] (-) TimerEvent: {}
+[2.304344] (-) TimerEvent: {}
+[2.404575] (-) TimerEvent: {}
+[2.504764] (-) TimerEvent: {}
+[2.604991] (-) TimerEvent: {}
+[2.705186] (-) TimerEvent: {}
+[2.805370] (-) TimerEvent: {}
+[2.905578] (-) TimerEvent: {}
+[3.005795] (-) TimerEvent: {}
+[3.106002] (-) TimerEvent: {}
+[3.206202] (-) TimerEvent: {}
+[3.306385] (-) TimerEvent: {}
+[3.406566] (-) TimerEvent: {}
+[3.506807] (-) TimerEvent: {}
+[3.607021] (-) TimerEvent: {}
+[3.707198] (-) TimerEvent: {}
+[3.807421] (-) TimerEvent: {}
+[3.907638] (-) TimerEvent: {}
+[4.007839] (-) TimerEvent: {}
+[4.108062] (-) TimerEvent: {}
+[4.208241] (-) TimerEvent: {}
+[4.308440] (-) TimerEvent: {}
+[4.408629] (-) TimerEvent: {}
+[4.508868] (-) TimerEvent: {}
+[4.609075] (-) TimerEvent: {}
+[4.709262] (-) TimerEvent: {}
+[4.809492] (-) TimerEvent: {}
+[4.909747] (-) TimerEvent: {}
+[5.009937] (-) TimerEvent: {}
+[5.110150] (-) TimerEvent: {}
+[5.210323] (-) TimerEvent: {}
+[5.310505] (-) TimerEvent: {}
+[5.410684] (-) TimerEvent: {}
+[5.510879] (-) TimerEvent: {}
+[5.611143] (-) TimerEvent: {}
+[5.711319] (-) TimerEvent: {}
+[5.811506] (-) TimerEvent: {}
+[5.911700] (-) TimerEvent: {}
+[6.011912] (-) TimerEvent: {}
+[6.112139] (-) TimerEvent: {}
+[6.212309] (-) TimerEvent: {}
+[6.312556] (-) TimerEvent: {}
+[6.412872] (-) TimerEvent: {}
+[6.513259] (-) TimerEvent: {}
+[6.613796] (-) TimerEvent: {}
+[6.714211] (-) TimerEvent: {}
+[6.814502] (-) TimerEvent: {}
+[6.914718] (-) TimerEvent: {}
+[7.014906] (-) TimerEvent: {}
+[7.115097] (-) TimerEvent: {}
+[7.215277] (-) TimerEvent: {}
+[7.315493] (-) TimerEvent: {}
+[7.415736] (-) TimerEvent: {}
+[7.515920] (-) TimerEvent: {}
+[7.616107] (-) TimerEvent: {}
+[7.716276] (-) TimerEvent: {}
+[7.816523] (-) TimerEvent: {}
+[7.916767] (-) TimerEvent: {}
+[8.016943] (-) TimerEvent: {}
+[8.117124] (-) TimerEvent: {}
+[8.217281] (-) TimerEvent: {}
+[8.317492] (-) TimerEvent: {}
+[8.417681] (-) TimerEvent: {}
+[8.517862] (-) TimerEvent: {}
+[8.618002] (-) TimerEvent: {}
+[8.718168] (-) TimerEvent: {}
+[8.818337] (-) TimerEvent: {}
+[8.918502] (-) TimerEvent: {}
+[9.018670] (-) TimerEvent: {}
+[9.118846] (-) TimerEvent: {}
+[9.219021] (-) TimerEvent: {}
+[9.319200] (-) TimerEvent: {}
+[9.419377] (-) TimerEvent: {}
+[9.519556] (-) TimerEvent: {}
+[9.619729] (-) TimerEvent: {}
+[9.719901] (-) TimerEvent: {}
+[9.820086] (-) TimerEvent: {}
+[9.920271] (-) TimerEvent: {}
+[10.020436] (-) TimerEvent: {}
+[10.120622] (-) TimerEvent: {}
+[10.220831] (-) TimerEvent: {}
+[10.321043] (-) TimerEvent: {}
+[10.421277] (-) TimerEvent: {}
+[10.521530] (-) TimerEvent: {}
+[10.621803] (-) TimerEvent: {}
+[10.721984] (-) TimerEvent: {}
+[10.822166] (-) TimerEvent: {}
+[10.922355] (-) TimerEvent: {}
+[11.022530] (-) TimerEvent: {}
+[11.122728] (-) TimerEvent: {}
+[11.222941] (-) TimerEvent: {}
+[11.323129] (-) TimerEvent: {}
+[11.423325] (-) TimerEvent: {}
+[11.523512] (-) TimerEvent: {}
+[11.623698] (-) TimerEvent: {}
+[11.723893] (-) TimerEvent: {}
+[11.824097] (-) TimerEvent: {}
+[11.924303] (-) TimerEvent: {}
+[12.024488] (-) TimerEvent: {}
+[12.124657] (-) TimerEvent: {}
+[12.224878] (-) TimerEvent: {}
+[12.325129] (-) TimerEvent: {}
+[12.425366] (-) TimerEvent: {}
+[12.525576] (-) TimerEvent: {}
+[12.625739] (-) TimerEvent: {}
+[12.725899] (-) TimerEvent: {}
+[12.826068] (-) TimerEvent: {}
+[12.926236] (-) TimerEvent: {}
+[13.026396] (-) TimerEvent: {}
+[13.126559] (-) TimerEvent: {}
+[13.226720] (-) TimerEvent: {}
+[13.326894] (-) TimerEvent: {}
+[13.427067] (-) TimerEvent: {}
+[13.527248] (-) TimerEvent: {}
+[13.627415] (-) TimerEvent: {}
+[13.727592] (-) TimerEvent: {}
+[13.827868] (-) TimerEvent: {}
+[13.928031] (-) TimerEvent: {}
+[14.028277] (-) TimerEvent: {}
+[14.128525] (-) TimerEvent: {}
+[14.228759] (-) TimerEvent: {}
+[14.328927] (-) TimerEvent: {}
+[14.429126] (-) TimerEvent: {}
+[14.529293] (-) TimerEvent: {}
+[14.629433] (-) TimerEvent: {}
+[14.729597] (-) TimerEvent: {}
+[14.829779] (-) TimerEvent: {}
+[14.929959] (-) TimerEvent: {}
+[15.030119] (-) TimerEvent: {}
+[15.130274] (-) TimerEvent: {}
+[15.230434] (-) TimerEvent: {}
+[15.330601] (-) TimerEvent: {}
+[15.430762] (-) TimerEvent: {}
+[15.530926] (-) TimerEvent: {}
+[15.631096] (-) TimerEvent: {}
+[15.731255] (-) TimerEvent: {}
+[15.831422] (-) TimerEvent: {}
+[15.931588] (-) TimerEvent: {}
+[16.031743] (-) TimerEvent: {}
+[16.131907] (-) TimerEvent: {}
+[16.232083] (-) TimerEvent: {}
+[16.332322] (-) TimerEvent: {}
+[16.432580] (-) TimerEvent: {}
+[16.532754] (-) TimerEvent: {}
+[16.632917] (-) TimerEvent: {}
+[16.733081] (-) TimerEvent: {}
+[16.833246] (-) TimerEvent: {}
+[16.933407] (-) TimerEvent: {}
+[17.033576] (-) TimerEvent: {}
+[17.133748] (-) TimerEvent: {}
+[17.233910] (-) TimerEvent: {}
+[17.334148] (-) TimerEvent: {}
+[17.434379] (-) TimerEvent: {}
+[17.534561] (-) TimerEvent: {}
+[17.634928] (-) TimerEvent: {}
+[17.735281] (-) TimerEvent: {}
+[17.835466] (-) TimerEvent: {}
+[17.935666] (-) TimerEvent: {}
+[18.035845] (-) TimerEvent: {}
+[18.136024] (-) TimerEvent: {}
+[18.236203] (-) TimerEvent: {}
+[18.336411] (-) TimerEvent: {}
+[18.436629] (-) TimerEvent: {}
+[18.536832] (-) TimerEvent: {}
+[18.637033] (-) TimerEvent: {}
+[18.737215] (-) TimerEvent: {}
+[18.837399] (-) TimerEvent: {}
+[18.859264] (test_draw_pgm_realtime) StdoutLine: {'line': b'[100%] Linking CXX executable pose_localization_node\n'}
+[18.937484] (-) TimerEvent: {}
+[19.037664] (-) TimerEvent: {}
+[19.137852] (-) TimerEvent: {}
+[19.238060] (-) TimerEvent: {}
+[19.338266] (-) TimerEvent: {}
+[19.438455] (-) TimerEvent: {}
+[19.538660] (-) TimerEvent: {}
+[19.638796] (-) TimerEvent: {}
+[19.738980] (-) TimerEvent: {}
+[19.839166] (-) TimerEvent: {}
+[19.939388] (-) TimerEvent: {}
+[19.976801] (test_draw_pgm_realtime) StdoutLine: {'line': b'[100%] Built target pose_localization_node\n'}
+[19.985566] (test_draw_pgm_realtime) CommandEnded: {'returncode': 0}
+[19.986092] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'install'}
+[19.991817] (test_draw_pgm_realtime) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/lele'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en'), ('CLAUDE_SESSION_ID', '18235f62d56c4d45a0c231ed8df3075f'), ('USER', 'lele'), ('SSH_CLIENT', '172.20.10.6 63384 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","messagesFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea/nls.messages.json","corruptMarkerFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"75539731208fa508a5b042c8fe051beb.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","_cacheRoot":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn","_resolvedLanguagePackCoreLocation":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea","_corruptedFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"}'), ('SYSTEMD_PAGER', ''), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('BROWSER', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('CODEBUDDY_SAFE_DELETE_SHIM_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim'), ('CODEBUDDY_COPILOT_INTERNET_ENVIRONMENT', 'internal'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-a5010398-84dc-45fc-8bd3-cd77865cc3bc.sock'), ('PYTHONUNBUFFERED', '1'), ('STDBUF_O', 'L'), ('ROS_PYTHON_VERSION', '3'), ('NODE_OPTIONS', '--require="/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/node-language-shim.cjs"'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('CODEBUDDY_NODE_BIN', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('RUBY_UNBUFFERED', '1'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR', '/tmp/codebuddy-safe-delete-bulk'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'f6439f8c-932f-4c07-b2d1-a32a89ce972a'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin:/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/remote-cli:/home/lele/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('VSCODE_AGENT_FOLDER', '/home/lele/.vscode-server'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_REPORT_PATH', '/tmp/codebuddy-safe-delete/report-8964-1791642028912-kqlb0g4fckp.jsonl'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_HOST_HEARTBEAT', '/tmp/codebuddy-sd-state/host-8964-29b2332e7055b9bc/host-heartbeat.json'), ('XMODIFIERS', '@im=fcitx'), ('LS_COLORS', ''), ('MANPAGER', 'cat'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('MXC_BIN_DIR', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node_modules/@microsoft/mxc-sdk/bin'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEBUDDY_TOOL_CALL_ID', 'call_00_ET_ZzpsYF0EOX1yAR4fVSHH0757'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_ENABLED', '1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('BASH_ENV', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin/safe-delete-bash-env.sh'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime'), ('GENIE_TRASH_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/genie-trash'), ('SSH_CONNECTION', '172.20.10.6 63384 172.20.10.2 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CODEBUDDY_SAFE_DELETE_BULK_GUARD', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-delete-bulk-guard.cjs'), ('PYTHONPATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('CODEBUDDY_SESSION_ID', '18235f62d56c4d45a0c231ed8df3075f'), ('LC_PAPER', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_BIN_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('CODEBUDDY_SAFE_DELETE_BULK_THRESHOLD', '500'), ('EDITOR', 'cat'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[19.996454] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[19.996767] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[19.996930] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/test_draw_pgm_realtime_node\n'}
+[19.996991] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/pose_localization_node\n'}
+[20.002135] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/launch/__pycache__/realtime_pgm.launch.cpython-310.pyc\n'}
+[20.002188] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/launch/__pycache__/realtime_pgm.launch.cpython-39.pyc\n'}
+[20.002236] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/launch/realtime_pgm.launch.py\n'}
+[20.002295] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/pgm_viewer.py\n'}
+[20.002340] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/nav2_bridge.py\n'}
+[20.002383] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/lib/test_draw_pgm_realtime/diag_logger.py\n'}
+[20.002501] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/config/nav2_params.yaml\n'}
+[20.002547] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/config/navigate_to_pose_w_replanning_5hz.xml\n'}
+[20.002656] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/log/.gitkeep\n'}
+[20.002699] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/log/README.md\n'}
+[20.002770] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/ament_index/resource_index/package_run_dependencies/test_draw_pgm_realtime\n'}
+[20.002836] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/ament_index/resource_index/parent_prefix_path/test_draw_pgm_realtime\n'}
+[20.002897] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/ament_prefix_path.sh\n'}
+[20.002969] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/ament_prefix_path.dsv\n'}
+[20.003019] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/path.sh\n'}
+[20.003077] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/environment/path.dsv\n'}
+[20.003133] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.bash\n'}
+[20.003188] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.sh\n'}
+[20.003241] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.zsh\n'}
+[20.003296] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/local_setup.dsv\n'}
+[20.003339] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Symlinking: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.dsv\n'}
+[20.007762] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/ament_index/resource_index/packages/test_draw_pgm_realtime\n'}
+[20.007852] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/cmake/test_draw_pgm_realtimeConfig.cmake\n'}
+[20.007900] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/cmake/test_draw_pgm_realtimeConfig-version.cmake\n'}
+[20.007927] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Up-to-date symlink: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_draw_pgm_realtime/share/test_draw_pgm_realtime/package.xml\n'}
+[20.009548] (test_draw_pgm_realtime) CommandEnded: {'returncode': 0}
+[20.018535] (test_draw_pgm_realtime) JobEnded: {'identifier': 'test_draw_pgm_realtime', 'rc': 0}
+[20.018807] (-) EventReactorShutdown: {}

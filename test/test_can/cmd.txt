@@ -1,0 +1,49 @@
+# ================== CAN 接口准备（每次开机/重插 USB-CAN 后执行）==================
+sudo ip link set can0 down
+sudo ip link set can0 type can bitrate 1000000
+sudo ip link set can0 up
+
+# ================== 编译 ==================
+cd /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test    # 工作空间根目录
+colcon build --packages-select test_can
+source install/setup.bash
+
+# ================== 运行 ==================
+# 启动节点（默认发送 CAN_ID=0xFF，网页面板端口 1726）
+ros2 run test_can test_can_node --ros-args -p can_interface:=can0 -p can_id:=0xFF -p http_port:=1726 -p send_rate_hz:=100.0
+
+# 浏览器打开 http://<本机IP>:1726
+#   页面上半部分：逐位编辑每一帧的 CAN 数据并周期发送
+#   页面下半部分：接收区（按 ID 分组的最新值位图 + 最近帧历史）
+#   页面最底部：0x100 四元数解算面板（x/y/z/w、模长校验、ZYX 欧拉角）
+
+# ================== 参数 ==================
+# can_interface  收发共用的 CAN 接口名，默认 can0
+# can_id         发送帧的 CAN_ID，默认 0xFF
+# send_rate_hz   发送频率，默认 100.0
+# http_port      网页面板端口，默认 8080
+# rx_enabled     是否启用接收，默认 true
+# rx_history     接收历史最多保留条数（1~4096），默认 64
+# rx_own_msgs    是否把本节点自己发出的帧也计入接收，默认 false
+
+# 常用变体
+# 只看接收、不发送
+ros2 run test_can test_can_node --ros-args -p http_port:=1726 -p rx_enabled:=true -p send_rate_hz:=0.1
+# 历史多留一些
+ros2 run test_can test_can_node --ros-args -p http_port:=1726 -p rx_history:=512
+# 自发自收（页面上能看到自己发的 0xFF 帧）
+ros2 run test_can test_can_node --ros-args -p http_port:=1726 -p rx_own_msgs:=true
+
+# ================== 命令行验证 ==================
+candump can0                 # 查看总线上的全部帧
+candump -t d can0,000:7FF    # 带时间戳，只看标准帧 ID 范围
+candump can0,100:7FF         # 只看 0x100 四元数报文
+
+# 手工造一帧 0x100 四元数（x/y/z/w = 大端 int16 ÷ 1e4）
+cansend can0 100#0000000000002710    # w=1（10000=0x2710），单位四元数
+cansend can0 100#0000000000009F1B9F1B # w=z≈0.7071，绕 Z 转 90°，Yaw≈90°
+
+# ================== 重新全量编译（改了 CMakeLists / 包名后才需要）==================
+rm -rf build/test_can install/test_can
+colcon build --packages-select test_can
+source install/setup.bash

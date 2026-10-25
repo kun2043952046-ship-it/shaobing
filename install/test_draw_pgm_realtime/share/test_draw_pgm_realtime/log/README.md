@@ -1,0 +1,1 @@
+/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/log/README.md

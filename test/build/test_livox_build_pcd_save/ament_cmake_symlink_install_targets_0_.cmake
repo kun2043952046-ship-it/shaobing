@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/test_livox_build_pcd_save/test_livox_build_pcd_save_node" "TARGETS" "test_livox_build_pcd_save_node" "DESTINATION" "lib/test_livox_build_pcd_save")

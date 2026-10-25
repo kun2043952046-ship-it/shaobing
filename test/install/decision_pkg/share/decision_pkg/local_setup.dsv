@@ -1,0 +1,3 @@
+source;share/decision_pkg/environment/ament_prefix_path.sh
+source;share/decision_pkg/environment/path.sh
+source;share/decision_pkg/environment/pythonpath.sh

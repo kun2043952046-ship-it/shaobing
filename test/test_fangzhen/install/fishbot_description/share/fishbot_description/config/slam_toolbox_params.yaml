@@ -1,0 +1,73 @@
+# slam_toolbox 在线异步建图参数（基于官方 mapper_params_online_async.yaml 调优）
+# 适配：shaobing + Mid-360（经 pointcloud_to_laserscan 转出的 /scan，5Hz）
+slam_toolbox:
+  ros__parameters:
+
+    # Plugin params
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
+
+    # ===== ROS 坐标系与话题（与 shaobing 的 TF 一致）=====
+    odom_frame: odom              # 差速控制器发布
+    map_frame: map
+    base_frame: base_footprint    # 模型根节点
+    scan_topic: /scan             # pointcloud_to_laserscan 的输出
+    use_map_saver: true
+    mode: mapping                 # mapping = 建图；建完可改 localization 做纯定位
+
+    debug_logging: false
+    throttle_scans: 1
+    transform_publish_period: 0.02
+    # 点云 5Hz → 激光也是 5Hz，地图更新间隔相应调快（官方默认 5.0 偏慢）
+    map_update_interval: 2.0
+    resolution: 0.05              # 栅格分辨率 5cm
+    min_laser_range: 0.5          # 与 lidar_2d.launch.py 的 range_min 一致，避免警告
+    max_laser_range: 20.0         # RM 场地 12.6×8.6m，20m 足够
+    minimum_time_interval: 0.2    # 每 0.2s 处理一帧（对应 5Hz）
+    transform_timeout: 0.2
+    tf_buffer_duration: 30.
+    stack_size_to_use: 40000000
+    enable_interactive_mode: true
+
+    # General Parameters
+    use_scan_matching: true
+    use_scan_barycenter: true
+    # 平地小车适当调小，让地图更快更新（官方默认 0.5m / 0.5rad）
+    minimum_travel_distance: 0.3
+    minimum_travel_heading: 0.3
+    scan_buffer_size: 10
+    scan_buffer_maximum_scan_distance: 10.0
+    link_match_minimum_response_fine: 0.1
+    link_scan_maximum_distance: 1.5
+    loop_search_maximum_distance: 3.0
+    do_loop_closing: true
+    loop_match_minimum_chain_size: 10
+    loop_match_maximum_variance_coarse: 3.0
+    loop_match_minimum_response_coarse: 0.35
+    loop_match_minimum_response_fine: 0.45
+
+    # Correlation Parameters
+    correlation_search_space_dimension: 0.5
+    correlation_search_space_resolution: 0.01
+    correlation_search_space_smear_deviation: 0.1
+
+    # Loop Closure Parameters
+    loop_search_space_dimension: 8.0
+    loop_search_space_resolution: 0.05
+    loop_search_space_smear_deviation: 0.03
+
+    # Scan Matcher Parameters
+    distance_variance_penalty: 0.5
+    angle_variance_penalty: 1.0
+    fine_search_angle_offset: 0.00349
+    coarse_search_angle_offset: 0.349
+    coarse_angle_resolution: 0.0349
+    minimum_angle_penalty: 0.9
+    minimum_distance_penalty: 0.5
+    use_response_expansion: true
+    min_pass_through: 2
+    occupancy_threshold: 0.1

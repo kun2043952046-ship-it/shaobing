@@ -1,0 +1,32 @@
+[0.007s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime': /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16
+[0.037s] [35m[1mConsolidate compiler generated dependencies of target test_draw_pgm_realtime_node[0m
+[0.048s] [ 50%] [32mBuilding CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o[0m
+[1.811s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:[m[K In member function ‘[01m[Kvoid RealtimePgmNode::odomCallback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)[m[K’:
+[1.811s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:529:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kodom_x_[m[K’ was not declared in this scope; did you mean ‘[01m[Kodom_y_[m[K’?
+[1.811s]   529 |     [01;31m[Kodom_x_[m[K = msg->pose.pose.position.x;
+[1.811s]       |     [01;31m[K^~~~~~~[m[K
+[1.811s]       |     [32m[Kodom_y_[m[K
+[1.829s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:[m[K In member function ‘[01m[Kbool RealtimePgmNode::transformToBaseLink(const std::vector<RealtimePgmNode::Point>&, std::vector<RealtimePgmNode::Point>&)[m[K’:
+[1.829s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:1204:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kodom_x_[m[K’ was not declared in this scope; did you mean ‘[01m[Kodom_y_[m[K’?
+[1.829s]  1204 |       odom_x = [01;31m[Kodom_x_[m[K;
+[1.829s]       |                [01;31m[K^~~~~~~[m[K
+[1.829s]       |                [32m[Kodom_y_[m[K
+[1.848s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:[m[K In member function ‘[01m[Kvoid RealtimePgmNode::motionTimerCallback()[m[K’:
+[1.848s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2104:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kodom_x_[m[K’ was not declared in this scope; did you mean ‘[01m[Kodom_y_[m[K’?
+[1.849s]  2104 |       odom_x = [01;31m[Kodom_x_[m[K;
+[1.849s]       |                [01;31m[K^~~~~~~[m[K
+[1.849s]       |                [32m[Kodom_y_[m[K
+[1.857s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:[m[K In member function ‘[01m[Kvoid RealtimePgmNode::startMotion()[m[K’:
+[1.857s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2689:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kodom_x_[m[K’ was not declared in this scope; did you mean ‘[01m[Kodom_y_[m[K’?
+[1.857s]  2689 |           motion_plan_.back().x - [01;31m[Kodom_x_[m[K,
+[1.857s]       |                                   [01;31m[K^~~~~~~[m[K
+[1.857s]       |                                   [32m[Kodom_y_[m[K
+[1.863s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:[m[K In member function ‘[01m[KRealtimePgmNode::FootprintBounds RealtimePgmNode::computeVehicleFootprint()[m[K’:
+[1.863s] [01m[K/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/test_draw_pgm_realtime.cpp:2828:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kodom_x_[m[K’ was not declared in this scope; did you mean ‘[01m[Kodom_y_[m[K’?
+[1.863s]  2828 |       odom_x = [01;31m[Kodom_x_[m[K;
+[1.863s]       |                [01;31m[K^~~~~~~[m[K
+[1.863s]       |                [32m[Kodom_y_[m[K
+[5.468s] gmake[2]: *** [CMakeFiles/test_draw_pgm_realtime_node.dir/build.make:76：CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o] 错误 1
+[5.468s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/test_draw_pgm_realtime_node.dir/all] 错误 2
+[5.468s] gmake: *** [Makefile:146：all] 错误 2
+[5.470s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime' returned '2': /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16

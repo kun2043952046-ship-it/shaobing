@@ -1,0 +1,21 @@
+[35m[1mConsolidate compiler generated dependencies of target pcd_to_pgm[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/pcd_to_pgm.dir/src/test_pcd_To_pgm.cpp.o[0m
+[100%] [32m[1mLinking CXX executable pcd_to_pgm[0m
+[100%] Built target pcd_to_pgm
+-- Install configuration: ""
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/lib/test_pcd_To_pgm/pcd_to_pgm
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/ament_index/resource_index/package_run_dependencies/test_pcd_To_pgm
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/ament_index/resource_index/parent_prefix_path/test_pcd_To_pgm
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/ament_prefix_path.sh
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/ament_prefix_path.dsv
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/path.sh
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/environment/path.dsv
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.bash
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.sh
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.zsh
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/local_setup.dsv
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.dsv
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/ament_index/resource_index/packages/test_pcd_To_pgm
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/cmake/test_pcd_To_pgmConfig.cmake
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/cmake/test_pcd_To_pgmConfig-version.cmake
+-- Installing: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/install/test_pcd_To_pgm/share/test_pcd_To_pgm/package.xml

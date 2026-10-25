@@ -1,0 +1,302 @@
+[0.000000] (-) TimerEvent: {}
+[0.000084] (-) JobUnselected: {'identifier': 'can_serial_pkg'}
+[0.000173] (-) JobUnselected: {'identifier': 'decision_pkg'}
+[0.000297] (-) JobUnselected: {'identifier': 'fast_lio'}
+[0.000361] (-) JobUnselected: {'identifier': 'livox_ros_driver2'}
+[0.000420] (-) JobUnselected: {'identifier': 'map_trans_pkg'}
+[0.000440] (-) JobUnselected: {'identifier': 'r2n_bringup_pkg'}
+[0.000455] (-) JobUnselected: {'identifier': 'robot_description_pkg'}
+[0.000486] (-) JobUnselected: {'identifier': 'serial_node'}
+[0.000501] (-) JobUnselected: {'identifier': 'test_CAN'}
+[0.000519] (-) JobUnselected: {'identifier': 'test_livox_build_pcd_save'}
+[0.000566] (-) JobUnselected: {'identifier': 'test_pcd_To_pgm'}
+[0.000575] (-) JobUnselected: {'identifier': 'test_ros_health'}
+[0.000591] (test_draw_pgm_realtime) JobQueued: {'identifier': 'test_draw_pgm_realtime', 'dependencies': OrderedDict()}
+[0.000602] (test_draw_pgm_realtime) JobStarted: {'identifier': 'test_draw_pgm_realtime'}
+[0.004447] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'cmake'}
+[0.004699] (test_draw_pgm_realtime) JobProgress: {'identifier': 'test_draw_pgm_realtime', 'progress': 'build'}
+[0.005037] (test_draw_pgm_realtime) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', '--', '-j16', '-l16'], 'cwd': '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/lele'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en'), ('CLAUDE_SESSION_ID', '18235f62d56c4d45a0c231ed8df3075f'), ('USER', 'lele'), ('SSH_CLIENT', '172.20.10.6 63384 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","messagesFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea/nls.messages.json","corruptMarkerFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"75539731208fa508a5b042c8fe051beb.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","_cacheRoot":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn","_resolvedLanguagePackCoreLocation":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/06046c3182461020d91aa91fa570c5ba4155a580756c5cfc7a936fd99752b3ea","_corruptedFile":"/home/lele/.vscode-server/data/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"}'), ('SYSTEMD_PAGER', ''), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'tty'), ('ALLUSERSPROFILE', '/opt/MVS/MVFG'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32::/usr/local/lib'), ('BROWSER', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/lele'), ('OLDPWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation'), ('CODEBUDDY_SAFE_DELETE_SHIM_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim'), ('CODEBUDDY_COPILOT_INTERNET_ENVIRONMENT', 'internal'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-a5010398-84dc-45fc-8bd3-cd77865cc3bc.sock'), ('PYTHONUNBUFFERED', '1'), ('STDBUF_O', 'L'), ('ROS_PYTHON_VERSION', '3'), ('NODE_OPTIONS', '--require="/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/node-language-shim.cjs"'), ('PAGER', 'cat'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('CODEBUDDY_NODE_BIN', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('RUBY_UNBUFFERED', '1'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'lele'), ('CODEBUDDY_SAFE_DELETE_BULK_STATE_DIR', '/tmp/codebuddy-safe-delete-bulk'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('VSCODE_CLI_REQUIRE_TOKEN', 'f6439f8c-932f-4c07-b2d1-a32a89ce972a'), ('ROS_LOCALHOST_ONLY', '0'), ('MVCAM_SDK_PATH', '/opt/MVS'), ('PATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin:/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/bin/remote-cli:/home/lele/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/ros/humble/lib/plotjuggler:/opt/ros/humble/lib/plotjuggler'), ('VSCODE_AGENT_FOLDER', '/home/lele/.vscode-server'), ('MVCAM_GENICAM_CLPROTOCOL', '/opt/MVS/lib/CLProtocol'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_REPORT_PATH', '/tmp/codebuddy-safe-delete/report-8964-1791642004849-5n3knj98699.jsonl'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_HOST_HEARTBEAT', '/tmp/codebuddy-sd-state/host-8964-29b2332e7055b9bc/host-heartbeat.json'), ('XMODIFIERS', '@im=fcitx'), ('LS_COLORS', ''), ('MANPAGER', 'cat'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('MXC_BIN_DIR', '/home/lele/.vscode-server/cli/servers/Stable-2a59476c9bfcb90b3ddc372c36762471b7dfad1c/server/node_modules/@microsoft/mxc-sdk/bin'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEBUDDY_TOOL_CALL_ID', 'call_00_VNxt8ZFLVGGmXBq8iADr3802'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_ENABLED', '1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('GIT_PAGER', 'cat'), ('BASH_ENV', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin/safe-delete-bash-env.sh'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime'), ('GENIE_TRASH_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/genie-trash'), ('SSH_CONNECTION', '172.20.10.6 63384 172.20.10.2 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CODEBUDDY_SAFE_DELETE_BULK_GUARD', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-delete-bulk-guard.cjs'), ('PYTHONPATH', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('MVCAM_SDK_VERSION', ''), ('CODEBUDDY_SESSION_ID', '18235f62d56c4d45a0c231ed8df3075f'), ('LC_PAPER', 'zh_CN.UTF-8'), ('CODEBUDDY_SAFE_DELETE_BIN_DIR', '/home/lele/.vscode-server/extensions/tencent-cloud.coding-copilot-4.12.39997873/out/vendor/shim/safe-bin'), ('COLCON', '1'), ('COPILOT_CLI_ENABLED_FEATURE_FLAGS', 'SHELL_SPAWN_BACKEND'), ('CODEBUDDY_SAFE_DELETE_BULK_THRESHOLD', '500'), ('EDITOR', 'cat'), ('MVCAM_COMMON_RUNENV', '/opt/MVS/lib'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.025790] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099868] (-) TimerEvent: {}
+[0.129906] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.135878] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.154200] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.155631] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.159307] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.165059] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.172402] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.192713] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.193639] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.199918] (-) TimerEvent: {}
+[0.258088] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.287115] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.299989] (-) TimerEvent: {}
+[0.303737] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.313329] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found nav2_msgs: 1.1.20 (/opt/ros/humble/share/nav2_msgs/cmake)\n'}
+[0.349487] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[0.357489] (test_draw_pgm_realtime) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[0.378228] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[0.378333] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[0.391232] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization \n'}
+[0.400016] (-) TimerEvent: {}
+[0.426994] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[0.434741] (test_draw_pgm_realtime) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[0.454745] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[0.455582] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") \n'}
+[0.455652] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[0.487556] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") \n'}
+[0.487666] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[0.487795] (test_draw_pgm_realtime) StderrLine: {'line': b'** WARNING ** io features related to pcap will be disabled\n'}
+[0.487836] (test_draw_pgm_realtime) StderrLine: {'line': b'** WARNING ** io features related to png will be disabled\n'}
+[0.500076] (-) TimerEvent: {}
+[0.509112] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  \n'}
+[0.512338] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX \n'}
+[0.600183] (-) TimerEvent: {}
+[0.614973] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") \n'}
+[0.615184] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found MPI: TRUE (found version "3.1") found components: C \n'}
+[0.616756] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") \n'}
+[0.623388] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") \n'}
+[0.636313] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") \n'}
+[0.646422] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") \n'}
+[0.697039] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found X11: /usr/include   \n'}
+[0.697318] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so\n'}
+[0.700235] (-) TimerEvent: {}
+[0.742513] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found\n'}
+[0.742711] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for gethostbyname\n'}
+[0.789573] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for gethostbyname - found\n'}
+[0.789819] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for connect\n'}
+[0.800320] (-) TimerEvent: {}
+[0.837388] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for connect - found\n'}
+[0.837577] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for remove\n'}
+[0.879602] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for remove - found\n'}
+[0.879777] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for shmat\n'}
+[0.900416] (-) TimerEvent: {}
+[0.921640] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for shmat - found\n'}
+[0.921834] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE\n'}
+[0.965760] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE - found\n'}
+[1.000514] (-) TimerEvent: {}
+[1.015324] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") \n'}
+[1.016380] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  \n'}
+[1.017789] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") \n'}
+[1.018906] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") \n'}
+[1.029175] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") \n'}
+[1.032162] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  \n'}
+[1.034494] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") \n'}
+[1.037906] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found utf8cpp: /usr/include/utf8cpp  \n'}
+[1.058705] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[1.067558] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[1.076736] (test_draw_pgm_realtime) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[1.100613] (-) TimerEvent: {}
+[1.101220] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[1.101349] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[1.200703] (-) TimerEvent: {}
+[1.262712] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_COMMON\n'}
+[1.263373] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[1.263478] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_OCTREE\n'}
+[1.264163] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[1.264254] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_IO\n'}
+[1.264647] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[1.264769] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_SEARCH\n'}
+[1.265173] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[1.265266] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_SAMPLE_CONSENSUS\n'}
+[1.265713] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[1.265803] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_FILTERS\n'}
+[1.266216] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[1.266325] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_KDTREE\n'}
+[1.266741] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[1.266825] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_2D\n'}
+[1.266946] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[1.267100] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_FEATURES\n'}
+[1.267506] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[1.267634] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- looking for PCL_REGISTRATION\n'}
+[1.268068] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[1.268391] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found PCL: pcl_common;pcl_octree;pcl_io;pcl_search;pcl_sample_consensus;pcl_filters;pcl_kdtree;pcl_features;pcl_registration;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN  \n'}
+[1.269423] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[1.290709] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.300770] (-) TimerEvent: {}
+[1.347232] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.347419] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.347479] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.347560] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.347806] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.348097] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[1.348707] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.348768] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.348928] (test_draw_pgm_realtime) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.349558] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.368694] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Generating done\n'}
+[1.372743] (test_draw_pgm_realtime) StdoutLine: {'line': b'-- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime\n'}
+[1.396772] (test_draw_pgm_realtime) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target test_draw_pgm_realtime_node\n'}
+[1.400842] (-) TimerEvent: {}
+[1.401115] (test_draw_pgm_realtime) StdoutLine: {'line': b'[ 25%] Building CXX object CMakeFiles/pose_localization_node.dir/src/pose_localization_node.cpp.o\n'}
+[1.404044] (test_draw_pgm_realtime) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o\n'}
+[1.500944] (-) TimerEvent: {}
+[1.601143] (-) TimerEvent: {}
+[1.701336] (-) TimerEvent: {}
+[1.801596] (-) TimerEvent: {}
+[1.901883] (-) TimerEvent: {}
+[2.002087] (-) TimerEvent: {}
+[2.102304] (-) TimerEvent: {}
+[2.202499] (-) TimerEvent: {}
+[2.302741] (-) TimerEvent: {}
+[2.402921] (-) TimerEvent: {}
+[2.503104] (-) TimerEvent: {}
+[2.603305] (-) TimerEvent: {}
+[2.703514] (-) TimerEvent: {}
+[2.803718] (-) TimerEvent: {}
+[2.903914] (-) TimerEvent: {}
+[3.004140] (-) TimerEvent: {}
+[3.104545] (-) TimerEvent: {}
+[3.204835] (-) TimerEvent: {}
+[3.305041] (-) TimerEvent: {}
+[3.405272] (-) TimerEvent: {}
+[3.505425] (-) TimerEvent: {}
+[3.605637] (-) TimerEvent: {}
+[3.705848] (-) TimerEvent: {}
+[3.806086] (-) TimerEvent: {}
+[3.906334] (-) TimerEvent: {}
+[4.006625] (-) TimerEvent: {}
+[4.106953] (-) TimerEvent: {}
+[4.207187] (-) TimerEvent: {}
+[4.307473] (-) TimerEvent: {}
+[4.407704] (-) TimerEvent: {}
+[4.507952] (-) TimerEvent: {}
+[4.608151] (-) TimerEvent: {}
+[4.708333] (-) TimerEvent: {}
+[4.808654] (-) TimerEvent: {}
+[4.908963] (-) TimerEvent: {}
+[5.009170] (-) TimerEvent: {}
+[5.109348] (-) TimerEvent: {}
+[5.168588] (test_draw_pgm_realtime) StderrLine: {'line': b'/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp: In member function \xe2\x80\x98double PoseLocalizationNode::computeInlierRatio(const CloudT&, const Matrix4f&) const\xe2\x80\x99:\n'}
+[5.168740] (test_draw_pgm_realtime) StderrLine: {'line': b'/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:412:26: error: no matching function for call to \xe2\x80\x98transformPoint(const pcl::PointXYZ&, {anonymous}::PointT&, const Matrix4f&)\xe2\x80\x99\n'}
+[5.168881] (test_draw_pgm_realtime) StderrLine: {'line': b'  412 |       pcl::transformPoint(point, transformed, transform);\n'}
+[5.168910] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.168938] (test_draw_pgm_realtime) StderrLine: {'line': b'In file included from /usr/include/pcl-1.12/pcl/common/transforms.h:45,\n'}
+[5.168966] (test_draw_pgm_realtime) StderrLine: {'line': b'                 from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:60:\n'}
+[5.168993] (test_draw_pgm_realtime) StderrLine: {'line': b'/usr/include/pcl-1.12/pcl/common/eigen.h:389:3: note: candidate: \xe2\x80\x98template<class Scalar> void pcl::transformPoint(const Eigen::Matrix<Type, 3, 1>&, Eigen::Matrix<Type, 3, 1>&, const Eigen::Transform<NewScalarType, 3, 2, 0>&)\xe2\x80\x99\n'}
+[5.169042] (test_draw_pgm_realtime) StderrLine: {'line': b'  389 |   transformPoint (const Eigen::Matrix<Scalar, 3, 1> &point_in,\n'}
+[5.169068] (test_draw_pgm_realtime) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~\n'}
+[5.169099] (test_draw_pgm_realtime) StderrLine: {'line': b'/usr/include/pcl-1.12/pcl/common/eigen.h:389:3: note:   template argument deduction/substitution failed:\n'}
+[5.169124] (test_draw_pgm_realtime) StderrLine: {'line': b'/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:412:26: note:   \xe2\x80\x98const pcl::PointXYZ\xe2\x80\x99 is not derived from \xe2\x80\x98const Eigen::Matrix<Type, 3, 1>\xe2\x80\x99\n'}
+[5.169151] (test_draw_pgm_realtime) StderrLine: {'line': b'  412 |       pcl::transformPoint(point, transformed, transform);\n'}
+[5.169177] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.169227] (test_draw_pgm_realtime) StderrLine: {'line': b'In file included from /usr/include/pcl-1.12/pcl/common/transforms.h:493,\n'}
+[5.169253] (test_draw_pgm_realtime) StderrLine: {'line': b'                 from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:60:\n'}
+[5.169278] (test_draw_pgm_realtime) StderrLine: {'line': b'/usr/include/pcl-1.12/pcl/common/impl/transforms.hpp:435:1: note: candidate: \xe2\x80\x98template<class PointT, class Scalar> PointT pcl::transformPoint(const PointT&, const Eigen::Transform<Scalar, 3, 2>&)\xe2\x80\x99\n'}
+[5.169302] (test_draw_pgm_realtime) StderrLine: {'line': b'  435 | transformPoint (const PointT &point, const Eigen::Transform<Scalar, 3, Eigen::Affine> &transform)\n'}
+[5.169329] (test_draw_pgm_realtime) StderrLine: {'line': b'      | ^~~~~~~~~~~~~~\n'}
+[5.169353] (test_draw_pgm_realtime) StderrLine: {'line': b'/usr/include/pcl-1.12/pcl/common/impl/transforms.hpp:435:1: note:   template argument deduction/substitution failed:\n'}
+[5.169377] (test_draw_pgm_realtime) StderrLine: {'line': b'/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:412:26: note:   \xe2\x80\x98{anonymous}::PointT\xe2\x80\x99 {aka \xe2\x80\x98pcl::PointXYZ\xe2\x80\x99} is not derived from \xe2\x80\x98const Eigen::Transform<Scalar, 3, 2>\xe2\x80\x99\n'}
+[5.169403] (test_draw_pgm_realtime) StderrLine: {'line': b'  412 |       pcl::transformPoint(point, transformed, transform);\n'}
+[5.169428] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.169452] (test_draw_pgm_realtime) StderrLine: {'line': b'In file included from /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:60:\n'}
+[5.169477] (test_draw_pgm_realtime) StderrLine: {'line': b'/usr/include/pcl-1.12/pcl/common/transforms.h:451:3: note: candidate: \xe2\x80\x98template<class PointT> PointT pcl::transformPoint(const PointT&, const Affine3f&)\xe2\x80\x99\n'}
+[5.169504] (test_draw_pgm_realtime) StderrLine: {'line': b'  451 |   transformPoint (const PointT &point,\n'}
+[5.169529] (test_draw_pgm_realtime) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~\n'}
+[5.169552] (test_draw_pgm_realtime) StderrLine: {'line': b'/usr/include/pcl-1.12/pcl/common/transforms.h:451:3: note:   template argument deduction/substitution failed:\n'}
+[5.169577] (test_draw_pgm_realtime) StderrLine: {'line': b'/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_draw_pgm_realtime/src/pose_localization_node.cpp:412:26: note:   candidate expects 2 arguments, 3 provided\n'}
+[5.169603] (test_draw_pgm_realtime) StderrLine: {'line': b'  412 |       pcl::transformPoint(point, transformed, transform);\n'}
+[5.169627] (test_draw_pgm_realtime) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[5.209445] (-) TimerEvent: {}
+[5.309632] (-) TimerEvent: {}
+[5.409954] (-) TimerEvent: {}
+[5.510245] (-) TimerEvent: {}
+[5.610509] (-) TimerEvent: {}
+[5.710784] (-) TimerEvent: {}
+[5.811070] (-) TimerEvent: {}
+[5.911293] (-) TimerEvent: {}
+[6.011497] (-) TimerEvent: {}
+[6.111719] (-) TimerEvent: {}
+[6.211965] (-) TimerEvent: {}
+[6.312237] (-) TimerEvent: {}
+[6.412455] (-) TimerEvent: {}
+[6.512715] (-) TimerEvent: {}
+[6.612911] (-) TimerEvent: {}
+[6.713095] (-) TimerEvent: {}
+[6.813283] (-) TimerEvent: {}
+[6.913470] (-) TimerEvent: {}
+[7.013662] (-) TimerEvent: {}
+[7.113886] (-) TimerEvent: {}
+[7.214108] (-) TimerEvent: {}
+[7.314349] (-) TimerEvent: {}
+[7.414644] (-) TimerEvent: {}
+[7.514935] (-) TimerEvent: {}
+[7.615126] (-) TimerEvent: {}
+[7.715325] (-) TimerEvent: {}
+[7.815525] (-) TimerEvent: {}
+[7.915741] (-) TimerEvent: {}
+[8.016030] (-) TimerEvent: {}
+[8.116310] (-) TimerEvent: {}
+[8.216510] (-) TimerEvent: {}
+[8.316733] (-) TimerEvent: {}
+[8.416907] (-) TimerEvent: {}
+[8.517063] (-) TimerEvent: {}
+[8.617233] (-) TimerEvent: {}
+[8.717358] (-) TimerEvent: {}
+[8.817699] (-) TimerEvent: {}
+[8.918193] (-) TimerEvent: {}
+[9.018459] (-) TimerEvent: {}
+[9.118709] (-) TimerEvent: {}
+[9.219030] (-) TimerEvent: {}
+[9.319697] (-) TimerEvent: {}
+[9.420165] (-) TimerEvent: {}
+[9.520582] (-) TimerEvent: {}
+[9.620780] (-) TimerEvent: {}
+[9.720973] (-) TimerEvent: {}
+[9.821168] (-) TimerEvent: {}
+[9.921353] (-) TimerEvent: {}
+[10.021568] (-) TimerEvent: {}
+[10.121772] (-) TimerEvent: {}
+[10.222002] (-) TimerEvent: {}
+[10.322218] (-) TimerEvent: {}
+[10.422456] (-) TimerEvent: {}
+[10.522673] (-) TimerEvent: {}
+[10.622860] (-) TimerEvent: {}
+[10.723061] (-) TimerEvent: {}
+[10.823251] (-) TimerEvent: {}
+[10.923477] (-) TimerEvent: {}
+[11.023902] (-) TimerEvent: {}
+[11.124364] (-) TimerEvent: {}
+[11.224765] (-) TimerEvent: {}
+[11.325123] (-) TimerEvent: {}
+[11.425381] (-) TimerEvent: {}
+[11.525647] (-) TimerEvent: {}
+[11.625864] (-) TimerEvent: {}
+[11.726075] (-) TimerEvent: {}
+[11.826281] (-) TimerEvent: {}
+[11.926502] (-) TimerEvent: {}
+[12.026730] (-) TimerEvent: {}
+[12.126932] (-) TimerEvent: {}
+[12.227165] (-) TimerEvent: {}
+[12.327368] (-) TimerEvent: {}
+[12.427581] (-) TimerEvent: {}
+[12.527874] (-) TimerEvent: {}
+[12.628229] (-) TimerEvent: {}
+[12.728616] (-) TimerEvent: {}
+[12.828991] (-) TimerEvent: {}
+[12.929338] (-) TimerEvent: {}
+[13.029637] (-) TimerEvent: {}
+[13.129859] (-) TimerEvent: {}
+[13.230106] (-) TimerEvent: {}
+[13.330357] (-) TimerEvent: {}
+[13.430604] (-) TimerEvent: {}
+[13.530865] (-) TimerEvent: {}
+[13.631094] (-) TimerEvent: {}
+[13.731343] (-) TimerEvent: {}
+[13.831616] (-) TimerEvent: {}
+[13.900014] (test_draw_pgm_realtime) StdoutLine: {'line': b'[ 75%] Linking CXX executable test_draw_pgm_realtime_node\n'}
+[13.931700] (-) TimerEvent: {}
+[14.009333] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/pose_localization_node.dir/build.make:76\xef\xbc\x9aCMakeFiles/pose_localization_node.dir/src/pose_localization_node.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[14.009524] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:165\xef\xbc\x9aCMakeFiles/pose_localization_node.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[14.009561] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake[1]: *** \xe6\xad\xa3\xe5\x9c\xa8\xe7\xad\x89\xe5\xbe\x85\xe6\x9c\xaa\xe5\xae\x8c\xe6\x88\x90\xe7\x9a\x84\xe4\xbb\xbb\xe5\x8a\xa1....\n'}
+[14.031773] (-) TimerEvent: {}
+[14.131920] (-) TimerEvent: {}
+[14.232176] (-) TimerEvent: {}
+[14.332436] (-) TimerEvent: {}
+[14.432705] (-) TimerEvent: {}
+[14.532929] (-) TimerEvent: {}
+[14.537332] (test_draw_pgm_realtime) StdoutLine: {'line': b'[ 75%] Built target test_draw_pgm_realtime_node\n'}
+[14.537918] (test_draw_pgm_realtime) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[14.538962] (test_draw_pgm_realtime) CommandEnded: {'returncode': 2}
+[14.547757] (test_draw_pgm_realtime) JobEnded: {'identifier': 'test_draw_pgm_realtime', 'rc': 2}
+[14.557934] (-) EventReactorShutdown: {}

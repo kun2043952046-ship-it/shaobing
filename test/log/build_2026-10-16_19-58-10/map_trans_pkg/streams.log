@@ -1,0 +1,139 @@
+[0.037s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/map_trans_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/slam_pkgs/map_trans_pkg -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/map_trans_pkg
+[0.322s] -- The C compiler identification is GNU 11.4.0
+[0.322s] -- The CXX compiler identification is GNU 11.4.0
+[0.322s] -- Detecting C compiler ABI info
+[0.322s] -- Detecting C compiler ABI info - done
+[0.322s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.322s] -- Detecting C compile features
+[0.322s] -- Detecting C compile features - done
+[0.322s] -- Detecting CXX compiler ABI info
+[0.322s] -- Detecting CXX compiler ABI info - done
+[0.322s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.322s] -- Detecting CXX compile features
+[0.322s] -- Detecting CXX compile features - done
+[0.322s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.596s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.722s] -- Found rclcpp: 16.0.16 (/opt/ros/humble/share/rclcpp/cmake)
+[0.774s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.784s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.801s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.816s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.838s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.890s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.895s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.985s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.018s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.083s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.094s] -- Looking for pthread.h
+[1.177s] -- Looking for pthread.h - found
+[1.177s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.282s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.284s] -- Found Threads: TRUE  
+[1.354s] -- Found rclpy: 3.3.19 (/opt/ros/humble/share/rclpy/cmake)
+[1.358s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.395s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.415s] -- Found tf2_ros: 0.25.17 (/opt/ros/humble/share/tf2_ros/cmake)
+[1.520s] -- Found tf2_sensor_msgs: 0.25.17 (/opt/ros/humble/share/tf2_sensor_msgs/cmake)
+[1.541s] -- Found tf2_geometry_msgs: 0.25.17 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[1.566s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.566s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.591s] -- Checking for module 'eigen3'
+[1.619s] --   Found eigen3, version 3.4.0
+[1.673s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[1.674s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.706s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization 
+[1.790s] -- Checking for module 'libusb-1.0'
+[1.810s] --   Found libusb-1.0, version 1.0.25
+[1.861s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[1.861s] -- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") 
+[1.861s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.912s] -- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") 
+[1.912s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[1.912s] [0m** WARNING ** io features related to pcap will be disabled[0m
+[1.912s] [0m** WARNING ** io features related to png will be disabled[0m
+[1.944s] -- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  
+[1.954s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX 
+[2.096s] -- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") 
+[2.100s] -- Found MPI: TRUE (found version "3.1") found components: C 
+[2.101s] -- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") 
+[2.117s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+[2.139s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
+[2.158s] -- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") 
+[2.302s] -- Found X11: /usr/include   
+[2.303s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[2.376s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[2.376s] -- Looking for gethostbyname
+[2.436s] -- Looking for gethostbyname - found
+[2.436s] -- Looking for connect
+[2.503s] -- Looking for connect - found
+[2.503s] -- Looking for remove
+[2.571s] -- Looking for remove - found
+[2.571s] -- Looking for shmat
+[2.636s] -- Looking for shmat - found
+[2.636s] -- Looking for IceConnectionNumber in ICE
+[2.714s] -- Looking for IceConnectionNumber in ICE - found
+[2.807s] -- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") 
+[2.809s] -- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  
+[2.811s] -- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") 
+[2.813s] -- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") 
+[2.831s] -- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") 
+[2.837s] -- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  
+[2.840s] -- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") 
+[2.847s] -- Found utf8cpp: /usr/include/utf8cpp  
+[2.879s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[2.890s] -- Checking for module 'flann'
+[2.900s] --   Found flann, version 1.9.1
+[2.931s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[2.931s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[2.932s] -- looking for PCL_COMMON
+[2.933s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[2.933s] -- looking for PCL_OCTREE
+[2.934s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[2.934s] -- looking for PCL_IO
+[2.935s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[2.935s] -- looking for PCL_KDTREE
+[2.936s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[2.936s] -- looking for PCL_SEARCH
+[2.937s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[2.937s] -- looking for PCL_SAMPLE_CONSENSUS
+[2.938s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[2.938s] -- looking for PCL_FILTERS
+[2.939s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[2.940s] -- Found PCL: pcl_common;pcl_octree;pcl_io;pcl_kdtree;pcl_search;pcl_sample_consensus;pcl_filters;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN  
+[2.942s] -- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+[2.971s] -- Found laser_geometry: 2.4.1 (/opt/ros/humble/share/laser_geometry/cmake)
+[2.981s] -- Found OpenCV: /usr/local (found version "4.10.0") 
+[2.986s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.987s] -- Found Open3D: /usr/lib/x86_64-linux-gnu/cmake/Open3D/Open3DConfig.cmake (found version "0.14.1") 
+[3.121s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.233s] -- Added test 'copyright' to check source files copyright and LICENSE
+[3.234s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.235s] -- Configured cppcheck include dirs: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/slam_pkgs/map_trans_pkg/include
+[3.235s] -- Configured cppcheck exclude dirs and/or files: 
+[3.237s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[3.237s] -- Configured cpplint exclude dirs and/or files: 
+[3.237s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.238s] -- Added test 'lint_cmake' to check CMake code style
+[3.238s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.240s] -- Added test 'uncrustify' to check C / C++ code style
+[3.240s] -- Configured uncrustify additional arguments: 
+[3.240s] -- Added test 'xmllint' to check XML markup files
+[3.242s] -- Configuring done
+[3.338s] -- Generating done
+[3.361s] -- Build files have been written to: /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/map_trans_pkg
+[3.388s] Invoked command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/map_trans_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/nav_ros2_ws/src/slam_pkgs/map_trans_pkg -DCMAKE_INSTALL_PREFIX=/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/install/map_trans_pkg
+[3.389s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/map_trans_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/build/map_trans_pkg -- -j16 -l16
+[3.440s] [ 33%] [32mBuilding CXX object CMakeFiles/pointcloud2laserscan_elv.dir/src/pointcloud2_to_laserscan_elv.cpp.o[0m
+[3.441s] [ 33%] [32mBuilding CXX object CMakeFiles/pointcloud2_to_laserscan.dir/src/pointcloud2_to_laserscan.cpp.o[0m
+[3.441s] [ 50%] [32mBuilding CXX object CMakeFiles/relocalization_node.dir/src/relocalization.cpp.o[0m
+[3.459s] [ 50%] Built target ament_cmake_python_copy_map_trans_pkg
+[3.674s] running egg_info
+[3.674s] creating map_trans_pkg.egg-info
+[3.674s] writing map_trans_pkg.egg-info/PKG-INFO
+[3.675s] writing dependency_links to map_trans_pkg.egg-info/dependency_links.txt
+[3.675s] writing top-level names to map_trans_pkg.egg-info/top_level.txt
+[3.675s] writing manifest file 'map_trans_pkg.egg-info/SOURCES.txt'
+[3.678s] reading manifest file 'map_trans_pkg.egg-info/SOURCES.txt'
+[3.679s] writing manifest file 'map_trans_pkg.egg-info/SOURCES.txt'
+[3.719s] [ 50%] Built target ament_cmake_python_build_map_trans_pkg_egg
+[25.515s] [ 66%] [32m[1mLinking CXX executable pointcloud2_to_laserscan[0m

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+    <xacro:include filename="$(find fishbot_description)/urdf/shaobing/common_inertia.xacro"/>
+    <xacro:macro name="camera_xacro" params="xyz">
+    <!-- camera -->
+     <link name="camera_link">
+        <!-- 部件外观描述 -->
+        <visual>
+           <!-- 沿着自己中心的偏移和旋转量 -->
+           <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+           <!-- 几何形状 -->
+           <geometry>
+           <!-- 长方体 -->
+               <box size="0.04 0.20 0.04"/>
+            
+           </geometry>
+            <!-- 材质颜色 -->
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 0.5"/>
+            </material>
+        </visual> 
+        <collision>
+            <!-- 沿着自己中心的偏移和旋转量 -->
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <!-- 几何形状 -->
+            <geometry>
+            <!-- 长方体 -->
+                <box size="0.04 0.20 0.04"/>
+            
+            </geometry>
+        </collision>
+        <!-- box 0.04 x 0.20 x 0.04 -->
+        <xacro:box_inertia m="0.05" w="0.04" h="0.20" d="0.04"/> 
+    </link>
+    <link name="camera_optical_link">
+        
+    </link>
+
+     <!-- 机器人的关节，用来组合机器人的部件 -->
+    <joint name="camera_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="camera_link"/>
+        <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+    </joint>
+    <!-- 机器人的关节，用来组合机器人的部件 -->
+    <joint name="camera_optical_joint" type="fixed">
+        <parent link="camera_link"/>
+        <child link="camera_optical_link"/>
+        <origin xyz="0 0 0" rpy="${-pi/2} 0.0 ${-pi/2}"/>
+    </joint>
+
+    <gazebo reference="camera_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+</xacro:macro>
+</robot>
