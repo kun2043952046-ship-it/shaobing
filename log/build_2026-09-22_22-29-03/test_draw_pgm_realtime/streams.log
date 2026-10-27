@@ -1,4 +1,0 @@
-[0.008s] Invoking command in '/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/build/test_draw_pgm_realtime -- -j16 -l16
-[0.063s] [35m[1mConsolidate compiler generated dependencies of target test_draw_pgm_realtime_node[0m
-[0.085s] [ 50%] [32mBuilding CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o[0m
-[10.582s] [100%] [32m[1mLinking CXX executable test_draw_pgm_realtime_node[0m
