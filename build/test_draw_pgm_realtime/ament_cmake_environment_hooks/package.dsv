@@ -1,4 +1,0 @@
-source;share/test_draw_pgm_realtime/local_setup.bash
-source;share/test_draw_pgm_realtime/local_setup.dsv
-source;share/test_draw_pgm_realtime/local_setup.sh
-source;share/test_draw_pgm_realtime/local_setup.zsh

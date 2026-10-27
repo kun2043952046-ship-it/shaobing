@@ -1,4 +1,0 @@
-source;share/test_livox_build_pcd_save/local_setup.bash
-source;share/test_livox_build_pcd_save/local_setup.dsv
-source;share/test_livox_build_pcd_save/local_setup.sh
-source;share/test_livox_build_pcd_save/local_setup.zsh

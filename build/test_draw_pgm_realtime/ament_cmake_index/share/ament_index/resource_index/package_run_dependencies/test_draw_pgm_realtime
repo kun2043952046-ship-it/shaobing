@@ -1,1 +1,0 @@
-rclcpp;sensor_msgs;nav_msgs;std_msgs;nav2_msgs;rclpy;launch;launch_ros;python3-opencv;python3-numpy;geometry_msgs;nav2_bringup;tf2_ros;ament_lint_auto;ament_lint_common
