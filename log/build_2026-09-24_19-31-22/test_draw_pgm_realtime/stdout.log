@@ -1,2 +1,0 @@
-Consolidate compiler generated dependencies of target test_draw_pgm_realtime_node
-[ 50%] Building CXX object CMakeFiles/test_draw_pgm_realtime_node.dir/src/test_draw_pgm_realtime.cpp.o

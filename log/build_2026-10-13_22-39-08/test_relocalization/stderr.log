@@ -1,4 +1,0 @@
-/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_relocalization/src/test_relocalization_node.cpp: In member function ‘bool RelocalizationNode::estimatePoseCorrection(const std::vector<RelocalizationNode::Point>&)’:
-/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/test/test_relocalization/src/test_relocalization_node.cpp:1045:18: warning: unused variable ‘delta_yaw’ [-Wunused-variable]
- 1045 |     const double delta_yaw = wrapAngle(best_yaw - previous_yaw);
-      |                  ^~~~~~~~~

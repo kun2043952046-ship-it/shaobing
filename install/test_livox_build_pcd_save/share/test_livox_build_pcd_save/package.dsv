@@ -1,8 +1,0 @@
-source;share/test_livox_build_pcd_save/hook/cmake_prefix_path.ps1
-source;share/test_livox_build_pcd_save/hook/cmake_prefix_path.dsv
-source;share/test_livox_build_pcd_save/hook/cmake_prefix_path.sh
-source;share/test_livox_build_pcd_save/local_setup.bash
-source;share/test_livox_build_pcd_save/local_setup.dsv
-source;share/test_livox_build_pcd_save/local_setup.ps1
-source;share/test_livox_build_pcd_save/local_setup.sh
-source;share/test_livox_build_pcd_save/local_setup.zsh
