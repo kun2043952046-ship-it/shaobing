@@ -303,6 +303,27 @@ can_id: 0xFF                           # int, 默认 0xFF
 can_send_period_ms: 10                 # int, 默认 10
 ```
 
+## nav2_params.yaml 对照（Nav2 侧参数，需与本节点对齐）
+
+本节点**不读取**这个文件：它由 Nav2 的 9 个节点段各自 `declare_parameter` 消费。但它有 7 组值与源码重复设置，**改一处必须同步另一处**，否则 Nav2 与本节点的安全距离/话题会对不上。
+
+- 数据来源（自动读取）：`config/nav2_params.yaml`
+- 注入链：launch 的 `nav2_params_file` → `nav2_bringup/navigation_launch.py`；行为树由 launch 的 `bt_xml_file` 覆写 `default_nav_to_pose_bt_xml`
+
+| 项目 | `nav2_params.yaml` 中的值 | 本节点对应参数（源码默认值） | 约束 |
+|---|---|---|---|
+| `robot_radius` | `0.50`(行201,303) | `astar_inflate_radius` = `0.50` | **必须相等**：同为“车体中心→障碍”的硬半径 |
+| `inflation_radius` | `0.60`(行287,377) | `astar_cost_reach` = `0.60` | **必须相等**：软性避让半径 |
+| `cost_scaling_factor` | `3.0`(行284,375) | 无对应 | Nav2 独有：代价衰减陡缓，只影响 Nav2 自身避障 |
+| `odom_topic` | `/Odometry`(行26,120,452) | `odom_topic` = `/Odometry` | 话题名必须一致 |
+| 观测源 `topic` | `/cloud_self_filtered`(行225,325) / `/cloud_dynamic_obstacles`(行241,341) / `/cloud_clear_ring`(行270,363) | `self_filtered_topic` = `/cloud_self_filtered`；`dynamic_obstacle_topic` = `/cloud_dynamic_obstacles`；`clear_ring_topic` = `/cloud_clear_ring` | 三个点云话题必须与 yaml 里的观测源一致，否则清除射线不生效 |
+| 清除代价图服务 | yaml 未出现（Nav2 默认） | `clear_local_costmap_service` = `/local_costmap/clear_entirely_local_costmap`；`clear_global_costmap_service` = `/global_costmap/clear_entirely_global_costmap` | yaml 不配这两项，用 Nav2 默认服务名，源码里必须同名 |
+| `default_nav_to_pose_bt_xml` | `"launch/behavior_trees/navigate_to_pose_w_replanning_5hz.xml"`(行109) | 无对应 | yaml 里写相对路径会被 launch 用绝对路径覆写 |
+
+**当前检查结果：以上对应项全部一致。**
+
+> 其余参数（插件列表 `plugin_lib_names`、costmap 分辨率与更新频率、controller/planner 插件、behavior 超时、velocity_smoother 等）属于 Nav2 自身行为，改它们**不需要动 C++**，故不在此文档展开，直接看原 yaml。
+
 ## 附录：成员变量（20 组）去向
 
 `config/` 只放 yaml，成员变量分三种去向：① 可调参数 → `params.yaml` 的键；② 纯数据结构 → `tools/types.hpp`；③ 运行期状态（mutex/队列/缓存/发布器）→ `io/` 或 `tasks/` 类的私有成员。逐组源码见 `05_node.md` 附录。

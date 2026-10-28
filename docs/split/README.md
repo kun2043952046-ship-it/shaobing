@@ -86,6 +86,10 @@ config(yaml)  →  src 读取参数
 tools  ←  io  ←  tasks  ←  src
 ```
 
+**已完成的搬运（2026-10-28）**：`test/test_navigation/config/nav2_params.yaml` → `Navigation/config/nav2_params.yaml`；
+`navigate_to_pose_w_replanning_5hz.xml` → `Navigation/launch/behavior_trees/`；
+`realtime_pgm.launch.py` 的 `nav2_params_file` 默认值改为绝对路径，并新增 `bt_xml_file` 参数。
+
 判定规则（搬代码时照着问）：
 
 | 问题 | 是 → 放哪 |

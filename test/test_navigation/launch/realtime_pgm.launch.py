@@ -500,9 +500,11 @@ def generate_launch_description():
     # 被调用 → /plan 一条消息都没有 → "没有规划出路径"。
     # 用 RewrittenYaml 在 launch 阶段把本包 config/ 下的绝对路径写进参数即可,
     # 换机器/换用户名依然有效(因此无需在 yaml 里硬编码绝对路径)。
-    bt_xml_path = PathJoinSubstitution([
-        FindPackageShare('test_navigation'), 'config',
-        'navigate_to_pose_w_replanning_5hz.xml'])
+    # 新布局: 行为树与 Nav2 参数已搬到工作区顶层, 不再是本包 share 下的文件
+    #   Navigation/launch/behavior_trees/*.xml
+    #   Navigation/config/nav2_params.yaml
+    # 因此默认值改为绝对路径, 并可用 LaunchArgument 覆盖。
+    bt_xml_path = LaunchConfiguration('bt_xml_file')
 
     nav2_params_abs_bt = RewrittenYaml(
         source_file=nav2_params_file,
@@ -748,9 +750,17 @@ def generate_launch_description():
         # (重规划 200 ms/次由 config/nav2_params.yaml 的 default_nav_to_pose_bt_xml
         #  指向自定义 BT 实现, 见该文件 bt_navigator 段)
         DeclareLaunchArgument('with_nav2', default_value='true'),
-        DeclareLaunchArgument('nav2_params_file', default_value=PathJoinSubstitution([
-            FindPackageShare('test_navigation'),
-            'config', 'nav2_params.yaml'])),
+        # 新布局: Nav2 参数放在工作区顶层 Navigation/config/nav2_params.yaml
+        # (不在本包 share 下, 故用绝对路径; 换机器时用该 LaunchArgument 覆盖)
+        DeclareLaunchArgument(
+            'nav2_params_file',
+            default_value='/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/config/nav2_params.yaml',
+            description='Nav2 参数文件 (新布局: 工作区顶层 config/)'),
+        DeclareLaunchArgument(
+            'bt_xml_file',
+            default_value='/home/lele/aaaaa_mine_NJIT_Vision_Gen2/Navigation/'
+                          'launch/behavior_trees/navigate_to_pose_w_replanning_5hz.xml',
+            description='Nav2 行为树 XML (新布局: 工作区顶层 launch/behavior_trees/)'),
         # 3D 重定位节点 (GICP): 锁定历史累计图后接管位姿修正
         DeclareLaunchArgument(
             'with_relocalization_3d', default_value='true',

@@ -1,0 +1,153 @@
+# ==================== 基础建图 (写入 Config) ====================
+resolution: 0.03                       # double, 默认 0.03
+zmin: -2.25                            # double, 默认 -2.25
+zmax: 0.22                             # double, 默认 0.22
+dilate: 1                              # int, 默认 1
+baseline_dilate: -1                    # int, 默认 -1
+self_filter_size: 1.0                  # double, 默认 1.0
+xmin: -20.0                            # double, 默认 -20.0
+ymin: -20.0                            # double, 默认 -20.0
+xmax: 20.0                             # double, 默认 20.0
+ymax: 20.0                             # double, 默认 20.0
+output: "/tmp/realtime_map.pgm"        # std::string, 默认 "/tmp/realtime_map.pgm"
+history_output: "/tmp/realtime_map_history.pgm" # std::string, 默认 "/tmp/realtime_map_history.pgm"
+history_duration: 300.0                # double, 默认 300.0
+history_max_points_per_frame: 5000     # int, 默认 5000
+history_min_hits: 2                    # int, 默认 2
+cloud_topic: "/cloud_registered"       # std::string, 默认 "/cloud_registered"
+
+# ==================== 调试日志 / 异常快照 ====================
+debug_log_enabled: true                # bool, 默认 true
+debug_log_dir: "log"                   # std::string, 默认 "log"
+debug_pcd_enabled: true                # bool, 默认 true
+debug_pcd_max_files: 200               # int, 默认 200
+debug_cloud_count_jump_ratio: 3.0      # double, 默认 3.0
+debug_cloud_count_jump_delta: 20000    # int, 默认 20000
+debug_centroid_jump_m: 1.5             # double, 默认 1.5
+debug_odom_jump_m: 0.5                 # double, 默认 0.5
+debug_odom_jump_yaw_deg: 30.0          # double, 默认 30.0
+pose_jump_reject_sec: 0.8              # double, 默认 0.8
+debug_occ_ratio_jump: 0.15             # double, 默认 0.15
+
+# ==================== 渲染 / 话题名 ====================
+render_period_ms: 150                  # int, 默认 150
+clear_history: false                   # bool, 默认 false
+cloud_preview_topic: "/realtime_pgm/cloud" # std::string, 默认 "/realtime_pgm/cloud"
+cloud_preview_max_points: 15000        # int, 默认 15000
+history_image_topic: "/realtime_pgm/image_history" # std::string, 默认 "/realtime_pgm/image_history"
+image_topic: "/realtime_pgm/image"     # std::string, 默认 "/realtime_pgm/image"
+
+# ==================== 地图导出 / 导入 ====================
+export_map_dir: "/tmp/pgm_export"      # std::string, 默认 "/tmp/pgm_export"
+export_map_name: "map_export.zip"      # std::string, 默认 "map_export.zip"
+export_map_request: false              # bool, 默认 false
+import_map_dir: "/tmp/pgm_import"      # std::string, 默认 "/tmp/pgm_import"
+import_map_request: false              # bool, 默认 false
+
+# ==================== 动态障碍模式 ====================
+dynamic_obstacle_enabled: false        # bool, 默认 false
+dynamic_obstacle_topic: "/cloud_dynamic_obstacles" # std::string, 默认 "/cloud_dynamic_obstacles"
+dynamic_obstacle_image_topic: "/realtime_pgm/image_dynamic" # std::string, 默认 "/realtime_pgm/image_dynamic"
+
+# ==================== 位姿校正 (map->odom) ====================
+pose_correction_topic: "/pose_correction" # std::string, 默认 "/pose_correction"
+pose_correction_global_period_sec: 1.0 # double, 默认 1.0
+pose_correction_global_range_m: 15.0   # double, 默认 15.0
+pose_correction_local_range_m: 1.0     # double, 默认 1.0
+pose_correction_score_min: 0.12        # double, 默认 0.12
+pose_correction_max_delta_m: 0.3       # double, 默认 0.3
+pose_correction_ema_alpha: 0.5         # double, 默认 0.5
+pose_correction_score_gain: 0.05       # double, 默认 0.05
+pose_correction_global_trigger_fails: 5 # int, 默认 5
+apply_pose_correction: false           # bool, 默认 false
+
+# ==================== 自过滤点云 (Nav2 clearing) ====================
+self_filtered_topic: "/cloud_self_filtered" # std::string, 默认 "/cloud_self_filtered"
+self_filtered_publish_rate: 10.0       # double, 默认 10.0
+self_filtered_max_points: 6000         # int, 默认 6000
+
+# ==================== 清除射线环 ====================
+clear_ring_topic: "/cloud_clear_ring"  # std::string, 默认 "/cloud_clear_ring"
+clear_ring_points: 72                  # int, 默认 72
+clear_ring_radius: 1.2                 # double, 默认 1.2
+
+# ==================== 清空 Nav2 代价图 ====================
+clear_costmap_on_history_reset: true   # bool, 默认 true
+clear_local_costmap_service: "/local_costmap/clear_entirely_local_costmap" # std::string, 默认 "/local_costmap/clear_entirely_local_costmap"
+clear_global_costmap_service: "/global_costmap/clear_entirely_global_costmap" # std::string, 默认 "/global_costmap/clear_entirely_global_costmap"
+
+# ==================== 运动帧 / 输入话题 ====================
+motion_topic: "/nav_motion_cmd"        # std::string, 默认 "/nav_motion_cmd"
+odom_topic: "/Odometry"                # std::string, 默认 "/Odometry"
+global_plan_topic: "/plan"             # std::string, 默认 "/plan"
+local_plan_topic: "/local_plan"        # std::string, 默认 "/local_plan"
+local_plan_timeout: 0.5                # double, 默认 0.5
+motion_control: 1                      # int, 默认 1
+motion_vx_scale: kMotionSpeedScale     # double, 默认 kMotionSpeedScale
+motion_vy_scale: kMotionSpeedScale     # double, 默认 kMotionSpeedScale
+motion_rate_hz: 100.0                  # double, 默认 100.0
+
+# ==================== 路径跟随 ====================
+motion_target_speed: 1.00              # double, 默认 1.00
+motion_lookahead: 0.45                 # double, 默认 0.45
+motion_lookahead_speed_gain: 0.52      # double, 默认 0.52
+motion_lookahead_max: 1.50             # double, 默认 1.50
+motion_yaw_kp: 1.20                    # double, 默认 1.20
+motion_goal_tolerance: 0.25            # double, 默认 0.25
+motion_goal_check_tolerance: 0.35      # double, 默认 0.35
+motion_goal_check_max_retry: 2         # int, 默认 2
+motion_max_lateral: 0.0                # double, 默认 0.0
+motion_plan_timeout: 1.0               # double, 默认 1.0
+motion_slow_radius: 0.0                # double, 默认 0.0
+motion_min_speed: 0.08                 # double, 默认 0.08
+motion_base_to_lidar_x: -0.239         # double, 默认 -0.239
+motion_base_to_lidar_y: 0.158          # double, 默认 0.158
+
+# ==================== A* 兜底 ====================
+astar_enabled: true                    # bool, 默认 true
+astar_speed: -1.0                      # double, 默认 -1.0
+astar_inflate_radius: 0.50             # double, 默认 0.50
+astar_obstacle_penalty: 0.8            # double, 默认 0.8
+astar_cost_reach: 0.60                 # double, 默认 0.60
+astar_path_spacing: 0.15               # double, 默认 0.15
+astar_replan_interval: 0.20            # double, 默认 0.20
+astar_replan_move_dist: 0.05           # double, 默认 0.05
+goal_pose_topic: "/nav_goal_pose"      # std::string, 默认 "/nav_goal_pose"
+astar_plan_topic: "/astar_plan"        # std::string, 默认 "/astar_plan"
+
+# ==================== 网页一次性触发 ====================
+start_motion: false                    # bool, 默认 false
+stop_motion: false                     # bool, 默认 false
+
+# ==================== 占点 ====================
+hold_point_enabled: false              # bool, 默认 false
+hold_point_x: 0.0                      # double, 默认 0.0
+hold_point_y: 0.0                      # double, 默认 0.0
+hold_point_radius: 1.50                # double, 默认 1.50
+hold_point_speed: -1.0                 # double, 默认 -1.0
+hold_point_slow_radius: -1.0           # double, 默认 -1.0
+hold_point_standoff_scale: 1.10        # double, 默认 1.10
+hold_point_recenter_deadband: 0.08     # double, 默认 0.08
+hold_point_status_topic: "/hold_point_status" # std::string, 默认 "/hold_point_status"
+hold_point_viz_topic: "/hold_point_viz" # std::string, 默认 "/hold_point_viz"
+
+# ==================== 追击 ====================
+chase_enabled: false                   # bool, 默认 false
+chase_pick_x: 0.0                      # double, 默认 0.0
+chase_pick_y: 0.0                      # double, 默认 0.0
+chase_radius: 1.0                      # double, 默认 1.0
+chase_deadband: 0.15                   # double, 默认 0.15
+chase_speed: -1.0                      # double, 默认 -1.0
+chase_lock_radius: 1.0                 # double, 默认 1.0
+chase_track_radius: 5.0                # double, 默认 5.0
+chase_track_history_sec: 30.0          # double, 默认 30.0
+chase_track_record_interval: 0.2       # double, 默认 0.2
+chase_status_topic: "/chase_status"    # std::string, 默认 "/chase_status"
+chase_viz_topic: "/chase_viz"          # std::string, 默认 "/chase_viz"
+chase_track_topic: "/chase_track"      # std::string, 默认 "/chase_track"
+
+# ==================== SocketCAN 直发 ====================
+can_enabled: false                     # bool, 默认 false
+can_interface: "can0"                  # std::string, 默认 "can0"
+can_id: 0xFF                           # int, 默认 0xFF
+can_send_period_ms: 10                 # int, 默认 10

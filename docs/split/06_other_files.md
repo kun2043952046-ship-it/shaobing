@@ -10,9 +10,9 @@
 | `CMakeLists.txt` | 构建脚本 | 现在只有 1 个可执行 + install(launch/config/log/scripts) | 包根 | 改为"三库一可执行"，见第 3 节 |
 | `LICENSE` | 许可 | Apache-2.0 | 包根 | 原样 |
 | `cmd.txt` | 运维备忘（非代码） | 编译/启动命令、CAN 拉起、Nav2 说明 + 一条遗留缺陷记录（`base_link` 系点云戳早于 TF → Message Filter 整帧丢弃） | `docs/ops_notes.md` | 缺陷记录转 issue，别丢；它正是 `io/ros_stamp.cpp` 要解决的问题 |
-| `launch/realtime_pgm.launch.py` | 启动编排 | 拉起 Livox + FAST-LIO + 本节点 + `nav2_bridge.py` + Nav2，`RewrittenYaml` 注入行为树绝对路径 | `launch/` | 节点改名/拆包后改 `executable=` 与参数注入 |
-| `config/nav2_params.yaml` | Nav2 参数（**yaml，留在 config**） | 全局/局部代价图、controller、planner、bt_navigator、`robot_radius`（与 `astar_inflate_radius` 同口径） | `config/nav2_params.yaml` | bt 路径改为新位置 |
-| `config/navigate_to_pose_w_replanning_5hz.xml` | Nav2 行为树（**不是 yaml**） | 与官方同构，仅 `ComputePathToPose` 提到 5 Hz | `launch/behavior_trees/` | Humble 不支持 `error_code_id` 端口（文件头已注明） |
+| `launch/realtime_pgm.launch.py` | 启动编排 | 拉起 Livox + FAST-LIO + 本节点 + `nav2_bridge.py` + Nav2，`RewrittenYaml` 注入行为树绝对路径 | `launch/` | **已改**：`nav2_params_file` / 新增 `bt_xml_file` 默认值改为新布局绝对路径；拆包后只需改这两个默认值 |
+| `config/nav2_params.yaml` | Nav2 参数（**yaml，留在 config**） | 全局/局部代价图、controller、planner、bt_navigator、`robot_radius`（与 `astar_inflate_radius` 同口径） | **已搬到** `Navigation/config/nav2_params.yaml` | 7 组需对齐的值见 `01_config.md` 的 nav2 对照节 |
+| `config/navigate_to_pose_w_replanning_5hz.xml` | Nav2 行为树（**不是 yaml**） | 与官方同构，仅 `ComputePathToPose` 提到 5 Hz | **已搬到** `Navigation/launch/behavior_trees/` | Humble 不支持 `error_code_id` 端口（文件头已注明） |
 | `scripts/nav2_bridge.py` | 桥接节点 | `image_history`(mono8) → `/map`(transient_local)；`/Odometry` → TF `odom→base_link`；`/pose_correction` → TF `map→odom`（完整 SE(3)） | `scripts/`（或独立包 `nav_bridge`） | 依赖 `GetParameters` 同步 xmin/ymin/resolution，节点改名要同步 |
 | `scripts/pgm_viewer.py` | 网页可视化 | 订阅 image / history / 点云预览 / odom / 代价图 / 路径，网页点选目标 → `NavigateToPose`、zmin/zmax 滑条、开始/停止运动 | `scripts/` 或 `web/` | 话题名与 C++ 侧强耦合 |
 | `scripts/diag_logger.py` | 诊断记录 | 每帧 odom + pose_correction 落 CSV（roll/pitch/yaw、dxy、dyaw、corr_age、异常标签） | `scripts/` | 纯旁路，可独立跑 |
@@ -166,7 +166,8 @@ candump -t d can0,0FF:7FF
 
 | 目录 | 现状 | 放什么 |
 |---|---|---|
-| `Navigation/config/` | 只有 `map.yaml`（地图产物） | 只放 `params.yaml` / `nav2_params.yaml`；`map.yaml` 挪到 `maps/` |
+| `Navigation/config/` | 现有 `map.yaml`（地图产物）+ `nav2_params.yaml`（已搬入） | 只放 yaml 参数；`map.yaml` 挪到 `maps/`，`params.yaml` 待生成 |
+| `Navigation/launch/` | 新建，含 `behavior_trees/navigate_to_pose_w_replanning_5hz.xml`（已搬入） | 放 launch 与行为树 |
 | `Navigation/tools/` | 空 | `02_tools.md` 的 35 个条目 + 二次抽取内核 |
 | `Navigation/io/` | **待新建** | `03_io.md` 的 24 个条目 |
 | `Navigation/tasks/` | 空 | `04_tasks.md` 的 22 个条目 |

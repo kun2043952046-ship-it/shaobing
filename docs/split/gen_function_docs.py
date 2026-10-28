@@ -789,6 +789,140 @@ def build_yaml_skeleton(lines):
     return out
 
 
+NAV2_YAML_CANDIDATES = [
+    os.path.normpath(os.path.join(HERE, '..', '..', 'config', 'nav2_params.yaml')),
+    os.path.normpath(os.path.join(HERE, '..', '..', 'test', 'test_navigation', 'config',
+                                  'nav2_params.yaml')),
+]
+
+
+def find_nav2_yaml():
+    for p in NAV2_YAML_CANDIDATES:
+        if os.path.exists(p):
+            return p
+    return None
+
+
+def _norm(v):
+    """去掉默认值两侧的引号, 便于与 yaml 里的裸标量比较。"""
+    v = v.strip()
+    if len(v) >= 2 and v[0] == v[-1] and v[0] in ('"', "'"):
+        v = v[1:-1]
+    return v
+
+
+def _grab(yaml_lines, pattern, limit=8):
+    """按正则抓 yaml 里的标量, 返回 [(行号, 值)]。"""
+    hits = []
+    for i, l in enumerate(yaml_lines):
+        m = re.match(pattern, l)
+        if m:
+            hits.append((i + 1, m.group(1).strip()))
+    return hits[:limit]
+
+
+def _fmt_hits(hits):
+    if not hits:
+        return '未设置（用 Nav2 默认值）'
+    by_val = {}
+    for ln, v in hits:
+        by_val.setdefault(v, []).append(ln)
+    return ' / '.join('`%s`(行%s)' % (v, ','.join(str(x) for x in lns))
+                      for v, lns in by_val.items())
+
+
+def build_nav2_section(cpp_lines):
+    path = find_nav2_yaml()
+    out = ['## nav2_params.yaml 对照（Nav2 侧参数，需与本节点对齐）', '']
+    if not path:
+        out.append('未找到 `nav2_params.yaml`（候选路径见脚本里的 `NAV2_YAML_CANDIDATES`）。')
+        out.append('')
+        return out
+    with open(path, 'r', encoding='utf-8') as f:
+        yl = f.read().split('\n')
+    rel = os.path.relpath(path, os.path.normpath(os.path.join(HERE, '..', '..')))
+    out.append('本节点**不读取**这个文件：它由 Nav2 的 9 个节点段各自 `declare_parameter` 消费。'
+               '但它有 7 组值与源码重复设置，**改一处必须同步另一处**，否则 Nav2 与本节点的安全距离/话题会对不上。')
+    out.append('')
+    out.append('- 数据来源（自动读取）：`%s`' % rel)
+    out.append('- 注入链：launch 的 `nav2_params_file` → `nav2_bringup/navigation_launch.py`；'
+               '行为树由 launch 的 `bt_xml_file` 覆写 `default_nav_to_pose_bt_xml`')
+    out.append('')
+
+    node = scan_params(cpp_lines)
+
+    def nv(key):
+        typ, dft, ln = node.get(key, ('-', '未声明', '-'))
+        return typ, _norm(dft), ln
+
+    rr = _grab(yl, r'^\s*robot_radius:\s*(\S+)')
+    ir = _grab(yl, r'^\s*inflation_radius:\s*(\S+)')
+    cf = _grab(yl, r'^\s*cost_scaling_factor:\s*(\S+)')
+    od = _grab(yl, r'^\s*odom_topic:\s*(\S+)')
+    tp = _grab(yl, r'^\s*topic:\s*(\S+)')
+    bt = _grab(yl, r'^\s*default_nav_to_pose_bt_xml:\s*(\S+)')
+
+    inflate = nv('astar_inflate_radius')
+    reach = nv('astar_cost_reach')
+    odom = nv('odom_topic')
+
+    out.append('| 项目 | `nav2_params.yaml` 中的值 | 本节点对应参数（源码默认值） | 约束 |')
+    out.append('|---|---|---|---|')
+    out.append('| `robot_radius` | %s | `astar_inflate_radius` = `%s` | **必须相等**：同为“车体中心→障碍”的硬半径 |'
+               % (_fmt_hits(rr), inflate[1]))
+    out.append('| `inflation_radius` | %s | `astar_cost_reach` = `%s` | **必须相等**：软性避让半径 |'
+               % (_fmt_hits(ir), reach[1]))
+    out.append('| `cost_scaling_factor` | %s | 无对应 | Nav2 独有：代价衰减陡缓，只影响 Nav2 自身避障 |'
+               % _fmt_hits(cf))
+    out.append('| `odom_topic` | %s | `odom_topic` = `%s` | 话题名必须一致 |'
+               % (_fmt_hits(od), odom[1]))
+    out.append('| 观测源 `topic` | %s | `self_filtered_topic` = `%s`；`dynamic_obstacle_topic` = `%s`；'
+               '`clear_ring_topic` = `%s` | 三个点云话题必须与 yaml 里的观测源一致，否则清除射线不生效 |'
+               % (_fmt_hits(tp), nv('self_filtered_topic')[1],
+                  nv('dynamic_obstacle_topic')[1], nv('clear_ring_topic')[1]))
+    out.append('| 清除代价图服务 | %s | `clear_local_costmap_service` = `%s`；`clear_global_costmap_service` = `%s` | '
+               'yaml 不配这两项，用 Nav2 默认服务名，源码里必须同名 |'
+               % ('yaml 未出现（Nav2 默认）',
+                  nv('clear_local_costmap_service')[1], nv('clear_global_costmap_service')[1]))
+    out.append('| `default_nav_to_pose_bt_xml` | %s | 无对应 | yaml 里写相对路径会被 launch 用绝对路径覆写 |'
+               % _fmt_hits(bt))
+    out.append('')
+
+    # 一致性检查
+    warns = []
+    yaml_vals = {v for _, v in rr}
+    if yaml_vals and inflate[1] not in ('未声明', '-') and yaml_vals != {inflate[1]}:
+        warns.append('`robot_radius`(%s) 与 `astar_inflate_radius`(%s) 不一致'
+                     % ('/'.join(sorted(yaml_vals)), inflate[1]))
+    yaml_vals = {v for _, v in ir}
+    if yaml_vals and reach[1] not in ('未声明', '-') and yaml_vals != {reach[1]}:
+        warns.append('`inflation_radius`(%s) 与 `astar_cost_reach`(%s) 不一致'
+                     % ('/'.join(sorted(yaml_vals)), reach[1]))
+    yaml_vals = {v for _, v in od}
+    if yaml_vals and odom[1] not in ('未声明', '-') and yaml_vals != {odom[1]}:
+        warns.append('`odom_topic`(%s) 与源码 `odom_topic`(%s) 不一致'
+                     % ('/'.join(sorted(yaml_vals)), odom[1]))
+    yaml_topics = {v for _, v in tp}
+    for key in ('self_filtered_topic', 'dynamic_obstacle_topic', 'clear_ring_topic'):
+        val = nv(key)[1]
+        if yaml_topics and val not in ('未声明', '-') and val not in yaml_topics:
+            warns.append('源码 `%s`(%s) 未在 yaml 观测源中出现' % (key, val))
+
+    if warns:
+        out.append('**当前检查结果：发现 %d 处不一致**' % len(warns))
+        out.append('')
+        for w in warns:
+            out.append('- %s' % w)
+    else:
+        out.append('**当前检查结果：以上对应项全部一致。**')
+    out.append('')
+    out.append('> 其余参数（插件列表 `plugin_lib_names`、costmap 分辨率与更新频率、controller/planner 插件、'
+               'behavior 超时、velocity_smoother 等）属于 Nav2 自身行为，改它们**不需要动 C++**，'
+               '故不在此文档展开，直接看原 yaml。')
+    out.append('')
+    return out
+
+
 def build_param_table(lines, heading='## 参数清单（自动扫描 118-604 行的 declare_parameter）'):
     """扫描参数声明区, 生成 参数名 -> 主题 的表格（含类型与默认值，可直接抄成 yaml）。"""
     out = [heading, '']
@@ -931,6 +1065,7 @@ def main():
     cfg.append('键名与默认值均由源码自动提取，可直接落成 `config/params.yaml`。')
     cfg.append('')
     cfg.extend(build_yaml_skeleton(lines))
+    cfg.extend(build_nav2_section(lines))
     cfg.append('## 附录：成员变量（20 组）去向')
     cfg.append('')
     cfg.append('`config/` 只放 yaml，成员变量分三种去向：① 可调参数 → `params.yaml` 的键；'
