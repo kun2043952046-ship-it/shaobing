@@ -1,13 +1,175 @@
-# 02 纯计算与坐标转换（tools/）
+# 02 纯计算（tools/）
 
-来源: `src/test_navigation.cpp`。这些函数只做数学/几何/编解码/文件 IO，**没有一个需要 ROS 节点上下文**。
-迁入目录: 工作区顶层 `Navigation/tools/`。建议按本文的小节拆成独立 .hpp/.cpp，并统一 `namespace nav::tools`，让 `tasks/` 只依赖头文件。
+**约定**：`tools/` 只做数学、几何、编解码 —— 不 include ROS、不碰 socket/文件、不加锁。
+迁入顶层 `Navigation/tools/`，统一 `namespace nav::tools`，编译成 `nav_tools` 静态库。
 
-> 大函数内部还可以继续抽出纯内核（A* 搜索、膨胀、代价场、跟随几何段），清单见 `README.md` 的"二次抽取"一节。
+> 文件读写（PCD/BIN/YAML）已划到 `io/file_*`；ROS 发布全部在 `io/ros_*`。
 
-## 1. 几何 / 坐标变换
+## 1. 数据类型与协议常量
 
-全部无 ROS 通信、只依赖入参；抽到 tools/ 后建议加 `namespace nav::tools`。
+结构体与 constexpr 从节点类里搬出，成为 tools 的公共类型；本层零 ROS、零 IO。
+
+### `consts`
+
+- **源码行**: `46-55` (10 行)
+- **目标位置**: `tools/constants.hpp`
+- **职责**: 运动帧协议常量: kMotionSpeedScale(量化 200) / kMotionMaxSpeed(±2 m/s) / kSlowRadiusTime(减速时间常数) / kMotionRawLimit(12 位饱和 2040)
+- **依赖 / 备注**: block(46-55)
+
+```cpp
+  static constexpr double kMotionSpeedScale = 200.0;   // 量化系数: raw = v * scale
+  // 调试用单轴速度上限: 协议量程本可到 ±10.2 m/s, 这里收紧到 ±2 m/s。
+  // 超限时对 (vx, vy) 做等比缩放 (保方向), 而不是逐轴独立截断。
+  static constexpr double kMotionMaxSpeed = 2.0;       // 单轴速度上限 (m/s)
+  // 减速起始距离由目标速度决定: slow_radius = kSlowRadiusTime * 目标速度 (m),
+  // 即距终点还剩 kSlowRadiusTime 秒的行程时开始线性减速 (速度越大越早减速)。
+  // 参数 motion_slow_radius > 0 时用手动值覆盖该自动计算 (见 effectiveSlowRadius)。
+  static constexpr double kSlowRadiusTime = 1.0;       // 减速时间常数 (s)
+  // 12 位有符号量程对应的原始量上限 (±2040/200 = ±10.2 m/s), 仅用作饱和兜底
+  static constexpr long kMotionRawLimit = 2040;
+```
+
+### `Point`
+
+- **源码行**: `57-62` (6 行)
+- **目标位置**: `tools/types.hpp`
+- **职责**: 点云基本单元 float x/y/z (被 tools 与 tasks 共用, 建议放最底层头文件)
+- **依赖 / 备注**: type; 应保持无 ROS 依赖
+
+```cpp
+  struct Point
+  {
+    float x;
+    float y;
+    float z;
+  };
+```
+
+### `LookaheadView`
+
+- **源码行**: `70-82` (13 行)
+- **目标位置**: `tools/types.hpp`
+- **职责**: 路径跟随可视化快照: valid/base_x/base_y/yaw/target_x/target_y/vx/vy/lookahead/dist_end
+- **依赖 / 备注**: type
+
+```cpp
+  struct LookaheadView
+  {
+    bool valid{false};
+    double base_x{0.0};
+    double base_y{0.0};
+    double yaw{0.0};
+    double target_x{0.0};
+    double target_y{0.0};
+    double vx{0.0};
+    double vy{0.0};
+    double lookahead{0.0};
+    double dist_end{0.0};
+  };
+```
+
+### `Config`
+
+- **源码行**: `84-106` (23 行)
+- **目标位置**: `tools/types.hpp`
+- **职责**: 建图配置: resolution/zmin/zmax/dilate/baseline_dilate/self_filter_size/地图范围/输出路径/历史时长/每帧点数上限/投票阈值
+- **依赖 / 备注**: type; 纯 POD, 建议按主题拆成 MappingConfig 等
+
+```cpp
+  struct Config
+  {
+    double resolution;
+    double zmin;
+    double zmax;
+    int dilate;
+    // 静态基准图膨胀量: 只在动态障碍模式用于生成 static_obstacle_mask_。
+    //   <0 表示沿用 dilate; 正值可单独放大基准, 避免"障碍贴住静态物表面"
+    //   时被误判为静态 (表现为近距离绿色消失)。
+    int baseline_dilate;
+    // 车体自身自过滤正方形边长 (m): 以车体中心为中心, 该边长正方形内的
+    //   已占据格一律视为车体本身并清除。<=0 关闭。
+    double self_filter_size;
+    double xmin;
+    double ymin;
+    double xmax;
+    double ymax;
+    std::string output;
+    std::string history_output;
+    double history_duration;
+    int history_max_points_per_frame;
+    int history_min_hits;
+  };
+```
+
+### `PoseCorrection`
+
+- **源码行**: `1233-1238` (6 行)
+- **目标位置**: `tools/types.hpp`
+- **职责**: map->odom 刚体变换: double r[9] 行主序 + double t[3] + bool valid
+- **依赖 / 备注**: type
+
+```cpp
+  struct PoseCorrection
+  {
+    double r[9] = {1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0};   // 行主序
+    double t[3] = {0.0, 0.0, 0.0};
+    bool valid = false;
+  };
+```
+
+### `HoldObstacleCluster`
+
+- **源码行**: `4717-4721` (5 行)
+- **目标位置**: `tools/types.hpp`
+- **职责**: 障碍簇世界系质心 x/y (占点与追击共用)
+- **依赖 / 备注**: type
+
+```cpp
+  struct HoldObstacleCluster
+  {
+    double x{0.0};
+    double y{0.0};
+  };
+```
+
+### `FootprintBounds`
+
+- **源码行**: `6196-6203` (8 行)
+- **目标位置**: `tools/types.hpp`
+- **职责**: 车体自过滤 AABB: valid / xmin / xmax / ymin / ymax
+- **依赖 / 备注**: type
+
+```cpp
+  struct FootprintBounds
+  {
+    bool valid{false};      // false: 无里程计或已关闭自过滤, 不做任何过滤
+    double xmin{0.0};
+    double xmax{0.0};
+    double ymin{0.0};
+    double ymax{0.0};
+  };
+```
+
+### `ChaseTrackPoint`
+
+- **源码行**: `7848-7854` (7 行)
+- **目标位置**: `tools/types.hpp`
+- **职责**: 追击目标轨迹条目: stamp / x / y / 该时刻簇点云
+- **依赖 / 备注**: type; 嵌在成员区声明
+
+```cpp
+  struct ChaseTrackPoint
+  {
+    rclcpp::Time stamp;
+    double x{0.0};
+    double y{0.0};
+    std::vector<Point> cloud;   // 记录该时刻目标簇的 3D 点云 (map 系)
+  };
+```
+
+## 2. 几何 / 坐标变换
+
+全部只依赖入参；建议 `namespace nav::tools`。
 
 ### `hasField`
 
@@ -287,9 +449,9 @@
   }
 ```
 
-## 2. 运动帧编解码（12 位有符号量协议）
+## 3. 运动帧编解码（12 位有符号量协议）
 
-纯位运算与量化，可直接脱离 ROS 单测。
+纯位运算与量化，可单独做单元测试。
 
 ### `limitMotionSpeed`
 
@@ -368,9 +530,9 @@
   }
 ```
 
-## 3. 栅格几何与像素
+## 4. 栅格几何与像素
 
-占据栅格/像素层面的纯运算, 是拆分收益最大的一块。
+占据栅格/像素层面的纯运算，拆分收益最大的一块。
 
 ### `computeMapSize`
 
@@ -803,268 +965,9 @@
   }
 ```
 
-## 4. 序列化 (PCD / BIN / YAML)
-
-只做文件 IO, 不含发布; 建议签名改为 `bool write*(path, ...)`。
-
-### `saveCloudPcd`
-
-- **源码行**: `867-909` (43 行)
-- **目标位置**: `tools/io_pcd.cpp`
-- **职责**: 把一帧点云写成 ascii PCD 快照 (ASCII, 带时间戳文件名)
-- **依赖 / 备注**: 读 debug_* 三个参数, 入参化后纯 IO
-
-```cpp
-  bool saveCloudPcd(
-    const std::vector<Point> & cloud,
-    const std::string & tag,
-    const rclcpp::Time & stamp)
-  {
-    if (!debug_pcd_enabled_ ||
-      debug_pcd_saved_ >= static_cast<std::size_t>(
-        std::max(0, debug_pcd_max_files_)))
-    {
-      return false;
-    }
-
-    // 文件名: cloud_<tag>_<sec>_<nanosec>.pcd
-    const std::string path =
-      debug_log_dir_ + "/cloud_" + tag + "_" +
-      std::to_string(stamp.nanoseconds()) + ".pcd";
-
-    std::ofstream file(path, std::ios::out | std::ios::trunc);
-
-    if (!file) {
-      return false;
-    }
-
-    file << "# .PCD v0.7 - Point Cloud Data file format\n";
-    file << "VERSION 0.7\n";
-    file << "FIELDS x y z\n";
-    file << "SIZE 4 4 4\n";
-    file << "TYPE F F F\n";
-    file << "COUNT 1 1 1\n";
-    file << "WIDTH " << cloud.size() << "\n";
-    file << "HEIGHT 1\n";
-    file << "VIEWPOINT 0 0 0 1 0 0 0\n";
-    file << "POINTS " << cloud.size() << "\n";
-    file << "DATA ascii\n";
-
-    for (const auto & point : cloud) {
-      file << point.x << ' ' << point.y << ' ' << point.z << '\n';
-    }
-
-    file.flush();
-    ++debug_pcd_saved_;
-    return true;
-  }
-```
-
-### `writeHistoryCloudsBin`
-
-- **源码行**: `6839-6892` (54 行)
-- **目标位置**: `tools/io_bin.cpp`
-- **职责**: 历史点云队列 -> 自有二进制 (magic + 每帧时间戳 + float32 xyz)
-- **依赖 / 备注**: 准纯, 仅日志; 无 rclcpp 依赖的改造点见 README
-
-```cpp
-  bool writeHistoryCloudsBin(
-    const std::deque<TimedCloud> & history,
-    const std::string & path)
-  {
-    std::ofstream file(path, std::ios::binary | std::ios::trunc);
-
-    if (!file) {
-      RCLCPP_ERROR(get_logger(), "无法创建点云导出文件: %s", path.c_str());
-      return false;
-    }
-
-    const char magic[8] = {'R', 'P', 'G', 'M', 'C', 'L', 'D', '1'};
-    file.write(magic, 8);
-
-    const uint32_t frame_count =
-      static_cast<uint32_t>(history.size());
-    file.write(
-      reinterpret_cast<const char *>(&frame_count), sizeof(frame_count));
-
-    for (const auto & timed : history) {
-      const double stamp = timed.stamp.seconds();
-      file.write(reinterpret_cast<const char *>(&stamp), sizeof(stamp));
-
-      const uint32_t point_count = timed.points ?
-        static_cast<uint32_t>(timed.points->size()) : 0u;
-      file.write(
-        reinterpret_cast<const char *>(&point_count), sizeof(point_count));
-
-      if (point_count == 0) {
-        continue;
-      }
-
-      // 逐点写 float32 xyz, 避免结构体对齐/填充差异导致的跨平台不一致
-      std::vector<float> buffer;
-      buffer.reserve(static_cast<std::size_t>(point_count) * 3);
-
-      for (const auto & point : *timed.points) {
-        buffer.push_back(static_cast<float>(point.x));
-        buffer.push_back(static_cast<float>(point.y));
-        buffer.push_back(static_cast<float>(point.z));
-      }
-
-      file.write(
-        reinterpret_cast<const char *>(buffer.data()),
-        static_cast<std::streamsize>(buffer.size() * sizeof(float)));
-    }
-
-    if (!file.good()) {
-      RCLCPP_ERROR(get_logger(), "写入点云导出文件失败: %s", path.c_str());
-      return false;
-    }
-
-    return true;
-  }
-```
-
-### `readHistoryCloudsBin`
-
-- **源码行**: `6895-6975` (81 行)
-- **目标位置**: `tools/io_bin.cpp`
-- **职责**: 自有二进制 -> 历史点云队列 (反序列化, 校验 magic/长度)
-- **依赖 / 备注**: 准纯, 仅日志
-
-```cpp
-  bool readHistoryCloudsBin(
-    const std::string & path,
-    std::deque<TimedCloud> & history)
-  {
-    std::ifstream file(path, std::ios::binary);
-
-    if (!file) {
-      RCLCPP_ERROR(get_logger(), "无法打开点云导入文件: %s", path.c_str());
-      return false;
-    }
-
-    char magic[8] = {0};
-    file.read(magic, 8);
-
-    if (!file.good() ||
-      std::memcmp(magic, "RPGMCLD1", 8) != 0)
-    {
-      RCLCPP_ERROR(get_logger(), "点云导入文件格式不匹配: %s", path.c_str());
-      return false;
-    }
-
-    uint32_t frame_count = 0;
-    file.read(reinterpret_cast<char *>(&frame_count), sizeof(frame_count));
-
-    if (!file.good() || frame_count > 100000u) {
-      RCLCPP_ERROR(get_logger(), "点云导入文件帧数异常: %s", path.c_str());
-      return false;
-    }
-
-    std::deque<TimedCloud> loaded;
-
-    for (uint32_t frame = 0; frame < frame_count; ++frame) {
-      double stamp = 0.0;
-      file.read(reinterpret_cast<char *>(&stamp), sizeof(stamp));
-
-      uint32_t point_count = 0;
-      file.read(reinterpret_cast<char *>(&point_count), sizeof(point_count));
-
-      if (!file.good() || point_count > 10000000u) {
-        RCLCPP_ERROR(
-          get_logger(), "点云导入文件第 %u 帧异常: %s", frame, path.c_str());
-        return false;
-      }
-
-      auto points = std::make_shared<std::vector<Point>>();
-      points->reserve(point_count);
-
-      std::vector<float> buffer(
-        static_cast<std::size_t>(point_count) * 3);
-
-      if (point_count > 0) {
-        file.read(
-          reinterpret_cast<char *>(buffer.data()),
-          static_cast<std::streamsize>(buffer.size() * sizeof(float)));
-
-        if (!file.good()) {
-          RCLCPP_ERROR(
-            get_logger(), "点云导入文件第 %u 帧数据截断: %s",
-            frame, path.c_str());
-          return false;
-        }
-
-        for (uint32_t index = 0; index < point_count; ++index) {
-          Point point;
-          point.x = buffer[index * 3 + 0];
-          point.y = buffer[index * 3 + 1];
-          point.z = buffer[index * 3 + 2];
-          points->push_back(point);
-        }
-      }
-
-      TimedCloud timed;
-      timed.stamp = rclcpp::Time(
-        static_cast<int64_t>(stamp * 1e9), RCL_ROS_TIME);
-      timed.points = points;
-      loaded.push_back(timed);
-    }
-
-    history = std::move(loaded);
-    return true;
-  }
-```
-
-### `writeMapYaml`
-
-- **源码行**: `6985-7021` (37 行)
-- **目标位置**: `tools/io_yaml.cpp`
-- **职责**: 写 map_server 风格 YAML (image/resolution/origin/negate/occupied_thresh)
-- **依赖 / 备注**: 准纯, 仅日志
-
-```cpp
-  bool writeMapYaml(
-    const std::string & path,
-    const Config & config,
-    const std::string & image_name,
-    int width,
-    int height)
-  {
-    std::ofstream file(path, std::ios::trunc);
-
-    if (!file) {
-      RCLCPP_ERROR(get_logger(), "无法创建地图 YAML: %s", path.c_str());
-      return false;
-    }
-
-    // PGM 第 0 行在图像顶部 = ymax 侧, 因此 origin 的 y 取 ymin (map_server
-    //   的 origin 是图像左下角像素在世界系的坐标)。
-    file << "image: " << image_name << "\n";
-    file << "resolution: " << config.resolution << "\n";
-    file << "origin: [" << config.xmin << ", " << config.ymin << ", 0.0]\n";
-    file << "negate: 0\n";
-    file << "occupied_thresh: 0.1\n";
-    file << "free_thresh: 0.9\n";
-    // 附注字段 (不影响 map_server, 供本节点导入时校验尺寸/一致性)
-    file << "# width: " << width << "\n";
-    file << "# height: " << height << "\n";
-    file << "# xmin: " << config.xmin << "\n";
-    file << "# ymin: " << config.ymin << "\n";
-    file << "# xmax: " << config.xmax << "\n";
-    file << "# ymax: " << config.ymax << "\n";
-
-    if (!file.good()) {
-      RCLCPP_ERROR(get_logger(), "写入地图 YAML 失败: %s", path.c_str());
-      return false;
-    }
-
-    return true;
-  }
-```
-
 ## 5. 栅格查询 / 聚类 / 间距判定
 
-占点与追击共用，说明它们是通用几何算法而非业务。
+占点与追击共用，属通用几何算法。
 
 ### `extractHoldObstacles`
 

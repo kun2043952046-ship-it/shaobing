@@ -1,11 +1,11 @@
-# 03 业务流程（tasks/）
+# 04 业务流程（tasks/）
 
-来源: `src/test_navigation.cpp`。这些函数需要节点上下文（发布器/互斥量/参数），属于"任务/行为"层。
-迁入目录: 工作区顶层 `Navigation/tasks/`。建议每个小节一个类：`CloudPipeline` / `PoseCorrector` / `CloudPublisher` / `MapRenderer` / `MapIo` / `AstarPlanner` / `HoldPointTask` / `ChaseTask` / `MotionController`，统一由 `src/` 的节点类持有并注入 tools 依赖。
+**约定**：`tasks/` 是"做什么" —— 编排 io 的收发与 tools 的计算，持有状态与状态机；自己不做数学、不发消息、不写文件。
+迁入顶层 `Navigation/tasks/`，每小节一个类：`CloudPipeline` / `DynamicSplitter` / `PoseCorrector` / `MapRenderer` / `MapIo` / `AstarPlanner` / `HoldPointTask` / `ChaseTask` / `MotionController` / `DebugLogger`。
 
 ## 1. 点云流水线 / 动态障碍分离
 
-cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 tools 再搬它。
+cloudCallback 是全文件最强耦合点（4 把锁），建议先抽 tools/io 再搬它。
 
 ### `cloudCallback`
 
@@ -775,7 +775,7 @@ cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 
 
 ## 2. 位姿修正（map->odom 2D 配准）
 
-流程在 tasks，评分内核在 tools/registration。
+流程与状态在 tasks；评分内核在 tools/registration，发布在 io/ros_pose_pub。
 
 ### `getPoseCorrection`
 
@@ -789,34 +789,6 @@ cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 
   {
     std::lock_guard<std::mutex> lock(pose_correction_mutex_);
     return pose_correction_;
-  }
-```
-
-### `publishPoseCorrection`
-
-- **源码行**: `1342-1359` (18 行)
-- **目标位置**: `tasks/pose_correction.cpp`
-- **职责**: 修正量转 PoseStamped 并发布到 /pose_correction
-- **依赖 / 备注**: 发布
-
-```cpp
-  void publishPoseCorrection(const PoseCorrection & c)
-  {
-    geometry_msgs::msg::PoseStamped correction;
-    correction.header.stamp = get_clock()->now();
-    correction.header.frame_id = "map";
-    correction.pose.position.x = c.t[0];
-    correction.pose.position.y = c.t[1];
-    correction.pose.position.z = c.t[2];
-
-    double qx = 0.0, qy = 0.0, qz = 0.0, qw = 1.0;
-    matrixToQuaternion(c.r, qx, qy, qz, qw);
-    correction.pose.orientation.x = qx;
-    correction.pose.orientation.y = qy;
-    correction.pose.orientation.z = qz;
-    correction.pose.orientation.w = qw;
-
-    pose_correction_publisher_->publish(correction);
   }
 ```
 
@@ -1196,360 +1168,9 @@ cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 
   }
 ```
 
-## 3. 点云发布
+## 3. 建图渲染
 
-限频/抽稀/坐标变换 + ROS 发布。
-
-### `publishCloudPreview`
-
-- **源码行**: `2323-2369` (47 行)
-- **目标位置**: `tasks/cloud_publish.cpp`
-- **职责**: 按 cloud_preview_max_points_ 等步长抽稀后发布预览 PointCloud2; 无订阅者直接返回
-- **依赖 / 备注**: 发布
-
-```cpp
-  void publishCloudPreview(const std::vector<Point> & points)
-  {
-    if (!cloud_preview_publisher_ ||
-      cloud_preview_publisher_->get_subscription_count() == 0)
-    {
-      return;
-    }
-
-    const std::size_t total = points.size();
-
-    if (total == 0) {
-      return;
-    }
-
-    const std::size_t max_points =
-      static_cast<std::size_t>(cloud_preview_max_points_);
-
-    const std::size_t stride =
-      (total + max_points - 1) / max_points;
-
-    const std::size_t count =
-      (total + stride - 1) / stride;
-
-    sensor_msgs::msg::PointCloud2 preview_msg;
-    preview_msg.header.stamp = get_clock()->now();
-    preview_msg.header.frame_id = "map";
-    preview_msg.height = 1;
-
-    sensor_msgs::PointCloud2Modifier modifier(preview_msg);
-    modifier.setPointCloud2FieldsByString(1, "xyz");
-    modifier.resize(count);
-
-    sensor_msgs::PointCloud2Iterator<float> iter_x(preview_msg, "x");
-    sensor_msgs::PointCloud2Iterator<float> iter_y(preview_msg, "y");
-    sensor_msgs::PointCloud2Iterator<float> iter_z(preview_msg, "z");
-
-    for (std::size_t i = 0; i < total; i += stride) {
-      *iter_x = points[i].x;
-      *iter_y = points[i].y;
-      *iter_z = points[i].z;
-      ++iter_x;
-      ++iter_y;
-      ++iter_z;
-    }
-
-    cloud_preview_publisher_->publish(preview_msg);
-  }
-```
-
-### `pointCloudStamp`
-
-- **源码行**: `2384-2409` (26 行)
-- **目标位置**: `tasks/cloud_publish.cpp`
-- **职责**: 生成 Nav2 安全时间戳: 最新里程计戳 - 0.1 s (避免 TF 外推到未来导致整帧被丢)
-- **依赖 / 备注**: 读 odom_stamp_
-
-```cpp
-  rclcpp::Time pointCloudStamp()
-  {
-    constexpr double kTfStampMargin = 0.1;
-    constexpr double kMaxOdomAge = 1.0;
-
-    bool odom_ok = false;
-    rclcpp::Time odom_stamp(0, 0, RCL_ROS_TIME);
-    {
-      std::lock_guard<std::mutex> lock(motion_mutex_);
-      odom_ok = odom_received_;
-      odom_stamp = odom_stamp_;
-    }
-
-    const rclcpp::Time now = get_clock()->now();
-
-    // 里程计掉线/长时间未更新: TF 同样不会有新数据, 退回 now() 并交给 Nav2 按现状丢弃
-    if (!odom_ok || (now - odom_stamp).seconds() > kMaxOdomAge) {
-      return now;
-    }
-
-    const rclcpp::Time stamp =
-      odom_stamp - rclcpp::Duration::from_seconds(kTfStampMargin);
-
-    // 里程计戳异常跳到未来时兜底, 绝不发出比 now() 更晚的戳
-    return stamp < now ? stamp : now;
-  }
-```
-
-### `publishPointCloud`
-
-- **源码行**: `2412-2445` (34 行)
-- **目标位置**: `tasks/cloud_publish.cpp`
-- **职责**: 把点列打包成 PointCloud2 (frame_id 入参) 并发布
-- **依赖 / 备注**: 发布; 时间戳来自 pointCloudStamp
-
-```cpp
-  void publishPointCloud(
-    const rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr & publisher,
-    const std::vector<Point> & points,
-    const std::string & frame_id)
-  {
-    if (!publisher || publisher->get_subscription_count() == 0) {
-      return;
-    }
-
-    sensor_msgs::msg::PointCloud2 msg;
-    msg.header.stamp = pointCloudStamp();
-    msg.header.frame_id = frame_id;
-    msg.height = 1;
-    msg.is_dense = true;
-
-    sensor_msgs::PointCloud2Modifier modifier(msg);
-    modifier.setPointCloud2FieldsByString(1, "xyz");
-    modifier.resize(points.size());
-
-    sensor_msgs::PointCloud2Iterator<float> iter_x(msg, "x");
-    sensor_msgs::PointCloud2Iterator<float> iter_y(msg, "y");
-    sensor_msgs::PointCloud2Iterator<float> iter_z(msg, "z");
-
-    for (const auto & point : points) {
-      *iter_x = point.x;
-      *iter_y = point.y;
-      *iter_z = point.z;
-      ++iter_x;
-      ++iter_y;
-      ++iter_z;
-    }
-
-    publisher->publish(msg);
-  }
-```
-
-### `publishSelfFilteredCloud`
-
-- **源码行**: `2510-2578` (69 行)
-- **目标位置**: `tasks/cloud_publish.cpp`
-- **职责**: 限频 + 抽稀 + 转 base_link 后发布 (Nav2 obstacle_layer 的 clearing 源)
-- **依赖 / 备注**: 写 self_filtered_last_publish_
-
-```cpp
-  void publishSelfFilteredCloud(const std::vector<Point> & points)
-  {
-    if (!self_filtered_publisher_ ||
-      self_filtered_publisher_->get_subscription_count() == 0)
-    {
-      return;   // 无人订阅 (Nav2 未启动): 不做任何抽稀/打包开销
-    }
-
-    // 限频: <=0 表示不限频
-    if (self_filtered_publish_rate_ > 0.0) {
-      const rclcpp::Time now = get_clock()->now();
-      const double min_period = 1.0 / self_filtered_publish_rate_;
-
-      if (self_filtered_last_publish_.nanoseconds() != 0 &&
-        (now - self_filtered_last_publish_).seconds() < min_period)
-      {
-        return;
-      }
-      self_filtered_last_publish_ = now;
-    }
-
-    // 等间隔抽稀: 保留整帧的空间分布特征, 又控制单帧点数
-    int max_points = 0;
-    {
-      std::lock_guard<std::mutex> lock(config_mutex_);
-      max_points = self_filtered_max_points_;
-    }
-
-    std::vector<Point> base_points;
-
-    // 先把 map 系点云真实变换到 base_link 系 (Nav2 会把坐标当作 base_link 系数值,
-    // 否则机器人位姿被施加两次, 整张点云搬到车体上并随航向旋转)。变换与抽稀同循环完成。
-    if (transformToBaseLink(points, base_points)) {
-      const std::size_t cap =
-        max_points > 0 ? static_cast<std::size_t>(max_points) : 0;
-
-      if (cap > 0 && base_points.size() > cap) {
-        const std::size_t stride = (base_points.size() + cap - 1) / cap;
-        std::vector<Point> sampled;
-        sampled.reserve(cap + 1);
-
-        for (std::size_t i = 0; i < base_points.size(); i += stride) {
-          sampled.push_back(base_points[i]);
-        }
-        base_points.swap(sampled);
-      }
-
-      // 坐标与 frame_id 一致, Nav2 再做一次 TF 即回到 map 系正确位置
-      publishPointCloud(self_filtered_publisher_, base_points, "base_link");
-      return;
-    }
-
-    // 无里程计: 无法反推车体中心, 退回 map 帧 (marking 仍正确, 仅 clearing 退化)
-    const std::size_t cap =
-      max_points > 0 ? static_cast<std::size_t>(max_points) : 0;
-
-    if (cap > 0 && points.size() > cap) {
-      const std::size_t stride = (points.size() + cap - 1) / cap;
-      base_points.reserve(cap + 1);
-
-      for (std::size_t i = 0; i < points.size(); i += stride) {
-        base_points.push_back(points[i]);
-      }
-    } else {
-      base_points = points;
-    }
-
-    publishPointCloud(self_filtered_publisher_, base_points, "map");
-  }
-```
-
-### `publishDynamicObstacleCloud`
-
-- **源码行**: `7346-7418` (73 行)
-- **目标位置**: `tasks/cloud_publish.cpp`
-- **职责**: 组避障点云(整帧 + 基准栅格取点) 发 Nav2
-- **依赖 / 备注**: 调用 transformToBaseLink / publishPointCloud
-
-```cpp
-  void publishDynamicObstacleCloud(const std::vector<Point> & frame_points)
-  {
-    if (!dynamic_obstacle_publisher_ ||
-      dynamic_obstacle_publisher_->get_subscription_count() == 0)
-    {
-      return;
-    }
-
-    Config config;
-    std::vector<uint8_t> baseline;
-    {
-      std::lock_guard<std::mutex> lock(config_mutex_);
-      config = config_;
-    }
-    {
-      std::lock_guard<std::mutex> lock(dynamic_mutex_);
-      baseline = static_obstacle_mask_;
-    }
-
-    std::vector<Point> marking_points;
-    marking_points.reserve(frame_points.size());
-
-    for (const auto & point : frame_points) {
-      if (point.z < config.zmin || point.z > config.zmax) {
-        continue;
-      }
-      marking_points.push_back(point);
-    }
-
-    // 把锁定的累计历史图障碍 (冻结的静态基准) 也并入避障点云:
-    //   baseline 与该帧点云同为 map 系、同一栅格几何, 直接按格中心取点。
-    if (!baseline.empty()) {
-      int width = 0;
-      int height = 0;
-
-      if (computeMapSize(config, width, height) &&
-        baseline.size() ==
-        static_cast<std::size_t>(width) * static_cast<std::size_t>(height))
-      {
-        for (int iy = 0; iy < height; ++iy) {
-          for (int ix = 0; ix < width; ++ix) {
-            const std::size_t index =
-              static_cast<std::size_t>(iy) *
-              static_cast<std::size_t>(width) +
-              static_cast<std::size_t>(ix);
-
-            if (baseline[index] == 0) {
-              continue;
-            }
-
-            marking_points.push_back(
-              Point{
-                static_cast<float>(config.xmin +
-                (static_cast<double>(ix) + 0.5) * config.resolution),
-                static_cast<float>(config.ymin +
-                (static_cast<double>(iy) + 0.5) * config.resolution),
-                0.0F});
-          }
-        }
-      }
-    }
-
-    if (marking_points.empty()) {
-      return;
-    }
-
-    std::vector<Point> base_points;
-    if (transformToBaseLink(marking_points, base_points)) {
-      publishPointCloud(dynamic_obstacle_publisher_, base_points, "base_link");
-    } else {
-      publishPointCloud(dynamic_obstacle_publisher_, marking_points, "map");
-    }
-  }
-```
-
-### `publishClearRingCloud`
-
-- **源码行**: `7432-7469` (38 行)
-- **目标位置**: `tasks/cloud_publish.cpp`
-- **职责**: 生成 base_link 系环点并发布, 让代价图沿射线清除旧红色区域
-- **依赖 / 备注**: 读 clear_ring_points_/clear_ring_radius_
-
-```cpp
-  void publishClearRingCloud()
-  {
-    if (!clear_ring_publisher_ ||
-      clear_ring_publisher_->get_subscription_count() == 0)
-    {
-      return;
-    }
-
-    int ring_points = 0;
-    double radius = 0.0;
-
-    {
-      std::lock_guard<std::mutex> lock(config_mutex_);
-      ring_points = clear_ring_points_;
-      radius = clear_ring_radius_;
-    }
-
-    if (ring_points <= 0 || radius <= 0.0) {
-      return;   // 关闭该机制
-    }
-
-    std::vector<Point> ring;
-    ring.reserve(static_cast<std::size_t>(ring_points));
-
-    const double step = 2.0 * M_PI / static_cast<double>(ring_points);
-
-    for (int i = 0; i < ring_points; ++i) {
-      const double angle = step * static_cast<double>(i);
-      // Point 的字段是 float, 这里显式窄化避免 -Wnarrowing 警告
-      ring.push_back(
-        Point{
-          static_cast<float>(radius * std::cos(angle)),
-          static_cast<float>(radius * std::sin(angle)),
-          0.0F});
-    }
-
-    publishPointCloud(clear_ring_publisher_, ring, "base_link");
-  }
-```
-
-## 4. 建图渲染
-
-渲染流程（发布 Image + 写文件），其栅格运算部分已在 tools。
+渲染编排（栅格运算在 tools，写 PGM 在 io）。
 
 ### `renderPgm`
 
@@ -1896,9 +1517,9 @@ cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 
   }
 ```
 
-## 5. 地图导入导出
+## 4. 地图导入导出
 
-文件编排 + 状态重建。
+流程编排 + 状态重建（字节读写已下沉 io/file_*）。
 
 ### `exportHistoryMap`
 
@@ -2162,9 +1783,9 @@ cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 
   }
 ```
 
-## 6. A* 规划
+## 5. A* 规划
 
-外层流程（缓存/限频/发布）留 tasks，搜索内核建议下沉 tools/astar。
+缓存/限频/目标解析留 tasks，搜索内核建议下沉 tools/astar。
 
 ### `buildMergedOccupancy`
 
@@ -2682,40 +2303,7 @@ cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 
   }
 ```
 
-### `publishAstarPlan`
-
-- **源码行**: `4672-4694` (23 行)
-- **目标位置**: `tasks/astar_planner.cpp`
-- **职责**: A* 路径 -> nav_msgs/Path (map 系) 供网页显示
-- **依赖 / 备注**: 发布 /astar_plan
-
-```cpp
-  void publishAstarPlan(const std::vector<Point> & path)
-  {
-    if (!astar_plan_publisher_) {
-      return;
-    }
-
-    nav_msgs::msg::Path msg;
-    msg.header.frame_id = "map";
-    msg.header.stamp = now();
-    msg.poses.reserve(path.size());
-
-    for (const auto & point : path) {
-      geometry_msgs::msg::PoseStamped pose;
-      pose.header = msg.header;
-      pose.pose.position.x = point.x;
-      pose.pose.position.y = point.y;
-      pose.pose.position.z = 0.0;
-      pose.pose.orientation.w = 1.0;
-      msg.poses.push_back(pose);
-    }
-
-    astar_plan_publisher_->publish(msg);
-  }
-```
-
-## 7. 占点行为
+## 6. 占点行为
 
 业务状态机 + 复用 tools 的聚类/间距判定。
 
@@ -2930,103 +2518,9 @@ cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 
   }
 ```
 
-### `publishHoldPointViz`
+## 7. 追击行为
 
-- **源码行**: `5221-5251` (31 行)
-- **目标位置**: `tasks/hold_point.cpp`
-- **职责**: 发布"占点中心 + 本帧期望点"两点 Path
-- **依赖 / 备注**: 发布
-
-```cpp
-  void publishHoldPointViz(
-    double center_x, double center_y, double target_x, double target_y)
-  {
-    if (!hold_point_viz_publisher_ ||
-      hold_point_viz_publisher_->get_subscription_count() == 0)
-    {
-      return;
-    }
-
-    nav_msgs::msg::Path path;
-    path.header.stamp = now();
-    path.header.frame_id = "map";
-
-    geometry_msgs::msg::PoseStamped center_pose;
-    center_pose.header = path.header;
-    center_pose.pose.position.x = center_x;
-    center_pose.pose.position.y = center_y;
-    center_pose.pose.orientation.w = 1.0;
-    path.poses.push_back(center_pose);
-
-    if (std::hypot(target_x - center_x, target_y - center_y) > 1e-3) {
-      geometry_msgs::msg::PoseStamped target_pose;
-      target_pose.header = path.header;
-      target_pose.pose.position.x = target_x;
-      target_pose.pose.position.y = target_y;
-      target_pose.pose.orientation.w = 1.0;
-      path.poses.push_back(target_pose);
-    }
-
-    hold_point_viz_publisher_->publish(path);
-  }
-```
-
-### `publishHoldPointStatus`
-
-- **源码行**: `5254-5296` (43 行)
-- **目标位置**: `tasks/hold_point.cpp`
-- **职责**: 发布占点状态 JSON (enabled/x/y/radius/threat*)
-- **依赖 / 备注**: std_msgs/String 发布
-
-```cpp
-  void publishHoldPointStatus()
-  {
-    if (!hold_point_status_publisher_ ||
-      hold_point_status_publisher_->get_subscription_count() == 0)
-    {
-      return;
-    }
-
-    bool enabled = false;
-    double cx = 0.0;
-    double cy = 0.0;
-    double radius = 0.0;
-    bool threat_valid = false;
-    double tx = 0.0;
-    double ty = 0.0;
-    double tdist = 0.0;
-
-    {
-      std::lock_guard<std::mutex> lock(hold_point_mutex_);
-      enabled = hold_point_enabled_;
-      cx = hold_point_x_;
-      cy = hold_point_y_;
-      radius = hold_point_radius_;
-      threat_valid = hold_point_threat_valid_;
-      tx = hold_point_threat_x_;
-      ty = hold_point_threat_y_;
-      tdist = hold_point_threat_dist_;
-    }
-
-    std_msgs::msg::String msg;
-    msg.data = "{";
-    msg.data += "\"enabled\":" + std::string(enabled ? "true" : "false");
-    msg.data += ",\"x\":" + std::to_string(cx);
-    msg.data += ",\"y\":" + std::to_string(cy);
-    msg.data += ",\"radius\":" + std::to_string(radius);
-    msg.data += ",\"threat\":" + std::string(threat_valid ? "true" : "false");
-    msg.data += ",\"threat_x\":" + std::to_string(tx);
-    msg.data += ",\"threat_y\":" + std::to_string(ty);
-    msg.data += ",\"threat_dist\":" + std::to_string(tdist);
-    msg.data += "}";
-
-    hold_point_status_publisher_->publish(msg);
-  }
-```
-
-## 8. 追击行为
-
-业务状态机 + 目标轨迹记录 + 3 个发布。
+业务状态机 + 目标轨迹记录。
 
 ### `computeChaseCommand`
 
@@ -3345,149 +2839,9 @@ cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 
   }
 ```
 
-### `publishChaseViz`
+## 8. 运动控制 / 路径跟随
 
-- **源码行**: `5674-5710` (37 行)
-- **目标位置**: `tasks/chase.cpp`
-- **职责**: 发布"目标点 + 站位点"两点 Path
-- **依赖 / 备注**: 发布
-
-```cpp
-  void publishChaseViz(
-    bool has_target, double target_x, double target_y,
-    double goal_x, double goal_y)
-  {
-    if (!chase_viz_publisher_ ||
-      chase_viz_publisher_->get_subscription_count() == 0)
-    {
-      return;
-    }
-
-    nav_msgs::msg::Path path;
-    path.header.stamp = now();
-    path.header.frame_id = "map";
-
-    // 第 1 点 = 当前目标位置 (has_target=false 时跳过, 站点仍会发布)
-    if (has_target) {
-      geometry_msgs::msg::PoseStamped p0;
-      p0.header = path.header;
-      p0.pose.position.x = target_x;
-      p0.pose.position.y = target_y;
-      p0.pose.orientation.w = 1.0;
-      path.poses.push_back(p0);
-    }
-
-    if (path.poses.empty() ||
-      std::hypot(goal_x - target_x, goal_y - target_y) > 1e-3)
-    {
-      geometry_msgs::msg::PoseStamped p1;
-      p1.header = path.header;
-      p1.pose.position.x = goal_x;
-      p1.pose.position.y = goal_y;
-      p1.pose.orientation.w = 1.0;
-      path.poses.push_back(p1);
-    }
-
-    chase_viz_publisher_->publish(path);
-  }
-```
-
-### `publishChaseStatus`
-
-- **源码行**: `5713-5758` (46 行)
-- **目标位置**: `tasks/chase.cpp`
-- **职责**: 发布追击状态 JSON (valid/target/goal/radius/track 点数)
-- **依赖 / 备注**: std_msgs/String 发布
-
-```cpp
-  void publishChaseStatus()
-  {
-    if (!chase_status_publisher_ ||
-      chase_status_publisher_->get_subscription_count() == 0)
-    {
-      return;
-    }
-
-    bool enabled = false;
-    bool valid = false;
-    double tx = 0.0;
-    double ty = 0.0;
-    double gx = 0.0;
-    double gy = 0.0;
-    double radius = 0.0;
-    double track_radius = 0.0;
-    std::size_t track_size = 0;
-
-    {
-      std::lock_guard<std::mutex> lock(chase_mutex_);
-      enabled = chase_enabled_;
-      valid = chase_target_valid_;
-      tx = chase_target_x_;
-      ty = chase_target_y_;
-      gx = chase_goal_x_;
-      gy = chase_goal_y_;
-      radius = chase_radius_;
-      track_radius = chase_track_radius_;
-      track_size = chase_track_.size();
-    }
-
-    std_msgs::msg::String msg;
-    msg.data = "{";
-    msg.data += "\"enabled\":" + std::string(enabled ? "true" : "false");
-    msg.data += ",\"valid\":" + std::string(valid ? "true" : "false");
-    msg.data += ",\"target_x\":" + std::to_string(tx);
-    msg.data += ",\"target_y\":" + std::to_string(ty);
-    msg.data += ",\"goal_x\":" + std::to_string(gx);
-    msg.data += ",\"goal_y\":" + std::to_string(gy);
-    msg.data += ",\"radius\":" + std::to_string(radius);
-    msg.data += ",\"track_radius\":" + std::to_string(track_radius);
-    msg.data += ",\"track\":" + std::to_string(track_size);
-    msg.data += "}";
-
-    chase_status_publisher_->publish(msg);
-  }
-```
-
-### `publishChaseTrack`
-
-- **源码行**: `5761-5787` (27 行)
-- **目标位置**: `tasks/chase.cpp`
-- **职责**: 发布目标历史轨迹 Path (网页画轨迹线)
-- **依赖 / 备注**: 发布
-
-```cpp
-  void publishChaseTrack()
-  {
-    if (!chase_track_publisher_ ||
-      chase_track_publisher_->get_subscription_count() == 0)
-    {
-      return;
-    }
-
-    nav_msgs::msg::Path path;
-    path.header.stamp = now();
-    path.header.frame_id = "map";
-
-    {
-      std::lock_guard<std::mutex> lock(chase_mutex_);
-
-      for (const auto & p : chase_track_) {
-        geometry_msgs::msg::PoseStamped pose;
-        pose.header = path.header;
-        pose.pose.position.x = p.x;
-        pose.pose.position.y = p.y;
-        pose.pose.orientation.w = 1.0;
-        path.poses.push_back(pose);
-      }
-    }
-
-    chase_track_publisher_->publish(path);
-  }
-```
-
-## 9. 运动控制 / 路径跟随
-
-几何控制内核可下沉 tools/pure_pursuit，类只保留状态机与发布。
+几何内核下沉 tools/pure_pursuit，类只保留状态机。
 
 ### `computeFollowCommand`
 
@@ -3864,113 +3218,5 @@ cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 
         RCLCPP_INFO(get_logger(), "已停止运动");
       }
     }
-  }
-```
-
-### `publishMotionFrame`
-
-- **源码行**: `3432-3474` (43 行)
-- **目标位置**: `tasks/motion_frame.cpp (打包段可入 tools/motion_codec)`
-- **职责**: 组装 8 字节运动帧(control 位 + vx/vy 各 12 位, vy 下发取反) -> 发 /motion -> 可选 CAN 直发
-- **依赖 / 备注**: 读写 motion_vx_scale_/motion_vy_scale_/motion_control_
-
-```cpp
-  void publishMotionFrame(bool control, double vx, double vy)
-  {
-    double vx_scale = kMotionSpeedScale;
-    double vy_scale = kMotionSpeedScale;
-    int control_value = 1;
-    {
-      std::lock_guard<std::mutex> lock(motion_mutex_);
-      vx_scale = motion_vx_scale_;
-      vy_scale = motion_vy_scale_;
-      control_value = motion_control_;
-    }
-
-    // 先做保方向限幅: 任一轴超过单轴上限时, 两轴按同一比例等比缩小
-    limitMotionSpeed(vx, vy);
-
-    // 12 位有符号速度量: 低 12 位为有效数据, 负数为补码
-    // 下发前对 vy 取反: 下位机对 vy 的符号约定与导航侧相反 (横向分量整体反号)
-    const uint16_t vx_raw = encodeMotionRaw(vx, vx_scale);
-    const uint16_t vy_raw = encodeMotionRaw(-vy, vy_scale);
-
-    std_msgs::msg::UInt8MultiArray msg;
-    msg.data.resize(8);
-    // control 位: 运动时取参数 motion_control (默认 1), 停车时恒为 0
-    const uint8_t control_bit = control ? static_cast<uint8_t>(
-      (std::clamp(control_value, 0, 255) != 0) ? 1 : 0) : 0U;
-    msg.data[0] = static_cast<uint8_t>(control_bit & 0x01U);  // bit0=control, bit1=shoot(0)
-    msg.data[1] = 0U;                 // tar_yaw    高 8 位 (导航不涉及)
-    msg.data[2] = 0U;                 // tar_yaw    低 8 位
-    msg.data[3] = 0U;                 // tar_pitch  高 8 位 (导航不涉及)
-    msg.data[4] = 0U;                 // tar_pitch  低 8 位
-    msg.data[5] = static_cast<uint8_t>((vx_raw >> 4) & 0xFF);       // vx 高 8 位
-    msg.data[6] = static_cast<uint8_t>(((vx_raw & 0x0F) << 4) |    // vx 低 4 位
-      ((vy_raw >> 8) & 0x0F));                                     // vy 高 4 位
-    msg.data[7] = static_cast<uint8_t>(vy_raw & 0xFF);              // vy 低 8 位
-
-    motion_publisher_->publish(msg);
-
-    // 同一份 8 字节直接写进 CAN 总线 (开启 can_enabled 时)
-    // 这样即使没有任何桥接节点, candump 也能看到 0xFF 报文
-    if (can_enabled_) {
-      canFrameFromMotion(msg.data.data());
-    }
-  }
-```
-
-### `clearCostmaps`
-
-- **源码行**: `3317-3361` (45 行)
-- **目标位置**: `tasks/nav2_service.cpp`
-- **职责**: 异步调用 Nav2 ClearEntireCostmap 清空局部/全局代价地图, 不阻塞渲染线程
-- **依赖 / 备注**: 服务客户端
-
-```cpp
-  void clearCostmaps()
-  {
-    if (!clear_costmap_on_history_reset_) {
-      return;
-    }
-
-    const auto try_clear =
-      [this](const rclcpp::Client<nav2_msgs::srv::ClearEntireCostmap>::SharedPtr & client,
-        const std::string & name)
-      {
-        if (!client) {
-          return;
-        }
-
-        if (!client->service_is_ready()) {
-          RCLCPP_WARN(
-            get_logger(),
-            "刷新历史图: 代价地图清空服务 %s 未就绪, 本次跳过 (红区可能残留)",
-            name.c_str());
-          return;
-        }
-
-        auto request =
-          std::make_shared<nav2_msgs::srv::ClearEntireCostmap::Request>();
-
-        client->async_send_request(
-          request,
-          [this, name](
-            rclcpp::Client<nav2_msgs::srv::ClearEntireCostmap>::SharedFuture future)
-          {
-            if (future.valid()) {
-              RCLCPP_INFO(
-                get_logger(),
-                "刷新历史图: 已清空代价地图 %s", name.c_str());
-            } else {
-              RCLCPP_WARN(
-                get_logger(),
-                "刷新历史图: 清空代价地图 %s 调用失败", name.c_str());
-            }
-          });
-      };
-
-    try_clear(clear_local_costmap_client_, clear_local_costmap_service_);
-    try_clear(clear_global_costmap_client_, clear_global_costmap_service_);
   }
 ```

@@ -450,6 +450,30 @@ MEMBER_GROUPS = [
     ('参数回调句柄', 7923, 7924),
 ]
 
+# 成员变量组 -> 新结构去向（config 只放 yaml，故参数进 yaml、状态进 io/tasks 类）
+MEMBER_TARGET = {
+    '点云基础 / 渲染周期': 'tasks/cloud_pipeline.cpp（cloud_mutex_ / latest_cloud_）；话题名进 params.yaml',
+    '调试日志 / 异常快照 / 跳变检测': 'tasks/debug_log.cpp → DebugLogger（阈值键来自 params.yaml）',
+    '参数与配置快照': '值 → config/params.yaml；结构 → tools/types.hpp；锁与快照 → src/ 节点',
+    '订阅 / 定时器 / 单帧图发布': '订阅与定时器 → src/ 节点；Image 发布器 → io/ros_image_pub',
+    '历史图缓冲': 'tasks/cloud_pipeline.cpp（history_ 队列）',
+    '地图导出 / 导入': 'tasks/map_io.cpp → MapIo（atomic 请求位）；落盘 → io/file_*',
+    '动态障碍 / 位姿修正': 'tasks/dynamic_split.cpp + tasks/pose_correction.cpp',
+    '自过滤点云发布': 'io/ros_cloud_pub.cpp → RosCloudPublisher',
+    '清除射线': 'io/ros_cloud_pub.cpp → RosCloudPublisher',
+    '清空 Nav2 代价地图': 'io/ros_nav2_client.cpp；开关键 `clear_costmap_on_history_reset` 进 params.yaml',
+    '运动帧框架 / 输入话题': '话题名与 scale → config/params.yaml；打包与下发 → io/ros_motion_pub.cpp',
+    '路径跟随参数': 'config/params.yaml（motion_* 14 项）',
+    'A* 兜底参数': 'config/params.yaml（astar_* 8 项）+ tasks/astar_planner.cpp（缓存）',
+    '占点': 'config/params.yaml（hold_point_*）+ tasks/hold_point.cpp（状态）',
+    '追击': 'config/params.yaml（chase_*）+ tasks/chase.cpp（状态与轨迹）',
+    '轨迹 + A* 缓存 + 目标点缓存': 'tasks/chase.cpp（chase_track_）+ tasks/astar_planner.cpp（astar_cache_*）',
+    '运动状态 / 里程计 / 路径缓冲': 'tasks/motion_control.cpp（状态）+ src/callbacks.cpp（写入）',
+    '运动请求 + 可视化快照': 'tasks/motion_control.cpp（lookahead_view_ 的写入上移到此）',
+    'SocketCAN 直发': 'io/can_bus.cpp → CanBus；`can_*` 键进 params.yaml',
+    '参数回调句柄': 'src/parameter_callback.cpp',
+}
+
 # 参数名 -> 主题 (用于自动生成参数分组表)
 PARAM_GROUPS = [
     ('基础建图 (写入 Config)', [
@@ -505,19 +529,106 @@ PARAM_GROUPS = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# 目标路径覆写
+#   约定: config/ 只放 yaml(调参用), 因此所有"数据类型/常量/文件 IO/ROS 收发"条目
+#         一律改判到 tools/(纯计算) 或 io/(硬件与外部交互)。
+# ---------------------------------------------------------------------------
+OVERRIDE = {
+    # --- 类型与常量: config/ -> tools/ (TimedCloud 带 rclcpp::Time, 归 io) ---
+    'consts': 'tools/constants.hpp',
+    'Point': 'tools/types.hpp',
+    'LookaheadView': 'tools/types.hpp',
+    'Config': 'tools/types.hpp',
+    'PoseCorrection': 'tools/types.hpp',
+    'HoldObstacleCluster': 'tools/types.hpp',
+    'FootprintBounds': 'tools/types.hpp',
+    'ChaseTrackPoint': 'tools/types.hpp',
+    'TimedCloud': 'io/timed_cloud.hpp',
+    # --- 文件序列化: tools/ -> io/ ---
+    'saveCloudPcd': 'io/file_pcd.cpp',
+    'writeHistoryCloudsBin': 'io/file_bin.cpp',
+    'readHistoryCloudsBin': 'io/file_bin.cpp',
+    'writeMapYaml': 'io/file_yaml.cpp',
+    # --- ROS 发布: tasks/ -> io/ ---
+    'publishCloudPreview': 'io/ros_cloud_pub.cpp',
+    'publishPointCloud': 'io/ros_cloud_pub.cpp',
+    'publishSelfFilteredCloud': 'io/ros_cloud_pub.cpp',
+    'publishDynamicObstacleCloud': 'io/ros_cloud_pub.cpp',
+    'publishClearRingCloud': 'io/ros_cloud_pub.cpp',
+    'publishAstarPlan': 'io/ros_path_pub.cpp',
+    'publishHoldPointViz': 'io/ros_path_pub.cpp',
+    'publishHoldPointStatus': 'io/ros_path_pub.cpp',
+    'publishChaseViz': 'io/ros_path_pub.cpp',
+    'publishChaseStatus': 'io/ros_path_pub.cpp',
+    'publishChaseTrack': 'io/ros_path_pub.cpp',
+    'publishMotionFrame': 'io/ros_motion_pub.cpp',
+    'publishPoseCorrection': 'io/ros_pose_pub.cpp',
+    'pointCloudStamp': 'io/ros_stamp.cpp',
+    'clearCostmaps': 'io/ros_nav2_client.cpp',
+    # --- CAN / 调试文件: src/ 或 tasks/ -> io/ ---
+    'openCanSocket': 'io/can_bus.cpp',
+    'closeCanSocket': 'io/can_bus.cpp',
+    'canFrameFromMotion': 'io/can_bus.cpp',
+    'initDebugLog': 'io/debug_log_file.cpp',
+}
+
+PARAM_BLOCK = ('参数声明区 (constructor 118-604)', 118, 'config/params.yaml',
+               '构造函数里的全部 declare_parameter: 参数名/类型/默认值的唯一来源',
+               'block(118-604)')
+
+
+def _apply(items):
+    return [(n, s, OVERRIDE.get(n, t), p, nt) for (n, s, t, p, nt) in items]
+
+
+CONFIG_TYPES = _apply(CONFIG_TYPES)
+TOOLS = _apply(TOOLS)
+TASKS = _apply(TASKS)
+NODE = _apply(NODE)
+ALL = CONFIG_TYPES + TOOLS + TASKS + NODE
+
+
+def layer_of(target):
+    """目标路径的首段即所属层: config / tools / io / tasks / src。"""
+    return target.split('/')[0]
+
+
+def by_layer(items, layer):
+    return [i for i in items if layer_of(i[2]) == layer]
+
+
+def pick(items, names):
+    sel = set(names)
+    return [i for i in items if i[0] in sel]
+
+
+# 层 -> 文档文件名
+LAYER_DOC = {
+    'config': '01_config.md',
+    'tools': '02_tools.md',
+    'io': '03_io.md',
+    'tasks': '04_tasks.md',
+    'src': '05_node.md',
+}
+
+
 def read_slice(lines, start, end):
     return lines[start - 1:end]
 
 
 # 按目标文件分组: (文件, 建议类/命名空间, [符号名])
 FILE_GROUPS = [
-    ('config/constants.hpp', 'namespace nav::config', ['consts']),
-    ('config/types.hpp', 'namespace nav::config', [
-        'Point', 'LookaheadView', 'TimedCloud', 'PoseCorrection',
-        'HoldObstacleCluster', 'FootprintBounds', 'ChaseTrackPoint']),
-    ('config/config.hpp', 'namespace nav::config', ['Config']),
-    ('config/config_loader.cpp', 'nav::config::loadConfig(node)', ['参数声明区 (constructor 118-604)']),
+    # ---------------- config/: 只有 yaml ----------------
+    ('config/params.yaml', '参数默认值（由 declare_parameter 提炼）',
+     ['参数声明区 (constructor 118-604)']),
+    ('config/nav2_params.yaml', 'Nav2 参数（人工维护，无源码条目）', []),
 
+    # ---------------- tools/: 纯计算 ----------------
+    ('tools/types.hpp', 'namespace nav::tools', [
+        'Point', 'LookaheadView', 'Config', 'PoseCorrection',
+        'HoldObstacleCluster', 'FootprintBounds', 'ChaseTrackPoint']),
+    ('tools/constants.hpp', 'namespace nav::tools', ['consts']),
     ('tools/ros_utils.hpp', 'namespace nav::tools', ['hasField']),
     ('tools/tf_math.hpp', 'namespace nav::tools (inline)', [
         'quaternionToMatrix', 'matrixToQuaternion', 'yawFromMatrix', 'wrapAngle',
@@ -535,46 +646,53 @@ FILE_GROUPS = [
         'extractHoldObstacles', 'findNearestObstacleCluster']),
     ('tools/grid_clearance.cpp', 'namespace nav::tools', [
         'isHoldPointClear', 'isHoldPointClearPath', 'chaseLineClear']),
-    ('tools/io_pcd.cpp', 'namespace nav::tools', ['saveCloudPcd']),
-    ('tools/io_bin.cpp', 'namespace nav::tools', ['writeHistoryCloudsBin', 'readHistoryCloudsBin']),
-    ('tools/io_yaml.cpp', 'namespace nav::tools', ['writeMapYaml']),
 
+    # ---------------- io/: 硬件与外部交互 ----------------
+    ('io/timed_cloud.hpp', 'namespace nav::io（带 rclcpp::Time，故不放 tools）', ['TimedCloud']),
+    ('io/can_bus.cpp', 'class CanBus', [
+        'openCanSocket', 'closeCanSocket', 'canFrameFromMotion']),
+    ('io/ros_cloud_pub.cpp', 'class RosCloudPublisher', [
+        'publishCloudPreview', 'publishPointCloud', 'publishSelfFilteredCloud',
+        'publishDynamicObstacleCloud', 'publishClearRingCloud']),
+    ('io/ros_path_pub.cpp', 'class RosPathPublisher', [
+        'publishAstarPlan', 'publishHoldPointViz', 'publishHoldPointStatus',
+        'publishChaseViz', 'publishChaseStatus', 'publishChaseTrack']),
+    ('io/ros_motion_pub.cpp', 'class RosMotionPublisher', ['publishMotionFrame']),
+    ('io/ros_pose_pub.cpp', 'class RosPosePublisher', ['publishPoseCorrection']),
+    ('io/ros_stamp.cpp', 'namespace nav::io', ['pointCloudStamp']),
+    ('io/ros_nav2_client.cpp', 'class Nav2ServiceClient', ['clearCostmaps']),
+    ('io/file_pcd.cpp', 'namespace nav::io', ['saveCloudPcd']),
+    ('io/file_bin.cpp', 'namespace nav::io', ['writeHistoryCloudsBin', 'readHistoryCloudsBin']),
+    ('io/file_yaml.cpp', 'namespace nav::io', ['writeMapYaml']),
+    ('io/debug_log_file.cpp', 'class DebugLogFile', ['initDebugLog']),
+
+    # ---------------- tasks/: 业务流程 ----------------
     ('tasks/cloud_pipeline.cpp', 'class CloudPipeline', ['cloudCallback', 'pruneHistory']),
-    ('tasks/debug_log.cpp', 'class DebugLogger', ['logCloudFrame']),
     ('tasks/dynamic_split.cpp', 'class DynamicSplitter', [
         'splitDynamicObstacles', 'subtractBaseline', 'buildStaticBaseline']),
     ('tasks/pose_correction.cpp', 'class PoseCorrector', [
-        'getPoseCorrection', 'publishPoseCorrection', 'setPoseCorrection2D',
-        'resetPoseCorrection', 'estimatePoseCorrection', 'correctCloudForPose']),
-    ('tasks/cloud_publish.cpp', 'class CloudPublisher', [
-        'publishCloudPreview', 'pointCloudStamp', 'publishPointCloud',
-        'publishSelfFilteredCloud', 'publishDynamicObstacleCloud', 'publishClearRingCloud']),
+        'getPoseCorrection', 'setPoseCorrection2D', 'resetPoseCorrection',
+        'estimatePoseCorrection', 'correctCloudForPose']),
     ('tasks/map_render.cpp', 'class MapRenderer', [
         'renderPgm', 'renderHistoryPgm', 'renderDynamicObstaclePgm']),
     ('tasks/map_io.cpp', 'class MapIo', [
         'exportHistoryMap', 'importHistoryMap', 'mergeImportedMap']),
     ('tasks/astar_planner.cpp', 'class AstarPlanner', [
-        'buildMergedOccupancy', 'planAstarPath', 'planAstarToGoal',
-        'getAstarPath', 'publishAstarPlan']),
-    ('tasks/hold_point.cpp', 'class HoldPointTask', [
-        'computeHoldPointCommand', 'publishHoldPointViz', 'publishHoldPointStatus']),
-    ('tasks/chase.cpp', 'class ChaseTask', [
-        'computeChaseCommand', 'recordTargetCloud', 'publishChaseViz',
-        'publishChaseStatus', 'publishChaseTrack']),
+        'buildMergedOccupancy', 'planAstarPath', 'planAstarToGoal', 'getAstarPath']),
+    ('tasks/hold_point.cpp', 'class HoldPointTask', ['computeHoldPointCommand']),
+    ('tasks/chase.cpp', 'class ChaseTask', ['computeChaseCommand', 'recordTargetCloud']),
     ('tasks/motion_control.cpp', 'class MotionController', [
         'computeFollowCommand', 'computeAstarFollowCommand', 'startMotion', 'stopMotion']),
-    ('tasks/motion_frame.cpp', 'class MotionFramePublisher', ['publishMotionFrame']),
-    ('tasks/nav2_service.cpp', 'class Nav2ServiceClient', ['clearCostmaps']),
+    ('tasks/debug_log.cpp', 'class DebugLogger', ['logCloudFrame']),
 
+    # ---------------- src/: 装配与回调 ----------------
     ('src/main.cpp', 'int main()', ['main']),
     ('src/realtime_pgm_node.cpp', 'class RealtimePgmNode', [
-        'constructor_assembly', 'initDebugLog', 'printConfig', 'createMotionTimer']),
+        'constructor_assembly', 'printConfig', 'createMotionTimer']),
     ('src/callbacks.cpp', 'class RealtimePgmNode (回调段)', [
         'odomCallback', 'planCallback', 'localPlanCallback', 'goalPoseCallback',
         'renderTimerCallback', 'motionTimerCallback']),
     ('src/parameter_callback.cpp', 'class RealtimePgmNode (参数段)', ['parameterCallback']),
-    ('src/can_socket.cpp', 'class CanSocket', [
-        'openCanSocket', 'closeCanSocket', 'canFrameFromMotion']),
 ]
 
 
@@ -624,34 +742,71 @@ def build_doc(lines, title, intro, sections, params_table=False):
     return out
 
 
-def build_param_table(lines):
-    """扫描参数声明区, 生成 参数名 -> 主题 的表格。"""
-    out = ['## 参数清单（自动扫描 118-604 行的 declare_parameter）', '']
-    found = []
-    pat = re.compile(r'declare_parameter<(.+?)>\s*\(\s*"([A-Za-z0-9_]+)"')
-    for idx in range(117, 604):
-        line = lines[idx]
-        m = pat.search(line)
-        if m:
-            found.append((m.group(2), m.group(1).strip(), idx + 1))
+def scan_params(lines):
+    """扫描 118-604 行的 declare_parameter, 返回 参数名 -> (类型, 默认值, 行号)。
+
+    参数声明经常跨行书写（名字与默认值在下一行），因此先把该区间拼成一个字符串
+    整体匹配，行号用换行计数还原。
+    """
+    text = '\n'.join(lines[117:604])
+    pat = re.compile(
+        r'declare_parameter<((?:[^<>]|<[^<>]*>)+)>\s*\(\s*"([A-Za-z0-9_]+)"\s*(?:,\s*([^;)]*))?\)')
     seen = {}
-    for name, typ, ln in found:
-        seen[name] = (typ, ln)
-    out.append('共 **%d** 个参数。' % len(seen))
+    for m in pat.finditer(text):
+        name = m.group(2)
+        typ = ' '.join(m.group(1).split())
+        default = ' '.join((m.group(3) or '').split())
+        line_no = text.count('\n', 0, m.start(2)) + 118
+        seen[name] = (typ, default if default else '—', line_no)
+    return seen
+
+
+def build_yaml_skeleton(lines):
+    """按 PARAM_GROUPS 生成 params.yaml 骨架（值 = 源码默认值）。"""
+    seen = scan_params(lines)
+    out = ['```yaml', '# Navigation 可调参数（由 test_navigation.cpp 的 declare_parameter 提炼）',
+           '# 用法: 由 src/parameter_callback.cpp 通过 declare_parameter 默认值覆盖读取']
+    mapped = set()
+    for group, names in PARAM_GROUPS:
+        keys = [n for n in names if n in seen]
+        if not keys:
+            continue
+        out.append('')
+        out.append('# ==================== %s ====================' % group)
+        for n in keys:
+            typ, dft, _ = seen[n]
+            out.append('%-38s # %s, 默认 %s' % ('%s: %s' % (n, dft), typ, dft))
+            mapped.add(n)
+    rest = sorted(set(seen) - mapped)
+    if rest:
+        out.append('')
+        out.append('# ==================== 其他 ====================')
+        for n in rest:
+            typ, dft, _ = seen[n]
+            out.append('%-38s # %s' % ('%s: %s' % (n, dft), typ))
+    out.append('```')
     out.append('')
-    out.append('| 主题 | 参数 | 类型 | 声明行 |')
-    out.append('|---|---|---|---|')
+    return out
+
+
+def build_param_table(lines, heading='## 参数清单（自动扫描 118-604 行的 declare_parameter）'):
+    """扫描参数声明区, 生成 参数名 -> 主题 的表格（含类型与默认值，可直接抄成 yaml）。"""
+    out = [heading, '']
+    seen = scan_params(lines)
+    out.append('共 **%d** 个参数（这是 `config/params.yaml` 的全部键）。' % len(seen))
+    out.append('')
+    out.append('| 主题 | 参数 | 类型 | 默认值 | 声明行 |')
+    out.append('|---|---|---|---|---|')
     mapped = set()
     for group, names in PARAM_GROUPS:
         for n in names:
             if n in seen:
-                typ, ln = seen[n]
-                out.append('| %s | `%s` | `%s` | %d |' % (group, n, typ, ln))
+                typ, dft, ln = seen[n]
+                out.append('| %s | `%s` | `%s` | `%s` | %d |' % (group, n, typ, dft, ln))
                 mapped.add(n)
-    rest = sorted(set(seen) - mapped)
-    for n in rest:
-        typ, ln = seen[n]
-        out.append('| (未归类, 待补充) | `%s` | `%s` | %d |' % (n, typ, ln))
+    for n in sorted(set(seen) - mapped):
+        typ, dft, ln = seen[n]
+        out.append('| (未归类, 待补充) | `%s` | `%s` | `%s` | %d |' % (n, typ, dft, ln))
     out.append('')
     return out
 
@@ -659,35 +814,29 @@ def build_param_table(lines):
 def build_by_file(lines):
     """按"目标文件"汇总: 每个文件一节, 先列符号表, 再给合并后的完整源码。"""
     lookup = {}
-    for item in CONFIG_TYPES:
+    for item in ALL:
         n, s, t, p, nt = item
+        if n in ('consts', '参数声明区 (constructor 118-604)', 'constructor_assembly'):
+            kind = '代码块'
+        elif n in [i[0] for i in CONFIG_TYPES]:
+            kind = 'struct'
+        else:
+            kind = '函数'
         lookup[n] = dict(name=n, start=s, target=t, purpose=p, note=nt,
-                         doc='01_config.md', kind='struct')
-    lookup['参数声明区 (constructor 118-604)'] = dict(
-        name='参数声明区', start=118, target='config/config_loader.cpp',
-        purpose='构造函数的 104 个 declare_parameter', note='block(118-604)',
-        doc='01_config.md', kind='代码块')
-    for item in TOOLS:
-        n, s, t, p, nt = item
-        lookup[n] = dict(name=n, start=s, target=t, purpose=p, note=nt,
-                         doc='02_tools.md', kind='函数')
-    for item in TASKS:
-        n, s, t, p, nt = item
-        lookup[n] = dict(name=n, start=s, target=t, purpose=p, note=nt,
-                         doc='03_tasks.md', kind='函数')
-    for item in NODE:
-        n, s, t, p, nt = item
-        lookup[n] = dict(name=n, start=s, target=t, purpose=p, note=nt,
-                         doc='04_node.md',
-                         kind='代码块' if n == 'constructor_assembly' else '函数')
+                         doc=LAYER_DOC.get(layer_of(t), 'INDEX.md'), kind=kind)
+    n, s, t, p, nt = PARAM_BLOCK
+    lookup[n] = dict(name='参数声明区', start=s, target=t, purpose=p, note=nt,
+                     doc='01_config.md', kind='代码块')
 
     out = ['# 按目标文件汇总（BY_FILE）', '',
            '同一份拆分方案的"文件视角"：每个目标文件一节，先列该文件要装哪些符号，'
            '再给出**合并后的完整源码**（各段前有 `// ===== 源码行 a-b: 符号名 =====` 分隔注释，便于对照原文件）。', '',
+           '层级顺序：`config/`（只有 yaml） → `tools/`（纯计算） → `io/`（硬件与 ROS/文件交互） → '
+           '`tasks/`（业务流程） → `src/`（装配与回调），依赖只允许自上而下。', '',
            '> 注意：合并后的代码是**搬运视图**，不是可直接编译的完整文件——'
            '类方法的声明仍需在对应 `.hpp` 里按类组织，`private:` 成员、`#include`、'
-           '`namespace` 包裹都要你在新建文件时补齐。参数与成员变量的分配见文末附录。', '',
-           '对照文档：`01_config.md` / `02_tools.md` / `03_tasks.md` / `04_node.md`，索引见 `INDEX.md`。', '']
+           '`namespace` 包裹都要你在新建文件时补齐。成员变量的分配见文末附录。', '',
+           '对照文档：`01_config.md` / `02_tools.md` / `03_io.md` / `04_tasks.md` / `05_node.md`，索引见 `INDEX.md`。', '']
 
     # 总览表
     out.append('## 文件总览')
@@ -709,6 +858,10 @@ def build_by_file(lines):
         out.append('')
         out.append('建议落点：%s' % hint)
         out.append('')
+        if not names:
+            out.append('人工维护的参数文件，没有对应源码条目。')
+            out.append('')
+            continue
         out.append('| 符号 | 源码行 | 类型 | 职责 |')
         out.append('|---|---|---|---|')
         spans = []
@@ -730,36 +883,14 @@ def build_by_file(lines):
     # 附录
     out.append('## 附录：成员变量区（20 组）的分配参考')
     out.append('')
-    out.append('成员变量不是简单整块搬走：`config_*` / `motion_*` / `astar_*` 这类参数应进 '
-               '`config/` 的结构体，运行期状态（mutex / 队列 / 缓存）应进对应 tasks 类的私有成员，'
-               '发布器与订阅器留在 `src/` 节点类。逐组源码见 `01_config.md` 第 3 节。')
+    out.append('`config/` 只放 yaml，所以成员变量分三种去向：① **可调参数** → `config/params.yaml` 的键；'
+               '② **纯数据/结构** → `tools/types.hpp`；③ **运行期状态**（mutex / 队列 / 缓存 / 发布器）'
+               '→ 对应 `io/` 或 `tasks/` 类的私有成员。逐组源码见 `05_node.md` 的附录。')
     out.append('')
     out.append('| 成员变量组 | 源码行 | 建议落点 |')
     out.append('|---|---|---|')
-    member_target = {
-        '点云基础 / 渲染周期': 'src/ 节点私有成员（cloud_mutex_ 保留在节点或 CloudPipeline）',
-        '调试日志 / 异常快照 / 跳变检测': 'tasks/debug_log.cpp → DebugLogger',
-        '参数与配置快照': 'config/config.hpp',
-        '订阅 / 定时器 / 单帧图发布': 'src/ 节点私有成员',
-        '历史图缓冲': 'tasks/cloud_pipeline.cpp 或 MapRenderer',
-        '地图导出 / 导入': 'tasks/map_io.cpp → MapIo',
-        '动态障碍 / 位姿修正': 'tasks/dynamic_split.cpp + tasks/pose_correction.cpp',
-        '自过滤点云发布': 'tasks/cloud_publish.cpp → CloudPublisher',
-        '清除射线': 'tasks/cloud_publish.cpp → CloudPublisher',
-        '清空 Nav2 代价地图': 'tasks/nav2_service.cpp',
-        '运动帧框架 / 输入话题': 'config/ + tasks/motion_frame.cpp',
-        '路径跟随参数': 'config/config.hpp → MotionConfig',
-        'A* 兜底参数': 'config/config.hpp → AstarConfig',
-        '占点': 'config/ (参数) + tasks/hold_point.cpp (状态)',
-        '追击': 'config/ (参数) + tasks/chase.cpp (状态)',
-        '轨迹 + A* 缓存 + 目标点缓存': 'tasks/chase.cpp + tasks/astar_planner.cpp',
-        '运动状态 / 里程计 / 路径缓冲': 'tasks/motion_control.cpp + src/ 回调',
-        '运动请求 + 可视化快照': 'tasks/motion_control.cpp（lookahead_view_ 的写入上移到此）',
-        'SocketCAN 直发': 'src/can_socket.cpp → CanSocket',
-        '参数回调句柄': 'src/parameter_callback.cpp',
-    }
     for title, s, e in MEMBER_GROUPS:
-        out.append('| %s | %d-%d | %s |' % (title, s, e, member_target.get(title, '待定')))
+        out.append('| %s | %d-%d | %s |' % (title, s, e, MEMBER_TARGET.get(title, '待定')))
     out.append('')
     return out
 
@@ -771,185 +902,189 @@ def main():
         lines = f.read().split('\n')
     print('源文件: %s (%d 行)' % (SRC, len(lines) - 1))
 
-    def mk(items, kind_default='func'):
+    def mk(items):
         res = []
         for item in items:
             name, start, target, purpose, note = item[:5]
             kw = dict(name=name, start=start, target=target, purpose=purpose, note=note)
-            if kind_default == 'block' and len(item) > 5:
-                kw['end'] = item[5]
+            if note.startswith('block('):
+                kw['end'] = int(note.split('(')[1].split(')')[0].split('-')[1])
             res.append(kw)
         return res
 
-    # ---- 01_config.md ----
-    cfg_sections = [
-        ('1. 常量与数据结构（config/）', '全部为类内 struct/constexpr, 建议搬到 config/ 下的纯头文件, 供 tools 与 tasks 共用。',
-         [dict(name=n, start=s, target=t, purpose=p, note=nt,
-               end=int(nt.split('(')[1].split(')')[0].split('-')[1]) if nt.startswith('block(') else None)
-          for (n, s, t, p, nt) in CONFIG_TYPES]),
-        ('2. 参数声明区（构造函数前半段, 建议替换为 config 加载器）',
-         '这 487 行是 86 个 `declare_parameter`。拆分后建议改为：`config/params.yaml` + `config/config_loader.cpp` '
-         '一次性读入 `AppConfig` 结构体，构造函数只保留装配。',
-         [dict(name='参数声明区 (constructor 118-604)', start=118, target='config/config_loader.cpp',
-               purpose='逐项 declare_parameter 并写入成员/Config', note='block(118-604)', end=604)]),
-    ]
-    # 成员变量分组
-    member_items = []
+    # ===================== 01_config.md：只放 yaml =====================
+    cfg = [
+        '# 01 参数配置（config/，只有 yaml）', '',
+        '**约定**：`Navigation/config/` 只放 yaml，专用于调参；不放头文件、不放源码、不放数据结构。', '',
+        '| 文件 | 内容 |', '|---|---|',
+        '| `config/params.yaml` | 本节点全部可调参数（下表即其全部键） |',
+        '| `config/nav2_params.yaml` | Nav2 栈参数（人工维护） |', '',
+        'Nav2 行为树 XML 不是 yaml：`launch/behavior_trees/navigate_to_pose_w_replanning_5hz.xml`，'
+        'launch 用 `RewrittenYaml` 注入绝对路径。', '',
+        '**数据类型与常量不在 config**：`Point` / `Config` / `LookaheadView` / `PoseCorrection` / '
+        '`HoldObstacleCluster` / `FootprintBounds` / `ChaseTrackPoint` → `tools/types.hpp`；'
+        '运动帧协议常量 → `tools/constants.hpp`；带 `rclcpp::Time` 的 `TimedCloud` → `io/timed_cloud.hpp`。'
+        '源码见 `02_tools.md` 第 1 节、`03_io.md` 第 7 节。', '']
+    cfg.extend(build_param_table(lines))
+    cfg.append('## params.yaml 骨架')
+    cfg.append('')
+    cfg.append('键名与默认值均由源码自动提取，可直接落成 `config/params.yaml`。')
+    cfg.append('')
+    cfg.extend(build_yaml_skeleton(lines))
+    cfg.append('## 附录：成员变量（20 组）去向')
+    cfg.append('')
+    cfg.append('`config/` 只放 yaml，成员变量分三种去向：① 可调参数 → `params.yaml` 的键；'
+               '② 纯数据结构 → `tools/types.hpp`；③ 运行期状态（mutex/队列/缓存/发布器）→ '
+               '`io/` 或 `tasks/` 类的私有成员。逐组源码见 `05_node.md` 附录。')
+    cfg.append('')
+    cfg.append('| 成员变量组 | 源码行 | 去向 |')
+    cfg.append('|---|---|---|')
     for title, s, e in MEMBER_GROUPS:
-        member_items.append(dict(
-            name='成员变量: %s' % title, start=s, target='config/config.hpp + 各 tasks 类的私有成员',
-            purpose='（变量清单见源码, 拆分时按主题分配到对应类）', note='block(%d-%d)' % (s, e), end=e))
-    cfg_sections.append(('3. 成员变量区（private, 7569-7924）',
-                         '按主题切块，便于你逐块搬到 `config/` 结构体或各 tasks 类。',
-                         member_items))
-
-    cfg = build_doc(
-        lines,
-        '01 配置与数据类型（config/）',
-        '来源: `test/test_navigation/src/test_navigation.cpp`。本文覆盖常量、数据结构、参数声明、成员变量四部分。\n'
-        '迁入目录: 工作区顶层 `Navigation/config/`；若设为纯头文件目录，`tools/` 与 `tasks/` 都可直接 include。',
-        cfg_sections, params_table=True)
+        cfg.append('| %s | %d-%d | %s |' % (title, s, e, MEMBER_TARGET.get(title, '待定')))
+    cfg.append('')
     write('01_config.md', cfg)
 
-    # ---- 02_tools.md ----
+    # ===================== 02_tools.md：纯计算 =====================
+    tools_pool = by_layer(TOOLS + CONFIG_TYPES, 'tools')
     tool_secs = [
-        ('1. 几何 / 坐标变换', '全部无 ROS 通信、只依赖入参；抽到 tools/ 后建议加 `namespace nav::tools`。', mk([
-            i for i in TOOLS if i[0] in
-            ('hasField', 'quaternionToMatrix', 'matrixToQuaternion', 'yawFromMatrix', 'wrapAngle',
-             'multiplyMatrix', 'transformPointByCorrection', 'score_at', 'transformToBaseLink')])),
-        ('2. 运动帧编解码（12 位有符号量协议）', '纯位运算与量化，可直接脱离 ROS 单测。', mk([
-            i for i in TOOLS if i[0] in
-            ('limitMotionSpeed', 'effectiveSlowRadius', 'encodeMotionRaw', 'resolveAstarSpeed')])),
-        ('3. 栅格几何与像素', '占据栅格/像素层面的纯运算, 是拆分收益最大的一块。', mk([
-            i for i in TOOLS if i[0] in
-            ('computeMapSize', 'computeVehicleFootprint', 'clipCloudToMapBounds',
-             'filterVehicleFootprintPoints', 'clearVehicleFootprint', 'accumulateCloud',
-             'applyDilate', 'occupancyToPixels')])),
-        ('4. 序列化 (PCD / BIN / YAML)', '只做文件 IO, 不含发布; 建议签名改为 `bool write*(path, ...)`。', mk([
-            i for i in TOOLS if i[0] in
-            ('saveCloudPcd', 'writeHistoryCloudsBin', 'readHistoryCloudsBin', 'writeMapYaml')])),
-        ('5. 栅格查询 / 聚类 / 间距判定', '占点与追击共用，说明它们是通用几何算法而非业务。', mk([
-            i for i in TOOLS if i[0] in
-            ('extractHoldObstacles', 'computeHoldBlockPose', 'isHoldPointClear',
-             'isHoldPointClearPath', 'findNearestObstacleCluster', 'chaseLineClear')])),
+        ('1. 数据类型与协议常量', '结构体与 constexpr 从节点类里搬出，成为 tools 的公共类型；本层零 ROS、零 IO。',
+         mk(pick(tools_pool, ('Point', 'LookaheadView', 'Config', 'PoseCorrection',
+                              'HoldObstacleCluster', 'FootprintBounds', 'ChaseTrackPoint', 'consts')))),
+        ('2. 几何 / 坐标变换', '全部只依赖入参；建议 `namespace nav::tools`。',
+         mk(pick(tools_pool, ('hasField', 'quaternionToMatrix', 'matrixToQuaternion', 'yawFromMatrix',
+                              'wrapAngle', 'multiplyMatrix', 'transformPointByCorrection',
+                              'score_at', 'transformToBaseLink')))),
+        ('3. 运动帧编解码（12 位有符号量协议）', '纯位运算与量化，可单独做单元测试。',
+         mk(pick(tools_pool, ('limitMotionSpeed', 'effectiveSlowRadius', 'encodeMotionRaw', 'resolveAstarSpeed')))),
+        ('4. 栅格几何与像素', '占据栅格/像素层面的纯运算，拆分收益最大的一块。',
+         mk(pick(tools_pool, ('computeMapSize', 'computeVehicleFootprint', 'clipCloudToMapBounds',
+                              'filterVehicleFootprintPoints', 'clearVehicleFootprint', 'accumulateCloud',
+                              'applyDilate', 'occupancyToPixels')))),
+        ('5. 栅格查询 / 聚类 / 间距判定', '占点与追击共用，属通用几何算法。',
+         mk(pick(tools_pool, ('extractHoldObstacles', 'computeHoldBlockPose', 'isHoldPointClear',
+                              'isHoldPointClearPath', 'findNearestObstacleCluster', 'chaseLineClear')))),
     ]
-    # score_at 是 lambda, 需要显式 end
-    for it in tool_secs[0][2]:
-        if it['name'] == 'score_at':
-            it['end'] = 1505
     tools_doc = build_doc(
         lines,
-        '02 纯计算与坐标转换（tools/）',
-        '来源: `src/test_navigation.cpp`。这些函数只做数学/几何/编解码/文件 IO，**没有一个需要 ROS 节点上下文**。\n'
-        '迁入目录: 工作区顶层 `Navigation/tools/`。建议按本文的小节拆成独立 .hpp/.cpp，'
-        '并统一 `namespace nav::tools`，让 `tasks/` 只依赖头文件。\n\n'
-        '> 大函数内部还可以继续抽出纯内核（A* 搜索、膨胀、代价场、跟随几何段），清单见 `README.md` 的"二次抽取"一节。',
+        '02 纯计算（tools/）',
+        '**约定**：`tools/` 只做数学、几何、编解码 —— 不 include ROS、不碰 socket/文件、不加锁。\n'
+        '迁入顶层 `Navigation/tools/`，统一 `namespace nav::tools`，编译成 `nav_tools` 静态库。\n\n'
+        '> 文件读写（PCD/BIN/YAML）已划到 `io/file_*`；ROS 发布全部在 `io/ros_*`。',
         tool_secs)
     write('02_tools.md', tools_doc)
 
-    # ---- 03_tasks.md ----
+    # ===================== 03_io.md：硬件与外部交互 =====================
+    io_pool = by_layer(CONFIG_TYPES + TOOLS + TASKS + NODE, 'io')
+    io_secs = [
+        ('1. ROS 点云发布', '抽稀/限频/坐标变换后的发布动作，对上只暴露 `publish(points, frame_id)`。',
+         mk(pick(io_pool, ('publishCloudPreview', 'publishPointCloud', 'publishSelfFilteredCloud',
+                           'publishDynamicObstacleCloud', 'publishClearRingCloud')))),
+        ('2. ROS 路径 / 状态 / 轨迹发布', '纯消息打包，不含业务判断。',
+         mk(pick(io_pool, ('publishAstarPlan', 'publishHoldPointViz', 'publishHoldPointStatus',
+                           'publishChaseViz', 'publishChaseStatus', 'publishChaseTrack')))),
+        ('3. ROS 运动帧与位姿修正下发', '运动帧打包（8 字节协议）+ 位姿修正量发布。',
+         mk(pick(io_pool, ('publishMotionFrame', 'publishPoseCorrection')))),
+        ('4. 时间戳与服务客户端', 'ROS 时间戳对齐 + Nav2 ClearEntireCostmap 调用。',
+         mk(pick(io_pool, ('pointCloudStamp', 'clearCostmaps')))),
+        ('5. SocketCAN 直发', '系统调用层：建链/关链/限频发送，业务只给 (vx, vy, control)。',
+         mk(pick(io_pool, ('openCanSocket', 'closeCanSocket', 'canFrameFromMotion')))),
+        ('6. 文件 IO', 'PCD 快照、历史点云二进制、map YAML、调试日志初始化。',
+         mk(pick(io_pool, ('saveCloudPcd', 'writeHistoryCloudsBin', 'readHistoryCloudsBin',
+                           'writeMapYaml', 'initDebugLog')))),
+        ('7. 带 ROS 类型的容器', '`TimedCloud` 含 `rclcpp::Time`，放 io 才能让 tools 彻底无 ROS 依赖。',
+         mk(pick(io_pool, ('TimedCloud',)))),
+    ]
+    io_doc = build_doc(
+        lines,
+        '03 硬件与外部交互（io/）',
+        '**约定**：`io/` 是唯一接触外部世界的地方 —— ROS 话题/服务、SocketCAN、文件系统。'
+        '它依赖 `tools/`，但 `tools/` 绝不反向依赖它。\n'
+        '迁入顶层 `Navigation/io/`，编译成 `nav_io` 静态库（需要 rclcpp 与消息依赖）。',
+        io_secs)
+    write('03_io.md', io_doc)
+
+    # ===================== 04_tasks.md：业务流程 =====================
+    task_pool = by_layer(TASKS, 'tasks')
     task_secs = [
-        ('1. 点云流水线 / 动态障碍分离', 'cloudCallback 是全文件最强耦合点（4 把锁），拆分时建议先抽 tools 再搬它。',
-         mk([i for i in TASKS if i[0] in
-             ('cloudCallback', 'pruneHistory', 'logCloudFrame', 'splitDynamicObstacles',
-              'subtractBaseline', 'buildStaticBaseline')])),
-        ('2. 位姿修正（map->odom 2D 配准）', '流程在 tasks，评分内核在 tools/registration。',
-         mk([i for i in TASKS if i[0] in
-             ('getPoseCorrection', 'publishPoseCorrection', 'setPoseCorrection2D',
-              'resetPoseCorrection', 'estimatePoseCorrection', 'correctCloudForPose')])),
-        ('3. 点云发布', '限频/抽稀/坐标变换 + ROS 发布。',
-         mk([i for i in TASKS if i[0] in
-             ('publishCloudPreview', 'pointCloudStamp', 'publishPointCloud',
-              'publishSelfFilteredCloud', 'publishDynamicObstacleCloud', 'publishClearRingCloud')])),
-        ('4. 建图渲染', '渲染流程（发布 Image + 写文件），其栅格运算部分已在 tools。',
-         mk([i for i in TASKS if i[0] in
-             ('renderPgm', 'renderHistoryPgm', 'renderDynamicObstaclePgm')])),
-        ('5. 地图导入导出', '文件编排 + 状态重建。',
-         mk([i for i in TASKS if i[0] in
-             ('exportHistoryMap', 'importHistoryMap', 'mergeImportedMap')])),
-        ('6. A* 规划', '外层流程（缓存/限频/发布）留 tasks，搜索内核建议下沉 tools/astar。',
-         mk([i for i in TASKS if i[0] in
-             ('buildMergedOccupancy', 'planAstarPath', 'planAstarToGoal',
-              'getAstarPath', 'publishAstarPlan')])),
-        ('7. 占点行为', '业务状态机 + 复用 tools 的聚类/间距判定。',
-         mk([i for i in TASKS if i[0] in
-             ('computeHoldPointCommand', 'publishHoldPointViz', 'publishHoldPointStatus')])),
-        ('8. 追击行为', '业务状态机 + 目标轨迹记录 + 3 个发布。',
-         mk([i for i in TASKS if i[0] in
-             ('computeChaseCommand', 'recordTargetCloud', 'publishChaseViz',
-              'publishChaseStatus', 'publishChaseTrack')])),
-        ('9. 运动控制 / 路径跟随', '几何控制内核可下沉 tools/pure_pursuit，类只保留状态机与发布。',
-         mk([i for i in TASKS if i[0] in
-             ('computeFollowCommand', 'computeAstarFollowCommand', 'startMotion',
-              'stopMotion', 'publishMotionFrame', 'clearCostmaps')])),
+        ('1. 点云流水线 / 动态障碍分离', 'cloudCallback 是全文件最强耦合点（4 把锁），建议先抽 tools/io 再搬它。',
+         mk(pick(task_pool, ('cloudCallback', 'pruneHistory', 'logCloudFrame',
+                             'splitDynamicObstacles', 'subtractBaseline', 'buildStaticBaseline')))),
+        ('2. 位姿修正（map->odom 2D 配准）', '流程与状态在 tasks；评分内核在 tools/registration，发布在 io/ros_pose_pub。',
+         mk(pick(task_pool, ('getPoseCorrection', 'setPoseCorrection2D', 'resetPoseCorrection',
+                             'estimatePoseCorrection', 'correctCloudForPose')))),
+        ('3. 建图渲染', '渲染编排（栅格运算在 tools，写 PGM 在 io）。',
+         mk(pick(task_pool, ('renderPgm', 'renderHistoryPgm', 'renderDynamicObstaclePgm')))),
+        ('4. 地图导入导出', '流程编排 + 状态重建（字节读写已下沉 io/file_*）。',
+         mk(pick(task_pool, ('exportHistoryMap', 'importHistoryMap', 'mergeImportedMap')))),
+        ('5. A* 规划', '缓存/限频/目标解析留 tasks，搜索内核建议下沉 tools/astar。',
+         mk(pick(task_pool, ('buildMergedOccupancy', 'planAstarPath', 'planAstarToGoal', 'getAstarPath')))),
+        ('6. 占点行为', '业务状态机 + 复用 tools 的聚类/间距判定。',
+         mk(pick(task_pool, ('computeHoldPointCommand',)))),
+        ('7. 追击行为', '业务状态机 + 目标轨迹记录。',
+         mk(pick(task_pool, ('computeChaseCommand', 'recordTargetCloud')))),
+        ('8. 运动控制 / 路径跟随', '几何内核下沉 tools/pure_pursuit，类只保留状态机。',
+         mk(pick(task_pool, ('computeFollowCommand', 'computeAstarFollowCommand',
+                             'startMotion', 'stopMotion')))),
     ]
     tasks_doc = build_doc(
         lines,
-        '03 业务流程（tasks/）',
-        '来源: `src/test_navigation.cpp`。这些函数需要节点上下文（发布器/互斥量/参数），属于"任务/行为"层。\n'
-        '迁入目录: 工作区顶层 `Navigation/tasks/`。建议每个小节一个类：`CloudPipeline` / `PoseCorrector` / '
-        '`CloudPublisher` / `MapRenderer` / `MapIo` / `AstarPlanner` / `HoldPointTask` / `ChaseTask` / `MotionController`，'
-        '统一由 `src/` 的节点类持有并注入 tools 依赖。',
+        '04 业务流程（tasks/）',
+        '**约定**：`tasks/` 是"做什么" —— 编排 io 的收发与 tools 的计算，持有状态与状态机；'
+        '自己不做数学、不发消息、不写文件。\n'
+        '迁入顶层 `Navigation/tasks/`，每小节一个类：`CloudPipeline` / `DynamicSplitter` / `PoseCorrector` / '
+        '`MapRenderer` / `MapIo` / `AstarPlanner` / `HoldPointTask` / `ChaseTask` / `MotionController` / `DebugLogger`。',
         task_secs)
-    write('03_tasks.md', tasks_doc)
+    write('04_tasks.md', tasks_doc)
 
-    # ---- 04_node.md ----
+    # ===================== 05_node.md：装配与回调 =====================
+    node_pool = by_layer(NODE, 'src')
     node_secs = [
-        ('1. 节点装配与主函数（src/）', '构造函数装配区 + main + 启动期初始化。', mk([
-            i for i in NODE if i[0] in
-            ('constructor_assembly', 'main', 'initDebugLog', 'printConfig', 'createMotionTimer')])),
-        ('2. 订阅回调（src/）', '回调本身保持很薄：解析消息 + 写成员 + 交给 tasks。', mk([
-            i for i in NODE if i[0] in
-            ('odomCallback', 'planCallback', 'localPlanCallback', 'goalPoseCallback')])),
-        ('3. 定时器回调 / 运动状态机', 'motionTimerCallback 是全文件最长的函数（1483 行），'
-         '排查/改动成本最高，建议按文末"二次拆解"清单拆段。', mk([
-            i for i in NODE if i[0] in ('renderTimerCallback', 'motionTimerCallback')])),
-        ('4. 参数回调', '2580-3311 共 732 行, 建议只保留"解析 -> 校验 -> 提交"三段, 参数表外置到 config。', mk([
-            i for i in NODE if i[0] == 'parameterCallback'])),
-        ('5. SocketCAN 直发', '系统调用层, 建议留在 src（或整体搬 tools/can_bus 并把 publish 部分留节点）。', mk([
-            i for i in NODE if i[0] in ('openCanSocket', 'closeCanSocket', 'canFrameFromMotion')])),
+        ('1. 节点装配与主函数', '构造装配区（605-815）+ main + createMotionTimer + printConfig。',
+         mk(pick(node_pool, ('constructor_assembly', 'main', 'printConfig', 'createMotionTimer')))),
+        ('2. 订阅回调', '回调保持很薄：解析消息 → 写快照 → 交给 tasks。',
+         mk(pick(node_pool, ('odomCallback', 'planCallback', 'localPlanCallback', 'goalPoseCallback')))),
+        ('3. 定时器回调 / 运动状态机', 'motionTimerCallback 是全文件最长函数（1483 行），按 `README.md` 拆段表处理。',
+         mk(pick(node_pool, ('renderTimerCallback', 'motionTimerCallback')))),
+        ('4. 参数回调', '2580-3311 共 732 行；参数键的唯一来源是 `config/params.yaml`。',
+         mk(pick(node_pool, ('parameterCallback',)))),
     ]
-    for sec_title, sec_desc, items in node_secs:
-        for it in items:
-            if it['name'] == 'constructor_assembly':
-                it['end'] = 815
+    member_items = []
+    for title, s, e in MEMBER_GROUPS:
+        member_items.append(dict(
+            name='成员变量: %s' % title, start=s,
+            target='（去向见 01_config.md 附录表）',
+            purpose='（变量清单见源码；参数类键进 params.yaml）',
+            note='block(%d-%d)' % (s, e), end=e))
+    node_secs.append(('5. 附录：成员变量区源码（private, 7569-7924）',
+                      '按组切块便于对照搬迁；每组去向见 `01_config.md` 附录表。', member_items))
     node_doc = build_doc(
         lines,
-        '04 节点装配与回调（src/）',
-        '来源: `src/test_navigation.cpp`。这些函数与 ROS 强绑定（创建器/回调/系统调用），留给 `src/` 的节点类。\n'
-        '迁入目录: 工作区顶层 `Navigation/src/`。建议拆成 `main.cpp` + `realtime_pgm_node.cpp` + '
-        '`callbacks.cpp` + `parameter_callback.cpp` + `can_socket.cpp`，类声明放 `src/realtime_pgm_node.hpp`。',
+        '05 节点装配与回调（src/）',
+        '**约定**：`src/` 只做 ROS 装配 —— 创建订阅/发布器/定时器/服务客户端，回调里转调 tasks。'
+        '不含算法、不含文件读写、不含 CAN 系统调用（都在 io）。\n'
+        '迁入顶层 `Navigation/src/`：`main.cpp` + `realtime_pgm_node.{hpp,cpp}` + `callbacks.cpp` + '
+        '`parameter_callback.cpp`。',
         node_secs)
-    write('04_node.md', node_doc)
+    write('05_node.md', node_doc)
 
-    # ---- INDEX.md ----
-    idx = ['# 函数索引（按目标目录）', '',
+    # ===================== INDEX.md =====================
+    idx = ['# 函数索引（按层 -> 目标文件）', '',
            '源文件: `test/test_navigation/src/test_navigation.cpp` (7937 行)。'
-           '「行」列为源码起止行，点击对应文档可看完整源码。', '']
-    idx.append('| # | 函数 / 块 | 源码行 | 目标位置 | 文档 |')
+           '「源码行」为起止行，「文档」为含完整源码的详表。', '',
+           '层级：`config/`（只有 yaml） → `tools/`（纯计算） → `io/`（硬件与 ROS/文件） → '
+           '`tasks/`（业务流程） → `src/`（装配与回调）。', '']
+    idx.append('| # | 符号 / 块 | 源码行 | 目标位置 | 文档 |')
     idx.append('|---|---|---|---|---|')
     rows = []
-    for item in CONFIG_TYPES:
+    for item in ALL:
         n, s, t, p, nt = item
-        e = find_end_line(lines, s)
-        if nt.startswith('block('):
-            e = int(nt.split('(')[1].split(')')[0].split('-')[1])
-        rows.append((s, n, '%d-%d' % (s, e), t, '01_config.md'))
-    rows.append((118, '参数声明区', '118-604', 'config/config_loader.cpp', '01_config.md'))
+        e = item_end(lines, n, nt, s)
+        rows.append((s, n, '%d-%d' % (s, e), t, LAYER_DOC.get(layer_of(t), '-')))
+    n, s, t, p, nt = PARAM_BLOCK
+    rows.append((s, '参数声明区', '%d-%d' % (s, 604), t, '01_config.md'))
     for title, s, e in MEMBER_GROUPS:
         rows.append((s, '成员变量: %s' % title, '%d-%d' % (s, e),
-                     'config/config.hpp', '01_config.md'))
-    for item in TOOLS:
-        n, s, t, p, nt = item
-        rows.append((s, n, '%d-%d' % (s, 1505 if n == 'score_at' else find_end_line(lines, s)),
-                     t, '02_tools.md'))
-    for item in TASKS:
-        n, s, t, p, nt = item
-        rows.append((s, n, '%d-%d' % (s, find_end_line(lines, s)), t, '03_tasks.md'))
-    for item in NODE:
-        n, s, t, p, nt = item
-        e = 815 if n == 'constructor_assembly' else find_end_line(lines, s)
-        rows.append((s, n, '%d-%d' % (s, e), t, '04_node.md'))
+                     MEMBER_TARGET.get(title, '待定'), '05_node.md'))
     rows.sort(key=lambda r: r[0])
     for i, (_, n, span, t, doc) in enumerate(rows, 1):
         idx.append('| %d | `%s` | %s | `%s` | %s |' % (i, n, span, t, doc))

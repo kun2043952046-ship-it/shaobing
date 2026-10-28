@@ -1,11 +1,11 @@
-# 04 节点装配与回调（src/）
+# 05 节点装配与回调（src/）
 
-来源: `src/test_navigation.cpp`。这些函数与 ROS 强绑定（创建器/回调/系统调用），留给 `src/` 的节点类。
-迁入目录: 工作区顶层 `Navigation/src/`。建议拆成 `main.cpp` + `realtime_pgm_node.cpp` + `callbacks.cpp` + `parameter_callback.cpp` + `can_socket.cpp`，类声明放 `src/realtime_pgm_node.hpp`。
+**约定**：`src/` 只做 ROS 装配 —— 创建订阅/发布器/定时器/服务客户端，回调里转调 tasks。不含算法、不含文件读写、不含 CAN 系统调用（都在 io）。
+迁入顶层 `Navigation/src/`：`main.cpp` + `realtime_pgm_node.{hpp,cpp}` + `callbacks.cpp` + `parameter_callback.cpp`。
 
-## 1. 节点装配与主函数（src/）
+## 1. 节点装配与主函数
 
-构造函数装配区 + main + 启动期初始化。
+构造装配区（605-815）+ main + createMotionTimer + printConfig。
 
 ### `constructor_assembly`
 
@@ -228,57 +228,6 @@
   }
 ```
 
-### `initDebugLog`
-
-- **源码行**: `824-864` (41 行)
-- **目标位置**: `src/realtime_pgm_node.cpp`
-- **职责**: 启动期一次性初始化: 建 debug_log_dir_ 目录, 打开 cloud_frames.csv 写表头
-- **依赖 / 备注**: 读 debug_* 参数
-
-```cpp
-  void initDebugLog()
-  {
-    if (!debug_log_enabled_) {
-      RCLCPP_INFO(get_logger(), "调试日志: 已关闭 (debug_log_enabled=false)");
-      return;
-    }
-
-    std::error_code ec;
-    std::filesystem::create_directories(debug_log_dir_, ec);
-
-    if (ec) {
-      RCLCPP_WARN(
-        get_logger(),
-        "调试日志: 创建目录失败 %s (%s), 调试日志关闭",
-        debug_log_dir_.c_str(), ec.message().c_str());
-      debug_log_enabled_ = false;
-      return;
-    }
-
-    const std::string csv_path = debug_log_dir_ + "/cloud_frames.csv";
-    debug_cloud_log_.open(csv_path, std::ios::out | std::ios::trunc);
-
-    if (!debug_cloud_log_) {
-      RCLCPP_WARN(
-        get_logger(), "调试日志: 无法打开 %s, 调试日志关闭", csv_path.c_str());
-      debug_log_enabled_ = false;
-      return;
-    }
-
-    debug_cloud_log_ <<
-      "stamp,frame,raw,valid,self_filtered,queued,"
-      "cx,cy,cz,xmin,xmax,ymin,ymax,zmin,zmax,anomaly\n";
-    debug_cloud_log_.flush();
-
-    RCLCPP_INFO(
-      get_logger(),
-      "调试日志: 已开启, 逐帧统计 -> %s, PCD 快照=%s (上限 %d 个)",
-      csv_path.c_str(),
-      debug_pcd_enabled_ ? "开" : "关",
-      debug_pcd_max_files_);
-  }
-```
-
 ### `printConfig`
 
 - **源码行**: `7471-7567` (97 行)
@@ -436,9 +385,9 @@ int main(int argc, char ** argv)
 }
 ```
 
-## 2. 订阅回调（src/）
+## 2. 订阅回调
 
-回调本身保持很薄：解析消息 + 写成员 + 交给 tasks。
+回调保持很薄：解析消息 → 写快照 → 交给 tasks。
 
 ### `odomCallback`
 
@@ -644,7 +593,7 @@ int main(int argc, char ** argv)
 
 ## 3. 定时器回调 / 运动状态机
 
-motionTimerCallback 是全文件最长的函数（1483 行），排查/改动成本最高，建议按文末"二次拆解"清单拆段。
+motionTimerCallback 是全文件最长函数（1483 行），按 `README.md` 拆段表处理。
 
 ### `renderTimerCallback`
 
@@ -1214,7 +1163,7 @@ motionTimerCallback 是全文件最长的函数（1483 行），排查/改动成
 
 ## 4. 参数回调
 
-2580-3311 共 732 行, 建议只保留"解析 -> 校验 -> 提交"三段, 参数表外置到 config。
+2580-3311 共 732 行；参数键的唯一来源是 `config/params.yaml`。
 
 ### `parameterCallback`
 
@@ -1958,140 +1907,543 @@ motionTimerCallback 是全文件最长的函数（1483 行），排查/改动成
   }
 ```
 
-## 5. SocketCAN 直发
+## 5. 附录：成员变量区源码（private, 7569-7924）
 
-系统调用层, 建议留在 src（或整体搬 tools/can_bus 并把 publish 部分留节点）。
+按组切块便于对照搬迁；每组去向见 `01_config.md` 附录表。
 
-### `openCanSocket`
+### `成员变量: 点云基础 / 渲染周期`
 
-- **源码行**: `3487-3536` (50 行)
-- **目标位置**: `src/can_socket.cpp`
-- **职责**: socket / ioctl(SIOCGIFINDEX) / bind 建 SocketCAN 链路, 失败打错并返回 false (下次重试)
-- **依赖 / 备注**: 读 can_interface_/can_id_/can_send_period_ms_
+- **源码行**: `7570-7576` (7 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7570-7576)
 
 ```cpp
-  bool openCanSocket()
-  {
-    closeCanSocket();
+  std::string cloud_topic_;
+  int render_period_ms_{200};
 
-    can_socket_fd_ = ::socket(PF_CAN, SOCK_RAW | SOCK_CLOEXEC, CAN_RAW);
-    if (can_socket_fd_ < 0) {
-      RCLCPP_ERROR_THROTTLE(
-        get_logger(), *get_clock(), 2000,
-        "创建 CAN socket 失败: %s", std::strerror(errno));
-      return false;
-    }
-
-    struct ifreq ifr;
-    std::memset(&ifr, 0, sizeof(ifr));
-    std::strncpy(ifr.ifr_name, can_interface_.c_str(), IFNAMSIZ - 1);
-    ifr.ifr_name[IFNAMSIZ - 1] = '\0';
-
-    if (::ioctl(can_socket_fd_, SIOCGIFINDEX, &ifr) < 0) {
-      RCLCPP_ERROR_THROTTLE(
-        get_logger(), *get_clock(), 2000,
-        "找不到 CAN 接口 %s: %s (请先执行 ip link set %s up)",
-        can_interface_.c_str(), std::strerror(errno),
-        can_interface_.c_str());
-      closeCanSocket();
-      return false;
-    }
-
-    struct sockaddr_can addr;
-    std::memset(&addr, 0, sizeof(addr));
-    addr.can_family = AF_CAN;
-    addr.can_ifindex = ifr.ifr_ifindex;
-
-    if (::bind(
-        can_socket_fd_, reinterpret_cast<struct sockaddr *>(&addr),
-        sizeof(addr)) < 0)
-    {
-      RCLCPP_ERROR_THROTTLE(
-        get_logger(), *get_clock(), 2000,
-        "绑定 CAN 接口 %s 失败: %s",
-        can_interface_.c_str(), std::strerror(errno));
-      closeCanSocket();
-      return false;
-    }
-
-    RCLCPP_INFO(
-      get_logger(),
-      "SocketCAN 已就绪: %s, 帧 ID=0x%03X, 直发周期 %d ms",
-      can_interface_.c_str(), can_id_, can_send_period_ms_);
-    return true;
-  }
+  std::mutex cloud_mutex_;
+  std::vector<Point> latest_cloud_;
+  bool received_cloud_{false};
+  std::size_t cloud_frames_{0};
 ```
 
-### `closeCanSocket`
+### `成员变量: 调试日志 / 异常快照 / 跳变检测`
 
-- **源码行**: `3478-3484` (7 行)
-- **目标位置**: `src/can_socket.cpp`
-- **职责**: 关闭 CAN fd 并置 -1
-- **依赖 / 备注**: 写 can_socket_fd_
+- **源码行**: `7578-7611` (34 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7578-7611)
 
 ```cpp
-  void closeCanSocket()
-  {
-    if (can_socket_fd_ >= 0) {
-      ::close(can_socket_fd_);
-      can_socket_fd_ = -1;
-    }
-  }
+  // ---------------- 调试日志 / 异常快照 ----------------
+  bool debug_log_enabled_{true};
+  std::string debug_log_dir_{"log"};
+  bool debug_pcd_enabled_{true};
+  int debug_pcd_max_files_{200};
+  double debug_cloud_count_jump_ratio_{3.0};
+  int debug_cloud_count_jump_delta_{20000};
+  double debug_centroid_jump_m_{1.5};
+  std::mutex debug_log_mutex_;
+  std::ofstream debug_cloud_log_;        // 逐帧点云统计 CSV
+  std::size_t debug_pcd_saved_{0};       // 已保存的 PCD 快照数
+  std::size_t debug_frame_index_{0};     // 调试日志帧号 (独立于 cloud_frames_)
+  bool debug_prev_valid_{false};         // 上帧统计是否有效 (用于突增判定)
+  // 里程计位姿跳变检测 (仅在 odom 回调线程访问, 无需加锁)
+  bool debug_prev_odom_valid_{false};
+  double debug_prev_odom_x_{0.0};
+  double debug_prev_odom_y_{0.0};
+  double debug_prev_odom_yaw_{0.0};
+  double debug_odom_jump_m_{0.5};        // 单帧位移超此值判为跳变 (m)
+  double debug_odom_jump_yaw_{0.52};     // 单帧偏航超此值判为跳变 (rad, ~30°)
+  // 位姿跳变"拒绝窗口": 检出跳变后, 截止时刻之前到达的点云帧一律丢弃。
+  //   在 odom 回调线程写、cloud 回调线程读, 故均用原子量保证跨线程可见性。
+  //   截止时刻用 header.stamp 的秒数 (本机时钟, 与点云同源) 表示。
+  double pose_jump_reject_sec_{0.8};     // 拒绝窗口时长 (s), <=0 关闭
+  std::atomic<bool> pose_jump_has_until_{false};
+  std::atomic<double> pose_jump_until_sec_{0.0};
+  // 历史图占据比例暴涨检测 (仅在渲染线程访问, 无需加锁)
+  bool debug_prev_occ_valid_{false};
+  double debug_prev_occ_ratio_{0.0};
+  double debug_occ_ratio_jump_{0.15};    // 单帧占比涨幅超此值 -> WARN
+  std::size_t debug_prev_points_{0};     // 上帧点数
+  double debug_prev_cx_{0.0};            // 上帧质心
+  double debug_prev_cy_{0.0};
+  double debug_prev_cz_{0.0};
 ```
 
-### `canFrameFromMotion`
+### `成员变量: 参数与配置快照`
 
-- **源码行**: `3540-3586` (47 行)
-- **目标位置**: `src/can_socket.cpp`
-- **职责**: 按 can_send_period_ms_ 节流组 can_frame 直写总线; 失败关 socket 待重连, 成功累加计数
-- **依赖 / 备注**: 读写 can_last_send_ / can_sent_frames_
+- **源码行**: `7613-7615` (3 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7613-7615)
 
 ```cpp
-  void canFrameFromMotion(const uint8_t * data)
+  std::mutex config_mutex_;
+  Config config_{};
+  bool config_changed_{false};
+```
+
+### `成员变量: 订阅 / 定时器 / 单帧图发布`
+
+- **源码行**: `7617-7630` (14 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7617-7630)
+
+```cpp
+  rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr
+    cloud_subscription_;
+
+  rclcpp::TimerBase::SharedPtr render_timer_;
+  rclcpp::TimerBase::SharedPtr warn_timer_;
+
+  std::string image_topic_;
+  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr
+    image_publisher_;
+
+  std::string cloud_preview_topic_;
+  int cloud_preview_max_points_{15000};
+  rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr
+    cloud_preview_publisher_;
+```
+
+### `成员变量: 历史图缓冲`
+
+- **源码行**: `7632-7638` (7 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7632-7638)
+
+```cpp
+  std::deque<TimedCloud> history_;
+  // 网页"刷新累计图"请求标志, 由参数回调置位, 渲染线程消费
+  std::atomic<bool> history_reset_requested_{false};
+
+  std::string history_image_topic_;
+  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr
+    history_image_publisher_;
+```
+
+### `成员变量: 地图导出 / 导入`
+
+- **源码行**: `7640-7655` (16 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7640-7655)
+
+```cpp
+  // ---------- 历史累计图导出 / 导入 ----------
+  // 导出目录 (由网页端写入 export_map_dir 参数指定), 本节点在该目录生成
+  //   map.pgm / map.yaml / map_clouds.bin 三个中间文件, 网页端打包 zip 下载。
+  std::string export_map_dir_;
+  std::string export_map_name_;
+  std::atomic<bool> export_map_requested_{false};
+  // 导入目录 (网页端解包 zip 后写入), 本节点从该目录读取上述三个文件恢复。
+  std::string import_map_dir_;
+  std::atomic<bool> import_map_requested_{false};
+  // 导入的成品历史图 (mono8: 0=占据, 205=未知): 非空时作为网页底图优先发布,
+  //   并作为动态障碍基准 (static_obstacle_mask_) 的来源。
+  std::mutex imported_map_mutex_;
+  std::vector<uint8_t> imported_map_pixels_;
+  int imported_map_width_{0};
+  int imported_map_height_{0};
+  bool imported_map_valid_{false};
+```
+
+### `成员变量: 动态障碍 / 位姿修正`
+
+- **源码行**: `7657-7704` (48 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7657-7704)
+
+```cpp
+  // ---------- 动态障碍 (可变障碍): 锁定历史累计图后, 新出现的障碍单独成层 ----------
+  // 静态基准栅格: 锁定那一刻由当前历史累积图投票生成, 作为"什么是静态环境"的依据
+  std::mutex dynamic_mutex_;
+  std::vector<uint8_t> static_obstacle_mask_;
+  // 配准评分容差掩码: static_obstacle_mask_ 再膨胀 1 格 (buildStaticBaseline 生成)。
+  //   搜索步长 (0.2 m/1.0 m) 远大于栅格边长, 若按"恰好落在占据格"评分, 候选
+  //   分数退化为噪声 -> 修正量乱跳。预膨胀后评分仍是单次查表。
+  std::vector<uint8_t> static_obstacle_tolerance_;
+  // 本帧绿色层点云 (= 自过滤整帧 − 基准占据格), 供渲染线程发布绿色栅格图
+  std::vector<Point> latest_dynamic_obstacles_;
+  std::atomic<bool> dynamic_obstacle_enabled_{false};
+  std::string pose_correction_topic_{"/pose_correction"};
+  double pose_correction_global_period_sec_{1.0};
+  double pose_correction_global_range_m_{15.0};
+  double pose_correction_local_range_m_{1.0};
+  double pose_correction_score_min_{0.12};
+  double pose_correction_max_delta_m_{0.3};
+  // 时序滤波: EMA 平滑系数 (1 = 不平滑) 与滞回增益阈值
+  //   (新解评分须比当前解高出该值才接受, 否则保持当前修正量不动)
+  double pose_correction_ema_alpha_{0.5};
+  double pose_correction_score_gain_{0.05};
+  // 全局兜底搜索触发条件: 局部搜索连续失败达到该帧数才做 ±15 m/±180° 全搜
+  int pose_correction_global_trigger_fails_{5};
+  // 修正来源: true=本节点 2D 配准 (估计+发布); false=订阅外部 /pose_correction
+  bool apply_pose_correction_{false};
+  std::atomic<int> pose_correction_local_fail_count_{0};
+  std::atomic<double> pose_correction_last_global_sec_{
+    -std::numeric_limits<double>::infinity()};
+  std::mutex pose_correction_mutex_;
+  double baseline_pose_x_{0.0};
+  double baseline_pose_y_{0.0};
+  double baseline_pose_yaw_{0.0};
+  bool baseline_pose_valid_{false};
+  // 位姿修正量 (map->odom, SE(3)): 由本节点自带 2D 栅格配准提供
+  PoseCorrection pose_correction_;
+  rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr
+    pose_correction_publisher_;
+  // 外部修正输入订阅 (apply_pose_correction=false 时消费; 内部模式下忽略回环)
+  rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr
+    pose_correction_sub_;
+  std::string dynamic_obstacle_topic_;
+  std::string dynamic_obstacle_image_topic_;
+  rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr
+    dynamic_obstacle_publisher_;
+  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr
+    dynamic_obstacle_image_publisher_;
+  // 上次是否已发布过动态障碍图: 用于解锁后补发一张空图, 让网页绿色层消失
+  bool dynamic_image_published_{false};
+```
+
+### `成员变量: 自过滤点云发布`
+
+- **源码行**: `7706-7715` (10 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7706-7715)
+
+```cpp
+  // ---------- 自过滤点云 (供 Nav2 obstacle_layer 的清除射线) ----------
+  // 车体自过滤后的完整当前帧点云 (静态+动态), 以 base_link 帧发布。
+  // 作用: obstacle_layer 的 pointcloud 源此前因无人发布该话题而空转, 补上之后
+  // 清除射线从车体当前位置射出, 可把旧红色残留清成空闲 (详见 publishSelfFilteredCloud)。
+  std::string self_filtered_topic_;
+  double self_filtered_publish_rate_{10.0};
+  int self_filtered_max_points_{6000};
+  rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr
+    self_filtered_publisher_;
+  rclcpp::Time self_filtered_last_publish_{0, 0, RCL_ROS_TIME};
+```
+
+### `成员变量: 清除射线`
+
+- **源码行**: `7717-7725` (9 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7717-7725)
+
+```cpp
+  // ---------- 清除射线点云 (让红色代价区域实时跟随绿色障碍消失) ----------
+  // 每帧向 nav2_params.yaml 的 clear_ring 源 (marking:false / clearing:true)
+  // 发一圈 base_link 系的稀疏点, 让 obstacle_layer 从车体原点向四周射线清除
+  // 旧红格。见 publishClearRingCloud。
+  std::string clear_ring_topic_;
+  int clear_ring_points_{72};
+  double clear_ring_radius_{1.2};
+  rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr
+    clear_ring_publisher_;
+```
+
+### `成员变量: 清空 Nav2 代价地图`
+
+- **源码行**: `7727-7735` (9 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7727-7735)
+
+```cpp
+  // ---------- 刷新历史图时整张清空 Nav2 红色代价区 ----------
+  // 见 clearCostmaps: 异步调 ClearEntireCostmap 清空局部/全局代价地图。
+  bool clear_costmap_on_history_reset_{true};
+  std::string clear_local_costmap_service_;
+  std::string clear_global_costmap_service_;
+  rclcpp::Client<nav2_msgs::srv::ClearEntireCostmap>::SharedPtr
+    clear_local_costmap_client_;
+  rclcpp::Client<nav2_msgs::srv::ClearEntireCostmap>::SharedPtr
+    clear_global_costmap_client_;
+```
+
+### `成员变量: 运动帧框架 / 输入话题`
+
+- **源码行**: `7737-7749` (13 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7737-7749)
+
+```cpp
+  // ---------- 导航运动控制 (Nav2 全局路径 -> 8 字节运动帧) ----------
+  // 运动帧话题: uint8[8], 对应接收方 0xFF 报文 Data[0..7]:
+  //   [0] bit0=control bit1=shoot, [1-2] tar_yaw(H/L), [3-4] tar_pitch(H/L),
+  //   [5-7] vx/vy 各 12 位有符号量 (单位 1/scale m/s)
+  std::string motion_topic_;
+  int motion_control_{1};          // control 位取值 (0=停止 / 1=运动)
+  double motion_vx_scale_{kMotionSpeedScale};  // vx 量化系数: raw = vx(m/s) * scale
+  double motion_vy_scale_{kMotionSpeedScale};  // vy 量化系数: raw = vy(m/s) * scale
+  double motion_rate_hz_{100.0};   // 运动帧下发频率 (100 Hz => 10 ms 一帧)
+
+  std::string odom_topic_;
+  std::string global_plan_topic_;
+  std::string local_plan_topic_;
+```
+
+### `成员变量: 路径跟随参数`
+
+- **源码行**: `7751-7775` (25 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7751-7775)
+
+```cpp
+  // 路径跟随参数 (速度以车体系为参考: vx=车头前方, vy=车辆左手边)
+  double motion_target_speed_{1.00};
+  double motion_lookahead_{0.45};
+  double motion_lookahead_speed_gain_{0.52};
+  double motion_lookahead_max_{1.50};
+  double motion_yaw_kp_{1.20};
+  double motion_goal_tolerance_{0.25};
+  // 到达后位置校验阈值 (m): 车体中心 -> 用户目标点; 超过则用自建 A* 重新导航
+  double motion_goal_check_tolerance_{0.35};
+  // 位置校验失败时用自建 A* 重新导航的最大重试次数
+  int motion_goal_check_max_retry_{2};
+  // 位置校验失败重试计数 (每次新导航/新目标点清零, 达到上限则彻底停车)
+  int motion_goal_check_retry_{0};
+  // "校验失败已改用 A* 重导航"标志: true 时暂时无视 Nav2 路径, 由 A* 接管直到
+  //   车体驶离到达半径 (再交还 Nav2), 避免旧 Nav2 末点让每帧都重触发校验
+  bool motion_goal_check_replan_{false};
+  double motion_max_lateral_{0.0};
+  double motion_slow_radius_{0.0};
+  double motion_min_speed_{0.08};
+  // "车体中心 -> 雷达原点" 的平移, 表达在车体系, 数值为 lidar_to_base
+  // (雷达系表达) 的反向量。使用时必须做减法反推车体中心:
+  //   base = lidar_odom - R(yaw) * motion_base_to_lidar   (勿写成加法!)
+  // 详见 computeFollowCommand 步骤 0 处的说明。
+  double motion_base_to_lidar_x_{-0.239};
+  double motion_base_to_lidar_y_{0.158};
+```
+
+### `成员变量: A* 兜底参数`
+
+- **源码行**: `7777-7788` (12 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7777-7788)
+
+```cpp
+  // ---- 自建 A* 兜底规划器 (详见 planAstarPath) ----
+  bool astar_enabled_{true};           // 是否启用 A* 兜底 (/plan 不可用时)
+  double astar_speed_{-1.0};           // 兜底跟随速度 (m/s), <=0 跟随 motion_target_speed
+  double astar_inflate_radius_{0.50};  // 硬性最小间距 (m): 车体中心 -> 障碍
+  double astar_cost_reach_{0.60};      // 软性避让范围 (m): 障碍邻近代价影响半径
+  double astar_obstacle_penalty_{0.8}; // 靠障碍代价惩罚权重 (越大越远离障碍)
+  double astar_path_spacing_{0.15};    // A* 路径抽稀间距 (m), <=0 不抽稀
+  // A* 重算限频 (详见参数声明处): 时间上限 + 位移触发, 防止 100 Hz 重算阻塞运动线程
+  double astar_replan_interval_{0.20};
+  double astar_replan_move_dist_{0.05};
+  std::string goal_pose_topic_;        // Web 目标点话题 (PoseStamped, map 系)
+  std::string astar_plan_topic_;       // A* 路径发布话题 (Path, map 系)
+```
+
+### `成员变量: 占点`
+
+- **源码行**: `7790-7816` (27 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7790-7816)
+
+```cpp
+  // ---------- 占点 (hold point) 行为 ----------
+  // 行为: 车辆前往"占点中心"驻守, 实时计算"威胁障碍 -> 占点中心"的行进路线,
+  //   抢先机动到该路线上用车体阻挡。无威胁时回到占点中心。
+  // 安全: 硬性间距复用 astar_inflate_radius_ (0.50 m, 与 Nav2 robot_radius 同口径),
+  //   任何时刻车体中心到障碍都不得小于该值 —— 若机动会导致越界则拒绝该机动。
+  mutable std::mutex hold_point_mutex_;
+  bool hold_point_enabled_{false};     // 占点模式开关 (网页按钮)
+  double hold_point_x_{0.0};           // 占点中心 (map 系, m)
+  double hold_point_y_{0.0};
+  double hold_point_radius_{1.50};     // 占点范围 (m): 半径内的障碍才算威胁
+  double hold_point_speed_{-1.0};      // 占点机动速度 (m/s), <=0 跟随 motion_target_speed
+  double hold_point_slow_radius_{-1.0};  // 占点减速起始距离 (m), <0 自动取常规的一半
+  double hold_point_standoff_scale_{1.10};  // 拦截点距障碍 = k * 硬性间距
+  double hold_point_recenter_deadband_{0.08};    // 回位死区 (m)
+  std::string hold_point_status_topic_;
+  std::string hold_point_viz_topic_;
+  rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr hold_point_viz_publisher_;
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr
+    hold_point_status_publisher_;
+
+  // 当前仲裁出的威胁 (供网页展示): 位置/到中心直线距离/是否已就位阻挡
+  bool hold_point_threat_valid_{false};
+  double hold_point_threat_x_{0.0};
+  double hold_point_threat_y_{0.0};
+  double hold_point_threat_dist_{0.0};   // 威胁障碍到占点中心的直线距离 (m)
+  double hold_point_block_x_{0.0};       // 计算出的阻挡站位点
+  double hold_point_block_y_{0.0};
+```
+
+### `成员变量: 追击`
+
+- **源码行**: `7818-7846` (29 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7818-7846)
+
+```cpp
+  // ---------- 追击 (chase) 模式 ----------
+  // 行为: 网页锁定历史图后点"选择追击目标"并点图 -> 锁定最近障碍簇为目标;
+  //   每帧重新定位目标并维持约 chase_radius_ 的环形跟随 (太近退/太远进);
+  //   车体与目标连线被障碍挡住时用 A* 绕行; 目标丢失时直接停车等待重新出现。
+  //   控制复用 computeFollowCommand。
+  mutable std::mutex chase_mutex_;
+  bool chase_enabled_{false};        // 追击模式开关 (网页按钮)
+  double chase_pick_x_{0.0};         // 目标点选点 (map 系, m), 用于首次锁定目标簇
+  double chase_pick_y_{0.0};
+  double chase_radius_{1.0};         // 环形跟随半径 (m)
+  double chase_deadband_{0.15};      // 环形死区 (m)
+  double chase_speed_{-1.0};         // 追击速度 (m/s), <=0 跟随 motion_target_speed_
+  double chase_lock_radius_{1.0};    // 首次锁定命中半径 (m)
+  double chase_track_radius_{5.0};   // 每帧重定位搜索半径 (m)
+  double chase_track_history_sec_{30.0};     // 目标轨迹记录时长 (s)
+  double chase_track_record_interval_{0.2};  // 目标轨迹记录间隔 (s)
+  std::string chase_status_topic_;
+  std::string chase_viz_topic_;
+  std::string chase_track_topic_;
+  rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr chase_viz_publisher_;
+  rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr chase_track_publisher_;
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr chase_status_publisher_;
+
+  // 目标锁定/跟踪状态 (供追击主逻辑与网页展示)
+  bool chase_target_valid_{false};      // 是否已锁定目标
+  double chase_target_x_{0.0};          // 当前目标位置 (map 系, m)
+  double chase_target_y_{0.0};
+  double chase_goal_x_{0.0};            // 本帧期望到达点 (站位点)
+  double chase_goal_y_{0.0};
+```
+
+### `成员变量: 轨迹 + A* 缓存 + 目标点缓存`
+
+- **源码行**: `7847-7867` (21 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7847-7867)
+
+```cpp
+  // 目标历史轨迹 (map 系): 记录目标位置与时间, 供丢失后回溯与网页绘制
+  struct ChaseTrackPoint
   {
-    const auto now = std::chrono::steady_clock::now();
-    const auto period = std::chrono::milliseconds(
-      std::max(1, can_send_period_ms_));
+    rclcpp::Time stamp;
+    double x{0.0};
+    double y{0.0};
+    std::vector<Point> cloud;   // 记录该时刻目标簇的 3D 点云 (map 系)
+  };
+  std::deque<ChaseTrackPoint> chase_track_;
+  rclcpp::Time chase_last_record_time_{0, 0, RCL_ROS_TIME};
+  // A* 路径缓存 (供限频复用): 上次规划结果 + 规划时刻 + 规划时车体中心
+  std::vector<Point> astar_cached_path_;
+  rclcpp::Time astar_last_plan_time_{0, 0, RCL_ROS_TIME};
+  double astar_last_plan_x_{0.0};
+  double astar_last_plan_y_{0.0};
+  bool astar_cache_valid_{false};
+  // Web 目标点缓存 (由 goalPoseCallback 写入, 供 A* 作为终点)
+  float goal_x_{0.0F};
+  float goal_y_{0.0F};
+  bool goal_received_{false};
+  rclcpp::Time goal_recv_time_{0, 0, RCL_ROS_TIME};
+```
 
-    if (can_last_send_.time_since_epoch().count() != 0 &&
-      now - can_last_send_ < period)
-    {
-      return;
-    }
-    can_last_send_ = now;
+### `成员变量: 运动状态 / 里程计 / 路径缓冲`
 
-    if (can_socket_fd_ < 0) {
-      if (!openCanSocket()) {
-        return;
-      }
-    }
+- **源码行**: `7869-7903` (35 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7869-7903)
 
-    struct can_frame frame;
-    std::memset(&frame, 0, sizeof(frame));
-    frame.can_id = can_id_;
-    frame.can_dlc = 8;
-    for (std::size_t i = 0; i < 8; ++i) {
-      frame.data[i] = data[i];
-    }
+```cpp
+  std::mutex motion_mutex_;
+  bool motion_active_{false};        // 是否正在按路径运动
+  // "等待路径"态: /plan 过期/缺失时不再真正停车, 而是保持运动态、下发 0 速等待
+  // Nav2 重规划; 新路径一到立即恢复跟随。自建 A* 兜底也只在等待态下进行。
+  bool motion_waiting_{false};       // 是否处于"无有效路径, 等待重规划"状态
+  double odom_x_{0.0};               // 最新雷达位姿 (map 系)
+  double odom_y_{0.0};
+  double odom_yaw_{0.0};
+  bool odom_received_{false};
+  rclcpp::Time odom_stamp_{0, 0, RCL_ROS_TIME};
+  std::vector<Point> motion_plan_;   // Nav2 全局路径 (map 系)
+  bool motion_plan_received_{false};
+  rclcpp::Time motion_plan_stamp_{0, 0, RCL_ROS_TIME};
+  // 全局路径新鲜度监督: /plan 超过 motion_plan_timeout_ 秒未更新 -> 判定
+  // Nav2 已停止重规划(导航完成/中止/取消), 立即停车, 不再按过期路径盲跑。
+  // recv_time 用本机时钟记录 (见 planCallback)。
+  double motion_plan_timeout_{1.0};
+  rclcpp::Time motion_plan_recv_time_{0, 0, RCL_ROS_TIME};
+  std::vector<Point> local_plan_;    // Nav2 局部路径 (map 系, 含避障)
+  bool local_plan_received_{false};
+  rclcpp::Time local_plan_stamp_{0, 0, RCL_ROS_TIME};
+  double local_plan_timeout_{0.5};   // 局部路径超时 (s), 超时回退全局路径
 
-    const ssize_t nbytes = ::write(can_socket_fd_, &frame, sizeof(frame));
-    if (nbytes < 0) {
-      RCLCPP_ERROR_THROTTLE(
-        get_logger(), *get_clock(), 1000,
-        "CAN 发送失败 (ID=0x%03X): %s (接口可能 DOWN, 将自动重连)",
-        can_id_, std::strerror(errno));
-      closeCanSocket();
-      return;
-    }
+  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr
+    odom_subscription_;
+  rclcpp::Subscription<nav_msgs::msg::Path>::SharedPtr plan_subscription_;
+  rclcpp::Subscription<nav_msgs::msg::Path>::SharedPtr
+    local_plan_subscription_;
+  // Web 目标点订阅 (自建 A* 兜底规划器的终点) 与 A* 路径发布 (网页黄色显示)
+  rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr
+    goal_pose_subscription_;
+  rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr astar_plan_publisher_;
+  rclcpp::TimerBase::SharedPtr motion_timer_;
+  rclcpp::Publisher<std_msgs::msg::UInt8MultiArray>::SharedPtr
+    motion_publisher_;
+```
 
-    ++can_sent_frames_;
-    RCLCPP_INFO_THROTTLE(
-      get_logger(), *get_clock(), 2000,
-      "CAN 直发 %s ID=0x%03X [8] %02X %02X %02X %02X %02X %02X %02X %02X "
-      "(累计 %llu 帧)",
-      can_interface_.c_str(), can_id_,
-      frame.data[0], frame.data[1], frame.data[2], frame.data[3],
-      frame.data[4], frame.data[5], frame.data[6], frame.data[7],
-      static_cast<unsigned long long>(can_sent_frames_.load()));
-  }
+### `成员变量: 运动请求 + 可视化快照`
+
+- **源码行**: `7905-7911` (7 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7905-7911)
+
+```cpp
+  // 网页"开始运动"/"停止运动"请求标志, 由参数回调置位, 运动线程消费
+  std::atomic<bool> motion_start_requested_{false};
+  std::atomic<bool> motion_stop_requested_{false};
+
+  // 路径跟随可视化快照 (前视点/车体中心/速度矢量/车头航向), 供网页读取
+  std::mutex lookahead_mutex_;
+  LookaheadView lookahead_view_{};
+```
+
+### `成员变量: SocketCAN 直发`
+
+- **源码行**: `7913-7921` (9 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7913-7921)
+
+```cpp
+  // ---------- SocketCAN 直发 (把运动帧原样写进 CAN 总线) ----------
+  // 开启后无需任何桥接节点: 运动线程产出的 8 字节帧同时发布话题并 write() 到 can0
+  std::atomic<bool> can_enabled_{false};
+  std::string can_interface_{"can0"};
+  canid_t can_id_{0xFF};
+  int can_send_period_ms_{10};       // 直发限频周期 (10 ms => 100 Hz 上限)
+  int can_socket_fd_{-1};
+  std::atomic<uint64_t> can_sent_frames_{0};
+  std::chrono::steady_clock::time_point can_last_send_{};
+```
+
+### `成员变量: 参数回调句柄`
+
+- **源码行**: `7923-7924` (2 行)
+- **目标位置**: `（去向见 01_config.md 附录表）`
+- **职责**: （变量清单见源码；参数类键进 params.yaml）
+- **依赖 / 备注**: block(7923-7924)
+
+```cpp
+  rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr
+    parameter_callback_handle_;
 ```
