@@ -16,7 +16,6 @@
 | `config/nav2_params.yaml` | Nav2 参数（人工维护，无源码条目） | 0 | 0 |
 | `tools/types.hpp` | namespace nav::tools | 7 | 68 |
 | `tools/constants.hpp` | namespace nav::tools | 1 | 10 |
-| `tools/ros_utils.hpp` | namespace nav::tools | 1 | 11 |
 | `tools/tf_math.hpp` | namespace nav::tools (inline) | 6 | 99 |
 | `tools/tf_math.cpp` | namespace nav::tools | 1 | 41 |
 | `tools/registration.cpp` | namespace nav::tools | 1 | 37 |
@@ -26,6 +25,7 @@
 | `tools/grid_cluster.cpp` | namespace nav::tools | 2 | 123 |
 | `tools/grid_clearance.cpp` | namespace nav::tools | 3 | 161 |
 | `io/timed_cloud.hpp` | namespace nav::io（带 rclcpp::Time，故不放 tools） | 1 | 5 |
+| `io/ros_pc_utils.hpp` | namespace nav::io（依赖 sensor_msgs，故不放 tools） | 1 | 11 |
 | `io/can_bus.cpp` | class CanBus | 3 | 104 |
 | `io/ros_cloud_pub.cpp` | class RosCloudPublisher | 5 | 261 |
 | `io/ros_path_pub.cpp` | class RosPathPublisher | 6 | 207 |
@@ -677,30 +677,6 @@
   static constexpr double kSlowRadiusTime = 1.0;       // 减速时间常数 (s)
   // 12 位有符号量程对应的原始量上限 (±2040/200 = ±10.2 m/s), 仅用作饱和兜底
   static constexpr long kMotionRawLimit = 2040;
-
-```
-
-## `tools/ros_utils.hpp`
-
-建议落点：namespace nav::tools
-
-| 符号 | 源码行 | 类型 | 职责 |
-|---|---|---|---|
-| `hasField` | 1217-1227 | 函数 | 检查 PointCloud2 是否含指定字段名 (static, 无成员访问) |
-
-```cpp
-// ===================== 源码行 1217-1227 · hasField =====================
-  static bool hasField(
-    const sensor_msgs::msg::PointCloud2 & cloud,
-    const std::string & field_name)
-  {
-    for (const auto & field : cloud.fields) {
-      if (field.name == field_name) {
-        return true;
-      }
-    }
-    return false;
-  }
 
 ```
 
@@ -1757,6 +1733,30 @@
     rclcpp::Time stamp;
     std::shared_ptr<const std::vector<Point>> points;
   };
+
+```
+
+## `io/ros_pc_utils.hpp`
+
+建议落点：namespace nav::io（依赖 sensor_msgs，故不放 tools）
+
+| 符号 | 源码行 | 类型 | 职责 |
+|---|---|---|---|
+| `hasField` | 1217-1227 | 函数 | 检查 PointCloud2 是否含指定字段名 (static, 无成员访问) |
+
+```cpp
+// ===================== 源码行 1217-1227 · hasField =====================
+  static bool hasField(
+    const sensor_msgs::msg::PointCloud2 & cloud,
+    const std::string & field_name)
+  {
+    for (const auto & field : cloud.fields) {
+      if (field.name == field_name) {
+        return true;
+      }
+    }
+    return false;
+  }
 
 ```
 

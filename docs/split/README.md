@@ -15,6 +15,7 @@
 | `04_tasks.md` | 业务流程：流水线、位姿修正、渲染、导入导出、A*、占点、追击、运动控制（含完整源码） | 28 |
 | `05_node.md` | 装配与回调：构造装配区、main、6 个回调、参数回调 + 成员变量源码附录 | 11 + 20 块 |
 | `06_other_files.md` | launch / scripts / 构建文件 / 日志 / 顶层目录的归属，含三库 CMake | — |
+| `07_src_design.md` | **src 目标设计**：main ≤ 20 行、节点类骨架、装配顺序、薄回调改造示例、参数三段式、验收清单 | — |
 | `BY_FILE.md` | 文件视角：每个目标文件装哪些符号 + 合并源码 | — |
 | `gen_function_docs.py` | 生成脚本（元数据 + 目标路径覆写表） | — |
 
@@ -37,7 +38,6 @@ Navigation/
 │   ├── types.hpp            Point / LookaheadView / Config / PoseCorrection / HoldObstacleCluster / FootprintBounds / ChaseTrackPoint
 │   ├── constants.hpp        kMotionSpeedScale / kMotionMaxSpeed / kSlowRadiusTime / kMotionRawLimit
 │   ├── tf_math.*            四元数↔矩阵、yaw、wrapAngle、矩阵乘、点变换、map→base_link
-│   ├── ros_utils.*          hasField（消息字段查询，只读入参）
 │   ├── registration.*       scorePose（配准评分内核）
 │   ├── motion_codec.hpp     限速 / 减速半径 / 12 位量化 / A* 速度解析
 │   ├── grid.*               accumulateCloud / applyDilate / occupancyToPixels / clearVehicleFootprint
@@ -56,6 +56,7 @@ Navigation/
 │   ├── ros_pose_pub.*       map->odom 修正量发布
 │   ├── ros_image_pub.*      PGM / 历史图 / 动态障碍层 Image 发布
 │   ├── ros_stamp.*          pointCloudStamp（odom 戳 - 0.1 s，防 TF 丢弃）
+│   ├── ros_pc_utils.*       hasField / hasXYZ（依赖 sensor_msgs，所以留在 io）
 │   ├── ros_nav2_client.*    ClearEntireCostmap 服务客户端
 │   ├── file_pcd.* file_bin.* file_yaml.* file_pgm.*   落盘/读盘
 │   └── debug_log_file.*     调试日志目录与 CSV 初始化
@@ -109,6 +110,7 @@ tools  ←  io  ←  tasks  ←  src
 5. **抽 tasks**：按 `04_tasks.md` 的 8 个小节逐类搬，节点类只留 `shared_ptr<Task>`。
 6. **拆大回调**：`motionTimerCallback`（1483 行）与 `parameterCallback`（732 行）放最后。
 7. **参数外置**：把 `118-604` 的 122 个 `declare_parameter` 默认值抄进 `config/params.yaml`，用 `01_config.md` 的骨架直接生成。
+8. **重写 src**：按 `07_src_design.md` 把入口与装配收敛成 main（16 行）+ 节点类（五步装配）+ 薄回调（每个 ≤ 15 行）。
 
 ## 3. 二次抽取：大函数内部的纯内核（→ tools）
 

@@ -100,7 +100,8 @@ TOOLS = [
     # --- 几何 / 变换 ---
     ('hasField', 1217, 'tools/ros_utils.hpp / ros_utils.cpp',
      '检查 PointCloud2 是否含指定字段名 (static, 无成员访问)',
-     '入参 sensor_msgs::msg::PointCloud2, 纯查询'),
+     '入参 sensor_msgs::msg::PointCloud2, 依赖消息类型故只能进 io; '
+     '搬运时去掉 static 改成 inline 自由函数, 并补 hasXYZ(cloud) 收敛三连判断'),
     ('quaternionToMatrix', 1240, 'tools/tf_math.hpp (inline)',
      '四元数 -> 行主序 3x3 旋转矩阵, 含归一化与退化时取单位阵',
      'static; 入参 x,y,z,w; 出参 double r[9]'),
@@ -545,6 +546,8 @@ OVERRIDE = {
     'FootprintBounds': 'tools/types.hpp',
     'ChaseTrackPoint': 'tools/types.hpp',
     'TimedCloud': 'io/timed_cloud.hpp',
+    # --- ROS 消息工具: hasField 依赖 sensor_msgs, 不能留 tools ---
+    'hasField': 'io/ros_pc_utils.hpp',
     # --- 文件序列化: tools/ -> io/ ---
     'saveCloudPcd': 'io/file_pcd.cpp',
     'writeHistoryCloudsBin': 'io/file_bin.cpp',
@@ -629,7 +632,6 @@ FILE_GROUPS = [
         'Point', 'LookaheadView', 'Config', 'PoseCorrection',
         'HoldObstacleCluster', 'FootprintBounds', 'ChaseTrackPoint']),
     ('tools/constants.hpp', 'namespace nav::tools', ['consts']),
-    ('tools/ros_utils.hpp', 'namespace nav::tools', ['hasField']),
     ('tools/tf_math.hpp', 'namespace nav::tools (inline)', [
         'quaternionToMatrix', 'matrixToQuaternion', 'yawFromMatrix', 'wrapAngle',
         'multiplyMatrix', 'transformPointByCorrection']),
@@ -649,6 +651,7 @@ FILE_GROUPS = [
 
     # ---------------- io/: 硬件与外部交互 ----------------
     ('io/timed_cloud.hpp', 'namespace nav::io（带 rclcpp::Time，故不放 tools）', ['TimedCloud']),
+    ('io/ros_pc_utils.hpp', 'namespace nav::io（依赖 sensor_msgs，故不放 tools）', ['hasField']),
     ('io/can_bus.cpp', 'class CanBus', [
         'openCanSocket', 'closeCanSocket', 'canFrameFromMotion']),
     ('io/ros_cloud_pub.cpp', 'class RosCloudPublisher', [
@@ -1086,7 +1089,7 @@ def main():
          mk(pick(tools_pool, ('Point', 'LookaheadView', 'Config', 'PoseCorrection',
                               'HoldObstacleCluster', 'FootprintBounds', 'ChaseTrackPoint', 'consts')))),
         ('2. 几何 / 坐标变换', '全部只依赖入参；建议 `namespace nav::tools`。',
-         mk(pick(tools_pool, ('hasField', 'quaternionToMatrix', 'matrixToQuaternion', 'yawFromMatrix',
+         mk(pick(tools_pool, ('quaternionToMatrix', 'matrixToQuaternion', 'yawFromMatrix',
                               'wrapAngle', 'multiplyMatrix', 'transformPointByCorrection',
                               'score_at', 'transformToBaseLink')))),
         ('3. 运动帧编解码（12 位有符号量协议）', '纯位运算与量化，可单独做单元测试。',
@@ -1128,6 +1131,9 @@ def main():
                            'writeMapYaml', 'initDebugLog')))),
         ('7. 带 ROS 类型的容器', '`TimedCloud` 含 `rclcpp::Time`，放 io 才能让 tools 彻底无 ROS 依赖。',
          mk(pick(io_pool, ('TimedCloud',)))),
+        ('8. ROS 消息字段查询', '`hasField` 依赖 `sensor_msgs`，放 io 才能让 tools 保持零 ROS；'
+         '建议同时提供 `hasXYZ(cloud)` 把三连判断收敛成一句。',
+         mk(pick(io_pool, ('hasField',)))),
     ]
     io_doc = build_doc(
         lines,

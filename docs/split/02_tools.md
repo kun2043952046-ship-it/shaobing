@@ -171,27 +171,6 @@
 
 全部只依赖入参；建议 `namespace nav::tools`。
 
-### `hasField`
-
-- **源码行**: `1217-1227` (11 行)
-- **目标位置**: `tools/ros_utils.hpp / ros_utils.cpp`
-- **职责**: 检查 PointCloud2 是否含指定字段名 (static, 无成员访问)
-- **依赖 / 备注**: 入参 sensor_msgs::msg::PointCloud2, 纯查询
-
-```cpp
-  static bool hasField(
-    const sensor_msgs::msg::PointCloud2 & cloud,
-    const std::string & field_name)
-  {
-    for (const auto & field : cloud.fields) {
-      if (field.name == field_name) {
-        return true;
-      }
-    }
-    return false;
-  }
-```
-
 ### `quaternionToMatrix`
 
 - **源码行**: `1240-1265` (26 行)

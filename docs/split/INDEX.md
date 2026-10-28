@@ -20,7 +20,7 @@
 | 12 | `planCallback` | 1150-1174 | `src/callbacks.cpp` | 05_node.md |
 | 13 | `localPlanCallback` | 1179-1201 | `src/callbacks.cpp` | 05_node.md |
 | 14 | `goalPoseCallback` | 1205-1215 | `src/callbacks.cpp` | 05_node.md |
-| 15 | `hasField` | 1217-1227 | `tools/ros_utils.hpp / ros_utils.cpp` | 02_tools.md |
+| 15 | `hasField` | 1217-1227 | `io/ros_pc_utils.hpp` | 03_io.md |
 | 16 | `PoseCorrection` | 1233-1238 | `tools/types.hpp` | 02_tools.md |
 | 17 | `quaternionToMatrix` | 1240-1265 | `tools/tf_math.hpp (inline)` | 02_tools.md |
 | 18 | `matrixToQuaternion` | 1267-1298 | `tools/tf_math.hpp (inline)` | 02_tools.md |
